@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace Team29_Group_Project
 {
-    public partial class HomeGUI : Form
+    public partial class PatientRegistration : Form
     {
-        public HomeGUI()
+        public PatientRegistration()
         {
             InitializeComponent();
         }
 
-        private void HomeGUI_Load(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

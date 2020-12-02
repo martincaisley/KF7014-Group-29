@@ -1,0 +1,10 @@
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientRegistration.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.Properties.Resources.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.GenerateResource.cache
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.CoreCompileInputs.cache
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.exe.config
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.exe
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.pdb
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.HomeGUI.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.exe
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.pdb

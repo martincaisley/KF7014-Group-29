@@ -13,6 +13,7 @@ namespace AssessmentIdeas
     public partial class NewAppointment : Form
     {
         int patientID;
+        string appointmentType;
         public NewAppointment(int patientID)
         {
             this.patientID = patientID;
@@ -33,30 +34,32 @@ namespace AssessmentIdeas
                 var name = nameQuery.ToList();
                 txt_name.Text = name[0].name;
                 txt_name.ReadOnly = true;
-                checkBoxBridges.Checked = false;
-                checkBoxCrowns.Checked = false;
-                checkBoxFillings.Checked = false;
-                checkBoxRootCanal.Checked = false;
-                checkBoxScaleAndPolish.Checked = false;
-                checkBoxBraces.Checked = false;
-                checkBoxWisdomTooth.Checked = false;
-                checkBoxDentalImplants.Checked = false;
-                checkBoxDentures.Checked = false;
-                checkBoxBrokenTooth.Checked = false;
-                checkBoxTeethWhitening.Checked = false;
-                checkBoxDentalVeneers.Checked = false;
+                radioButtonBridges.Checked = false;
+                radioButtonCrowns.Checked = false;
+                radioButtonFillings.Checked = false;
+                radioButtonRootCanal.Checked = false;
+                radioButtonScaleAndPolish.Checked = false;
+                radioButtonBraces.Checked = false;
+                radioButtonWisdomTooth.Checked = false;
+                radioButtonDentalImplants.Checked = false;
+                radioButtonDentures.Checked = false;
+                radioButtonBrokenTooth.Checked = false;
+                radioButtonTeethWhitening.Checked = false;
+                radioButtonDentalVeneers.Checked = false;
         
             }
         }
 
         private void btn_addAppointment_Click(object sender, EventArgs e)
         {
+
             using (var context = new MyDBEntities())
             {
                 Appointment a = new Appointment();
                 a.patientID = patientID;
-                a.appointmentDate = txt_date.Text;
+                a.appointmentDate = datePicker.Text;
                 a.appointmentTime = txt_time.Text;
+                a.appointmentType = appointmentType;
 
                 context.Appointments.Add(a);
                 context.SaveChanges();
@@ -65,66 +68,103 @@ namespace AssessmentIdeas
             }
         }
 
-           #region Chk box changed
 
-        private void checkBoxBridges_CheckedChanged(object sender, EventArgs e)
+        #region Chk box changed
+
+        private void radioButtonBridges_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Bridges";
+            }
         }
 
-        private void checkBoxCrowns_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonCrowns_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Crowns";
+            }
         }
 
-        private void checkBoxFillings_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonFillings_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Fillings";
+            }
         }
 
-        private void checkBoxRootCanal_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonRootCanal_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Root Canal";
+            }
         }
 
-        private void checkBoxScaleAndPolish_CheckedChanged_1(object sender, EventArgs e)
+        private void radioButtonScaleAndPolish_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Scale and Polish";
+            }
         }
 
-        private void checkBoxBraces_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonBraces_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Braces";
+            }
         }
 
-        private void checkBoxWisdomTooth_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonWisdomTooth_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Wisdom Tooth";
+            }
         }
 
-        private void checkBoxDentalImplants_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonDentalImplants_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Dental Implants";
+            }
         }
 
-        private void checkBoxDentures_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonDentures_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Dentures";
+            }
         }
 
-        private void checkBoxBrokenTooth_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonBrokenTooth_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Broken Tooth";
+            }
         }
 
-        private void checkBoxTeethWhitening_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonTeethWhitening_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Teeth Whitening";
+            }
         }
 
-        private void checkBoxDentalVeneers_CheckedChanged(object sender, EventArgs e)
+        private void radioButtonDentalVeneers_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (radioButtonBridges.Checked)
+            {
+                appointmentType = "Dental Veneers";
+            }
         }
 
         #endregion

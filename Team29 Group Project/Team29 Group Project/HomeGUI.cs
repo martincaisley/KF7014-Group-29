@@ -21,5 +21,11 @@ namespace Team29_Group_Project
         {
 
         }
+
+        private void BTN_registerPatient_Click(object sender, EventArgs e)
+        {
+            PatientRegistrationGUI pr = new PatientRegistrationGUI();
+            pr.Show();
+        }
     }
 }

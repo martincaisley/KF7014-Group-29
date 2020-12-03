@@ -10,13 +10,17 @@ using System.Windows.Forms;
 
 namespace Team29_Group_Project
 {
-    public partial class PatientRegistration : Form
+    public partial class PatientRegistrationGUI : Form
     {
-        public PatientRegistration()
+        public PatientRegistrationGUI()
         {
             InitializeComponent();
         }
 
-       
+        private void BTN_medQuestionnaire_Click(object sender, EventArgs e)
+        {
+            MedicalQuestionnaireGUI med = new MedicalQuestionnaireGUI();
+            med.Show();
+        }
     }
 }

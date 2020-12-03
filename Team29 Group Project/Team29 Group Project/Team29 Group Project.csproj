@@ -58,11 +58,11 @@
     <Compile Include="MedicalQuestionnaireGUI.Designer.cs">
       <DependentUpon>MedicalQuestionnaireGUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="PatientRegistration.cs">
+    <Compile Include="PatientRegistrationGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PatientRegistration.Designer.cs">
-      <DependentUpon>PatientRegistration.cs</DependentUpon>
+    <Compile Include="PatientRegistrationGUI.Designer.cs">
+      <DependentUpon>PatientRegistrationGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +72,8 @@
     <EmbeddedResource Include="MedicalQuestionnaireGUI.resx">
       <DependentUpon>MedicalQuestionnaireGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PatientRegistration.resx">
-      <DependentUpon>PatientRegistration.cs</DependentUpon>
+    <EmbeddedResource Include="PatientRegistrationGUI.resx">
+      <DependentUpon>PatientRegistrationGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

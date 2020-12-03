@@ -1,6 +1,6 @@
 ﻿namespace Team29_Group_Project
 {
-    partial class PatientRegistration
+    partial class PatientRegistrationGUI
     {
         /// <summary>
         /// Required designer variable.
@@ -48,6 +48,10 @@
             this.TXT_address = new System.Windows.Forms.TextBox();
             this.TXT_email = new System.Windows.Forms.TextBox();
             this.BTN_medQuestionnaire = new System.Windows.Forms.Button();
+            this.LBL_GPname = new System.Windows.Forms.Label();
+            this.LBL_GPaddress = new System.Windows.Forms.Label();
+            this.TXT_GPname = new System.Windows.Forms.TextBox();
+            this.TXT_GPaddress = new System.Windows.Forms.TextBox();
             this.PNL_occupations.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -237,18 +241,57 @@
             // 
             // BTN_medQuestionnaire
             // 
-            this.BTN_medQuestionnaire.Location = new System.Drawing.Point(310, 605);
+            this.BTN_medQuestionnaire.Location = new System.Drawing.Point(311, 641);
             this.BTN_medQuestionnaire.Name = "BTN_medQuestionnaire";
             this.BTN_medQuestionnaire.Size = new System.Drawing.Size(158, 54);
             this.BTN_medQuestionnaire.TabIndex = 15;
             this.BTN_medQuestionnaire.Text = "Medical Questionnaire";
             this.BTN_medQuestionnaire.UseVisualStyleBackColor = true;
+            this.BTN_medQuestionnaire.Click += new System.EventHandler(this.BTN_medQuestionnaire_Click);
             // 
-            // PatientRegistration
+            // LBL_GPname
+            // 
+            this.LBL_GPname.AutoSize = true;
+            this.LBL_GPname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_GPname.Location = new System.Drawing.Point(15, 573);
+            this.LBL_GPname.Name = "LBL_GPname";
+            this.LBL_GPname.Size = new System.Drawing.Size(78, 20);
+            this.LBL_GPname.TabIndex = 16;
+            this.LBL_GPname.Text = "GP Name";
+            // 
+            // LBL_GPaddress
+            // 
+            this.LBL_GPaddress.AutoSize = true;
+            this.LBL_GPaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_GPaddress.Location = new System.Drawing.Point(15, 605);
+            this.LBL_GPaddress.Name = "LBL_GPaddress";
+            this.LBL_GPaddress.Size = new System.Drawing.Size(95, 20);
+            this.LBL_GPaddress.TabIndex = 17;
+            this.LBL_GPaddress.Text = "GP Address";
+            // 
+            // TXT_GPname
+            // 
+            this.TXT_GPname.Location = new System.Drawing.Point(117, 573);
+            this.TXT_GPname.Name = "TXT_GPname";
+            this.TXT_GPname.Size = new System.Drawing.Size(149, 20);
+            this.TXT_GPname.TabIndex = 18;
+            // 
+            // TXT_GPaddress
+            // 
+            this.TXT_GPaddress.Location = new System.Drawing.Point(116, 607);
+            this.TXT_GPaddress.Name = "TXT_GPaddress";
+            this.TXT_GPaddress.Size = new System.Drawing.Size(149, 20);
+            this.TXT_GPaddress.TabIndex = 19;
+            // 
+            // PatientRegistrationGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 671);
+            this.ClientSize = new System.Drawing.Size(800, 707);
+            this.Controls.Add(this.TXT_GPaddress);
+            this.Controls.Add(this.TXT_GPname);
+            this.Controls.Add(this.LBL_GPaddress);
+            this.Controls.Add(this.LBL_GPname);
             this.Controls.Add(this.BTN_medQuestionnaire);
             this.Controls.Add(this.TXT_email);
             this.Controls.Add(this.TXT_address);
@@ -263,7 +306,7 @@
             this.Controls.Add(this.LBL_lname);
             this.Controls.Add(this.LBL_fname);
             this.Controls.Add(this.LBL_patTitle);
-            this.Name = "PatientRegistration";
+            this.Name = "PatientRegistrationGUI";
             this.Text = "PatientRegistration";
             this.PNL_occupations.ResumeLayout(false);
             this.PNL_occupations.PerformLayout();
@@ -294,5 +337,9 @@
         private System.Windows.Forms.TextBox TXT_address;
         private System.Windows.Forms.TextBox TXT_email;
         private System.Windows.Forms.Button BTN_medQuestionnaire;
+        private System.Windows.Forms.Label LBL_GPname;
+        private System.Windows.Forms.Label LBL_GPaddress;
+        private System.Windows.Forms.TextBox TXT_GPname;
+        private System.Windows.Forms.TextBox TXT_GPaddress;
     }
 }

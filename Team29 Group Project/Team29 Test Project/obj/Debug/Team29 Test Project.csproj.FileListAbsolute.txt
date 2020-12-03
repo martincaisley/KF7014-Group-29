@@ -1,0 +1,6 @@
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Test Project\obj\Debug\Team29 Test Project.csprojAssemblyReference.cache
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Test Project\obj\Debug\Team29 Test Project.csproj.CoreCompileInputs.cache
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Test Project\bin\Debug\Team29 Test Project.dll
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Test Project\bin\Debug\Team29 Test Project.pdb
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Test Project\obj\Debug\Team29 Test Project.dll
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Test Project\obj\Debug\Team29 Test Project.pdb

@@ -33,6 +33,19 @@ namespace AssessmentIdeas
                 var name = nameQuery.ToList();
                 txt_name.Text = name[0].name;
                 txt_name.ReadOnly = true;
+                checkBoxBridges.Checked = false;
+                checkBoxCrowns.Checked = false;
+                checkBoxFillings.Checked = false;
+                checkBoxRootCanal.Checked = false;
+                checkBoxScaleAndPolish.Checked = false;
+                checkBoxBraces.Checked = false;
+                checkBoxWisdomTooth.Checked = false;
+                checkBoxDentalImplants.Checked = false;
+                checkBoxDentures.Checked = false;
+                checkBoxBrokenTooth.Checked = false;
+                checkBoxTeethWhitening.Checked = false;
+                checkBoxDentalVeneers.Checked = false;
+        
             }
         }
 
@@ -51,5 +64,69 @@ namespace AssessmentIdeas
                 this.Close();
             }
         }
+
+           #region Chk box changed
+
+        private void checkBoxBridges_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxCrowns_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxFillings_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxRootCanal_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxScaleAndPolish_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxBraces_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxWisdomTooth_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxDentalImplants_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxDentures_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxBrokenTooth_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxTeethWhitening_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxDentalVeneers_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
     }
 }

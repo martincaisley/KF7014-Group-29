@@ -73,3 +73,19 @@ C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\AssessmentIdeas
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.csproj.CopyComplete
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.exe
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.pdb
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.csprojAssemblyReference.cache
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.AddPatient.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.AppointmentStatus.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.ContactedByPhone.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.GUI_Home.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.Messages.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.NewAppointment.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.PatientDetails.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.PatientHomeScreen.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.PhoneReminders.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.Properties.Resources.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.ViewAppointments.resources
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.csproj.GenerateResource.cache
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.csproj.CoreCompileInputs.cache
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.exe
+C:\Users\Drumm\Source\Repos\KF7014-Group-29\AssessmentIdeas V2\AssessmentIdeas\obj\Debug\AssessmentIdeas.pdb

@@ -152,7 +152,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonBraces.TabStop = true;
             this.radioButtonBraces.Text = "Braces";
             this.radioButtonBraces.UseVisualStyleBackColor = true;
-            this.radioButtonBraces.CheckedChanged += new System.EventHandler(this.radioButtonBraces_CheckedChanged);
             // 
             // radioButtonScaleAndPolish
             // 
@@ -164,7 +163,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonScaleAndPolish.TabStop = true;
             this.radioButtonScaleAndPolish.Text = "Scale and Polish";
             this.radioButtonScaleAndPolish.UseVisualStyleBackColor = true;
-            this.radioButtonScaleAndPolish.CheckedChanged += new System.EventHandler(this.radioButtonScaleAndPolish_CheckedChanged);
             // 
             // radioButtonRootCanal
             // 
@@ -176,7 +174,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonRootCanal.TabStop = true;
             this.radioButtonRootCanal.Text = "Root Canal";
             this.radioButtonRootCanal.UseVisualStyleBackColor = true;
-            this.radioButtonRootCanal.CheckedChanged += new System.EventHandler(this.radioButtonRootCanal_CheckedChanged);
             // 
             // radioButtonFillings
             // 
@@ -188,7 +185,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonFillings.TabStop = true;
             this.radioButtonFillings.Text = "Fillings";
             this.radioButtonFillings.UseVisualStyleBackColor = true;
-            this.radioButtonFillings.CheckedChanged += new System.EventHandler(this.radioButtonFillings_CheckedChanged);
             // 
             // radioButtonCrowns
             // 
@@ -200,7 +196,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonCrowns.TabStop = true;
             this.radioButtonCrowns.Text = "Crowns";
             this.radioButtonCrowns.UseVisualStyleBackColor = true;
-            this.radioButtonCrowns.CheckedChanged += new System.EventHandler(this.radioButtonCrowns_CheckedChanged);
             // 
             // radioButtonBridges
             // 
@@ -212,7 +207,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonBridges.TabStop = true;
             this.radioButtonBridges.Text = "Bridges";
             this.radioButtonBridges.UseVisualStyleBackColor = true;
-            this.radioButtonBridges.CheckedChanged += new System.EventHandler(this.radioButtonBridges_CheckedChanged);
             // 
             // datePicker
             // 
@@ -231,7 +225,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonWisdomTooth.TabStop = true;
             this.radioButtonWisdomTooth.Text = "Wisdom Tooth";
             this.radioButtonWisdomTooth.UseVisualStyleBackColor = true;
-            this.radioButtonWisdomTooth.CheckedChanged += new System.EventHandler(this.radioButtonWisdomTooth_CheckedChanged);
             // 
             // radioButtonDentalImplants
             // 
@@ -243,7 +236,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonDentalImplants.TabStop = true;
             this.radioButtonDentalImplants.Text = "Dental Implants";
             this.radioButtonDentalImplants.UseVisualStyleBackColor = true;
-            this.radioButtonDentalImplants.CheckedChanged += new System.EventHandler(this.radioButtonDentalImplants_CheckedChanged);
             // 
             // radioButtonDentures
             // 
@@ -255,7 +247,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonDentures.TabStop = true;
             this.radioButtonDentures.Text = "Dentures";
             this.radioButtonDentures.UseVisualStyleBackColor = true;
-            this.radioButtonDentures.CheckedChanged += new System.EventHandler(this.radioButtonDentures_CheckedChanged);
             // 
             // radioButtonBrokenTooth
             // 
@@ -267,7 +258,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonBrokenTooth.TabStop = true;
             this.radioButtonBrokenTooth.Text = "Broken Tooth";
             this.radioButtonBrokenTooth.UseVisualStyleBackColor = true;
-            this.radioButtonBrokenTooth.CheckedChanged += new System.EventHandler(this.radioButtonBrokenTooth_CheckedChanged);
             // 
             // radioButtonTeethWhitening
             // 
@@ -279,7 +269,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonTeethWhitening.TabStop = true;
             this.radioButtonTeethWhitening.Text = "Teeth Whitening";
             this.radioButtonTeethWhitening.UseVisualStyleBackColor = true;
-            this.radioButtonTeethWhitening.CheckedChanged += new System.EventHandler(this.radioButtonTeethWhitening_CheckedChanged);
             // 
             // radioButtonDentalVeneers
             // 
@@ -291,7 +280,6 @@ namespace AppointmentsGroupProject.AssessmentIdeas
             this.radioButtonDentalVeneers.TabStop = true;
             this.radioButtonDentalVeneers.Text = "Dental Veneers";
             this.radioButtonDentalVeneers.UseVisualStyleBackColor = true;
-            this.radioButtonDentalVeneers.CheckedChanged += new System.EventHandler(this.radioButtonDentalVeneers_CheckedChanged);
             // 
             // NewAppointment
             // 

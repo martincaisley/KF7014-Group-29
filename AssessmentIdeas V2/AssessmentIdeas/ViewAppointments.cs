@@ -31,6 +31,7 @@ namespace AssessmentIdeas
                 dt.Columns.Add("Patient Name", typeof(string));
                 dt.Columns.Add("Appointment Date", typeof(string));
                 dt.Columns.Add("Appointment Time", typeof(string));
+                dt.Columns.Add("Appointment Type", typeof(string));
 
                 var appointmentQuery = from a in appointments.AsEnumerable()
                                        join p in patients.AsEnumerable()
@@ -39,7 +40,8 @@ namespace AssessmentIdeas
                                        {
                                    p.PatientName,
                                    a.appointmentDate,
-                                   a.appointmentTime
+                                   a.appointmentTime,
+                                   a.appointmentType
                                        }, false);
 
                 appointmentQuery.CopyToDataTable();
@@ -95,11 +97,12 @@ namespace AssessmentIdeas
                                    p.PatientPhoneNumber,
                                    a.appointmentDate,
                                    a.appointmentTime,
+                                   a.appointmentType
                                        });
                 
                 foreach(var a in appointmentList)
                 {
-                    string row = a.PatientName + "," + a.PatientPhoneNumber + "," + a.appointmentDate + "," + a.appointmentTime + ",";
+                    string row = a.PatientName + "," + a.PatientPhoneNumber + "," + a.appointmentDate + "," + a.appointmentTime + "," + a.appointmentType;
                     csv.Add(row);
                 }
                 string filePath = @"C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\AssessmentIdeas V2\AppointmentTextReminders\" + fileName + ".txt";

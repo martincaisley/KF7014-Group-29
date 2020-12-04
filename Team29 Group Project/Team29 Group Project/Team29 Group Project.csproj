@@ -69,6 +69,8 @@
     <Compile Include="MedicalQuestionnaireGUI.Designer.cs">
       <DependentUpon>MedicalQuestionnaireGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyDBEntities.cs" />
+    <Compile Include="Patient.cs" />
     <Compile Include="PatientRegistrationGUI.cs">
       <SubType>Form</SubType>
     </Compile>

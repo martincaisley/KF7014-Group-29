@@ -62,6 +62,7 @@
     <Compile Include="HomeGUI.Designer.cs">
       <DependentUpon>HomeGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="IPatientHomeScreenGUI.cs" />
     <Compile Include="IPatientRegistrationGUI.cs" />
     <Compile Include="MedicalQuestionnaireGUI.cs">
       <SubType>Form</SubType>
@@ -71,6 +72,12 @@
     </Compile>
     <Compile Include="MyDBEntities.cs" />
     <Compile Include="Patient.cs" />
+    <Compile Include="PatientHomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientHomeScreen.Designer.cs" />
+    <Compile Include="PatientHomeScreenModel.cs" />
+    <Compile Include="PatientHomeScreenPresenter.cs" />
     <Compile Include="PatientRegistrationGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +92,7 @@
     <EmbeddedResource Include="MedicalQuestionnaireGUI.resx">
       <DependentUpon>MedicalQuestionnaireGUI.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PatientHomeScreen.resx" />
     <EmbeddedResource Include="PatientRegistrationGUI.resx">
       <DependentUpon>PatientRegistrationGUI.cs</DependentUpon>
     </EmbeddedResource>

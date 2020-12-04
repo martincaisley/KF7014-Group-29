@@ -19,7 +19,7 @@ namespace Team29_Group_Project
 
         private void HomeGUI_Load(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Hello");
         }
 
         private void BTN_registerPatient_Click(object sender, EventArgs e)

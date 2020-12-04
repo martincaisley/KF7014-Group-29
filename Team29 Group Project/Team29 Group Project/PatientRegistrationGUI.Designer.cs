@@ -138,7 +138,7 @@
             // BTN_LIbenefits
             // 
             this.BTN_LIbenefits.AutoSize = true;
-            this.BTN_LIbenefits.Location = new System.Drawing.Point(2, 188);
+            this.BTN_LIbenefits.Location = new System.Drawing.Point(0, 188);
             this.BTN_LIbenefits.Name = "BTN_LIbenefits";
             this.BTN_LIbenefits.Size = new System.Drawing.Size(124, 17);
             this.BTN_LIbenefits.TabIndex = 5;
@@ -149,7 +149,7 @@
             // BTN_unemployed
             // 
             this.BTN_unemployed.AutoSize = true;
-            this.BTN_unemployed.Location = new System.Drawing.Point(0, 149);
+            this.BTN_unemployed.Location = new System.Drawing.Point(3, 149);
             this.BTN_unemployed.Name = "BTN_unemployed";
             this.BTN_unemployed.Size = new System.Drawing.Size(84, 17);
             this.BTN_unemployed.TabIndex = 4;

@@ -45,12 +45,6 @@
     <Compile Include="HomeGUI_test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Team29 Group Project\Team29 Group Project.csproj">
-      <Project>{f374555a-4c8c-495f-b5b0-4ee5ce33e792}</Project>
-      <Name>Team29 Group Project</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

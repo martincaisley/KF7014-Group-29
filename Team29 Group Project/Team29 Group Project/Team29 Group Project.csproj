@@ -52,12 +52,14 @@
     <Compile Include="HomeGUI.Designer.cs">
       <DependentUpon>HomeGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="IPatientRegistrationGUI.cs" />
     <Compile Include="MedicalQuestionnaireGUI.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MedicalQuestionnaireGUI.Designer.cs">
       <DependentUpon>MedicalQuestionnaireGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patient.cs" />
     <Compile Include="PatientRegistrationGUI.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -45,3 +45,4 @@ C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 G
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.CopyComplete
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.exe
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.pdb
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.ViewAppointments.resources

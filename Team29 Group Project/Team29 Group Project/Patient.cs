@@ -10,7 +10,7 @@ namespace Team29_Group_Project
     class Patient
     {
         [Key]
-        public int patientID { get; set; }
+        public int PatientID { get; set; }
         public String firstName { get; set; }
         public String lastName { get; set; }
         public DateTime DoB { get; set; }

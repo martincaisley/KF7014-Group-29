@@ -28,9 +28,9 @@ namespace Team29_Group_Project
         }
         private void btn_viewApps_Click(object sender, EventArgs e)
         {
-            //ViewAppointments viewAppointments = new ViewAppointments();
+            ViewAppointments viewAppointments = new ViewAppointments();
             this.Hide();
-            //viewAppointments.ShowDialog();
+            viewAppointments.ShowDialog();
             this.Show();
         }
 
@@ -55,12 +55,12 @@ namespace Team29_Group_Project
         {
             using (var context = new MyDBEntities())
             {
-                //var patients = context.Patients.ToList();
-                //int NewPatientID = patients[index].PatientID;
+                var patients = context.Patients.ToList();
+                int NewPatientID = patients[index].PatientID;
                 //PatientDetails patientDetails = new PatientDetails(NewPatientID);
-                //this.Hide();
+                this.Hide();
                 //patientDetails.ShowDialog();
-                //this.Show();
+                this.Show();
             }
         }
 
@@ -79,10 +79,6 @@ namespace Team29_Group_Project
         public void Register(PatientHomeScreenPresenter PHSP)
         {
             presenter = PHSP;
-        }
-        private void PatientHomeScreen_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

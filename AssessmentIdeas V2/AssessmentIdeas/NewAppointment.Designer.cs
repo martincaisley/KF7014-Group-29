@@ -32,25 +32,26 @@ namespace AssessmentIdeas
             this.lbl_title = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.txt_time = new System.Windows.Forms.TextBox();
-            this.txt_date = new System.Windows.Forms.TextBox();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_date = new System.Windows.Forms.Label();
             this.lbl_time = new System.Windows.Forms.Label();
             this.btn_addAppointment = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBoxDentalVeneers = new System.Windows.Forms.CheckBox();
-            this.checkBoxTeethWhitening = new System.Windows.Forms.CheckBox();
-            this.checkBoxWisdomTooth = new System.Windows.Forms.CheckBox();
-            this.checkBoxDentalImplants = new System.Windows.Forms.CheckBox();
-            this.checkBoxDentures = new System.Windows.Forms.CheckBox();
-            this.checkBoxBrokenTooth = new System.Windows.Forms.CheckBox();
-            this.checkBoxBraces = new System.Windows.Forms.CheckBox();
-            this.checkBoxScaleAndPolish = new System.Windows.Forms.CheckBox();
-            this.checkBoxRootCanal = new System.Windows.Forms.CheckBox();
-            this.checkBoxFillings = new System.Windows.Forms.CheckBox();
-            this.checkBoxCrowns = new System.Windows.Forms.CheckBox();
-            this.checkBoxBridges = new System.Windows.Forms.CheckBox();
-            this.groupBox1.SuspendLayout();
+            this.AppointmentBox = new System.Windows.Forms.GroupBox();
+            this.radioButtonDentalVeneers = new System.Windows.Forms.RadioButton();
+            this.radioButtonTeethWhitening = new System.Windows.Forms.RadioButton();
+            this.radioButtonBrokenTooth = new System.Windows.Forms.RadioButton();
+            this.radioButtonDentures = new System.Windows.Forms.RadioButton();
+            this.radioButtonDentalImplants = new System.Windows.Forms.RadioButton();
+            this.radioButtonWisdomTooth = new System.Windows.Forms.RadioButton();
+            this.radioButtonBraces = new System.Windows.Forms.RadioButton();
+            this.radioButtonScaleAndPolish = new System.Windows.Forms.RadioButton();
+            this.radioButtonRootCanal = new System.Windows.Forms.RadioButton();
+            this.radioButtonFillings = new System.Windows.Forms.RadioButton();
+            this.radioButtonCrowns = new System.Windows.Forms.RadioButton();
+            this.radioButtonBridges = new System.Windows.Forms.RadioButton();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.radioButtonCheckUp = new System.Windows.Forms.RadioButton();
+            this.AppointmentBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -74,24 +75,16 @@ namespace AssessmentIdeas
             // 
             // txt_time
             // 
-            this.txt_time.Location = new System.Drawing.Point(105, 114);
+            this.txt_time.Location = new System.Drawing.Point(105, 118);
             this.txt_time.Margin = new System.Windows.Forms.Padding(2);
             this.txt_time.Name = "txt_time";
             this.txt_time.Size = new System.Drawing.Size(76, 20);
             this.txt_time.TabIndex = 2;
             // 
-            // txt_date
-            // 
-            this.txt_date.Location = new System.Drawing.Point(105, 91);
-            this.txt_date.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_date.Name = "txt_date";
-            this.txt_date.Size = new System.Drawing.Size(76, 20);
-            this.txt_date.TabIndex = 3;
-            // 
             // lbl_name
             // 
             this.lbl_name.AutoSize = true;
-            this.lbl_name.Location = new System.Drawing.Point(47, 68);
+            this.lbl_name.Location = new System.Drawing.Point(28, 68);
             this.lbl_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(35, 13);
@@ -101,7 +94,7 @@ namespace AssessmentIdeas
             // lbl_date
             // 
             this.lbl_date.AutoSize = true;
-            this.lbl_date.Location = new System.Drawing.Point(47, 93);
+            this.lbl_date.Location = new System.Drawing.Point(28, 93);
             this.lbl_date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_date.Name = "lbl_date";
             this.lbl_date.Size = new System.Drawing.Size(30, 13);
@@ -111,7 +104,7 @@ namespace AssessmentIdeas
             // lbl_time
             // 
             this.lbl_time.AutoSize = true;
-            this.lbl_time.Location = new System.Drawing.Point(47, 118);
+            this.lbl_time.Location = new System.Drawing.Point(28, 118);
             this.lbl_time.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_time.Name = "lbl_time";
             this.lbl_time.Size = new System.Drawing.Size(30, 13);
@@ -120,7 +113,7 @@ namespace AssessmentIdeas
             // 
             // btn_addAppointment
             // 
-            this.btn_addAppointment.Location = new System.Drawing.Point(63, 299);
+            this.btn_addAppointment.Location = new System.Drawing.Point(63, 320);
             this.btn_addAppointment.Margin = new System.Windows.Forms.Padding(2);
             this.btn_addAppointment.Name = "btn_addAppointment";
             this.btn_addAppointment.Size = new System.Drawing.Size(130, 26);
@@ -129,170 +122,201 @@ namespace AssessmentIdeas
             this.btn_addAppointment.UseVisualStyleBackColor = true;
             this.btn_addAppointment.Click += new System.EventHandler(this.btn_addAppointment_Click);
             // 
-            // groupBox1
+            // AppointmentBox
             // 
-            this.groupBox1.Controls.Add(this.checkBoxDentalVeneers);
-            this.groupBox1.Controls.Add(this.checkBoxTeethWhitening);
-            this.groupBox1.Controls.Add(this.checkBoxWisdomTooth);
-            this.groupBox1.Controls.Add(this.checkBoxDentalImplants);
-            this.groupBox1.Controls.Add(this.checkBoxDentures);
-            this.groupBox1.Controls.Add(this.checkBoxBrokenTooth);
-            this.groupBox1.Controls.Add(this.checkBoxBraces);
-            this.groupBox1.Controls.Add(this.checkBoxScaleAndPolish);
-            this.groupBox1.Controls.Add(this.checkBoxRootCanal);
-            this.groupBox1.Controls.Add(this.checkBoxFillings);
-            this.groupBox1.Controls.Add(this.checkBoxCrowns);
-            this.groupBox1.Controls.Add(this.checkBoxBridges);
-            this.groupBox1.Location = new System.Drawing.Point(12, 139);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(247, 155);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Appointment Type";
+            this.AppointmentBox.Controls.Add(this.radioButtonCheckUp);
+            this.AppointmentBox.Controls.Add(this.radioButtonDentalVeneers);
+            this.AppointmentBox.Controls.Add(this.radioButtonTeethWhitening);
+            this.AppointmentBox.Controls.Add(this.radioButtonBrokenTooth);
+            this.AppointmentBox.Controls.Add(this.radioButtonDentures);
+            this.AppointmentBox.Controls.Add(this.radioButtonDentalImplants);
+            this.AppointmentBox.Controls.Add(this.radioButtonWisdomTooth);
+            this.AppointmentBox.Controls.Add(this.radioButtonBraces);
+            this.AppointmentBox.Controls.Add(this.radioButtonScaleAndPolish);
+            this.AppointmentBox.Controls.Add(this.radioButtonRootCanal);
+            this.AppointmentBox.Controls.Add(this.radioButtonFillings);
+            this.AppointmentBox.Controls.Add(this.radioButtonCrowns);
+            this.AppointmentBox.Controls.Add(this.radioButtonBridges);
+            this.AppointmentBox.Location = new System.Drawing.Point(12, 139);
+            this.AppointmentBox.Name = "AppointmentBox";
+            this.AppointmentBox.Size = new System.Drawing.Size(247, 176);
+            this.AppointmentBox.TabIndex = 8;
+            this.AppointmentBox.TabStop = false;
+            this.AppointmentBox.Text = "Appointment Type";
             // 
-            // checkBoxDentalVeneers
+            // radioButtonDentalVeneers
             // 
-            this.checkBoxDentalVeneers.AutoSize = true;
-            this.checkBoxDentalVeneers.Location = new System.Drawing.Point(142, 135);
-            this.checkBoxDentalVeneers.Name = "checkBoxDentalVeneers";
-            this.checkBoxDentalVeneers.Size = new System.Drawing.Size(99, 17);
-            this.checkBoxDentalVeneers.TabIndex = 11;
-            this.checkBoxDentalVeneers.Text = "Dental Veneers";
-            this.checkBoxDentalVeneers.UseVisualStyleBackColor = true;
-            this.checkBoxDentalVeneers.CheckedChanged += new System.EventHandler(this.checkBoxDentalVeneers_CheckedChanged);
+            this.radioButtonDentalVeneers.AutoSize = true;
+            this.radioButtonDentalVeneers.Location = new System.Drawing.Point(142, 134);
+            this.radioButtonDentalVeneers.Name = "radioButtonDentalVeneers";
+            this.radioButtonDentalVeneers.Size = new System.Drawing.Size(98, 17);
+            this.radioButtonDentalVeneers.TabIndex = 22;
+            this.radioButtonDentalVeneers.TabStop = true;
+            this.radioButtonDentalVeneers.Text = "Dental Veneers";
+            this.radioButtonDentalVeneers.UseVisualStyleBackColor = true;
+            this.radioButtonDentalVeneers.CheckedChanged += new System.EventHandler(this.radioButtonDentalVeneers_CheckedChanged);
             // 
-            // checkBoxTeethWhitening
+            // radioButtonTeethWhitening
             // 
-            this.checkBoxTeethWhitening.AutoSize = true;
-            this.checkBoxTeethWhitening.Location = new System.Drawing.Point(142, 112);
-            this.checkBoxTeethWhitening.Name = "checkBoxTeethWhitening";
-            this.checkBoxTeethWhitening.Size = new System.Drawing.Size(102, 17);
-            this.checkBoxTeethWhitening.TabIndex = 10;
-            this.checkBoxTeethWhitening.Text = "Teeth whitening";
-            this.checkBoxTeethWhitening.UseVisualStyleBackColor = true;
-            this.checkBoxTeethWhitening.CheckedChanged += new System.EventHandler(this.checkBoxTeethWhitening_CheckedChanged);
+            this.radioButtonTeethWhitening.AutoSize = true;
+            this.radioButtonTeethWhitening.Location = new System.Drawing.Point(142, 111);
+            this.radioButtonTeethWhitening.Name = "radioButtonTeethWhitening";
+            this.radioButtonTeethWhitening.Size = new System.Drawing.Size(104, 17);
+            this.radioButtonTeethWhitening.TabIndex = 21;
+            this.radioButtonTeethWhitening.TabStop = true;
+            this.radioButtonTeethWhitening.Text = "Teeth Whitening";
+            this.radioButtonTeethWhitening.UseVisualStyleBackColor = true;
+            this.radioButtonTeethWhitening.CheckedChanged += new System.EventHandler(this.radioButtonTeethWhitening_CheckedChanged);
             // 
-            // checkBoxWisdomTooth
+            // radioButtonBrokenTooth
             // 
-            this.checkBoxWisdomTooth.AutoSize = true;
-            this.checkBoxWisdomTooth.Location = new System.Drawing.Point(142, 20);
-            this.checkBoxWisdomTooth.Name = "checkBoxWisdomTooth";
-            this.checkBoxWisdomTooth.Size = new System.Drawing.Size(95, 17);
-            this.checkBoxWisdomTooth.TabIndex = 9;
-            this.checkBoxWisdomTooth.Text = "Wisdom Tooth";
-            this.checkBoxWisdomTooth.UseVisualStyleBackColor = true;
-            this.checkBoxWisdomTooth.CheckedChanged += new System.EventHandler(this.checkBoxWisdomTooth_CheckedChanged);
+            this.radioButtonBrokenTooth.AutoSize = true;
+            this.radioButtonBrokenTooth.Location = new System.Drawing.Point(142, 88);
+            this.radioButtonBrokenTooth.Name = "radioButtonBrokenTooth";
+            this.radioButtonBrokenTooth.Size = new System.Drawing.Size(90, 17);
+            this.radioButtonBrokenTooth.TabIndex = 20;
+            this.radioButtonBrokenTooth.TabStop = true;
+            this.radioButtonBrokenTooth.Text = "Broken Tooth";
+            this.radioButtonBrokenTooth.UseVisualStyleBackColor = true;
+            this.radioButtonBrokenTooth.CheckedChanged += new System.EventHandler(this.radioButtonBrokenTooth_CheckedChanged);
             // 
-            // checkBoxDentalImplants
+            // radioButtonDentures
             // 
-            this.checkBoxDentalImplants.AutoSize = true;
-            this.checkBoxDentalImplants.Location = new System.Drawing.Point(142, 43);
-            this.checkBoxDentalImplants.Name = "checkBoxDentalImplants";
-            this.checkBoxDentalImplants.Size = new System.Drawing.Size(99, 17);
-            this.checkBoxDentalImplants.TabIndex = 8;
-            this.checkBoxDentalImplants.Text = "Dental Implants";
-            this.checkBoxDentalImplants.UseVisualStyleBackColor = true;
-            this.checkBoxDentalImplants.CheckedChanged += new System.EventHandler(this.checkBoxDentalImplants_CheckedChanged);
+            this.radioButtonDentures.AutoSize = true;
+            this.radioButtonDentures.Location = new System.Drawing.Point(142, 65);
+            this.radioButtonDentures.Name = "radioButtonDentures";
+            this.radioButtonDentures.Size = new System.Drawing.Size(68, 17);
+            this.radioButtonDentures.TabIndex = 19;
+            this.radioButtonDentures.TabStop = true;
+            this.radioButtonDentures.Text = "Dentures";
+            this.radioButtonDentures.UseVisualStyleBackColor = true;
+            this.radioButtonDentures.CheckedChanged += new System.EventHandler(this.radioButtonDentures_CheckedChanged);
             // 
-            // checkBoxDentures
+            // radioButtonDentalImplants
             // 
-            this.checkBoxDentures.AutoSize = true;
-            this.checkBoxDentures.Location = new System.Drawing.Point(142, 66);
-            this.checkBoxDentures.Name = "checkBoxDentures";
-            this.checkBoxDentures.Size = new System.Drawing.Size(69, 17);
-            this.checkBoxDentures.TabIndex = 7;
-            this.checkBoxDentures.Text = "Dentures";
-            this.checkBoxDentures.UseVisualStyleBackColor = true;
-            this.checkBoxDentures.CheckedChanged += new System.EventHandler(this.checkBoxDentures_CheckedChanged);
+            this.radioButtonDentalImplants.AutoSize = true;
+            this.radioButtonDentalImplants.Location = new System.Drawing.Point(142, 42);
+            this.radioButtonDentalImplants.Name = "radioButtonDentalImplants";
+            this.radioButtonDentalImplants.Size = new System.Drawing.Size(98, 17);
+            this.radioButtonDentalImplants.TabIndex = 18;
+            this.radioButtonDentalImplants.TabStop = true;
+            this.radioButtonDentalImplants.Text = "Dental Implants";
+            this.radioButtonDentalImplants.UseVisualStyleBackColor = true;
+            this.radioButtonDentalImplants.CheckedChanged += new System.EventHandler(this.radioButtonDentalImplants_CheckedChanged);
             // 
-            // checkBoxBrokenTooth
+            // radioButtonWisdomTooth
             // 
-            this.checkBoxBrokenTooth.AutoSize = true;
-            this.checkBoxBrokenTooth.Location = new System.Drawing.Point(142, 89);
-            this.checkBoxBrokenTooth.Name = "checkBoxBrokenTooth";
-            this.checkBoxBrokenTooth.Size = new System.Drawing.Size(91, 17);
-            this.checkBoxBrokenTooth.TabIndex = 6;
-            this.checkBoxBrokenTooth.Text = "Broken Tooth";
-            this.checkBoxBrokenTooth.UseVisualStyleBackColor = true;
-            this.checkBoxBrokenTooth.CheckedChanged += new System.EventHandler(this.checkBoxBrokenTooth_CheckedChanged);
+            this.radioButtonWisdomTooth.AutoSize = true;
+            this.radioButtonWisdomTooth.Location = new System.Drawing.Point(142, 19);
+            this.radioButtonWisdomTooth.Name = "radioButtonWisdomTooth";
+            this.radioButtonWisdomTooth.Size = new System.Drawing.Size(94, 17);
+            this.radioButtonWisdomTooth.TabIndex = 17;
+            this.radioButtonWisdomTooth.TabStop = true;
+            this.radioButtonWisdomTooth.Text = "Wisdom Tooth";
+            this.radioButtonWisdomTooth.UseVisualStyleBackColor = true;
+            this.radioButtonWisdomTooth.CheckedChanged += new System.EventHandler(this.radioButtonWisdomTooth_CheckedChanged);
             // 
-            // checkBoxBraces
+            // radioButtonBraces
             // 
-            this.checkBoxBraces.AutoSize = true;
-            this.checkBoxBraces.Location = new System.Drawing.Point(6, 135);
-            this.checkBoxBraces.Name = "checkBoxBraces";
-            this.checkBoxBraces.Size = new System.Drawing.Size(59, 17);
-            this.checkBoxBraces.TabIndex = 5;
-            this.checkBoxBraces.Text = "Braces";
-            this.checkBoxBraces.UseVisualStyleBackColor = true;
-            this.checkBoxBraces.CheckedChanged += new System.EventHandler(this.checkBoxBraces_CheckedChanged);
+            this.radioButtonBraces.AutoSize = true;
+            this.radioButtonBraces.Location = new System.Drawing.Point(4, 153);
+            this.radioButtonBraces.Name = "radioButtonBraces";
+            this.radioButtonBraces.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonBraces.TabIndex = 16;
+            this.radioButtonBraces.TabStop = true;
+            this.radioButtonBraces.Text = "Braces";
+            this.radioButtonBraces.UseVisualStyleBackColor = true;
+            this.radioButtonBraces.CheckedChanged += new System.EventHandler(this.radioButtonBraces_CheckedChanged);
             // 
-            // checkBoxScaleAndPolish
+            // radioButtonScaleAndPolish
             // 
-            this.checkBoxScaleAndPolish.AutoSize = true;
-            this.checkBoxScaleAndPolish.Location = new System.Drawing.Point(6, 112);
-            this.checkBoxScaleAndPolish.Name = "checkBoxScaleAndPolish";
-            this.checkBoxScaleAndPolish.Size = new System.Drawing.Size(104, 17);
-            this.checkBoxScaleAndPolish.TabIndex = 4;
-            this.checkBoxScaleAndPolish.Text = "Scale and polish";
-            this.checkBoxScaleAndPolish.UseVisualStyleBackColor = true;
-            this.checkBoxScaleAndPolish.CheckedChanged += new System.EventHandler(this.checkBoxScaleAndPolish_CheckedChanged_1);
+            this.radioButtonScaleAndPolish.AutoSize = true;
+            this.radioButtonScaleAndPolish.Location = new System.Drawing.Point(6, 130);
+            this.radioButtonScaleAndPolish.Name = "radioButtonScaleAndPolish";
+            this.radioButtonScaleAndPolish.Size = new System.Drawing.Size(104, 17);
+            this.radioButtonScaleAndPolish.TabIndex = 15;
+            this.radioButtonScaleAndPolish.TabStop = true;
+            this.radioButtonScaleAndPolish.Text = "Scale and Polish";
+            this.radioButtonScaleAndPolish.UseVisualStyleBackColor = true;
+            this.radioButtonScaleAndPolish.CheckedChanged += new System.EventHandler(this.radioButtonScaleAndPolish_CheckedChanged);
             // 
-            // checkBoxRootCanal
+            // radioButtonRootCanal
             // 
-            this.checkBoxRootCanal.AutoSize = true;
-            this.checkBoxRootCanal.Location = new System.Drawing.Point(6, 89);
-            this.checkBoxRootCanal.Name = "checkBoxRootCanal";
-            this.checkBoxRootCanal.Size = new System.Drawing.Size(130, 17);
-            this.checkBoxRootCanal.TabIndex = 3;
-            this.checkBoxRootCanal.Text = "Root Canal Treatment";
-            this.checkBoxRootCanal.UseVisualStyleBackColor = true;
-            this.checkBoxRootCanal.CheckedChanged += new System.EventHandler(this.checkBoxRootCanal_CheckedChanged);
+            this.radioButtonRootCanal.AutoSize = true;
+            this.radioButtonRootCanal.Location = new System.Drawing.Point(6, 107);
+            this.radioButtonRootCanal.Name = "radioButtonRootCanal";
+            this.radioButtonRootCanal.Size = new System.Drawing.Size(78, 17);
+            this.radioButtonRootCanal.TabIndex = 14;
+            this.radioButtonRootCanal.TabStop = true;
+            this.radioButtonRootCanal.Text = "Root Canal";
+            this.radioButtonRootCanal.UseVisualStyleBackColor = true;
+            this.radioButtonRootCanal.CheckedChanged += new System.EventHandler(this.radioButtonRootCanal_CheckedChanged);
             // 
-            // checkBoxFillings
+            // radioButtonFillings
             // 
-            this.checkBoxFillings.AutoSize = true;
-            this.checkBoxFillings.Location = new System.Drawing.Point(6, 66);
-            this.checkBoxFillings.Name = "checkBoxFillings";
-            this.checkBoxFillings.Size = new System.Drawing.Size(57, 17);
-            this.checkBoxFillings.TabIndex = 2;
-            this.checkBoxFillings.Text = "Fillings";
-            this.checkBoxFillings.UseVisualStyleBackColor = true;
-            this.checkBoxFillings.CheckedChanged += new System.EventHandler(this.checkBoxFillings_CheckedChanged);
+            this.radioButtonFillings.AutoSize = true;
+            this.radioButtonFillings.Location = new System.Drawing.Point(6, 84);
+            this.radioButtonFillings.Name = "radioButtonFillings";
+            this.radioButtonFillings.Size = new System.Drawing.Size(56, 17);
+            this.radioButtonFillings.TabIndex = 13;
+            this.radioButtonFillings.TabStop = true;
+            this.radioButtonFillings.Text = "Fillings";
+            this.radioButtonFillings.UseVisualStyleBackColor = true;
+            this.radioButtonFillings.CheckedChanged += new System.EventHandler(this.radioButtonFillings_CheckedChanged);
             // 
-            // checkBoxCrowns
+            // radioButtonCrowns
             // 
-            this.checkBoxCrowns.AutoSize = true;
-            this.checkBoxCrowns.Location = new System.Drawing.Point(6, 43);
-            this.checkBoxCrowns.Name = "checkBoxCrowns";
-            this.checkBoxCrowns.Size = new System.Drawing.Size(61, 17);
-            this.checkBoxCrowns.TabIndex = 1;
-            this.checkBoxCrowns.Text = "Crowns";
-            this.checkBoxCrowns.UseVisualStyleBackColor = true;
-            this.checkBoxCrowns.CheckedChanged += new System.EventHandler(this.checkBoxCrowns_CheckedChanged);
+            this.radioButtonCrowns.AutoSize = true;
+            this.radioButtonCrowns.Location = new System.Drawing.Point(6, 61);
+            this.radioButtonCrowns.Name = "radioButtonCrowns";
+            this.radioButtonCrowns.Size = new System.Drawing.Size(60, 17);
+            this.radioButtonCrowns.TabIndex = 12;
+            this.radioButtonCrowns.TabStop = true;
+            this.radioButtonCrowns.Text = "Crowns";
+            this.radioButtonCrowns.UseVisualStyleBackColor = true;
+            this.radioButtonCrowns.CheckedChanged += new System.EventHandler(this.radioButtonCrowns_CheckedChanged);
             // 
-            // checkBoxBridges
+            // radioButtonBridges
             // 
-            this.checkBoxBridges.AutoSize = true;
-            this.checkBoxBridges.Location = new System.Drawing.Point(6, 20);
-            this.checkBoxBridges.Name = "checkBoxBridges";
-            this.checkBoxBridges.Size = new System.Drawing.Size(61, 17);
-            this.checkBoxBridges.TabIndex = 0;
-            this.checkBoxBridges.Text = "Bridges";
-            this.checkBoxBridges.UseVisualStyleBackColor = true;
-            this.checkBoxBridges.CheckedChanged += new System.EventHandler(this.checkBoxBridges_CheckedChanged);
+            this.radioButtonBridges.AutoSize = true;
+            this.radioButtonBridges.Location = new System.Drawing.Point(6, 39);
+            this.radioButtonBridges.Name = "radioButtonBridges";
+            this.radioButtonBridges.Size = new System.Drawing.Size(60, 17);
+            this.radioButtonBridges.TabIndex = 10;
+            this.radioButtonBridges.TabStop = true;
+            this.radioButtonBridges.Text = "Bridges";
+            this.radioButtonBridges.UseVisualStyleBackColor = true;
+            this.radioButtonBridges.CheckedChanged += new System.EventHandler(this.radioButtonBridges_CheckedChanged);
+            // 
+            // datePicker
+            // 
+            this.datePicker.Location = new System.Drawing.Point(105, 93);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(130, 20);
+            this.datePicker.TabIndex = 9;
+            // 
+            // radioButtonCheckUp
+            // 
+            this.radioButtonCheckUp.AutoSize = true;
+            this.radioButtonCheckUp.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonCheckUp.Name = "radioButtonCheckUp";
+            this.radioButtonCheckUp.Size = new System.Drawing.Size(70, 17);
+            this.radioButtonCheckUp.TabIndex = 23;
+            this.radioButtonCheckUp.TabStop = true;
+            this.radioButtonCheckUp.Text = "CheckUp";
+            this.radioButtonCheckUp.UseVisualStyleBackColor = true;
             // 
             // NewAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(271, 329);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(276, 357);
+            this.Controls.Add(this.datePicker);
+            this.Controls.Add(this.AppointmentBox);
             this.Controls.Add(this.btn_addAppointment);
             this.Controls.Add(this.lbl_time);
             this.Controls.Add(this.lbl_date);
             this.Controls.Add(this.lbl_name);
-            this.Controls.Add(this.txt_date);
             this.Controls.Add(this.txt_time);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.lbl_title);
@@ -300,8 +324,8 @@ namespace AssessmentIdeas
             this.Name = "NewAppointment";
             this.Text = "NewAppointment";
             this.Load += new System.EventHandler(this.NewAppointment_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.AppointmentBox.ResumeLayout(false);
+            this.AppointmentBox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -312,23 +336,24 @@ namespace AssessmentIdeas
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.TextBox txt_time;
-        private System.Windows.Forms.TextBox txt_date;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.Label lbl_date;
         private System.Windows.Forms.Label lbl_time;
         private System.Windows.Forms.Button btn_addAppointment;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBoxRootCanal;
-        private System.Windows.Forms.CheckBox checkBoxFillings;
-        private System.Windows.Forms.CheckBox checkBoxCrowns;
-        private System.Windows.Forms.CheckBox checkBoxBridges;
-        private System.Windows.Forms.CheckBox checkBoxBraces;
-        private System.Windows.Forms.CheckBox checkBoxScaleAndPolish;
-        private System.Windows.Forms.CheckBox checkBoxDentalVeneers;
-        private System.Windows.Forms.CheckBox checkBoxTeethWhitening;
-        private System.Windows.Forms.CheckBox checkBoxWisdomTooth;
-        private System.Windows.Forms.CheckBox checkBoxDentalImplants;
-        private System.Windows.Forms.CheckBox checkBoxDentures;
-        private System.Windows.Forms.CheckBox checkBoxBrokenTooth;
+        private System.Windows.Forms.GroupBox AppointmentBox;
+        private System.Windows.Forms.DateTimePicker datePicker;
+        private System.Windows.Forms.RadioButton radioButtonBridges;
+        private System.Windows.Forms.RadioButton radioButtonFillings;
+        private System.Windows.Forms.RadioButton radioButtonCrowns;
+        private System.Windows.Forms.RadioButton radioButtonBraces;
+        private System.Windows.Forms.RadioButton radioButtonScaleAndPolish;
+        private System.Windows.Forms.RadioButton radioButtonRootCanal;
+        private System.Windows.Forms.RadioButton radioButtonDentalVeneers;
+        private System.Windows.Forms.RadioButton radioButtonTeethWhitening;
+        private System.Windows.Forms.RadioButton radioButtonBrokenTooth;
+        private System.Windows.Forms.RadioButton radioButtonDentures;
+        private System.Windows.Forms.RadioButton radioButtonDentalImplants;
+        private System.Windows.Forms.RadioButton radioButtonWisdomTooth;
+        private System.Windows.Forms.RadioButton radioButtonCheckUp;
     }
 }

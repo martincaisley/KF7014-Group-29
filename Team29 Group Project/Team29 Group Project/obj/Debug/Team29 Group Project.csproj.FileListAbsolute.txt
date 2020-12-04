@@ -22,3 +22,8 @@ C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Pr
 C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.CoreCompileInputs.cache
 C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.exe
 C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.pdb
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.dll
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.xml
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.CopyComplete

@@ -14,5 +14,6 @@ namespace AssessmentIdeas
         public int patientID { get; set; }
         public string appointmentDate { get; set; }
         public string appointmentTime { get; set; }
+        public GroupBox appointmentType { get; internal set; }
     }
 }

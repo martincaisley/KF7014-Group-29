@@ -34,6 +34,7 @@ namespace AssessmentIdeas
                 var name = nameQuery.ToList();
                 txt_name.Text = name[0].name;
                 txt_name.ReadOnly = true;
+                radioButtonCheckUp.Checked = false;
                 radioButtonBridges.Checked = false;
                 radioButtonCrowns.Checked = false;
                 radioButtonFillings.Checked = false;

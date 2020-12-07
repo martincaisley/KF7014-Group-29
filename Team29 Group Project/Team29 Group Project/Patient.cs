@@ -11,13 +11,21 @@ namespace Team29_Group_Project
     {
         [Key]
         public int PatientID { get; set; }
+        [Required]
         public String firstName { get; set; }
+        [Required]
         public String lastName { get; set; }
+        [Required]
         public DateTime DoB { get; set; }
+        [Required]
         public String Address { get; set; }
+        [Required]
         public String Email { get; set; }
+        [Required]
         public String Occupation { get; set; }
+        [Required]
         public String GPname { get; set; }
+        [Required]
         public String GPaddress { get; set; }
 
 

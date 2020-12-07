@@ -69,6 +69,7 @@
     <Compile Include="IPatientHomeScreenGUI.cs" />
     <Compile Include="IPatientRegistrationGUI.cs" />
     <Compile Include="IPatientType.cs" />
+    <Compile Include="IViewAppointments.cs" />
     <Compile Include="MedicalQuestionnaireGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +108,8 @@
     <Compile Include="ViewAppointments.designer.cs">
       <DependentUpon>ViewAppointments.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewAppointmentsModel.cs" />
+    <Compile Include="ViewAppointmentsPresenter.cs" />
     <EmbeddedResource Include="HomeGUI.resx">
       <DependentUpon>HomeGUI.cs</DependentUpon>
     </EmbeddedResource>

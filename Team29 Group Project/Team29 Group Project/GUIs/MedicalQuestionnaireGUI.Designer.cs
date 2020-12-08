@@ -35,9 +35,7 @@
             this.TXT_medication = new System.Windows.Forms.TextBox();
             this.LBL_alllergies = new System.Windows.Forms.Label();
             this.TXT_allergies = new System.Windows.Forms.TextBox();
-            this.LBL_treatmentPlan = new System.Windows.Forms.Label();
-            this.CMB_treatmentPlan = new System.Windows.Forms.ComboBox();
-            this.BTN_submitPatient = new System.Windows.Forms.Button();
+            this.BTN_submitQuestionnaire = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LBL_medTitle
@@ -98,45 +96,21 @@
             this.TXT_allergies.Size = new System.Drawing.Size(169, 20);
             this.TXT_allergies.TabIndex = 6;
             // 
-            // LBL_treatmentPlan
+            // BTN_submitQuestionnaire
             // 
-            this.LBL_treatmentPlan.AutoSize = true;
-            this.LBL_treatmentPlan.Location = new System.Drawing.Point(3, 288);
-            this.LBL_treatmentPlan.Name = "LBL_treatmentPlan";
-            this.LBL_treatmentPlan.Size = new System.Drawing.Size(79, 13);
-            this.LBL_treatmentPlan.TabIndex = 7;
-            this.LBL_treatmentPlan.Text = "Treatment Plan";
-            // 
-            // CMB_treatmentPlan
-            // 
-            this.CMB_treatmentPlan.FormattingEnabled = true;
-            this.CMB_treatmentPlan.Items.AddRange(new object[] {
-            "Band 1 ",
-            "Band 2",
-            "Band 3",
-            "Free Treatment"});
-            this.CMB_treatmentPlan.Location = new System.Drawing.Point(144, 288);
-            this.CMB_treatmentPlan.Name = "CMB_treatmentPlan";
-            this.CMB_treatmentPlan.Size = new System.Drawing.Size(169, 21);
-            this.CMB_treatmentPlan.TabIndex = 8;
-            // 
-            // BTN_submitPatient
-            // 
-            this.BTN_submitPatient.Location = new System.Drawing.Point(282, 440);
-            this.BTN_submitPatient.Name = "BTN_submitPatient";
-            this.BTN_submitPatient.Size = new System.Drawing.Size(218, 65);
-            this.BTN_submitPatient.TabIndex = 9;
-            this.BTN_submitPatient.Text = "Add Patient";
-            this.BTN_submitPatient.UseVisualStyleBackColor = true;
+            this.BTN_submitQuestionnaire.Location = new System.Drawing.Point(279, 451);
+            this.BTN_submitQuestionnaire.Name = "BTN_submitQuestionnaire";
+            this.BTN_submitQuestionnaire.Size = new System.Drawing.Size(218, 65);
+            this.BTN_submitQuestionnaire.TabIndex = 9;
+            this.BTN_submitQuestionnaire.Text = "Submit";
+            this.BTN_submitQuestionnaire.UseVisualStyleBackColor = true;
             // 
             // MedicalQuestionnaireGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 541);
-            this.Controls.Add(this.BTN_submitPatient);
-            this.Controls.Add(this.CMB_treatmentPlan);
-            this.Controls.Add(this.LBL_treatmentPlan);
+            this.Controls.Add(this.BTN_submitQuestionnaire);
             this.Controls.Add(this.TXT_allergies);
             this.Controls.Add(this.LBL_alllergies);
             this.Controls.Add(this.TXT_medication);
@@ -160,8 +134,6 @@
         private System.Windows.Forms.TextBox TXT_medication;
         private System.Windows.Forms.Label LBL_alllergies;
         private System.Windows.Forms.TextBox TXT_allergies;
-        private System.Windows.Forms.Label LBL_treatmentPlan;
-        private System.Windows.Forms.ComboBox CMB_treatmentPlan;
-        private System.Windows.Forms.Button BTN_submitPatient;
+        private System.Windows.Forms.Button BTN_submitQuestionnaire;
     }
 }

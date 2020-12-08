@@ -10,14 +10,8 @@ namespace Team29_Group_Project
     {
         public IPatientType GetPatientType(PatientTypes patientType)
         {
-            if (patientType == PatientTypes.Band1)
-                return new Band1Patient();
-
-            if (patientType == PatientTypes.Band2)
-                return new Band2Patient();
-
-            if (patientType == PatientTypes.Band3)
-                return new Band3Patient();
+            if (patientType == PatientTypes.Paying)
+                return new PayingPatient();
             else
                 return new FreePatient();
 

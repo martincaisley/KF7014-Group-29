@@ -31,7 +31,7 @@
             this.LBL_patTitle = new System.Windows.Forms.Label();
             this.LBL_fname = new System.Windows.Forms.Label();
             this.LBL_lname = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTB_DoB = new System.Windows.Forms.DateTimePicker();
             this.LBL_DoB = new System.Windows.Forms.Label();
             this.LBL_address = new System.Windows.Forms.Label();
             this.LBL_email = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@
             this.LBL_GPaddress = new System.Windows.Forms.Label();
             this.TXT_GPname = new System.Windows.Forms.TextBox();
             this.TXT_GPaddress = new System.Windows.Forms.TextBox();
+            this.BTN_addPatient = new System.Windows.Forms.Button();
             this.PNL_occupations.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,12 +86,12 @@
             this.LBL_lname.TabIndex = 2;
             this.LBL_lname.Text = "Last Name";
             // 
-            // dateTimePicker1
+            // DTB_DoB
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(117, 197);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(136, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.DTB_DoB.Location = new System.Drawing.Point(117, 197);
+            this.DTB_DoB.Name = "DTB_DoB";
+            this.DTB_DoB.Size = new System.Drawing.Size(136, 20);
+            this.DTB_DoB.TabIndex = 3;
             // 
             // LBL_DoB
             // 
@@ -241,7 +242,7 @@
             // 
             // BTN_medQuestionnaire
             // 
-            this.BTN_medQuestionnaire.Location = new System.Drawing.Point(311, 641);
+            this.BTN_medQuestionnaire.Location = new System.Drawing.Point(547, 641);
             this.BTN_medQuestionnaire.Name = "BTN_medQuestionnaire";
             this.BTN_medQuestionnaire.Size = new System.Drawing.Size(158, 54);
             this.BTN_medQuestionnaire.TabIndex = 15;
@@ -283,11 +284,22 @@
             this.TXT_GPaddress.Size = new System.Drawing.Size(149, 20);
             this.TXT_GPaddress.TabIndex = 19;
             // 
+            // BTN_addPatient
+            // 
+            this.BTN_addPatient.Location = new System.Drawing.Point(311, 641);
+            this.BTN_addPatient.Name = "BTN_addPatient";
+            this.BTN_addPatient.Size = new System.Drawing.Size(158, 54);
+            this.BTN_addPatient.TabIndex = 20;
+            this.BTN_addPatient.Text = "Register Patient";
+            this.BTN_addPatient.UseVisualStyleBackColor = true;
+            this.BTN_addPatient.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BTN_addPatient_MouseClick);
+            // 
             // PatientRegistrationGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 707);
+            this.Controls.Add(this.BTN_addPatient);
             this.Controls.Add(this.TXT_GPaddress);
             this.Controls.Add(this.TXT_GPname);
             this.Controls.Add(this.LBL_GPaddress);
@@ -302,12 +314,13 @@
             this.Controls.Add(this.LBL_email);
             this.Controls.Add(this.LBL_address);
             this.Controls.Add(this.LBL_DoB);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.DTB_DoB);
             this.Controls.Add(this.LBL_lname);
             this.Controls.Add(this.LBL_fname);
             this.Controls.Add(this.LBL_patTitle);
             this.Name = "PatientRegistrationGUI";
             this.Text = "PatientRegistration";
+            this.Load += new System.EventHandler(this.PatientRegistrationGUI_Load);
             this.PNL_occupations.ResumeLayout(false);
             this.PNL_occupations.PerformLayout();
             this.ResumeLayout(false);
@@ -320,7 +333,7 @@
         private System.Windows.Forms.Label LBL_patTitle;
         private System.Windows.Forms.Label LBL_fname;
         private System.Windows.Forms.Label LBL_lname;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DTB_DoB;
         private System.Windows.Forms.Label LBL_DoB;
         private System.Windows.Forms.Label LBL_address;
         private System.Windows.Forms.Label LBL_email;
@@ -341,5 +354,6 @@
         private System.Windows.Forms.Label LBL_GPaddress;
         private System.Windows.Forms.TextBox TXT_GPname;
         private System.Windows.Forms.TextBox TXT_GPaddress;
+        private System.Windows.Forms.Button BTN_addPatient;
     }
 }

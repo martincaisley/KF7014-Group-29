@@ -14,7 +14,6 @@ C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Pr
 C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.exe
 C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.pdb
 C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csprojAssemblyReference.cache
-C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.HomeGUI.resources
 C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.MedicalQuestionnaireGUI.resources
 C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientRegistrationGUI.resources
 C:\Users\Amras\Source\Repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.Properties.Resources.resources

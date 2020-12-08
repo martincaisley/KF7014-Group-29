@@ -79,19 +79,19 @@ namespace Team29_Group_Project
 
         enum AppType
         {
-            CheckUp = 10,
-            Bridge = 10,
-            Crown = 10,
-            Filling = 10,
-            RootCanal = 10,
-            ScaleAndPolish = 10,
-            Braces = 10,
-            WisdomTooth = 10,
-            DentalImplants = 10,
-            Dentures = 10,
-            BrokenTooth = 10,
-            TeethWhitening = 10,
-            DentalVeneers = 10
+            CheckUp = 30,
+            Bridge = 60,
+            Crown = 30,
+            Filling = 20,
+            RootCanal = 60,
+            ScaleAndPolish = 45,
+            Braces = 60,
+            WisdomTooth = 20,
+            DentalImplants = 60,
+            Dentures = 60,
+            BrokenTooth = 30,
+            TeethWhitening = 90,
+            DentalVeneers = 120
 
         }
 

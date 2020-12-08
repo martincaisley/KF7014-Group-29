@@ -19,7 +19,7 @@ namespace Team29_Group_Project
 
         private void PatientRegistrationGUI_Load(object sender, EventArgs e)
         {
-            DateValidation();
+            DateFormat();
         }
 
         private void BTN_medQuestionnaire_Click(object sender, EventArgs e)
@@ -30,37 +30,34 @@ namespace Team29_Group_Project
 
         private void BTN_addPatient_MouseClick(object sender, MouseEventArgs e)
         {
-            TextValidation(TXT_fname);
-            TextValidation(TXT_sname);
-            TextValidation(TXT_address);
-            TextValidation(TXT_email);
-            TextValidation(TXT_GPname);
-            TextValidation(TXT_GPaddress);
-            OccupationValidation();
-           
-
+            AddPatient();
         }
-
-        private void TextValidation(TextBox tb)
+         private bool TextValidation()
         {
-            if(string.IsNullOrWhiteSpace(tb.Text))
+            string EmptyTextBoxes = string.Join(Environment.NewLine,
+            (
+              from T in this.Controls.OfType<TextBox>()
+              where string.IsNullOrWhiteSpace(T.Text)
+              select T.Name).ToArray());
+            if (EmptyTextBoxes.Length > 0)
             {
-                MessageBox.Show("All fields are not completed");
+                MessageBox.Show("Please complete every text field", "Error");
+                return false;
             }
+            else
+            return true;
         }
 
-        private void DateValidation()
+        private void DateFormat()
         {
             DTB_DoB.MinDate = DateTime.Today;
             DTB_DoB.CustomFormat = "dd MMMM, yyyy";
             DTB_DoB.Format = DateTimePickerFormat.Custom;
-
+            
         }
 
         private bool OccupationValidation()
-        {
-            
-
+        { 
             foreach (var RadioButton in PNL_occupations.Controls.OfType<RadioButton>())
             {
                 if(RadioButton.Checked)
@@ -72,6 +69,19 @@ namespace Team29_Group_Project
             MessageBox.Show("A occupation has not been chosen.");
 
             return false;
+        }
+
+        private void AddPatient()
+        {
+            if (TextValidation() && OccupationValidation())
+            {
+                MessageBox.Show("Patient added");
+            }
+            else
+            {
+               
+            }
+            
         }
 
        

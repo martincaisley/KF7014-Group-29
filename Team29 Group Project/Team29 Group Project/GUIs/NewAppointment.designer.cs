@@ -31,12 +31,12 @@ namespace Team29_Group_Project
         {
             this.lbl_title = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
-            this.txt_time = new System.Windows.Forms.TextBox();
             this.lbl_name = new System.Windows.Forms.Label();
             this.lbl_date = new System.Windows.Forms.Label();
             this.lbl_time = new System.Windows.Forms.Label();
             this.btn_addAppointment = new System.Windows.Forms.Button();
             this.AppointmentBox = new System.Windows.Forms.GroupBox();
+            this.radioButtonCheckUp = new System.Windows.Forms.RadioButton();
             this.radioButtonDentalVeneers = new System.Windows.Forms.RadioButton();
             this.radioButtonTeethWhitening = new System.Windows.Forms.RadioButton();
             this.radioButtonBrokenTooth = new System.Windows.Forms.RadioButton();
@@ -50,7 +50,8 @@ namespace Team29_Group_Project
             this.radioButtonCrowns = new System.Windows.Forms.RadioButton();
             this.radioButtonBridges = new System.Windows.Forms.RadioButton();
             this.datePicker = new System.Windows.Forms.DateTimePicker();
-            this.radioButtonCheckUp = new System.Windows.Forms.RadioButton();
+            this.AppointmentTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.AppointmentTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.AppointmentBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,14 +73,6 @@ namespace Team29_Group_Project
             this.txt_name.Name = "txt_name";
             this.txt_name.Size = new System.Drawing.Size(76, 20);
             this.txt_name.TabIndex = 1;
-            // 
-            // txt_time
-            // 
-            this.txt_time.Location = new System.Drawing.Point(105, 118);
-            this.txt_time.Margin = new System.Windows.Forms.Padding(2);
-            this.txt_time.Name = "txt_time";
-            this.txt_time.Size = new System.Drawing.Size(76, 20);
-            this.txt_time.TabIndex = 2;
             // 
             // lbl_name
             // 
@@ -143,6 +136,17 @@ namespace Team29_Group_Project
             this.AppointmentBox.TabIndex = 8;
             this.AppointmentBox.TabStop = false;
             this.AppointmentBox.Text = "Appointment Type";
+            // 
+            // radioButtonCheckUp
+            // 
+            this.radioButtonCheckUp.AutoSize = true;
+            this.radioButtonCheckUp.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonCheckUp.Name = "radioButtonCheckUp";
+            this.radioButtonCheckUp.Size = new System.Drawing.Size(70, 17);
+            this.radioButtonCheckUp.TabIndex = 23;
+            this.radioButtonCheckUp.TabStop = true;
+            this.radioButtonCheckUp.Text = "CheckUp";
+            this.radioButtonCheckUp.UseVisualStyleBackColor = true;
             // 
             // radioButtonDentalVeneers
             // 
@@ -295,29 +299,35 @@ namespace Team29_Group_Project
             this.datePicker.Size = new System.Drawing.Size(130, 20);
             this.datePicker.TabIndex = 9;
             // 
-            // radioButtonCheckUp
+            // AppointmentTimePicker
             // 
-            this.radioButtonCheckUp.AutoSize = true;
-            this.radioButtonCheckUp.Location = new System.Drawing.Point(6, 19);
-            this.radioButtonCheckUp.Name = "radioButtonCheckUp";
-            this.radioButtonCheckUp.Size = new System.Drawing.Size(70, 17);
-            this.radioButtonCheckUp.TabIndex = 23;
-            this.radioButtonCheckUp.TabStop = true;
-            this.radioButtonCheckUp.Text = "CheckUp";
-            this.radioButtonCheckUp.UseVisualStyleBackColor = true;
+            this.AppointmentTimePicker.Location = new System.Drawing.Point(105, 119);
+            this.AppointmentTimePicker.Name = "AppointmentTimePicker";
+            this.AppointmentTimePicker.Size = new System.Drawing.Size(44, 20);
+            this.AppointmentTimePicker.TabIndex = 10;
+            this.AppointmentTimePicker.Value = new System.DateTime(2020, 12, 8, 11, 55, 0, 0);
+            // 
+            // AppointmentTimePicker2
+            // 
+            this.AppointmentTimePicker2.Location = new System.Drawing.Point(155, 119);
+            this.AppointmentTimePicker2.Name = "AppointmentTimePicker2";
+            this.AppointmentTimePicker2.Size = new System.Drawing.Size(44, 20);
+            this.AppointmentTimePicker2.TabIndex = 11;
+            this.AppointmentTimePicker2.Value = new System.DateTime(2020, 12, 8, 11, 55, 0, 0);
             // 
             // NewAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(276, 357);
+            this.Controls.Add(this.AppointmentTimePicker2);
+            this.Controls.Add(this.AppointmentTimePicker);
             this.Controls.Add(this.datePicker);
             this.Controls.Add(this.AppointmentBox);
             this.Controls.Add(this.btn_addAppointment);
             this.Controls.Add(this.lbl_time);
             this.Controls.Add(this.lbl_date);
             this.Controls.Add(this.lbl_name);
-            this.Controls.Add(this.txt_time);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.lbl_title);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -335,7 +345,6 @@ namespace Team29_Group_Project
 
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.TextBox txt_name;
-        private System.Windows.Forms.TextBox txt_time;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.Label lbl_date;
         private System.Windows.Forms.Label lbl_time;
@@ -355,5 +364,7 @@ namespace Team29_Group_Project
         private System.Windows.Forms.RadioButton radioButtonDentalImplants;
         private System.Windows.Forms.RadioButton radioButtonWisdomTooth;
         private System.Windows.Forms.RadioButton radioButtonCheckUp;
+        private System.Windows.Forms.DateTimePicker AppointmentTimePicker;
+        private System.Windows.Forms.DateTimePicker AppointmentTimePicker2;
     }
 }

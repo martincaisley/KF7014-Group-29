@@ -22,6 +22,14 @@ namespace Team29_Group_Project
 
         private void NewAppointment_Load(object sender, EventArgs e)
         {
+            AppointmentTimePicker.Format = DateTimePickerFormat.Custom;
+            AppointmentTimePicker.CustomFormat = "HH:mm";
+            AppointmentTimePicker.ShowUpDown = true;
+
+            AppointmentTimePicker2.Format = DateTimePickerFormat.Custom;
+            AppointmentTimePicker2.CustomFormat = "HH:mm";
+            AppointmentTimePicker.ShowUpDown = true;
+
             using (var context = new MyDBEntities())
             {
                 var patients = context.Patients.ToList();
@@ -91,95 +99,91 @@ namespace Team29_Group_Project
         #region Chk box changed
 
        private void radioButtonCheckUp_CheckedChanged(object sender, EventArgs e)
-       {
-            string appointmentType = "CheckUp";
+        {
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-            
-       }
-
-
+        }
         private void radioButtonBridges_CheckedChanged(object sender, EventArgs e)
         {
-            string appointmentType = "Bridge";
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-
         }
 
         private void radioButtonCrowns_CheckedChanged(object sender, EventArgs e)
         {
-            string appointmentType = "Crown";
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }
 
         private void radioButtonFillings_CheckedChanged(object sender, EventArgs e)
         {
-            string appointmentType = "Filling";
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }
 
         private void radioButtonRootCanal_CheckedChanged(object sender, EventArgs e)
         {
-            string appointmentType = "RootCanal";
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }
 
         private void radioButtonScaleAndPolish_CheckedChanged(object sender, EventArgs e)
         {
-            string appointmentType = "ScaleAndPolish";
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }
 
         private void radioButtonBraces_CheckedChanged(object sender, EventArgs e)
         {
-            string appointmentType = "Braces";
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }
 
         private void radioButtonWisdomTooth_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = "WisdomTooth";
+       {
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }
 
         private void radioButtonDentalImplants_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = "DentalImplants";
+       {
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }
 
         private void radioButtonDentures_CheckedChanged(object sender, EventArgs e)
         {
-            string appointmentType = "Dentures";
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }
 
         private void radioButtonBrokenTooth_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = "BrokenTooth";
+       {
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }
 
         private void radioButtonTeethWhitening_CheckedChanged(object sender, EventArgs e)
         {
-            string appointmentType = "TeethWhitening";
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }
 
         private void radioButtonDentalVeneers_CheckedChanged(object sender, EventArgs e)
         {
-            string appointmentType = "DentalVeneers";
+            string appointmentType = radioButton.checked.toString();
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
         }

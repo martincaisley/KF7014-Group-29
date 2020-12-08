@@ -41,7 +41,7 @@ namespace Team29_Group_Project
               select T.Name).ToArray());
             if (EmptyTextBoxes.Length > 0)
             {
-                MessageBox.Show("Please complete every text field", "Error");
+                MessageBox.Show("Please complete every text field");
                 return false;
             }
             else
@@ -79,7 +79,7 @@ namespace Team29_Group_Project
             }
             else
             {
-               
+                MessageBox.Show("test","NO!");
             }
             
         }

@@ -56,10 +56,10 @@ namespace Team29_Group_Project
             using (var context = new MyDBEntities())
             {
                 var patients = context.Patients.ToList();
-              //  int NewPatientID = patients[index].PatientID;
-                //PatientDetails patientDetails = new PatientDetails(NewPatientID);
+                int NewPatientID = patients[index].PatientID;
+                NewAppointment patientDetails = new NewAppointment(NewPatientID);
                 this.Hide();
-                //patientDetails.ShowDialog();
+                patientDetails.ShowDialog();
                 this.Show();
             }
         }

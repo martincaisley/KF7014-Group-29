@@ -142,10 +142,10 @@ namespace Team29_Group_Project
             this.radioButtonCheckUp.AutoSize = true;
             this.radioButtonCheckUp.Location = new System.Drawing.Point(6, 19);
             this.radioButtonCheckUp.Name = "radioButtonCheckUp";
-            this.radioButtonCheckUp.Size = new System.Drawing.Size(70, 17);
+            this.radioButtonCheckUp.Size = new System.Drawing.Size(68, 17);
             this.radioButtonCheckUp.TabIndex = 23;
             this.radioButtonCheckUp.TabStop = true;
-            this.radioButtonCheckUp.Text = "CheckUp";
+            this.radioButtonCheckUp.Text = "Checkup";
             this.radioButtonCheckUp.UseVisualStyleBackColor = true;
             this.radioButtonCheckUp.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -154,10 +154,10 @@ namespace Team29_Group_Project
             this.radioButtonDentalVeneers.AutoSize = true;
             this.radioButtonDentalVeneers.Location = new System.Drawing.Point(142, 134);
             this.radioButtonDentalVeneers.Name = "radioButtonDentalVeneers";
-            this.radioButtonDentalVeneers.Size = new System.Drawing.Size(98, 17);
+            this.radioButtonDentalVeneers.Size = new System.Drawing.Size(95, 17);
             this.radioButtonDentalVeneers.TabIndex = 22;
             this.radioButtonDentalVeneers.TabStop = true;
-            this.radioButtonDentalVeneers.Text = "Dental Veneers";
+            this.radioButtonDentalVeneers.Text = "DentalVeneers";
             this.radioButtonDentalVeneers.UseVisualStyleBackColor = true;
             this.radioButtonDentalVeneers.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -166,10 +166,10 @@ namespace Team29_Group_Project
             this.radioButtonTeethWhitening.AutoSize = true;
             this.radioButtonTeethWhitening.Location = new System.Drawing.Point(142, 111);
             this.radioButtonTeethWhitening.Name = "radioButtonTeethWhitening";
-            this.radioButtonTeethWhitening.Size = new System.Drawing.Size(104, 17);
+            this.radioButtonTeethWhitening.Size = new System.Drawing.Size(101, 17);
             this.radioButtonTeethWhitening.TabIndex = 21;
             this.radioButtonTeethWhitening.TabStop = true;
-            this.radioButtonTeethWhitening.Text = "Teeth Whitening";
+            this.radioButtonTeethWhitening.Text = "TeethWhitening";
             this.radioButtonTeethWhitening.UseVisualStyleBackColor = true;
             this.radioButtonTeethWhitening.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -178,10 +178,10 @@ namespace Team29_Group_Project
             this.radioButtonBrokenTooth.AutoSize = true;
             this.radioButtonBrokenTooth.Location = new System.Drawing.Point(142, 88);
             this.radioButtonBrokenTooth.Name = "radioButtonBrokenTooth";
-            this.radioButtonBrokenTooth.Size = new System.Drawing.Size(90, 17);
+            this.radioButtonBrokenTooth.Size = new System.Drawing.Size(87, 17);
             this.radioButtonBrokenTooth.TabIndex = 20;
             this.radioButtonBrokenTooth.TabStop = true;
-            this.radioButtonBrokenTooth.Text = "Broken Tooth";
+            this.radioButtonBrokenTooth.Text = "BrokenTooth";
             this.radioButtonBrokenTooth.UseVisualStyleBackColor = true;
             this.radioButtonBrokenTooth.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -202,10 +202,10 @@ namespace Team29_Group_Project
             this.radioButtonDentalImplants.AutoSize = true;
             this.radioButtonDentalImplants.Location = new System.Drawing.Point(142, 42);
             this.radioButtonDentalImplants.Name = "radioButtonDentalImplants";
-            this.radioButtonDentalImplants.Size = new System.Drawing.Size(98, 17);
+            this.radioButtonDentalImplants.Size = new System.Drawing.Size(95, 17);
             this.radioButtonDentalImplants.TabIndex = 18;
             this.radioButtonDentalImplants.TabStop = true;
-            this.radioButtonDentalImplants.Text = "Dental Implants";
+            this.radioButtonDentalImplants.Text = "DentalImplants";
             this.radioButtonDentalImplants.UseVisualStyleBackColor = true;
             this.radioButtonDentalImplants.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -214,10 +214,10 @@ namespace Team29_Group_Project
             this.radioButtonWisdomTooth.AutoSize = true;
             this.radioButtonWisdomTooth.Location = new System.Drawing.Point(142, 19);
             this.radioButtonWisdomTooth.Name = "radioButtonWisdomTooth";
-            this.radioButtonWisdomTooth.Size = new System.Drawing.Size(94, 17);
+            this.radioButtonWisdomTooth.Size = new System.Drawing.Size(91, 17);
             this.radioButtonWisdomTooth.TabIndex = 17;
             this.radioButtonWisdomTooth.TabStop = true;
-            this.radioButtonWisdomTooth.Text = "Wisdom Tooth";
+            this.radioButtonWisdomTooth.Text = "WisdomTooth";
             this.radioButtonWisdomTooth.UseVisualStyleBackColor = true;
             this.radioButtonWisdomTooth.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -238,10 +238,10 @@ namespace Team29_Group_Project
             this.radioButtonScaleAndPolish.AutoSize = true;
             this.radioButtonScaleAndPolish.Location = new System.Drawing.Point(6, 130);
             this.radioButtonScaleAndPolish.Name = "radioButtonScaleAndPolish";
-            this.radioButtonScaleAndPolish.Size = new System.Drawing.Size(104, 17);
+            this.radioButtonScaleAndPolish.Size = new System.Drawing.Size(99, 17);
             this.radioButtonScaleAndPolish.TabIndex = 15;
             this.radioButtonScaleAndPolish.TabStop = true;
-            this.radioButtonScaleAndPolish.Text = "Scale and Polish";
+            this.radioButtonScaleAndPolish.Text = "ScaleAndPolish";
             this.radioButtonScaleAndPolish.UseVisualStyleBackColor = true;
             this.radioButtonScaleAndPolish.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
@@ -250,10 +250,10 @@ namespace Team29_Group_Project
             this.radioButtonRootCanal.AutoSize = true;
             this.radioButtonRootCanal.Location = new System.Drawing.Point(6, 107);
             this.radioButtonRootCanal.Name = "radioButtonRootCanal";
-            this.radioButtonRootCanal.Size = new System.Drawing.Size(78, 17);
+            this.radioButtonRootCanal.Size = new System.Drawing.Size(75, 17);
             this.radioButtonRootCanal.TabIndex = 14;
             this.radioButtonRootCanal.TabStop = true;
-            this.radioButtonRootCanal.Text = "Root Canal";
+            this.radioButtonRootCanal.Text = "RootCanal";
             this.radioButtonRootCanal.UseVisualStyleBackColor = true;
             this.radioButtonRootCanal.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 

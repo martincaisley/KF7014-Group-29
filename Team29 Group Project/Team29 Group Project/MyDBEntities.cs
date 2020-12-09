@@ -16,6 +16,7 @@ namespace Team29_Group_Project
 
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<MissedAppointments> MissedAppointments { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

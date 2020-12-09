@@ -34,7 +34,6 @@ C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 G
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.xml
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csprojAssemblyReference.cache
-C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.HomeGUI.resources
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.MedicalQuestionnaireGUI.resources
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientHomeScreen.resources
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientRegistrationGUI.resources
@@ -68,3 +67,5 @@ C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\T
 C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.xml
 C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.CopyComplete
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\bin\Debug\DentalDatabase.mdf
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\bin\Debug\DentalDatabase_log.ldf

@@ -41,7 +41,7 @@ namespace Team29_Group_Project
                                     surname = p.lastName
                                 };
                 var name = nameQuery.ToList();
-                txt_name.Text = name[0].ToString();
+                txt_name.Text = name[0].forename + " " + name[0].surname;
                 txt_name.ReadOnly = true;
                 radioButtonCheckUp.Checked = false;
                 radioButtonBridges.Checked = false;
@@ -62,28 +62,36 @@ namespace Team29_Group_Project
 
         private void btn_addAppointment_Click(object sender, EventArgs e)
         {
-            using (var context = new MyDBEntities())
+            try
             {
-                Appointment a = new Appointment();
-                a.patientID = patientID;
-                a.appointmentDate = datePicker.Text;
-                a.appointmentStartTime = AppointmentTimePicker.Text;
-                a.appointmentEndTime = AppointmentTimePicker2.Text;
-                a.appointmentType = AppointmentBox.ToString();
+                using (var context = new MyDBEntities())
+                {
+                    Appointment a = new Appointment();
+                    a.patientID = patientID;
+                    a.appointmentDate = datePicker.Value;
+                    a.appointmentStartTime = AppointmentTimePicker.Value;
+                    a.appointmentEndTime = AppointmentTimePicker2.Value;
+                    a.appointmentType = AppointmentBox.ToString();
 
-                context.Appointments.Add(a);
-                context.SaveChanges();
+                    context.Appointments.Add(a);
+                    context.SaveChanges();
 
-                this.Close();
+                    this.Close();
+                }
             }
+            catch(Exception f)
+            {
+                Console.WriteLine("New aPp Exception");
+            }
+
         }
 
         enum AppType
         {
-            CheckUp = 30,
-            Bridge = 60,
-            Crown = 30,
-            Filling = 20,
+            Checkup = 30,
+            Bridges = 60,
+            Crowns = 30,
+            Fillings = 20,
             RootCanal = 60,
             ScaleAndPolish = 45,
             Braces = 60,
@@ -110,7 +118,15 @@ namespace Team29_Group_Project
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            ProcessRadioButton(AppointmentBox.Text);
+            string appType = "";
+            foreach (var RadioButton in AppointmentBox.Controls.OfType<RadioButton>())
+            {
+                if (RadioButton.Checked)
+                {
+                    appType = RadioButton.Text;
+                }
+            }
+            ProcessRadioButton(appType);
         }
 
 

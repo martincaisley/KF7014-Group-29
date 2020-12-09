@@ -14,15 +14,18 @@ namespace Team29_Group_Project
         [Required]
         public int patientID { get; set; }
         [Required]
-        public string appointmentDate { get; set; }
+        public DateTime appointmentDate { get; set; }
         [Required]
-        public string appointmentStartTime { get; set; }
+        public DateTime appointmentStartTime { get; set; }
         [Required]
-        public string appointmentEndTime { get; set; }
+        public DateTime appointmentEndTime { get; set; }
         [Required]
         public string appointmentType { get; set; }
         [Required]
-        public string appointmentLength { get; set; }
-
+        public int appointmentLength { get; set; }
+        [Required]
+        public string arrivedToAppointment { get; set; }
+        [Required]
+        public string contacted { get; set; }
     }
 }

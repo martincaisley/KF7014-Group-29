@@ -10,7 +10,7 @@ namespace Team29_Group_Project
     abstract class Patient
     {
         [Key]
-        public  int PatientID { get; }
+        public  int PatientID { get; set; }
         [Required]
         public String firstName { get; set; }
         [Required]

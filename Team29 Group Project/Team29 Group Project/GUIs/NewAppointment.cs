@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Team29_Group_Project
 {
-     public partial class NewAppointment : Form
+    public partial class NewAppointment : Form
     {
         int patientID;
         string appointmentType;
@@ -56,7 +56,7 @@ namespace Team29_Group_Project
                 radioButtonBrokenTooth.Checked = false;
                 radioButtonTeethWhitening.Checked = false;
                 radioButtonDentalVeneers.Checked = false;
-        
+
             }
         }
 
@@ -67,7 +67,8 @@ namespace Team29_Group_Project
                 Appointment a = new Appointment();
                 a.patientID = patientID;
                 a.appointmentDate = datePicker.Text;
-                a.appointmentTime = txt_time.Text;
+                a.appointmentStartTime = AppointmentTimePicker.Text;
+                a.appointmentEndTime = AppointmentTimePicker2.Text;
                 a.appointmentType = AppointmentBox.ToString();
 
                 context.Appointments.Add(a);
@@ -96,97 +97,22 @@ namespace Team29_Group_Project
         }
 
 
+
+
         #region Chk box changed
 
-       private void radioButtonCheckUp_CheckedChanged(object sender, EventArgs e)
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            string appointmentType = radioButton.checked.toString();
+            appointmentType = AppointmentBox.Text;
             AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
             MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
-        private void radioButtonBridges_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
+            int appointmentLength = Convert.ToInt32(applength);
+
+            AppointmentTimePicker2.Value = AppointmentTimePicker.Value.AddMinutes(appointmentLength);
         }
 
-        private void radioButtonCrowns_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
 
-        private void radioButtonFillings_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
-
-        private void radioButtonRootCanal_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
-
-        private void radioButtonScaleAndPolish_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
-
-        private void radioButtonBraces_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
-
-        private void radioButtonWisdomTooth_CheckedChanged(object sender, EventArgs e)
-       {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
-
-        private void radioButtonDentalImplants_CheckedChanged(object sender, EventArgs e)
-       {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
-
-        private void radioButtonDentures_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
-
-        private void radioButtonBrokenTooth_CheckedChanged(object sender, EventArgs e)
-       {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
-
-        private void radioButtonTeethWhitening_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
-
-        private void radioButtonDentalVeneers_CheckedChanged(object sender, EventArgs e)
-        {
-            string appointmentType = radioButton.checked.toString();
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-        }
 
         #endregion
     }

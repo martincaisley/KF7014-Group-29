@@ -49,3 +49,14 @@ C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 G
 C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.NewAppointment.resources
 C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientHomeScreen.resources
 C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.ViewAppointments.resources
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csprojAssemblyReference.cache
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.MedicalQuestionnaireGUI.resources
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.NewAppointment.resources
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientHomeScreen.resources
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientRegistrationGUI.resources
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.Properties.Resources.resources
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.ViewAppointments.resources
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.GenerateResource.cache
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.CoreCompileInputs.cache
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.exe
+C:\Users\Drumm\Source\Repos\martincaisley\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.pdb

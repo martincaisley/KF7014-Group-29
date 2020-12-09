@@ -147,6 +147,7 @@ namespace Team29_Group_Project
             this.radioButtonCheckUp.TabStop = true;
             this.radioButtonCheckUp.Text = "CheckUp";
             this.radioButtonCheckUp.UseVisualStyleBackColor = true;
+            this.radioButtonCheckUp.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonDentalVeneers
             // 
@@ -158,7 +159,7 @@ namespace Team29_Group_Project
             this.radioButtonDentalVeneers.TabStop = true;
             this.radioButtonDentalVeneers.Text = "Dental Veneers";
             this.radioButtonDentalVeneers.UseVisualStyleBackColor = true;
-            this.radioButtonDentalVeneers.CheckedChanged += new System.EventHandler(this.radioButtonDentalVeneers_CheckedChanged);
+            this.radioButtonDentalVeneers.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonTeethWhitening
             // 
@@ -170,7 +171,7 @@ namespace Team29_Group_Project
             this.radioButtonTeethWhitening.TabStop = true;
             this.radioButtonTeethWhitening.Text = "Teeth Whitening";
             this.radioButtonTeethWhitening.UseVisualStyleBackColor = true;
-            this.radioButtonTeethWhitening.CheckedChanged += new System.EventHandler(this.radioButtonTeethWhitening_CheckedChanged);
+            this.radioButtonTeethWhitening.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonBrokenTooth
             // 
@@ -182,7 +183,7 @@ namespace Team29_Group_Project
             this.radioButtonBrokenTooth.TabStop = true;
             this.radioButtonBrokenTooth.Text = "Broken Tooth";
             this.radioButtonBrokenTooth.UseVisualStyleBackColor = true;
-            this.radioButtonBrokenTooth.CheckedChanged += new System.EventHandler(this.radioButtonBrokenTooth_CheckedChanged);
+            this.radioButtonBrokenTooth.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonDentures
             // 
@@ -194,7 +195,7 @@ namespace Team29_Group_Project
             this.radioButtonDentures.TabStop = true;
             this.radioButtonDentures.Text = "Dentures";
             this.radioButtonDentures.UseVisualStyleBackColor = true;
-            this.radioButtonDentures.CheckedChanged += new System.EventHandler(this.radioButtonDentures_CheckedChanged);
+            this.radioButtonDentures.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonDentalImplants
             // 
@@ -206,7 +207,7 @@ namespace Team29_Group_Project
             this.radioButtonDentalImplants.TabStop = true;
             this.radioButtonDentalImplants.Text = "Dental Implants";
             this.radioButtonDentalImplants.UseVisualStyleBackColor = true;
-            this.radioButtonDentalImplants.CheckedChanged += new System.EventHandler(this.radioButtonDentalImplants_CheckedChanged);
+            this.radioButtonDentalImplants.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonWisdomTooth
             // 
@@ -218,7 +219,7 @@ namespace Team29_Group_Project
             this.radioButtonWisdomTooth.TabStop = true;
             this.radioButtonWisdomTooth.Text = "Wisdom Tooth";
             this.radioButtonWisdomTooth.UseVisualStyleBackColor = true;
-            this.radioButtonWisdomTooth.CheckedChanged += new System.EventHandler(this.radioButtonWisdomTooth_CheckedChanged);
+            this.radioButtonWisdomTooth.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonBraces
             // 
@@ -230,7 +231,7 @@ namespace Team29_Group_Project
             this.radioButtonBraces.TabStop = true;
             this.radioButtonBraces.Text = "Braces";
             this.radioButtonBraces.UseVisualStyleBackColor = true;
-            this.radioButtonBraces.CheckedChanged += new System.EventHandler(this.radioButtonBraces_CheckedChanged);
+            this.radioButtonBraces.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonScaleAndPolish
             // 
@@ -242,7 +243,7 @@ namespace Team29_Group_Project
             this.radioButtonScaleAndPolish.TabStop = true;
             this.radioButtonScaleAndPolish.Text = "Scale and Polish";
             this.radioButtonScaleAndPolish.UseVisualStyleBackColor = true;
-            this.radioButtonScaleAndPolish.CheckedChanged += new System.EventHandler(this.radioButtonScaleAndPolish_CheckedChanged);
+            this.radioButtonScaleAndPolish.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonRootCanal
             // 
@@ -254,7 +255,7 @@ namespace Team29_Group_Project
             this.radioButtonRootCanal.TabStop = true;
             this.radioButtonRootCanal.Text = "Root Canal";
             this.radioButtonRootCanal.UseVisualStyleBackColor = true;
-            this.radioButtonRootCanal.CheckedChanged += new System.EventHandler(this.radioButtonRootCanal_CheckedChanged);
+            this.radioButtonRootCanal.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonFillings
             // 
@@ -266,7 +267,7 @@ namespace Team29_Group_Project
             this.radioButtonFillings.TabStop = true;
             this.radioButtonFillings.Text = "Fillings";
             this.radioButtonFillings.UseVisualStyleBackColor = true;
-            this.radioButtonFillings.CheckedChanged += new System.EventHandler(this.radioButtonFillings_CheckedChanged);
+            this.radioButtonFillings.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonCrowns
             // 
@@ -278,7 +279,7 @@ namespace Team29_Group_Project
             this.radioButtonCrowns.TabStop = true;
             this.radioButtonCrowns.Text = "Crowns";
             this.radioButtonCrowns.UseVisualStyleBackColor = true;
-            this.radioButtonCrowns.CheckedChanged += new System.EventHandler(this.radioButtonCrowns_CheckedChanged);
+            this.radioButtonCrowns.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButtonBridges
             // 
@@ -290,7 +291,7 @@ namespace Team29_Group_Project
             this.radioButtonBridges.TabStop = true;
             this.radioButtonBridges.Text = "Bridges";
             this.radioButtonBridges.UseVisualStyleBackColor = true;
-            this.radioButtonBridges.CheckedChanged += new System.EventHandler(this.radioButtonBridges_CheckedChanged);
+            this.radioButtonBridges.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // datePicker
             // 
@@ -303,15 +304,15 @@ namespace Team29_Group_Project
             // 
             this.AppointmentTimePicker.Location = new System.Drawing.Point(105, 119);
             this.AppointmentTimePicker.Name = "AppointmentTimePicker";
-            this.AppointmentTimePicker.Size = new System.Drawing.Size(44, 20);
+            this.AppointmentTimePicker.Size = new System.Drawing.Size(55, 20);
             this.AppointmentTimePicker.TabIndex = 10;
             this.AppointmentTimePicker.Value = new System.DateTime(2020, 12, 8, 11, 55, 0, 0);
             // 
             // AppointmentTimePicker2
             // 
-            this.AppointmentTimePicker2.Location = new System.Drawing.Point(155, 119);
+            this.AppointmentTimePicker2.Location = new System.Drawing.Point(178, 119);
             this.AppointmentTimePicker2.Name = "AppointmentTimePicker2";
-            this.AppointmentTimePicker2.Size = new System.Drawing.Size(44, 20);
+            this.AppointmentTimePicker2.Size = new System.Drawing.Size(57, 20);
             this.AppointmentTimePicker2.TabIndex = 11;
             this.AppointmentTimePicker2.Value = new System.DateTime(2020, 12, 8, 11, 55, 0, 0);
             // 

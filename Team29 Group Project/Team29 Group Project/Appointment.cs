@@ -13,7 +13,8 @@ namespace Team29_Group_Project
         public int appointmentID { get; set; }
         public int patientID { get; set; }
         public string appointmentDate { get; set; }
-        public string appointmentTime { get; set; }
+        public string appointmentStartTime { get; set; }
+        public string appointmentEndTime { get; set; }
         public string appointmentType { get; set; }
         public string appointmentLength { get; set; }
     }

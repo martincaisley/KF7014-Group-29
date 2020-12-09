@@ -96,20 +96,21 @@ namespace Team29_Group_Project
 
         }
 
+       private void ProcessRadioButton(string AppointmentT)
+            {
+            AppType applength = (AppType)Enum.Parse(typeof(AppType), AppointmentT);
+            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
+            int appointmentLength = Convert.ToInt32(applength);
 
-
+            AppointmentTimePicker2.Value = AppointmentTimePicker.Value.AddMinutes(appointmentLength);
+            }
 
         #region Chk box changed
 
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            appointmentType = AppointmentBox.Text;
-            AppType applength = (AppType)Enum.Parse(typeof(AppType), appointmentType);
-            MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
-            int appointmentLength = Convert.ToInt32(applength);
-
-            AppointmentTimePicker2.Value = AppointmentTimePicker.Value.AddMinutes(appointmentLength);
+            ProcessRadioButton(AppointmentBox.Text);
         }
 
 

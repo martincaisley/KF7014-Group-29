@@ -10,11 +10,11 @@ namespace Team29_Group_Project
     abstract class Patient
     {
         [Key]
-        public int PatientID { get; set; }
+        public  int PatientID { get; }
         [Required]
         public String firstName { get; set; }
         [Required]
-        public String lastName { get; set; }
+        public  String lastName { get; set; }
         [Required]
         public DateTime DoB { get; set; }
         [Required]
@@ -23,6 +23,8 @@ namespace Team29_Group_Project
         public String Email { get; set; }
         [Required]
         public String Occupation { get; set; }
+        [Required]
+        public String PhoneNum { get; set; }
         [Required]
         public String GPname { get; set; }
         [Required]

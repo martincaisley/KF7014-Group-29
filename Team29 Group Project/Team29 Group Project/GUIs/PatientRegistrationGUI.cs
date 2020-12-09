@@ -30,7 +30,7 @@ namespace Team29_Group_Project
 
         private void BTN_addPatient_MouseClick(object sender, MouseEventArgs e)
         {
-            AddPatient();
+            PatientSubmit();
         }
         private bool TextValidation()
         {
@@ -71,11 +71,15 @@ namespace Team29_Group_Project
             return false;
         }
 
-        private void AddPatient()
+        private void PatientSubmit()
         {
             if (TextValidation() && OccupationValidation())
             {
+               // if()
+                IPatientType patientType = PatientFactory.Singleton.GetPatientType(PatientTypes.Paying);
+                patientType.GetType();
                 MessageBox.Show("Patient added");
+
             }
             else
             {

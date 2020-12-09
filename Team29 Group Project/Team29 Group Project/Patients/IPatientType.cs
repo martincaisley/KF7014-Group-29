@@ -15,6 +15,9 @@ namespace Team29_Group_Project
     interface IPatientType
     {
          void GetDetails();
+        
+
+        
       
         
     }

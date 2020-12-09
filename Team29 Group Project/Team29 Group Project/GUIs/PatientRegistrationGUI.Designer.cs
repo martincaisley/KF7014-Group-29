@@ -53,6 +53,8 @@
             this.TXT_GPname = new System.Windows.Forms.TextBox();
             this.TXT_GPaddress = new System.Windows.Forms.TextBox();
             this.BTN_addPatient = new System.Windows.Forms.Button();
+            this.LBL_phoneNum = new System.Windows.Forms.Label();
+            this.TXT_phoneNum = new System.Windows.Forms.TextBox();
             this.PNL_occupations.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // 
             this.LBL_fname.AutoSize = true;
             this.LBL_fname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_fname.Location = new System.Drawing.Point(12, 107);
+            this.LBL_fname.Location = new System.Drawing.Point(12, 94);
             this.LBL_fname.Name = "LBL_fname";
             this.LBL_fname.Size = new System.Drawing.Size(86, 20);
             this.LBL_fname.TabIndex = 1;
@@ -80,7 +82,7 @@
             // 
             this.LBL_lname.AutoSize = true;
             this.LBL_lname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_lname.Location = new System.Drawing.Point(12, 154);
+            this.LBL_lname.Location = new System.Drawing.Point(12, 131);
             this.LBL_lname.Name = "LBL_lname";
             this.LBL_lname.Size = new System.Drawing.Size(86, 20);
             this.LBL_lname.TabIndex = 2;
@@ -88,16 +90,16 @@
             // 
             // DTB_DoB
             // 
-            this.DTB_DoB.Location = new System.Drawing.Point(117, 197);
+            this.DTB_DoB.Location = new System.Drawing.Point(132, 173);
             this.DTB_DoB.Name = "DTB_DoB";
-            this.DTB_DoB.Size = new System.Drawing.Size(136, 20);
+            this.DTB_DoB.Size = new System.Drawing.Size(149, 20);
             this.DTB_DoB.TabIndex = 3;
             // 
             // LBL_DoB
             // 
             this.LBL_DoB.AutoSize = true;
             this.LBL_DoB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_DoB.Location = new System.Drawing.Point(12, 197);
+            this.LBL_DoB.Location = new System.Drawing.Point(11, 174);
             this.LBL_DoB.Name = "LBL_DoB";
             this.LBL_DoB.Size = new System.Drawing.Size(99, 20);
             this.LBL_DoB.TabIndex = 4;
@@ -107,7 +109,7 @@
             // 
             this.LBL_address.AutoSize = true;
             this.LBL_address.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_address.Location = new System.Drawing.Point(12, 238);
+            this.LBL_address.Location = new System.Drawing.Point(12, 209);
             this.LBL_address.Name = "LBL_address";
             this.LBL_address.Size = new System.Drawing.Size(68, 20);
             this.LBL_address.TabIndex = 5;
@@ -117,7 +119,7 @@
             // 
             this.LBL_email.AutoSize = true;
             this.LBL_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_email.Location = new System.Drawing.Point(12, 276);
+            this.LBL_email.Location = new System.Drawing.Point(12, 250);
             this.LBL_email.Name = "LBL_email";
             this.LBL_email.Size = new System.Drawing.Size(48, 20);
             this.LBL_email.TabIndex = 6;
@@ -214,28 +216,28 @@
             // 
             // TXT_fname
             // 
-            this.TXT_fname.Location = new System.Drawing.Point(104, 109);
+            this.TXT_fname.Location = new System.Drawing.Point(132, 94);
             this.TXT_fname.Name = "TXT_fname";
             this.TXT_fname.Size = new System.Drawing.Size(149, 20);
             this.TXT_fname.TabIndex = 9;
             // 
             // TXT_sname
             // 
-            this.TXT_sname.Location = new System.Drawing.Point(104, 154);
+            this.TXT_sname.Location = new System.Drawing.Point(132, 133);
             this.TXT_sname.Name = "TXT_sname";
             this.TXT_sname.Size = new System.Drawing.Size(149, 20);
             this.TXT_sname.TabIndex = 10;
             // 
             // TXT_address
             // 
-            this.TXT_address.Location = new System.Drawing.Point(104, 238);
+            this.TXT_address.Location = new System.Drawing.Point(132, 211);
             this.TXT_address.Name = "TXT_address";
             this.TXT_address.Size = new System.Drawing.Size(149, 20);
             this.TXT_address.TabIndex = 11;
             // 
             // TXT_email
             // 
-            this.TXT_email.Location = new System.Drawing.Point(104, 278);
+            this.TXT_email.Location = new System.Drawing.Point(132, 250);
             this.TXT_email.Name = "TXT_email";
             this.TXT_email.Size = new System.Drawing.Size(149, 20);
             this.TXT_email.TabIndex = 12;
@@ -294,11 +296,30 @@
             this.BTN_addPatient.UseVisualStyleBackColor = true;
             this.BTN_addPatient.MouseClick += new System.Windows.Forms.MouseEventHandler(this.BTN_addPatient_MouseClick);
             // 
+            // LBL_phoneNum
+            // 
+            this.LBL_phoneNum.AutoSize = true;
+            this.LBL_phoneNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_phoneNum.Location = new System.Drawing.Point(11, 285);
+            this.LBL_phoneNum.Name = "LBL_phoneNum";
+            this.LBL_phoneNum.Size = new System.Drawing.Size(115, 20);
+            this.LBL_phoneNum.TabIndex = 21;
+            this.LBL_phoneNum.Text = "Phone Number";
+            // 
+            // TXT_phoneNum
+            // 
+            this.TXT_phoneNum.Location = new System.Drawing.Point(132, 285);
+            this.TXT_phoneNum.Name = "TXT_phoneNum";
+            this.TXT_phoneNum.Size = new System.Drawing.Size(149, 20);
+            this.TXT_phoneNum.TabIndex = 22;
+            // 
             // PatientRegistrationGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 707);
+            this.ClientSize = new System.Drawing.Size(800, 749);
+            this.Controls.Add(this.TXT_phoneNum);
+            this.Controls.Add(this.LBL_phoneNum);
             this.Controls.Add(this.BTN_addPatient);
             this.Controls.Add(this.TXT_GPaddress);
             this.Controls.Add(this.TXT_GPname);
@@ -355,5 +376,7 @@
         private System.Windows.Forms.TextBox TXT_GPname;
         private System.Windows.Forms.TextBox TXT_GPaddress;
         private System.Windows.Forms.Button BTN_addPatient;
+        private System.Windows.Forms.Label LBL_phoneNum;
+        private System.Windows.Forms.TextBox TXT_phoneNum;
     }
 }

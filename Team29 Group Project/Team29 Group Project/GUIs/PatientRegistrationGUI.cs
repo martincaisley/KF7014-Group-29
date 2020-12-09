@@ -32,7 +32,7 @@ namespace Team29_Group_Project
         {
             AddPatient();
         }
-         private bool TextValidation()
+        private bool TextValidation()
         {
             string EmptyTextBoxes = string.Join(Environment.NewLine,
             (
@@ -45,22 +45,22 @@ namespace Team29_Group_Project
                 return false;
             }
             else
-            return true;
+                return true;
         }
 
         private void DateFormat()
         {
-            DTB_DoB.MinDate = DateTime.Today;
+
             DTB_DoB.CustomFormat = "dd MMMM, yyyy";
             DTB_DoB.Format = DateTimePickerFormat.Custom;
-            
+
         }
 
         private bool OccupationValidation()
-        { 
+        {
             foreach (var RadioButton in PNL_occupations.Controls.OfType<RadioButton>())
             {
-                if(RadioButton.Checked)
+                if (RadioButton.Checked)
                 {
                     return true;
                 }
@@ -79,11 +79,11 @@ namespace Team29_Group_Project
             }
             else
             {
-               
+
             }
-            
+
         }
 
-       
+      
     }
 }

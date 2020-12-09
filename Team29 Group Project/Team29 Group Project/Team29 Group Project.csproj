@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Appointment.cs" />
+    <Compile Include="MissedAppointments.cs" />
     <Compile Include="Patients\FreePatient.cs" />
     <Compile Include="IPatientHomeScreenGUI.cs" />
     <Compile Include="IPatientRegistrationGUI.cs" />

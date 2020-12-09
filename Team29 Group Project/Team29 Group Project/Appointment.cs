@@ -11,11 +11,18 @@ namespace Team29_Group_Project
     {
         [Key]
         public int appointmentID { get; set; }
+        [Required]
         public int patientID { get; set; }
+        [Required]
         public string appointmentDate { get; set; }
+        [Required]
         public string appointmentStartTime { get; set; }
+        [Required]
         public string appointmentEndTime { get; set; }
+        [Required]
         public string appointmentType { get; set; }
+        [Required]
         public string appointmentLength { get; set; }
+
     }
 }

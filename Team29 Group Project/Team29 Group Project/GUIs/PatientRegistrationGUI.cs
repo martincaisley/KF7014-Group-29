@@ -20,6 +20,7 @@ namespace Team29_Group_Project
         private void PatientRegistrationGUI_Load(object sender, EventArgs e)
         {
             DateFormat();
+            TXT_age.ReadOnly = true;
         }
 
         private void BTN_medQuestionnaire_Click(object sender, EventArgs e)
@@ -32,6 +33,15 @@ namespace Team29_Group_Project
         {
             PatientSubmit();
         }
+
+        private void DTB_DoB_ValueChanged(object sender, EventArgs e)
+        {
+            var today = DateTime.Today;
+            var age = today.Year - DTB_DoB.Value.Year;
+            if (DTB_DoB.Value.Date > today.AddYears(-age)) age--;
+            TXT_age.Text = age.ToString();
+        }
+
         private bool TextValidation()
         {
             string EmptyTextBoxes = string.Join(Environment.NewLine,
@@ -50,10 +60,8 @@ namespace Team29_Group_Project
 
         private void DateFormat()
         {
-
             DTB_DoB.CustomFormat = "dd MMMM, yyyy";
             DTB_DoB.Format = DateTimePickerFormat.Custom;
-
         }
 
         private bool OccupationValidation()
@@ -71,15 +79,41 @@ namespace Team29_Group_Project
             return false;
         }
 
+        private bool FreePatientCheck()
+        {
+            string occupation = null;
+            int age = int.Parse(TXT_age.Text.ToString());
+            foreach (var RadioButton in PNL_occupations.Controls.OfType<RadioButton>())
+            {
+                if (RadioButton.Checked)
+                {
+                     occupation = RadioButton.Text;
+                }
+            }
+            if(occupation == "Full time education" && age < 19)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void PatientSubmit()
         {
             if (TextValidation() && OccupationValidation())
             {
-               // if()
-                IPatientType patientType = PatientFactory.Singleton.GetPatientType(PatientTypes.Paying);
-                patientType.GetType();
-                MessageBox.Show("Patient added");
-
+                if(FreePatientCheck())
+                {
+                    IPatientType patientType = PatientFactory.Singleton.GetPatientType(PatientTypes.Free);
+                    patientType.GetType();
+                    MessageBox.Show("Free patient added");
+                }
+                else 
+                {
+                    IPatientType patientType = PatientFactory.Singleton.GetPatientType(PatientTypes.Paying);
+                    patientType.GetType();
+                    MessageBox.Show("Paying patient added");
+                }
+                   
             }
             else
             {
@@ -88,6 +122,6 @@ namespace Team29_Group_Project
 
         }
 
-      
+       
     }
 }

@@ -55,6 +55,8 @@
             this.BTN_addPatient = new System.Windows.Forms.Button();
             this.LBL_phoneNum = new System.Windows.Forms.Label();
             this.TXT_phoneNum = new System.Windows.Forms.TextBox();
+            this.LBL_age = new System.Windows.Forms.Label();
+            this.TXT_age = new System.Windows.Forms.TextBox();
             this.PNL_occupations.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +64,7 @@
             // 
             this.LBL_patTitle.AutoSize = true;
             this.LBL_patTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LBL_patTitle.Location = new System.Drawing.Point(264, 29);
+            this.LBL_patTitle.Location = new System.Drawing.Point(125, 19);
             this.LBL_patTitle.Name = "LBL_patTitle";
             this.LBL_patTitle.Size = new System.Drawing.Size(295, 37);
             this.LBL_patTitle.TabIndex = 0;
@@ -94,6 +96,7 @@
             this.DTB_DoB.Name = "DTB_DoB";
             this.DTB_DoB.Size = new System.Drawing.Size(149, 20);
             this.DTB_DoB.TabIndex = 3;
+            this.DTB_DoB.ValueChanged += new System.EventHandler(this.DTB_DoB_ValueChanged);
             // 
             // LBL_DoB
             // 
@@ -244,7 +247,7 @@
             // 
             // BTN_medQuestionnaire
             // 
-            this.BTN_medQuestionnaire.Location = new System.Drawing.Point(547, 641);
+            this.BTN_medQuestionnaire.Location = new System.Drawing.Point(296, 638);
             this.BTN_medQuestionnaire.Name = "BTN_medQuestionnaire";
             this.BTN_medQuestionnaire.Size = new System.Drawing.Size(158, 54);
             this.BTN_medQuestionnaire.TabIndex = 15;
@@ -288,7 +291,7 @@
             // 
             // BTN_addPatient
             // 
-            this.BTN_addPatient.Location = new System.Drawing.Point(311, 641);
+            this.BTN_addPatient.Location = new System.Drawing.Point(296, 555);
             this.BTN_addPatient.Name = "BTN_addPatient";
             this.BTN_addPatient.Size = new System.Drawing.Size(158, 54);
             this.BTN_addPatient.TabIndex = 20;
@@ -313,11 +316,30 @@
             this.TXT_phoneNum.Size = new System.Drawing.Size(149, 20);
             this.TXT_phoneNum.TabIndex = 22;
             // 
+            // LBL_age
+            // 
+            this.LBL_age.AutoSize = true;
+            this.LBL_age.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBL_age.Location = new System.Drawing.Point(307, 173);
+            this.LBL_age.Name = "LBL_age";
+            this.LBL_age.Size = new System.Drawing.Size(38, 20);
+            this.LBL_age.TabIndex = 23;
+            this.LBL_age.Text = "Age";
+            // 
+            // TXT_age
+            // 
+            this.TXT_age.Location = new System.Drawing.Point(351, 174);
+            this.TXT_age.Name = "TXT_age";
+            this.TXT_age.Size = new System.Drawing.Size(149, 20);
+            this.TXT_age.TabIndex = 24;
+            // 
             // PatientRegistrationGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 749);
+            this.ClientSize = new System.Drawing.Size(533, 749);
+            this.Controls.Add(this.TXT_age);
+            this.Controls.Add(this.LBL_age);
             this.Controls.Add(this.TXT_phoneNum);
             this.Controls.Add(this.LBL_phoneNum);
             this.Controls.Add(this.BTN_addPatient);
@@ -378,5 +400,7 @@
         private System.Windows.Forms.Button BTN_addPatient;
         private System.Windows.Forms.Label LBL_phoneNum;
         private System.Windows.Forms.TextBox TXT_phoneNum;
+        private System.Windows.Forms.Label LBL_age;
+        private System.Windows.Forms.TextBox TXT_age;
     }
 }

@@ -36,6 +36,45 @@ namespace Team29_Group_Project
                 patientName = name[0].forename + " " + name[0].surname;
                 lbl_name.Text = patientName;
             }
+            
+            bool messages = messagesToView();
+            if (messages == false)
+            {
+                btn_messages.Hide();
+            }
+            else
+            {
+                btn_messages.Show();
+            }
+        }
+
+        public bool messagesToView()
+        {
+            using (var context = new MyDBEntities())
+            {
+                var appointments = context.Appointments.ToList();
+                var patients = context.Patients.ToList();
+                var appQuery = from a in appointments.AsEnumerable()
+                               join p in patients.AsEnumerable()
+                               on a.patientID equals p.PatientID
+                               where p.PatientID == patientID && a.arrivedToAppointment == "No"
+                               select new
+                               {
+                                   forename = p.firstName,
+                                   surname = p.lastName,
+                                   appointmentDate = a.appointmentDate,
+                                   appointmentStartTime = a.appointmentStartTime
+                               };
+                var appointment = appQuery.ToList();
+                if (appointment.Count() == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
         }
         
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -89,13 +128,12 @@ namespace Team29_Group_Project
             this.Show();
         }
 
-        private void txt_messages_Click(object sender, EventArgs e)
+        private void btn_messages_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Messages");
-            //Messages messages = new Messages();
-            //this.Hide();
-            //messages.ShowDialog();
-            //this.Show();
+            Messages messages = new Messages(patientID);
+            this.Hide();
+            messages.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -86,6 +86,12 @@
     <Compile Include="ContactedByPhone.designer.cs">
       <DependentUpon>ContactedByPhone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messages.designer.cs">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </Compile>
     <Compile Include="MissedAppointments.cs" />
     <Compile Include="PatientDetails.cs">
       <SubType>Form</SubType>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUIs\PatientRegistrationGUI.resx">
       <DependentUpon>PatientRegistrationGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messages.resx">
+      <DependentUpon>Messages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientDetails.resx">
       <DependentUpon>PatientDetails.cs</DependentUpon>

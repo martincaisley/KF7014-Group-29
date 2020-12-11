@@ -87,6 +87,12 @@
       <DependentUpon>ContactedByPhone.cs</DependentUpon>
     </Compile>
     <Compile Include="MissedAppointments.cs" />
+    <Compile Include="PatientDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientDetails.designer.cs">
+      <DependentUpon>PatientDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patients\FreePatient.cs" />
     <Compile Include="IPatientHomeScreenGUI.cs" />
     <Compile Include="IPatientRegistrationGUI.cs" />
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUIs\PatientRegistrationGUI.resx">
       <DependentUpon>PatientRegistrationGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientDetails.resx">
+      <DependentUpon>PatientDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PhoneReminders.resx">
       <DependentUpon>PhoneReminders.cs</DependentUpon>

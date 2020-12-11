@@ -19,20 +19,15 @@ namespace Team29_Group_Project
                 {
                     var patients = context.Patients.ToList();
 
-
-                    dt.Columns.Add("Patient ID", typeof(int));
                     dt.Columns.Add("Patient Name", typeof(string));
-                    //dt.Columns.Add("Patient Address", typeof(string));
-                    //dt.Columns.Add("Patient Phone Number", typeof(string));
+                    dt.Columns.Add("Patient Phone Number", typeof(string));
 
 
                     var patientQuery = from p in patients.AsEnumerable()
                                        select dt.LoadDataRow(new object[]
                                        {
-                                p.PatientID,
-                                p.firstName,
-                                           //p.PatientAddress,
-                                           //p.PatientPhoneNumber
+                                p.firstName + " " + p.lastName,
+                                p.PhoneNum
                                        }, false);
 
                     patientQuery.CopyToDataTable();

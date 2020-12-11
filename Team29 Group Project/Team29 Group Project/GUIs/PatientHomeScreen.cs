@@ -54,7 +54,7 @@ namespace Team29_Group_Project
         
         public  void viewPatient(int patientID)
         {
-            NewAppointment patientDetails = new NewAppointment(patientID);
+            PatientDetails patientDetails = new PatientDetails(patientID);
             this.Hide();
             patientDetails.ShowDialog();
             this.Show();

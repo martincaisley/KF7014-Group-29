@@ -24,7 +24,6 @@ namespace Team29_Group_Project
 
         public void setDGV(DataTable dt)
         {
-
             dgv_appointmentList.DataSource = dt;
             dgv_appointmentList.AllowUserToAddRows = false;
             dgv_appointmentList.AllowUserToDeleteRows = false;
@@ -33,7 +32,6 @@ namespace Team29_Group_Project
             {
                 dgv_appointmentList.Columns[x].ReadOnly = true;
             }
-
         }
         private void btn_phoneReminders_Click(object sender, EventArgs e)
         {
@@ -45,63 +43,26 @@ namespace Team29_Group_Project
 
         private void dgv_appointmentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            rowSelcted(dgv_appointmentList.CurrentCell.RowIndex);
+            presenter.rowSelcted(dgv_appointmentList.CurrentCell.RowIndex);
         }
 
         private void dgv_appointmentList_Click(object sender, EventArgs e)
         {
-            rowSelcted(dgv_appointmentList.CurrentCell.RowIndex);
+            presenter.rowSelcted(dgv_appointmentList.CurrentCell.RowIndex);
         }
 
-        private void rowSelcted(int index)
+        public void viewChosenAppointment(int appointmentID)
         {
-            using (var context = new MyDBEntities())
-            {
-                var appointments = context.Appointments.ToList();
-                int appointmentID = appointments[index].appointmentID;
-                AppointmentStatus appointmentStatus = new AppointmentStatus(appointmentID);
-                this.Hide();
-                appointmentStatus.ShowDialog();
-                this.Show();
-            }
+            AppointmentStatus appointmentStatus = new AppointmentStatus(appointmentID);
+            this.Hide();
+            appointmentStatus.ShowDialog();
+            this.Show();
         }
 
         private void btn_textReminders_Click(object sender, EventArgs e)
         {
+            presenter.createAppointmentRemindersCSV();
             MessageBox.Show("Reminders File Created");
-            
-            using (var context = new MyDBEntities())
-            {
-                List<string> csv = new List<string>();
-
-                var patients = context.Patients.ToList();
-                var appointments = context.Appointments.ToList();
-                string fileName = "TextReminders";
-                var appointmentList = (from a in appointments.AsEnumerable()
-                                       join p in patients.AsEnumerable()
-                                       on a.patientID equals p.PatientID
-                                       select new
-                                       {
-                                   p.firstName,
-                                   p.lastName,
-                                   p.PhoneNum,
-                                   a.appointmentDate,
-                                   a.appointmentStartTime,
-                                   a.appointmentEndTime,
-                                   a.appointmentLength,
-                                   a.appointmentType
-                                       });
-                
-                foreach(var a in appointmentList)
-                {
-                    string row = a.firstName + "," + a.lastName + ", " + a.PhoneNum + ", " + a.appointmentDate + "," 
-                        + a.appointmentStartTime + "," + a.appointmentEndTime + "," + a.appointmentLength + "," + a.appointmentType;
-                    csv.Add(row);
-                }
-                string filePath = @"C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\AppointmentTextReminders\" + fileName + ".txt";
-                System.IO.File.WriteAllLines(filePath, csv);
-            }
-            
         }
         public void Register(ViewAppointmentsPresenter VAP)
         {

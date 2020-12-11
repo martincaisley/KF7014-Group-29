@@ -53,7 +53,7 @@ namespace Team29_Group_Project
             presenter.rowSelcted(dgv_patientList.CurrentCell.RowIndex);
         }
         
-        public  void viewPatient(int patientID)
+        public void viewPatient(int patientID)
         {
             PatientDetails patientDetails = new PatientDetails(patientID);
             this.Hide();

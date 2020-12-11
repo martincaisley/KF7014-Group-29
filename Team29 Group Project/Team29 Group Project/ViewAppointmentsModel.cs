@@ -51,5 +51,50 @@ namespace Team29_Group_Project
 
             return dt;
         }
+        public int getAppointmentID(int rowIndex)
+        {
+            using (var context = new MyDBEntities())
+            {
+                var appointments = context.Appointments.ToList();
+                int appointmentID = appointments[rowIndex].appointmentID;
+
+                return appointmentID;
+            }
+            
+        }
+        public void showAppointmentReminders()
+        {
+            using (var context = new MyDBEntities())
+            {
+                List<string> csv = new List<string>();
+
+                var patients = context.Patients.ToList();
+                var appointments = context.Appointments.ToList();
+                string fileName = "TextReminders";
+                var appointmentList = (from a in appointments.AsEnumerable()
+                                       join p in patients.AsEnumerable()
+                                       on a.patientID equals p.PatientID
+                                       select new
+                                       {
+                                           p.firstName,
+                                           p.lastName,
+                                           p.PhoneNum,
+                                           a.appointmentDate,
+                                           a.appointmentStartTime,
+                                           a.appointmentEndTime,
+                                           a.appointmentLength,
+                                           a.appointmentType
+                                       });
+
+                foreach (var a in appointmentList)
+                {
+                    string row = a.firstName + "," + a.lastName + ", " + a.PhoneNum + ", " + a.appointmentDate + ","
+                        + a.appointmentStartTime + "," + a.appointmentEndTime + "," + a.appointmentLength + "," + a.appointmentType;
+                    csv.Add(row);
+                }
+                string filePath = @"C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\AppointmentTextReminders\" + fileName + ".txt";
+                System.IO.File.WriteAllLines(filePath, csv);
+            }
+        }
     }
 }

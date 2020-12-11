@@ -27,6 +27,10 @@ namespace Team29_Group_Project
         {
             patientScreen.setDGV(patientModel.getDT());
         }
+        public void rowSelcted(int index)
+        {
+            patientScreen.viewPatient(patientModel.getPatientID(index));
+        }
 
     }
 }

@@ -45,24 +45,21 @@ namespace Team29_Group_Project
 
         private void dgv_patientList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            rowSelcted(dgv_patientList.CurrentCell.RowIndex);
+            presenter.rowSelcted(dgv_patientList.CurrentCell.RowIndex);
         }
         private void dgv_patientList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            rowSelcted(dgv_patientList.CurrentCell.RowIndex);
+            presenter.rowSelcted(dgv_patientList.CurrentCell.RowIndex);
         }
-        private void rowSelcted(int index)
+        
+        public  void viewPatient(int patientID)
         {
-            using (var context = new MyDBEntities())
-            {
-                var patients = context.Patients.ToList();
-                int NewPatientID = patients[index].PatientID;
-                NewAppointment patientDetails = new NewAppointment(NewPatientID);
-                this.Hide();
-                patientDetails.ShowDialog();
-                this.Show();
-            }
+            NewAppointment patientDetails = new NewAppointment(patientID);
+            this.Hide();
+            patientDetails.ShowDialog();
+            this.Show();
         }
+        
 
         public void setDGV(DataTable dt)
         {

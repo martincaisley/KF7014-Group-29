@@ -10,7 +10,7 @@ namespace Team29_Group_Project
     public interface IPatientHomeScreenGUI
     {
         void setDGV(DataTable dt);
-
         void Register(PatientHomeScreenPresenter PHSP);
+        void viewPatient(int patientID);
     }
 }

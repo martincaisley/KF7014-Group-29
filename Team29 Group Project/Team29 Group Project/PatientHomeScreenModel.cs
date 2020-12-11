@@ -48,5 +48,14 @@ namespace Team29_Group_Project
             }
             return dt;
         }
+        public int getPatientID(int index)
+        {
+            using (var context = new MyDBEntities())
+            {
+                var patients = context.Patients.ToList();
+                int NewPatientID = patients[index].PatientID;
+                return NewPatientID;
+            }
+        }
     }
 }

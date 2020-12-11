@@ -71,3 +71,6 @@ C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 G
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\bin\Debug\DentalDatabase_log.ldf
 C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\bin\Debug\DentalDatabase.mdf
 C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\bin\Debug\DentalDatabase_log.ldf
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PhoneReminders.resources
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.AppointmentStatus.resources
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.ContactedByPhone.resources

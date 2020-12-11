@@ -74,6 +74,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Appointment.cs" />
+    <Compile Include="AppointmentStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentStatus.designer.cs">
+      <DependentUpon>AppointmentStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactedByPhone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContactedByPhone.designer.cs">
+      <DependentUpon>ContactedByPhone.cs</DependentUpon>
+    </Compile>
     <Compile Include="MissedAppointments.cs" />
     <Compile Include="Patients\FreePatient.cs" />
     <Compile Include="IPatientHomeScreenGUI.cs" />
@@ -111,6 +123,12 @@
     <Compile Include="GUIs\PatientRegistrationGUI.Designer.cs">
       <DependentUpon>PatientRegistrationGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhoneReminders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhoneReminders.designer.cs">
+      <DependentUpon>PhoneReminders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUIs\ViewAppointments.cs">
@@ -121,6 +139,12 @@
     </Compile>
     <Compile Include="ViewAppointmentsModel.cs" />
     <Compile Include="ViewAppointmentsPresenter.cs" />
+    <EmbeddedResource Include="AppointmentStatus.resx">
+      <DependentUpon>AppointmentStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactedByPhone.resx">
+      <DependentUpon>ContactedByPhone.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUIs\MedicalQuestionnaireGUI.resx">
       <DependentUpon>MedicalQuestionnaireGUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUIs\PatientRegistrationGUI.resx">
       <DependentUpon>PatientRegistrationGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneReminders.resx">
+      <DependentUpon>PhoneReminders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

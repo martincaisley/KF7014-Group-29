@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    class ViewAppointmentsPresenter
+    public class ViewAppointmentsPresenter
     {
+        private ViewAppointmentsModel appointmentsModel;
+        private IViewAppointmentsGUI appointmentsScreen;
+
+        public ViewAppointmentsPresenter(IViewAppointmentsGUI appointmentsScreen)
+        {
+            this.appointmentsScreen = appointmentsScreen;
+            appointmentsScreen.Register(this);
+            appointmentsModel = new ViewAppointmentsModel();
+            initialiseForm();
+        }
+        private void initialiseForm()
+        {
+            showAppointments();
+        }
+        public void showAppointments()
+        {
+            appointmentsScreen.setDGV(appointmentsModel.getDT());
+        }
     }
 }

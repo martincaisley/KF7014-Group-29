@@ -10,68 +10,30 @@ using System.Windows.Forms;
 
 namespace Team29_Group_Project
 {
-    public partial class ViewAppointments : Form
+    public partial class ViewAppointments : Form, IViewAppointmentsGUI
     {
+        private ViewAppointmentsPresenter presenter;
         public ViewAppointments()
         {
             InitializeComponent();
         }
         private void ViewAppointments_Load(object sender, EventArgs e)
         {
-            updateDGV();
+
         }
 
-        private void updateDGV()
+        public void setDGV(DataTable dt)
         {
-            try
+
+            dgv_appointmentList.DataSource = dt;
+            dgv_appointmentList.AllowUserToAddRows = false;
+            dgv_appointmentList.AllowUserToDeleteRows = false;
+            int cols = dgv_appointmentList.ColumnCount;
+            for (int x = 0; x < cols; x++)
             {
-                //DataTable dt = new DataTable();
-
-                using (var context = new MyDBEntities())
-                {
-                    var patients = context.Patients.ToList();
-                    var appointments = context.Appointments.ToList();
-
-                    DataTable dt = new DataTable();
-                    dt.Columns.Add("Patient Forename", typeof(string));
-                    dt.Columns.Add("Patient Surname", typeof(string));
-                    dt.Columns.Add("Appointment Date", typeof(DateTime));
-                    dt.Columns.Add("Appointment Start Time", typeof(DateTime));
-                    dt.Columns.Add("Appointment End Time", typeof(DateTime));
-                    dt.Columns.Add("Appointment Type", typeof(string));
-                    dt.Columns.Add("Appointment Length", typeof(int));
-
-                    var appointmentQuery = from a in appointments.AsEnumerable()
-                                           join p in patients.AsEnumerable()
-                                           on a.patientID equals p.PatientID
-                                           select dt.LoadDataRow(new object[]
-                                           {
-                                   p.firstName,
-                                   p.lastName,
-                                   a.appointmentDate,
-                                   a.appointmentStartTime,
-                                   a.appointmentEndTime,
-                                   a.appointmentType,
-                                   a.appointmentLength
-                                           }, false);
-
-                    appointmentQuery.CopyToDataTable();
-                    dgv_appointmentList.DataSource = dt;
-                    dgv_appointmentList.AllowUserToAddRows = false;
-                    dgv_appointmentList.AllowUserToDeleteRows = false;
-                    int cols = dgv_appointmentList.ColumnCount;
-                    for (int x = 0; x < cols; x++)
-                    {
-                        dgv_appointmentList.Columns[x].ReadOnly = true;
-                    }
-
-                }
+                dgv_appointmentList.Columns[x].ReadOnly = true;
             }
-            catch
-            {
 
-            }
-            
         }
         private void btn_phoneReminders_Click(object sender, EventArgs e)
         {
@@ -140,6 +102,10 @@ namespace Team29_Group_Project
                 System.IO.File.WriteAllLines(filePath, csv);
             }
             
+        }
+        public void Register(ViewAppointmentsPresenter VAP)
+        {
+            presenter = VAP;
         }
     }
 }

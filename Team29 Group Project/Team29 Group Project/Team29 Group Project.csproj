@@ -97,7 +97,7 @@
     <Compile Include="IPatientHomeScreenGUI.cs" />
     <Compile Include="IPatientRegistrationGUI.cs" />
     <Compile Include="Patients\IPatientType.cs" />
-    <Compile Include="IViewAppointments.cs" />
+    <Compile Include="IViewAppointmentsGUI.cs" />
     <Compile Include="MedicalQuestionnaire.cs" />
     <Compile Include="GUIs\MedicalQuestionnaireGUI.cs">
       <SubType>Form</SubType>

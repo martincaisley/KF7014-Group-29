@@ -29,6 +29,7 @@ namespace Team29_Group_Project
         private void btn_viewApps_Click(object sender, EventArgs e)
         {
             ViewAppointments viewAppointments = new ViewAppointments();
+            ViewAppointmentsPresenter VAP = new ViewAppointmentsPresenter(viewAppointments);
             this.Hide();
             viewAppointments.ShowDialog();
             this.Show();

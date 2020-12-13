@@ -57,7 +57,7 @@ namespace Team29_Group_Project
                 var appQuery = from a in appointments.AsEnumerable()
                                join p in patients.AsEnumerable()
                                on a.patientID equals p.PatientID
-                               where p.PatientID == patientID && a.arrivedToAppointment == "No"
+                               where p.PatientID == patientID && a.arrivedToAppointment == "No" && a.appointmentDate < DateTime.Today
                                select new
                                {
                                    forename = p.firstName,
@@ -123,6 +123,7 @@ namespace Team29_Group_Project
         private void btn_newAppointment_Click(object sender, EventArgs e) 
         {
             NewAppointment newAppointment = new NewAppointment(patientID);
+            NewAppointmentsPresenter NAP = new NewAppointmentsPresenter(newAppointment);
             this.Hide();
             newAppointment.ShowDialog();
             this.Show();

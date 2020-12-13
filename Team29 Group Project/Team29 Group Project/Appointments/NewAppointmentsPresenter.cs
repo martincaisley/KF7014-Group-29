@@ -10,6 +10,7 @@ namespace Team29_Group_Project
     {
         private NewAppointmentsModel newAppointmentsModel;
         private INewAppointmentsGUI NewAppointmentsScreen;
+        int appLength;
 
         public NewAppointmentsPresenter(INewAppointmentsGUI NewAppointmentsScreen)
         {
@@ -21,7 +22,12 @@ namespace Team29_Group_Project
 
         private void initializeForm()
         {
-           
+
+        }
+
+        public void getAppointmentLength()
+        {
+            //NewAppointmentsScreen.setAppointmentEndTime(appointmentLength);
         }
 
         public void processAppointment()
@@ -30,9 +36,10 @@ namespace Team29_Group_Project
             DateTime appointmentDate = NewAppointmentsScreen.getAppointmentDate();
             DateTime appointmentStartTime = NewAppointmentsScreen.getAppointmentStartTime();
             DateTime appointmentEndTime = NewAppointmentsScreen.getAppointmentEndTime();
+            int appointmentLength = appLength;
             string appointmentType = NewAppointmentsScreen.getAppointmentType();
 
-            newAppointmentsModel.WriteToDatabase(patientID, appointmentDate, appointmentStartTime, appointmentEndTime, appointmentType);
+            newAppointmentsModel.WriteToDatabase(patientID, appointmentDate, appointmentStartTime, appointmentEndTime, appointmentLength, appointmentType);
         }
 
         public void getPatientName(int patientID)
@@ -40,7 +47,14 @@ namespace Team29_Group_Project
             NewAppointmentsScreen.setName(newAppointmentsModel.GetPatientName(patientID));
         }
 
-       // public void
+        public void setAppType(string appType)
+        {
+            string appointmentType = appType;
+            appLength = newAppointmentsModel.getAppointmentLength(appointmentType);
+            NewAppointmentsScreen.setAppointmentEndTime(appLength);
+        }
+
+        // public void
     }
 }
 

@@ -15,7 +15,6 @@ namespace Team29_Group_Project
     {
         private NewAppointmentsPresenter presenter;
         int patientID;
-        string appointmentType;
         string appType = "";
         public NewAppointment(int patientID)
         {
@@ -36,7 +35,7 @@ namespace Team29_Group_Project
             AppointmentTimePicker.ShowUpDown = true;
 
 
-
+            /*
             radioButtonCheckUp.Checked = false;
             radioButtonBridges.Checked = false;
             radioButtonCrowns.Checked = false;
@@ -50,6 +49,7 @@ namespace Team29_Group_Project
             radioButtonBrokenTooth.Checked = false;
             radioButtonTeethWhitening.Checked = false;
             radioButtonDentalVeneers.Checked = false;
+            */
         }
 
         public void setName(string name)
@@ -77,10 +77,10 @@ namespace Team29_Group_Project
             return patientID;
         }
 
-       public string getAppointmentType()
-       {
-            return appType;  
-       }
+        public string getAppointmentType()
+        {
+            return appType;
+        }
 
         public void setAppointmentEndTime(int appointmentLength)
         {
@@ -92,26 +92,18 @@ namespace Team29_Group_Project
             presenter = NAP;
         }
 
-       
-
-
-
-
         private void btn_addAppointment_Click(object sender, EventArgs e)
         {
             presenter.processAppointment();
+            MessageBox.Show("Appointment Added");
+            this.Close();
         }
-       
-
-        
-
 
         #region Chk box changed
 
-
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            
+
             foreach (var RadioButton in AppointmentBox.Controls.OfType<RadioButton>())
             {
                 if (RadioButton.Checked)
@@ -119,13 +111,14 @@ namespace Team29_Group_Project
                     appType = RadioButton.Text;
                 }
             }
-            
+            presenter.setAppType(appType);
+
         }
 
 
 
         #endregion
 
-       
+
     }
 }

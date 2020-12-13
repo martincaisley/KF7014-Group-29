@@ -21,43 +21,39 @@ namespace Team29_Group_Project
         }
         private void Messages_Load(object sender, EventArgs e)
         {
-                using (var context = new MyDBEntities())
+            using (var context = new MyDBEntities())
+            {
+                var appointments = context.Appointments.ToList();
+                var patients = context.Patients.ToList();
+                var appQuery = from a in appointments.AsEnumerable()
+                               join p in patients.AsEnumerable()
+                               on a.patientID equals p.PatientID
+                               where p.PatientID == patientID && a.arrivedToAppointment == "No" && a.appointmentDate < DateTime.Today
+                               select new
+                               {
+                                   appointmentID = a.appointmentID,
+                                   forename = p.firstName,
+                                   surname = p.lastName,
+                                   appointmentDate = a.appointmentDate,
+                                   appointmentStartTime = a.appointmentStartTime
+                               };
+                var appointment = appQuery.ToList();
+                if (appointment.Count() == 0)
                 {
-                    var appointments = context.Appointments.ToList();
-                    var patients = context.Patients.ToList();
-                    var appQuery = from a in appointments.AsEnumerable()
-                                   join p in patients.AsEnumerable()
-                                   on a.patientID equals p.PatientID
-                                   where p.PatientID == patientID && a.arrivedToAppointment == "No"
-                                   select new
-                                   {
-                                       appointmentID = a.appointmentID,
-                                       forename = p.firstName,
-                                       surname = p.lastName,
-                                       appointmentDate = a.appointmentDate,
-                                       appointmentStartTime = a.appointmentStartTime
-                                   };
-                    var appointment = appQuery.ToList();
-                    if (appointment.Count() == 0)
-                    {
-                        txt_appointmentTime.Text = "No Name";
-                        txt_appointmentTime.ReadOnly = true;
-                        txt_patientName.Text = "No Date";
-                        txt_patientName.ReadOnly = true;
-                        txt_appointmentDate.Text = "No Time";
-                        txt_appointmentDate.ReadOnly = true;
-                    }
-                    else
-                    {
-                        txt_appointmentTime.Text = appointment[0].appointmentStartTime.ToString();
-                        txt_appointmentTime.ReadOnly = true;
-                        txt_patientName.Text = appointment[0].forename + " " + appointment[0].surname;
-                        txt_patientName.ReadOnly = true;
-                        txt_appointmentDate.Text = appointment[0].appointmentDate.ToString();
-                        txt_appointmentDate.ReadOnly = true;
-                        appointmentID = appointment[0].appointmentID;
-                    }
+                    txt_patientName.Text = "No Messages";
+                    txt_patientName.ReadOnly = true;
                 }
+                else
+                {
+                    txt_appointmentTime.Text = appointment[0].appointmentStartTime.ToString();
+                    txt_appointmentTime.ReadOnly = true;
+                    txt_patientName.Text = appointment[0].forename + " " + appointment[0].surname;
+                    txt_patientName.ReadOnly = true;
+                    txt_appointmentDate.Text = appointment[0].appointmentDate.ToString();
+                    txt_appointmentDate.ReadOnly = true;
+                    appointmentID = appointment[0].appointmentID;
+                }
+            }
         }
         private bool checkForRepeatOffence()
         {
@@ -67,8 +63,8 @@ namespace Team29_Group_Project
                 var repeatAppQuery = from a in appointments.AsEnumerable()
                                      where a.patientID == patientID && a.arrivedToAppointment == "Invalid" && a.appointmentDate >= DateTime.Today.AddYears(-3)
                                      group a by a.patientID into grouped
-                                     select new 
-                                     { 
+                                     select new
+                                     {
                                          count = grouped.Count()
                                      };
                 var offences = repeatAppQuery.ToList();
@@ -82,7 +78,7 @@ namespace Team29_Group_Project
                 {
                     return false;
                 }
-            }            
+            }
         }
 
         private void btn_invalid_Click(object sender, EventArgs e)
@@ -98,7 +94,7 @@ namespace Team29_Group_Project
             {
                 this.Close();
             }
-            
+
         }
 
         private void btn_valid_Click(object sender, EventArgs e)

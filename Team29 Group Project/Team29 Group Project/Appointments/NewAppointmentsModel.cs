@@ -9,27 +9,26 @@ namespace Team29_Group_Project
     class NewAppointmentsModel
     {
 
-        public string GetPatientName(int patientID) 
-        { 
+        public string GetPatientName(int patientID)
+        {
             using (var context = new MyDBEntities())
             {
                 var patients = context.Patients.ToList();
                 var nameQuery = from p in patients.AsEnumerable()
-                    where p.PatientID == patientID
-                    select new
-                    {
-                        forename = p.firstName,
-                        surname = p.lastName
-                    };
+                                where p.PatientID == patientID
+                                select new
+                                {
+                                    forename = p.firstName,
+                                    surname = p.lastName
+                                };
                 var name = nameQuery.ToList();
                 string patientName = name[0].forename + " " + name[0].surname;
-                
 
                 return patientName;
             }
         }
 
-        public void WriteToDatabase(int patientID, DateTime appointmentDate, DateTime appointmentStartTime, DateTime appointmentEndTime, string appointmentType)
+        public void WriteToDatabase(int patientID, DateTime appointmentDate, DateTime appointmentStartTime, DateTime appointmentEndTime, int appointmentLength, string appointmentType)
         {
             try
             {
@@ -40,12 +39,13 @@ namespace Team29_Group_Project
                     a.appointmentDate = appointmentDate;
                     a.appointmentStartTime = appointmentStartTime;
                     a.appointmentEndTime = appointmentEndTime;
+                    a.appointmentLength = appointmentLength;
                     a.appointmentType = appointmentType;
+                    a.arrivedToAppointment = "No";
+                    a.contacted = "No";
 
                     context.Appointments.Add(a);
                     context.SaveChanges();
-
-                   
                 }
             }
             catch (Exception f)
@@ -58,16 +58,13 @@ namespace Team29_Group_Project
         public int getAppointmentLength(string AppointmentT)
         {
             AppType applength = (AppType)Enum.Parse(typeof(AppType), AppointmentT);
-          //  MessageBox.Show("Appointment Length: " + Convert.ToInt32(applength).ToString());
             int appointmentLength = Convert.ToInt32(applength);
-
-            
 
             return appointmentLength;
         }
 
 
-     
+
 
 
 

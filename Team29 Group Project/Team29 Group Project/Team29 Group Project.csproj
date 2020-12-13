@@ -80,6 +80,9 @@
     <Compile Include="AppointmentStatus.designer.cs">
       <DependentUpon>AppointmentStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Appointments\INewAppointmentsGUI.cs" />
+    <Compile Include="Appointments\NewAppointmentsModel.cs" />
+    <Compile Include="Appointments\NewAppointmentsPresenter.cs" />
     <Compile Include="ContactedByPhone.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,10 +115,10 @@
       <DependentUpon>MedicalQuestionnaireGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="MyDBEntities.cs" />
-    <Compile Include="GUIs\NewAppointment.cs">
+    <Compile Include="Appointments\NewAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUIs\NewAppointment.designer.cs">
+    <Compile Include="Appointments\NewAppointment.designer.cs">
       <DependentUpon>NewAppointment.cs</DependentUpon>
     </Compile>
     <Compile Include="Patients\PayingPatient.cs" />
@@ -160,7 +163,7 @@
     <EmbeddedResource Include="GUIs\MedicalQuestionnaireGUI.resx">
       <DependentUpon>MedicalQuestionnaireGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUIs\NewAppointment.resx">
+    <EmbeddedResource Include="Appointments\NewAppointment.resx">
       <DependentUpon>NewAppointment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUIs\PatientHomeScreen.resx">

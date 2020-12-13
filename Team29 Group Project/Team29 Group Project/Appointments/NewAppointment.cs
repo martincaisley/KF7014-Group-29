@@ -32,24 +32,10 @@ namespace Team29_Group_Project
 
             AppointmentTimePicker2.Format = DateTimePickerFormat.Custom;
             AppointmentTimePicker2.CustomFormat = "HH:mm";
-            AppointmentTimePicker.ShowUpDown = true;
+            AppointmentTimePicker2.ShowUpDown = true;
 
-
-            /*
-            radioButtonCheckUp.Checked = false;
-            radioButtonBridges.Checked = false;
-            radioButtonCrowns.Checked = false;
-            radioButtonFillings.Checked = false;
-            radioButtonRootCanal.Checked = false;
-            radioButtonScaleAndPolish.Checked = false;
-            radioButtonBraces.Checked = false;
-            radioButtonWisdomTooth.Checked = false;
-            radioButtonDentalImplants.Checked = false;
-            radioButtonDentures.Checked = false;
-            radioButtonBrokenTooth.Checked = false;
-            radioButtonTeethWhitening.Checked = false;
-            radioButtonDentalVeneers.Checked = false;
-            */
+           
+            
         }
 
         public void setName(string name)

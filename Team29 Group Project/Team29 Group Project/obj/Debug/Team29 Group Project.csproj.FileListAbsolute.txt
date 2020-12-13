@@ -117,3 +117,13 @@ C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Pro
 C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.CoreCompileInputs.cache
 C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.exe
 C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.pdb
+C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\DentalDatabase.mdf
+C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\DentalDatabase_log.ldf
+C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.exe.config
+C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.exe
+C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.pdb
+C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.dll
+C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.xml
+C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.CopyComplete

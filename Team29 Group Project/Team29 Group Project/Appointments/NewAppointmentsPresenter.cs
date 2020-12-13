@@ -54,7 +54,7 @@ namespace Team29_Group_Project
             NewAppointmentsScreen.setAppointmentEndTime(appLength);
         }
 
-        // public void
+        
     }
 }
 

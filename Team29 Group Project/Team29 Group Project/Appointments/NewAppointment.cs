@@ -32,10 +32,7 @@ namespace Team29_Group_Project
 
             AppointmentTimePicker2.Format = DateTimePickerFormat.Custom;
             AppointmentTimePicker2.CustomFormat = "HH:mm";
-            AppointmentTimePicker2.ShowUpDown = true;
-
-           
-            
+            AppointmentTimePicker2.ShowUpDown = true;            
         }
 
         public void setName(string name)
@@ -49,13 +46,13 @@ namespace Team29_Group_Project
             return datePicker.Value;
         }
 
-        public DateTime getAppointmentStartTime()
+        public TimeSpan getAppointmentStartTime()
         {
-            return AppointmentTimePicker.Value;
+            return AppointmentTimePicker.Value.TimeOfDay;
         }
-        public DateTime getAppointmentEndTime()
+        public TimeSpan getAppointmentEndTime()
         {
-            return AppointmentTimePicker2.Value;
+            return AppointmentTimePicker2.Value.TimeOfDay;
         }
 
         public int getPatientID()

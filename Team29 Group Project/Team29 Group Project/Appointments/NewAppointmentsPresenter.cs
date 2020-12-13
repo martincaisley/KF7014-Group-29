@@ -34,8 +34,8 @@ namespace Team29_Group_Project
         {
             int patientID = NewAppointmentsScreen.getPatientID();
             DateTime appointmentDate = NewAppointmentsScreen.getAppointmentDate();
-            DateTime appointmentStartTime = NewAppointmentsScreen.getAppointmentStartTime();
-            DateTime appointmentEndTime = NewAppointmentsScreen.getAppointmentEndTime();
+            TimeSpan appointmentStartTime = NewAppointmentsScreen.getAppointmentStartTime();
+            TimeSpan appointmentEndTime = NewAppointmentsScreen.getAppointmentEndTime();
             int appointmentLength = appLength;
             string appointmentType = NewAppointmentsScreen.getAppointmentType();
 

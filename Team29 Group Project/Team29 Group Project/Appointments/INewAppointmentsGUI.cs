@@ -11,8 +11,8 @@ namespace Team29_Group_Project
     {
         int getPatientID();
         DateTime getAppointmentDate();
-        DateTime getAppointmentStartTime();
-        DateTime getAppointmentEndTime();
+        TimeSpan getAppointmentStartTime();
+        TimeSpan getAppointmentEndTime();
         string getAppointmentType();
         void setName(string name);
         void Register(NewAppointmentsPresenter NAP);

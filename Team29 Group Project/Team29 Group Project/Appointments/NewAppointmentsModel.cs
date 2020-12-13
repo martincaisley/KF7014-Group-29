@@ -28,7 +28,7 @@ namespace Team29_Group_Project
             }
         }
 
-        public void WriteToDatabase(int patientID, DateTime appointmentDate, DateTime appointmentStartTime, DateTime appointmentEndTime, int appointmentLength, string appointmentType)
+        public void WriteToDatabase(int patientID, DateTime appointmentDate, TimeSpan appointmentStartTime, TimeSpan appointmentEndTime, int appointmentLength, string appointmentType)
         {
             try
             {

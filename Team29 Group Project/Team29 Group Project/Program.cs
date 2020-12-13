@@ -39,27 +39,27 @@ namespace Team29_Group_Project
                 context.SaveChanges();
 
             }
-            
-            
+
+
             using (var context = new MyDBEntities())
             {
-                Appointment a= new Appointment();
+                Appointment a = new Appointment();
                 a.appointmentID = 1;
                 a.patientID = 1;
                 a.appointmentDate = DateTime.Today;
-                a.appointmentStartTime = DateTime.Today;
-                a.appointmentEndTime = DateTime.Today;
+                a.appointmentStartTime = DateTime.Now.TimeOfDay;
+                a.appointmentEndTime = DateTime.Now.TimeOfDay;
                 a.appointmentType = "Checkup";
                 a.appointmentLength = 20;
-                a.arrivedToAppointment = false;
-                a.contacted = false;
+                a.arrivedToAppointment = "No";
+                a.contacted = "No";
 
                 context.Appointments.Add(a);
                 context.SaveChanges();
 
             }
             */
-            
+
 
         }
     }

@@ -16,9 +16,9 @@ namespace Team29_Group_Project
         [Required]
         public DateTime appointmentDate { get; set; }
         [Required]
-        public DateTime appointmentStartTime { get; set; }
+        public TimeSpan appointmentStartTime { get; set; }
         [Required]
-        public DateTime appointmentEndTime { get; set; }
+        public TimeSpan appointmentEndTime { get; set; }
         [Required]
         public string appointmentType { get; set; }
         [Required]

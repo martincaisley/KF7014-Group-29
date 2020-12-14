@@ -77,8 +77,18 @@ namespace Team29_Group_Project
         private void btn_messages_Click_1(object sender, EventArgs e)
         {
             Messages messages = new Messages(patientID);
+            MessagesPresenter MP = new MessagesPresenter(messages);
             this.Hide();
             messages.ShowDialog();
+            bool message = presenter.getMessages(patientID);
+            if (message == false)
+            {
+                btn_messages.Hide();
+            }
+            else
+            {
+                btn_messages.Show();
+            }
             this.Show();
         }
 

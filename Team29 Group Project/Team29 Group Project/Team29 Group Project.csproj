@@ -95,12 +95,15 @@
     </Compile>
     <Compile Include="ContactedByPhone\IContactedByPhoneGUI.cs" />
     <Compile Include="AppointmentStatus\IAppointmentStatusGUI.cs" />
+    <Compile Include="Messages\IMessagesGUI.cs" />
+    <Compile Include="Messages\MessagesModel.cs" />
+    <Compile Include="Messages\MessagesPresenter.cs" />
     <Compile Include="PhoneReminders\IPhoneRemindersGUI.cs" />
     <Compile Include="PatientDetails\IPatientDetailsGUI.cs" />
-    <Compile Include="Messages.cs">
+    <Compile Include="Messages\Messages.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Messages.designer.cs">
+    <Compile Include="Messages\Messages.designer.cs">
       <DependentUpon>Messages.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\MissedAppointments.cs" />
@@ -186,7 +189,7 @@
     <EmbeddedResource Include="PatientRegistration\PatientRegistrationGUI.resx">
       <DependentUpon>PatientRegistrationGUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Messages.resx">
+    <EmbeddedResource Include="Messages\Messages.resx">
       <DependentUpon>Messages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientDetails\PatientDetails.resx">

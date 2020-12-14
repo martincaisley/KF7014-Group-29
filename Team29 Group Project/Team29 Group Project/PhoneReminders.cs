@@ -33,8 +33,8 @@ namespace Team29_Group_Project
                     dt.Columns.Add("Patient Surname", typeof(string));
                     dt.Columns.Add("Patient Phone Number", typeof(string));
                     dt.Columns.Add("Appointment Date", typeof(DateTime));
-                    dt.Columns.Add("Appointment Start Time", typeof(DateTime));
-                    dt.Columns.Add("Appointment End Time", typeof(DateTime));
+                    dt.Columns.Add("Appointment Start Time", typeof(TimeSpan));
+                    dt.Columns.Add("Appointment End Time", typeof(TimeSpan));
                     dt.Columns.Add("Appointment Length", typeof(int));
                     dt.Columns.Add("Appointment Type", typeof(string));
 
@@ -85,6 +85,7 @@ namespace Team29_Group_Project
                 var appointments = context.Appointments.ToList();
                 int appointmentID = appointments[index].appointmentID;
                 ContactedByPhone contactedByPhone = new ContactedByPhone(appointmentID);
+                ContactedByPhonePresenter CBPP = new ContactedByPhonePresenter(contactedByPhone);
                 this.Hide();
                 contactedByPhone.ShowDialog();
                 this.Show();

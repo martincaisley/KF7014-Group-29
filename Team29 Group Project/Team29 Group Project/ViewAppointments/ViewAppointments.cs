@@ -54,9 +54,12 @@ namespace Team29_Group_Project
 
         public void viewChosenAppointment(int appointmentID)
         {
+            MessageBox.Show(appointmentID.ToString());
             AppointmentStatus appointmentStatus = new AppointmentStatus(appointmentID);
+            AppointmentStatusPresenter ASP = new AppointmentStatusPresenter(appointmentStatus);
             this.Hide();
             appointmentStatus.ShowDialog();
+            presenter.showAppointments(dtp_appointmentDate.Value.Date);
             this.Show();
         }
 

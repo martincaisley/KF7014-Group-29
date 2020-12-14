@@ -73,13 +73,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppointmentStatus\AppointmentStatusModel.cs" />
+    <Compile Include="AppointmentStatus\AppointmentStatusPresenter.cs" />
     <Compile Include="ContactedByPhone\ContactedByPhoneModel.cs" />
     <Compile Include="ContactedByPhone\ContactedByPhonePresenter.cs" />
     <Compile Include="EntityFramework\Appointment.cs" />
-    <Compile Include="AppointmentStatus.cs">
+    <Compile Include="AppointmentStatus\AppointmentStatus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppointmentStatus.designer.cs">
+    <Compile Include="AppointmentStatus\AppointmentStatus.designer.cs">
       <DependentUpon>AppointmentStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="Appointments\INewAppointmentsGUI.cs" />
@@ -92,6 +94,7 @@
       <DependentUpon>ContactedByPhone.cs</DependentUpon>
     </Compile>
     <Compile Include="ContactedByPhone\IContactedByPhoneGUI.cs" />
+    <Compile Include="AppointmentStatus\IAppointmentStatusGUI.cs" />
     <Compile Include="PhoneReminders\IPhoneRemindersGUI.cs" />
     <Compile Include="PatientDetails\IPatientDetailsGUI.cs" />
     <Compile Include="Messages.cs">
@@ -165,7 +168,7 @@
     </Compile>
     <Compile Include="ViewAppointments\ViewAppointmentsModel.cs" />
     <Compile Include="ViewAppointments\ViewAppointmentsPresenter.cs" />
-    <EmbeddedResource Include="AppointmentStatus.resx">
+    <EmbeddedResource Include="AppointmentStatus\AppointmentStatus.resx">
       <DependentUpon>AppointmentStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContactedByPhone\ContactedByPhone.resx">

@@ -30,7 +30,7 @@ namespace Team29_Group_Project
                     var appointmentQuery = from a in appointments.AsEnumerable()
                                            join p in patients.AsEnumerable()
                                            on a.patientID equals p.PatientID
-                                           where a.appointmentDate == date
+                                           where a.appointmentDate == date && a.arrivedToAppointment == "No"
                                            select dt.LoadDataRow(new object[]
                                            {
                                    p.firstName,

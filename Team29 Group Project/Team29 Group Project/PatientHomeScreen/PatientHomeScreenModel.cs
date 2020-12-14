@@ -38,7 +38,7 @@ namespace Team29_Group_Project
             }
             catch (Exception e)
             {
-                Console.WriteLine("Home Screen Exception");
+                Console.WriteLine("Home Screen Exception: " + e.Message);
                 //add in exception here
             }
             return dt;

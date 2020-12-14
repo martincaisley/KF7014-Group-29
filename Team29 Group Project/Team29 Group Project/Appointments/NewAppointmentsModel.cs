@@ -50,7 +50,7 @@ namespace Team29_Group_Project
             }
             catch (Exception f)
             {
-                Console.WriteLine("New aPp Exception");
+                Console.WriteLine("New aPp Exception" + f.Message);
             }
 
         }

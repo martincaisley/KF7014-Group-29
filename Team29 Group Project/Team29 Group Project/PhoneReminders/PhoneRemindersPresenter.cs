@@ -25,7 +25,7 @@ namespace Team29_Group_Project
 
         public void rowSelcted(int index)
         {
-            remindersScreen.viewChosenReminder(remindersModel.getAppointmentID(index));
+            remindersScreen.viewChosenReminder(index);
         }
     }
 }

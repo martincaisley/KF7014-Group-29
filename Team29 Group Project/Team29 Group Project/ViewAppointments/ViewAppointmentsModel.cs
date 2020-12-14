@@ -18,7 +18,7 @@ namespace Team29_Group_Project
                 {
                     var patients = context.Patients.ToList();
                     var appointments = context.Appointments.ToList();
-
+                    dt.Columns.Add("AppointmentID", typeof(int));
                     dt.Columns.Add("Patient Forename", typeof(string));
                     dt.Columns.Add("Patient Surname", typeof(string));
                     dt.Columns.Add("Appointment Date", typeof(DateTime));
@@ -33,6 +33,7 @@ namespace Team29_Group_Project
                                            where a.appointmentDate == date && a.arrivedToAppointment == "No"
                                            select dt.LoadDataRow(new object[]
                                            {
+                                   a.appointmentID,
                                    p.firstName,
                                    p.lastName,
                                    a.appointmentDate,
@@ -52,6 +53,7 @@ namespace Team29_Group_Project
 
             return dt;
         }
+        /*
         public int getAppointmentID(int rowIndex)
         {
             using (var context = new MyDBEntities())
@@ -63,6 +65,7 @@ namespace Team29_Group_Project
             }
             
         }
+        */
         public void showAppointmentReminders()
         {
             using (var context = new MyDBEntities())

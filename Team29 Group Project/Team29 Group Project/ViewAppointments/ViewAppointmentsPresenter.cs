@@ -23,9 +23,9 @@ namespace Team29_Group_Project
         {
             appointmentsScreen.setDGV(appointmentsModel.getDT(date));
         }
-        public void rowSelcted(int index)
+        public void rowSelcted(int appointmentID)
         {
-            appointmentsScreen.viewChosenAppointment(appointmentsModel.getAppointmentID(index));   
+            appointmentsScreen.viewChosenAppointment(appointmentID);   
         }
         public void createAppointmentRemindersCSV()
         {

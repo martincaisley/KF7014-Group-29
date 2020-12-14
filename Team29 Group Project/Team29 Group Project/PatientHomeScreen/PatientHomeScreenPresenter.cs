@@ -29,7 +29,7 @@ namespace Team29_Group_Project
         }
         public void rowSelcted(int index)
         {
-            patientScreen.viewPatient(patientModel.getPatientID(index));
+            patientScreen.viewPatient(index);
         }
 
     }

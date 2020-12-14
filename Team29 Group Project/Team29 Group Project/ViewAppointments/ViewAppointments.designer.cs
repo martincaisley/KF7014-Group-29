@@ -60,7 +60,7 @@ namespace Team29_Group_Project
             this.dgv_appointmentList.Size = new System.Drawing.Size(235, 235);
             this.dgv_appointmentList.TabIndex = 2;
             this.dgv_appointmentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_appointmentList_CellContentClick);
-            this.dgv_appointmentList.Click += new System.EventHandler(this.dgv_appointmentList_Click);
+            this.dgv_appointmentList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_appointmentList_CellContentDoubleClick);
             // 
             // btn_phoneReminders
             // 

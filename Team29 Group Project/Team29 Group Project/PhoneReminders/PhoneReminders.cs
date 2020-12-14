@@ -36,12 +36,12 @@ namespace Team29_Group_Project
 
         private void dgv_phoneReminders_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            presenter.rowSelcted(dgv_phoneReminders.CurrentCell.RowIndex);
+            presenter.rowSelcted(Convert.ToInt32(dgv_phoneReminders.CurrentRow.Cells[0].Value.ToString()));
         }
 
         private void dgv_phoneReminders_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            presenter.rowSelcted(dgv_phoneReminders.CurrentCell.RowIndex);
+            presenter.rowSelcted(Convert.ToInt32(dgv_phoneReminders.CurrentRow.Cells[0].Value.ToString()));
         }
         public void viewChosenReminder(int appointmentID)
         {

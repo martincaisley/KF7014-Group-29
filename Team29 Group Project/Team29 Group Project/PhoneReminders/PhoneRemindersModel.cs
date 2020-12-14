@@ -18,6 +18,7 @@ namespace Team29_Group_Project
                 {
                     var patients = context.Patients.ToList();
                     var appointments = context.Appointments.ToList();
+                    dt.Columns.Add("AppointmentID", typeof(int));
                     dt.Columns.Add("Patient Forename", typeof(string));
                     dt.Columns.Add("Patient Surname", typeof(string));
                     dt.Columns.Add("Patient Phone Number", typeof(string));
@@ -33,6 +34,7 @@ namespace Team29_Group_Project
                                      where a.contacted == "No"
                                      select dt.LoadDataRow(new object[]
                                      {
+                                         a.appointmentID,
                                     p.firstName,
                                     p.lastName,
                                     p.PhoneNum,
@@ -50,16 +52,6 @@ namespace Team29_Group_Project
 
             }
             return dt;
-        }
-        public int getAppointmentID(int index)
-        {
-            using (var context = new MyDBEntities())
-            {
-                var appointments = context.Appointments.ToList();
-                int appointmentID = appointments[index].appointmentID;
-
-                return appointmentID;
-            }
         }
     }
 }

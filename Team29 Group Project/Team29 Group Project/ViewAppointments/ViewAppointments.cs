@@ -44,17 +44,15 @@ namespace Team29_Group_Project
 
         private void dgv_appointmentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            presenter.rowSelcted(dgv_appointmentList.CurrentCell.RowIndex);
+            presenter.rowSelcted(Convert.ToInt32(dgv_appointmentList.CurrentRow.Cells[0].Value.ToString()));
         }
-
-        private void dgv_appointmentList_Click(object sender, EventArgs e)
+        private void dgv_appointmentList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            presenter.rowSelcted(dgv_appointmentList.CurrentCell.RowIndex);
+            presenter.rowSelcted(Convert.ToInt32(dgv_appointmentList.CurrentRow.Cells[0].Value.ToString()));
         }
 
         public void viewChosenAppointment(int appointmentID)
         {
-            MessageBox.Show(appointmentID.ToString());
             AppointmentStatus appointmentStatus = new AppointmentStatus(appointmentID);
             AppointmentStatusPresenter ASP = new AppointmentStatusPresenter(appointmentStatus);
             this.Hide();
@@ -77,5 +75,7 @@ namespace Team29_Group_Project
         {
             presenter.showAppointments(dtp_appointmentDate.Value.Date);
         }
+
+        
     }
 }

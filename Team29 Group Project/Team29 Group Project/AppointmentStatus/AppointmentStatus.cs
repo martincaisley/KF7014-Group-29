@@ -39,7 +39,6 @@ namespace Team29_Group_Project
 
         private void btn_arrived_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(appointmentID.ToString());
             string value = "Yes";
             presenter.updateTable(appointmentID, value);
             this.Close();

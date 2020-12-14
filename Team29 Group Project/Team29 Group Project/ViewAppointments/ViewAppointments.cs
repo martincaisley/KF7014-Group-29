@@ -36,6 +36,7 @@ namespace Team29_Group_Project
         private void btn_phoneReminders_Click(object sender, EventArgs e)
         {
             PhoneReminders phoneReminders = new PhoneReminders();
+            PhoneRemindersPresenter PRP = new PhoneRemindersPresenter(phoneReminders);
             this.Hide();
             phoneReminders.ShowDialog();
             this.Show();
@@ -69,11 +70,9 @@ namespace Team29_Group_Project
             presenter = VAP;
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void dtp_appointmentDate_ValueChanged(object sender, EventArgs e)
         {
-            //MessageBox.Show(dateTimePicker1.Value.ToShortDateString());
-            
-            presenter.showAppointments(dateTimePicker1.Value);
+            presenter.showAppointments(dtp_appointmentDate.Value.Date);
         }
     }
 }

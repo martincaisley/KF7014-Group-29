@@ -43,7 +43,7 @@ namespace Team29_Group_Project
 
         public DateTime getAppointmentDate()
         {
-            return datePicker.Value;
+            return datePicker.Value.Date;
         }
 
         public TimeSpan getAppointmentStartTime()

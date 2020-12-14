@@ -41,6 +41,7 @@ namespace Team29_Group_Project
             PatientRegistrationPresenter PRP = new PatientRegistrationPresenter(addPatient);
             this.Hide();
             addPatient.ShowDialog();
+            presenter.processPatients();
             this.Show();
         }
 
@@ -59,6 +60,7 @@ namespace Team29_Group_Project
             PatientDetailsPresenter PDP = new PatientDetailsPresenter(patientDetails);
             this.Hide();
             patientDetails.ShowDialog();
+            presenter.processPatients();
             this.Show();
         }
         

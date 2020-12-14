@@ -88,6 +88,7 @@ namespace Team29_Group_Project
                 ContactedByPhonePresenter CBPP = new ContactedByPhonePresenter(contactedByPhone);
                 this.Hide();
                 contactedByPhone.ShowDialog();
+                //code to refresh
                 this.Show();
             }
         }

@@ -10,21 +10,18 @@ namespace Team29_Group_Project
     {
         private ViewAppointmentsModel appointmentsModel;
         private IViewAppointmentsGUI appointmentsScreen;
+        DateTime date = DateTime.Today;
 
         public ViewAppointmentsPresenter(IViewAppointmentsGUI appointmentsScreen)
         {
             this.appointmentsScreen = appointmentsScreen;
             appointmentsScreen.Register(this);
             appointmentsModel = new ViewAppointmentsModel();
-            initialiseForm();
+            showAppointments(date);
         }
-        private void initialiseForm()
+        public void showAppointments(DateTime date)
         {
-            showAppointments();
-        }
-        public void showAppointments()
-        {
-            appointmentsScreen.setDGV(appointmentsModel.getDT());
+            appointmentsScreen.setDGV(appointmentsModel.getDT(date));
         }
         public void rowSelcted(int index)
         {

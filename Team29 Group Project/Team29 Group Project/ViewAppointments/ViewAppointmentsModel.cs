@@ -9,7 +9,7 @@ namespace Team29_Group_Project
 {
     class ViewAppointmentsModel
     {
-        public DataTable getDT()
+        public DataTable getDT(DateTime date)
         {
             DataTable dt = new DataTable();
             try
@@ -30,6 +30,7 @@ namespace Team29_Group_Project
                     var appointmentQuery = from a in appointments.AsEnumerable()
                                            join p in patients.AsEnumerable()
                                            on a.patientID equals p.PatientID
+                                           where a.appointmentDate == date
                                            select dt.LoadDataRow(new object[]
                                            {
                                    p.firstName,

@@ -144,7 +144,7 @@
             // BTN_LIbenefits
             // 
             this.BTN_LIbenefits.AutoSize = true;
-            this.BTN_LIbenefits.Location = new System.Drawing.Point(0, 188);
+            this.BTN_LIbenefits.Location = new System.Drawing.Point(4, 188);
             this.BTN_LIbenefits.Name = "BTN_LIbenefits";
             this.BTN_LIbenefits.Size = new System.Drawing.Size(124, 17);
             this.BTN_LIbenefits.TabIndex = 5;

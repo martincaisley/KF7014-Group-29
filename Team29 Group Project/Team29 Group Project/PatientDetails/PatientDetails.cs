@@ -45,13 +45,8 @@ namespace Team29_Group_Project
 
         public void setDGV(DataTable dt)
         {
-            if (dt.Rows.Count == 0)
-            {
-                dgv_patientAppointments.Hide();
-                lbl_noAppointments.Text = "No Appointments";
-            }
-            else
-            {
+            try 
+            { 
                 dgv_patientAppointments.DataSource = dt;
                 dgv_patientAppointments.AllowUserToAddRows = false;
                 dgv_patientAppointments.AllowUserToDeleteRows = false;
@@ -62,6 +57,11 @@ namespace Team29_Group_Project
 
                 }
             }
+            catch
+            {
+                dgv_patientAppointments.Hide();
+                lbl_noAppointments.Text = "No Appointments";
+            }
         }
 
         private void btn_newAppointment_Click(object sender, EventArgs e)
@@ -70,6 +70,7 @@ namespace Team29_Group_Project
             NewAppointmentsPresenter NAP = new NewAppointmentsPresenter(newAppointment);
             this.Hide();
             newAppointment.ShowDialog();
+            presenter.showPatientDetails(patientID);
             this.Show();
         }
 

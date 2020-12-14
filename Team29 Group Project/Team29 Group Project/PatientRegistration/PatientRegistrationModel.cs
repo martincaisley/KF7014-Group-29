@@ -10,7 +10,7 @@ namespace Team29_Group_Project
    
     public class PatientRegistrationModel
     {
-        public void AddPayingPatient(String firstName, String lastName, DateTime DoB, String address, String email, String occupation, String phoneNum, String GPname, String GPaddress)
+        public void AddPayingPatient(String firstName, String lastName, DateTime DoB, String address, String email, String phoneNum, String occupation, String GPname, String GPaddress)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace Team29_Group_Project
             }
 
         }
-        public void AddFreePatient(String firstName, String lastName, DateTime DoB, String address, String email, String occupation, String phoneNum, String GPname, String GPaddress)
+        public void AddFreePatient(String firstName, String lastName, DateTime DoB, String address, String email, String phoneNum, String occupation, String GPname, String GPaddress)
         {
             try
             {

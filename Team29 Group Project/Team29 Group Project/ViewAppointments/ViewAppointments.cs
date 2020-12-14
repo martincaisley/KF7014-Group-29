@@ -68,5 +68,12 @@ namespace Team29_Group_Project
         {
             presenter = VAP;
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(dateTimePicker1.Value.ToShortDateString());
+            
+            presenter.showAppointments(dateTimePicker1.Value);
+        }
     }
 }

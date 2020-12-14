@@ -29,6 +29,7 @@ namespace Team29_Group_Project
         public String GPname { get; set; }
         [Required]
         public String GPaddress { get; set; }
+        public bool isFree { get; set; }
 
 
 

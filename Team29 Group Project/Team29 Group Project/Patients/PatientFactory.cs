@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    class PatientFactory
+     class PatientFactory
     {
         private static PatientFactory instance;
         private PatientFactory() { }

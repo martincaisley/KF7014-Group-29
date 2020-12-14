@@ -8,15 +8,16 @@ namespace Team29_Group_Project
 {
     public interface IPatientRegistrationGUI
     {
-        String Firstname { set; get; }
-        String Surname { set; get; }
-        DateTime DoB { set; get; }
-        String Address { set; get; }
-        String Email { set; get; }
-        String PhoneNumber { set; get; }
-        String Occupation { set; get; }
-        String GPname { set; get; }
-        String GPaddress { set; get; }
+        String GetFirstname();
+        String GetSurname();
+        DateTime GetDoB();
+        String GetAddress();
+        String GetEmail();
+        String GetPhoneNumber();
+        String GetOccupation();
+        String GetGPname();
+        String GetGPaddress();
+        bool GetPaymentType();
         void Message(String message);
         void Register(PatientRegistrationPresenter PRP);
     }

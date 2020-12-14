@@ -38,7 +38,7 @@ namespace Team29_Group_Project
         private void btn_newPatient_Click(object sender, EventArgs e)
         {
             PatientRegistrationGUI addPatient = new PatientRegistrationGUI();
-            //AddPatientPresenter app = new AddPatientPresenter(addPatient);
+            PatientRegistrationPresenter PRP = new PatientRegistrationPresenter(addPatient);
             this.Hide();
             addPatient.ShowDialog();
             this.Show();

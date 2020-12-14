@@ -6,39 +6,71 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    enum Occupation
-    {
-        fullTime_emp,
-        partTime_emp,
-        fullTime_edu,
-        partTime_edu,
-        unemployed,
-        LI_benefits
-    }
+    
+   
     public class PatientRegistrationModel
     {
-        public void AddPayingPatient(String patientID, String firstName, String lastName, DateTime DoB, String address, String email, String occupation, String phoneNum, String GPname, String GPaddress)
+        public void AddPayingPatient(String firstName, String lastName, DateTime DoB, String address, String email, String occupation, String phoneNum, String GPname, String GPaddress)
         {
             try
             {
                 using (var context = new MyDBEntities())
                 {
                     PayingPatient patient = new PayingPatient();
-                    patient.firstName = "s";
-                    
+                    patient.firstName = firstName;
+                    patient.lastName = lastName;
+                    patient.DoB = DoB;
+                    patient.Address = address;
+                    patient.Email = email;
+                    patient.Occupation = occupation;
+                    patient.PhoneNum = phoneNum;
+                    patient.GPname = GPname;
+                    patient.GPaddress = GPaddress;
+                    patient.isFree = false;
 
-                   // context.Appointments.Add(a);
-                   // context.SaveChanges();
+
+                     context.Patients.Add(patient);
+                     context.SaveChanges();
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine("New app Exception" + e.Message);
+                Console.WriteLine("New Exception" + e.Message);
             }
 
         }
-        public void AddFreePatient(String patientID, String firstName, String lastName, DateTime DoB, String address, String email, String occupation, String phoneNum, String GPname, String GPaddress, double treatmentCost)
+        public void AddFreePatient(String firstName, String lastName, DateTime DoB, String address, String email, String occupation, String phoneNum, String GPname, String GPaddress)
         {
+            try
+            {
+                using (var context = new MyDBEntities())
+                {
+                    IPatientType patientType = PatientFactory.Singleton.GetPatientType(PatientTypes.Free);
+                    patientType.GetDetails();
+                    
+
+                    FreePatient patient = new FreePatient();
+                    patient.firstName = firstName;
+                    patient.lastName = lastName;
+                    patient.DoB = DoB;
+                    patient.Address = address;
+                    patient.Email = email;
+                    patient.Occupation = occupation;
+                    patient.PhoneNum = phoneNum;
+                    patient.GPname = GPname;
+                    patient.GPaddress = GPaddress;
+                    patient.isFree = true;
+
+                    context.Patients.Add(patient);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("New Exception" + e.Message);
+            }
+
+
 
         }
     } 

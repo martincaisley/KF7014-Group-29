@@ -13,62 +13,63 @@ namespace Team29_Group_Project
     public partial class PatientRegistrationGUI : Form, IPatientRegistrationGUI
     {
         private PatientRegistrationPresenter presenter;
-        public String Firstname
-        { 
-            set { TXT_fname.Text = value; }
-            get { return TXT_fname.Text; }
-        }
-       public String Surname
+
+        #region Getters for presenter
+        public String GetFirstname()
         {
-            set { TXT_sname.Text = value; }
-            get { return TXT_sname.Text; }
+            return TXT_fname.Text;
         }
-       public DateTime DoB 
-        { 
-            set { DTB_DoB.Value = value; }
-            get { return DTB_DoB.Value; }
-        }
-       public  String Address
+        public String GetSurname()
         {
-            set { TXT_address.Text = value; }
-            get { return TXT_address.Text; }
+            return TXT_sname.Text;
         }
-       public String Email
-        { 
-            set { TXT_email.Text = value; }
-            get { return TXT_email.Text; }
+        public DateTime GetDoB()
+        {
+            return DTB_DoB.Value;
         }
-       public String PhoneNumber 
-        { 
-            set { TXT_phoneNum.Text = value; }
-            get { return TXT_phoneNum.Text; }
+        public String GetAddress()
+        {
+            return TXT_address.Text;
         }
-       public String Occupation { 
-            set { var checkedButton = PNL_occupations.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-                  checkedButton.Text = value;
+        public String GetEmail()
+        {
+            return TXT_email.Text;
+        }
+        public String GetPhoneNumber()
+        {
+            return TXT_phoneNum.Text;
+        }
+        public String GetOccupation()
+        {
+            var checkedButton = PNL_occupations.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+            return checkedButton.Text; 
+        }
+
+        public String GetGPname()
+        {
+            return TXT_GPname.Text;
+
+        }
+        public String GetGPaddress()
+        {
+            return TXT_GPaddress.Text;
+        }
+        public bool GetPaymentType()
+        {
+            if(FreePatientValidation())
+            {
+                return true;
             }
-            get { var checkedButton = PNL_occupations.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-                   return checkedButton.Text ;
-            } 
+            return false;
         }
-       public String GPname { 
-            set { TXT_GPname.Text = value; }
-            get { return TXT_GPname.Text; }
-        }
-       public String GPaddress 
-        { 
-            set { TXT_GPaddress.Text = value; }
-            get { return TXT_GPaddress.Text; }
-        }
+
+        #endregion
 
         public void Message(String message)
         {
             MessageBox.Show(message);
         }
-        public void Register(PatientRegistrationPresenter PRP)
-        {
-            presenter = PRP;
-        }
+       
         public PatientRegistrationGUI()
         {
             InitializeComponent();
@@ -86,6 +87,10 @@ namespace Team29_Group_Project
             TXT_GPname.Clear();
             TXT_GPaddress.Clear();
             TXT_age.Clear();
+        }
+        public void Register(PatientRegistrationPresenter PRP)
+        {
+            presenter = PRP;
         }
 
         private void BTN_medQuestionnaire_Click(object sender, EventArgs e)
@@ -141,7 +146,7 @@ namespace Team29_Group_Project
             return false;
         }
 
-        private bool FreePatientCheck()
+        private bool FreePatientValidation()
         {
             string occupation = null;
             int age = int.Parse(TXT_age.Text.ToString());
@@ -156,6 +161,10 @@ namespace Team29_Group_Project
             {
                 return true;
             }
+            else if(age <= 18)
+            {
+                return true;
+            }
             return false;
         }
         
@@ -163,24 +172,14 @@ namespace Team29_Group_Project
         {
             if (TextValidation() && OccupationValidation())
             {
-                if(FreePatientCheck())
-                {
-                    IPatientType patientType = PatientFactory.Singleton.GetPatientType(PatientTypes.Free);
-                    patientType.GetType();
-                    MessageBox.Show("Free patient added");
-                }
-                else 
-                {
-                    IPatientType patientType = PatientFactory.Singleton.GetPatientType(PatientTypes.Paying);
-                    patientType.GetType();
-                    MessageBox.Show("Paying patient added");
-                } 
+                presenter.ProcessNewPatient();
+                MessageBox.Show("Patient has been added", "Success");
+                this.Close();
             }
-            else
+            else 
             {
-
+                MessageBox.Show("There has been an error please try again", "Error");
             }
-
         }
 
       

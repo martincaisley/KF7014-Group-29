@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 
 namespace Team29_Group_Project
@@ -17,5 +18,6 @@ namespace Team29_Group_Project
         void setName(string name);
         void Register(NewAppointmentsPresenter NAP);
         void setAppointmentEndTime(int appointmentLength);
+        void setDGV(DataTable DT);
     }
 }

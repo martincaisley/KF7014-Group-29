@@ -32,7 +32,8 @@ namespace Team29_Group_Project
 
             AppointmentTimePicker2.Format = DateTimePickerFormat.Custom;
             AppointmentTimePicker2.CustomFormat = "HH:mm";
-            AppointmentTimePicker2.ShowUpDown = true;            
+            AppointmentTimePicker2.ShowUpDown = true;
+            
         }
 
         public void setName(string name)
@@ -75,6 +76,23 @@ namespace Team29_Group_Project
             presenter = NAP;
         }
 
+        public void setDGV(DataTable DT)
+        {
+            DGV_AddApp.DataSource = DT;
+            DGV_AddApp.AllowUserToAddRows = false;
+            DGV_AddApp.AllowUserToDeleteRows = false;
+            int cols = DGV_AddApp.ColumnCount;
+            for (int x = 0; x < cols; x++)
+            {
+                DGV_AddApp.Columns[x].ReadOnly = true;
+            }
+        }
+
+        private void DateSelector_ValueChanged(object sender, EventArgs e)
+        {
+            presenter.showAppointmentList(DateSelector.Value.Date);
+        }
+
         private void btn_addAppointment_Click(object sender, EventArgs e)
         {
             presenter.processAppointment();
@@ -100,8 +118,10 @@ namespace Team29_Group_Project
 
 
 
+
+
         #endregion
 
-
+        
     }
 }

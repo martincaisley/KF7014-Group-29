@@ -11,24 +11,18 @@ namespace Team29_Group_Project
         private NewAppointmentsModel newAppointmentsModel;
         private INewAppointmentsGUI NewAppointmentsScreen;
         int appLength;
+        DateTime Date = DateTime.Today;
 
         public NewAppointmentsPresenter(INewAppointmentsGUI NewAppointmentsScreen)
         {
             this.NewAppointmentsScreen = NewAppointmentsScreen;
             NewAppointmentsScreen.Register(this);
             newAppointmentsModel = new NewAppointmentsModel();
-            initializeForm();
+            showAppointmentList(Date);
+            
         }
 
-        private void initializeForm()
-        {
-
-        }
-
-        public void getAppointmentLength()
-        {
-            //NewAppointmentsScreen.setAppointmentEndTime(appointmentLength);
-        }
+        
 
         public void processAppointment()
         {
@@ -54,7 +48,13 @@ namespace Team29_Group_Project
             NewAppointmentsScreen.setAppointmentEndTime(appLength);
         }
 
-        
+        public void showAppointmentList(DateTime AppDate)
+        {
+            NewAppointmentsScreen.setDGV(newAppointmentsModel.getDT(AppDate));
+        }
+
+
+
     }
 }
 

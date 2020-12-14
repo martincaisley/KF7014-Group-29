@@ -52,7 +52,10 @@ namespace Team29_Group_Project
             this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.AppointmentTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AppointmentTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DateSelector = new System.Windows.Forms.DateTimePicker();
+            this.DGV_AddApp = new System.Windows.Forms.DataGridView();
             this.AppointmentBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddApp)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -316,11 +319,29 @@ namespace Team29_Group_Project
             this.AppointmentTimePicker2.TabIndex = 11;
             this.AppointmentTimePicker2.Value = new System.DateTime(2020, 12, 8, 11, 55, 0, 0);
             // 
+            // DateSelector
+            // 
+            this.DateSelector.Location = new System.Drawing.Point(364, 61);
+            this.DateSelector.Name = "DateSelector";
+            this.DateSelector.Size = new System.Drawing.Size(133, 20);
+            this.DateSelector.TabIndex = 12;
+            this.DateSelector.ValueChanged += new System.EventHandler(this.DateSelector_ValueChanged);
+            // 
+            // DGV_AddApp
+            // 
+            this.DGV_AddApp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_AddApp.Location = new System.Drawing.Point(309, 87);
+            this.DGV_AddApp.Name = "DGV_AddApp";
+            this.DGV_AddApp.Size = new System.Drawing.Size(240, 228);
+            this.DGV_AddApp.TabIndex = 13;
+            // 
             // NewAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 357);
+            this.ClientSize = new System.Drawing.Size(572, 357);
+            this.Controls.Add(this.DGV_AddApp);
+            this.Controls.Add(this.DateSelector);
             this.Controls.Add(this.AppointmentTimePicker2);
             this.Controls.Add(this.AppointmentTimePicker);
             this.Controls.Add(this.datePicker);
@@ -337,6 +358,7 @@ namespace Team29_Group_Project
             this.Load += new System.EventHandler(this.NewAppointment_Load);
             this.AppointmentBox.ResumeLayout(false);
             this.AppointmentBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_AddApp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +389,7 @@ namespace Team29_Group_Project
         private System.Windows.Forms.RadioButton radioButtonCheckUp;
         private System.Windows.Forms.DateTimePicker AppointmentTimePicker;
         private System.Windows.Forms.DateTimePicker AppointmentTimePicker2;
+        private System.Windows.Forms.DateTimePicker DateSelector;
+        private System.Windows.Forms.DataGridView DGV_AddApp;
     }
 }

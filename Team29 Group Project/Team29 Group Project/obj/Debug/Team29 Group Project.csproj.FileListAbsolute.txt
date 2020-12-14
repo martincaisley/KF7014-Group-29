@@ -127,3 +127,8 @@ C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Pro
 C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.xml
 C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Drumm\source\repos\GroupProjectv2\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.CopyComplete
+C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.AppointmentStatus.resources
+C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.ContactedByPhone.resources
+C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.Messages.resources
+C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientDetails.resources
+C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PhoneReminders.resources

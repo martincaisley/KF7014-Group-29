@@ -108,16 +108,18 @@
     <Compile Include="PatientDetails\PatientDetails.designer.cs">
       <DependentUpon>PatientDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientRegistration\PatientRegistrationPresenter.cs" />
+    <Compile Include="PatientRegistration\PatientRegistrationModel.cs" />
     <Compile Include="Patients\FreePatient.cs" />
     <Compile Include="PatientHomeScreen\IPatientHomeScreenGUI.cs" />
-    <Compile Include="IPatientRegistrationGUI.cs" />
+    <Compile Include="PatientRegistration\IPatientRegistrationGUI.cs" />
     <Compile Include="Patients\IPatientType.cs" />
     <Compile Include="ViewAppointments\IViewAppointmentsGUI.cs" />
     <Compile Include="MedicalQuestionnaire.cs" />
-    <Compile Include="GUIs\MedicalQuestionnaireGUI.cs">
+    <Compile Include="Medical Questionnaire\MedicalQuestionnaireGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUIs\MedicalQuestionnaireGUI.Designer.cs">
+    <Compile Include="Medical Questionnaire\MedicalQuestionnaireGUI.Designer.cs">
       <DependentUpon>MedicalQuestionnaireGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="MyDBEntities.cs" />
@@ -138,10 +140,10 @@
     </Compile>
     <Compile Include="PatientHomeScreen\PatientHomeScreenModel.cs" />
     <Compile Include="PatientHomeScreen\PatientHomeScreenPresenter.cs" />
-    <Compile Include="GUIs\PatientRegistrationGUI.cs">
+    <Compile Include="PatientRegistration\PatientRegistrationGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUIs\PatientRegistrationGUI.Designer.cs">
+    <Compile Include="PatientRegistration\PatientRegistrationGUI.Designer.cs">
       <DependentUpon>PatientRegistrationGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="PhoneReminders.cs">
@@ -166,7 +168,7 @@
     <EmbeddedResource Include="ContactedByPhone\ContactedByPhone.resx">
       <DependentUpon>ContactedByPhone.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUIs\MedicalQuestionnaireGUI.resx">
+    <EmbeddedResource Include="Medical Questionnaire\MedicalQuestionnaireGUI.resx">
       <DependentUpon>MedicalQuestionnaireGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Appointments\NewAppointment.resx">
@@ -175,7 +177,7 @@
     <EmbeddedResource Include="PatientHomeScreen\PatientHomeScreen.resx">
       <DependentUpon>PatientHomeScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUIs\PatientRegistrationGUI.resx">
+    <EmbeddedResource Include="PatientRegistration\PatientRegistrationGUI.resx">
       <DependentUpon>PatientRegistrationGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Messages.resx">

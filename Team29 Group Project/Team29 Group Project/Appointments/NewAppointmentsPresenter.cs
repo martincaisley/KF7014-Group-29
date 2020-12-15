@@ -56,6 +56,26 @@ namespace Team29_Group_Project
         {
             return newAppointmentsModel.checkTime(date, startTime, endTime);
         }
+        public bool checkEmergency(DateTime date, TimeSpan startTime, TimeSpan endTime)
+        {
+            if (date != DateTime.Today.Date)
+            {
+                TimeSpan startingHour = TimeSpan.Parse("11:00:00");
+                TimeSpan endingHour = TimeSpan.Parse("13:00:00");
+                if ((startTime < startingHour && endTime > startingHour) || (startTime > startingHour && endTime < endingHour) || (startTime < endingHour && endTime > endingHour))
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return true;
+            }
+        }
 
 
     }

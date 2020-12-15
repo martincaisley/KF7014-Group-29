@@ -89,16 +89,24 @@ namespace Team29_Group_Project
         }
         private void btn_addAppointment_Click(object sender, EventArgs e)
         {
-            bool canBook = presenter.checkTime(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay,AppointmentTimePicker2.Value.TimeOfDay);
-            if (canBook == false)
+            bool emergencyAppointment = presenter.checkEmergency(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
+            if (emergencyAppointment == true)
             {
-                MessageBox.Show("Appointment already booked for this time");
+                bool canBook = presenter.checkTime(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
+                if (canBook == false)
+                {
+                    MessageBox.Show("Appointment already booked for this time");
+                }
+                else
+                {
+                    presenter.processAppointment();
+                    MessageBox.Show("Appointment Added");
+                    this.Close();
+                }
             }
             else
             {
-                presenter.processAppointment();
-                MessageBox.Show("Appointment Added");
-                this.Close();
+                MessageBox.Show("These times are reserved");
             }
         }
 

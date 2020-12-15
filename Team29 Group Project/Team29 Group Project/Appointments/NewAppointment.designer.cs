@@ -53,6 +53,7 @@ namespace Team29_Group_Project
             this.AppointmentTimePicker = new System.Windows.Forms.DateTimePicker();
             this.AppointmentTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.DGV_AddApp = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.AppointmentBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_AddApp)).BeginInit();
             this.SuspendLayout();
@@ -327,11 +328,21 @@ namespace Team29_Group_Project
             this.DGV_AddApp.Size = new System.Drawing.Size(240, 247);
             this.DGV_AddApp.TabIndex = 13;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(306, 318);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(211, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Emergency Appointments Only 11:00-13:00";
+            // 
             // NewAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 357);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.DGV_AddApp);
             this.Controls.Add(this.AppointmentTimePicker2);
             this.Controls.Add(this.AppointmentTimePicker);
@@ -381,5 +392,6 @@ namespace Team29_Group_Project
         private System.Windows.Forms.DateTimePicker AppointmentTimePicker;
         private System.Windows.Forms.DateTimePicker AppointmentTimePicker2;
         private System.Windows.Forms.DataGridView DGV_AddApp;
+        private System.Windows.Forms.Label label1;
     }
 }

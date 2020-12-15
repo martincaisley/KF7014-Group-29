@@ -53,19 +53,6 @@ namespace Team29_Group_Project
 
             return dt;
         }
-        /*
-        public int getAppointmentID(int rowIndex)
-        {
-            using (var context = new MyDBEntities())
-            {
-                var appointments = context.Appointments.ToList();
-                int appointmentID = appointments[rowIndex].appointmentID;
-
-                return appointmentID;
-            }
-            
-        }
-        */
         public void showAppointmentReminders()
         {
             using (var context = new MyDBEntities())
@@ -78,6 +65,7 @@ namespace Team29_Group_Project
                 var appointmentList = (from a in appointments.AsEnumerable()
                                        join p in patients.AsEnumerable()
                                        on a.patientID equals p.PatientID
+                                       where (a.appointmentDate == DateTime.Today.Date.AddDays(5) || a.appointmentDate == DateTime.Today.Date.AddDays(1))
                                        select new
                                        {
                                            p.firstName,
@@ -85,15 +73,13 @@ namespace Team29_Group_Project
                                            p.PhoneNum,
                                            a.appointmentDate,
                                            a.appointmentStartTime,
-                                           a.appointmentEndTime,
-                                           a.appointmentLength,
-                                           a.appointmentType
+                                           a.appointmentEndTime
                                        });
 
                 foreach (var a in appointmentList)
                 {
-                    string row = a.firstName + "," + a.lastName + ", " + a.PhoneNum + ", " + a.appointmentDate + ","
-                        + a.appointmentStartTime + "," + a.appointmentEndTime + "," + a.appointmentLength + "," + a.appointmentType;
+                    string row = a.firstName + " " + a.lastName + ", " + a.PhoneNum + ", " + a.appointmentDate + ","
+                        + a.appointmentStartTime + "," + a.appointmentEndTime;
                     csv.Add(row);
                 }
                 string filePath = @"C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\AppointmentTextReminders\" + fileName + ".txt";

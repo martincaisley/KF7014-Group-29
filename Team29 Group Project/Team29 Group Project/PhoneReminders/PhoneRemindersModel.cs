@@ -31,7 +31,7 @@ namespace Team29_Group_Project
                     var phoneQuery = from a in appointments.AsEnumerable()
                                      join p in patients.AsEnumerable()
                                      on a.patientID equals p.PatientID
-                                     where a.contacted == "No"
+                                     where a.contacted == "No" && a.appointmentLength >= 40 && (a.appointmentDate == DateTime.Today.Date.AddDays(3) || a.appointmentDate == DateTime.Today.Date.AddDays(2))
                                      select dt.LoadDataRow(new object[]
                                      {
                                          a.appointmentID,

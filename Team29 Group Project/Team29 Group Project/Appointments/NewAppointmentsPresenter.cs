@@ -21,8 +21,7 @@ namespace Team29_Group_Project
             showAppointmentList(Date);
             
         }
-
-        
+               
 
         public void processAppointment()
         {
@@ -53,6 +52,10 @@ namespace Team29_Group_Project
             NewAppointmentsScreen.setDGV(newAppointmentsModel.getDT(AppDate));
         }
 
+        public bool checkTime(DateTime date, TimeSpan startTime, TimeSpan endTime)
+        {
+            return newAppointmentsModel.checkTime(date, startTime, endTime);
+        }
 
 
     }

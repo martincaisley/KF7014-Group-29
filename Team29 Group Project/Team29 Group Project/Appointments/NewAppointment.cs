@@ -87,17 +87,19 @@ namespace Team29_Group_Project
                 DGV_AddApp.Columns[x].ReadOnly = true;
             }
         }
-
-        private void DateSelector_ValueChanged(object sender, EventArgs e)
-        {
-            presenter.showAppointmentList(DateSelector.Value.Date);
-        }
-
         private void btn_addAppointment_Click(object sender, EventArgs e)
         {
-            presenter.processAppointment();
-            MessageBox.Show("Appointment Added");
-            this.Close();
+            bool canBook = presenter.checkTime(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay,AppointmentTimePicker2.Value.TimeOfDay);
+            if (canBook == false)
+            {
+                MessageBox.Show("Appointment already booked for this time");
+            }
+            else
+            {
+                presenter.processAppointment();
+                MessageBox.Show("Appointment Added");
+                this.Close();
+            }
         }
 
         #region Chk box changed
@@ -115,13 +117,11 @@ namespace Team29_Group_Project
             presenter.setAppType(appType);
 
         }
-
-
-
-
-
         #endregion
 
-        
+        private void datePicker_ValueChanged(object sender, EventArgs e)
+        {
+            presenter.showAppointmentList(datePicker.Value.Date);
+        }
     }
 }

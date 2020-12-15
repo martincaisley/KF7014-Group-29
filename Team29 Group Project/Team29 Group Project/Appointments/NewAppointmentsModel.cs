@@ -73,12 +73,12 @@ namespace Team29_Group_Project
                 {
                     var patients = context.Patients.ToList();
                     var appointments = context.Appointments.ToList();
-                    dt.Columns.Add("AppointmentID", typeof(int));
-                    dt.Columns.Add("Patient Forename", typeof(string));
-                    dt.Columns.Add("Patient Surname", typeof(string));
-                    dt.Columns.Add("Appointment Start Time", typeof(TimeSpan));
+                    
+                    dt.Columns.Add("Patient Name", typeof(string));
+                    dt.Columns.Add("Appointment Start Time", typeof(TimeSpan));         
                     dt.Columns.Add("Appointment End Time", typeof(TimeSpan));
                     dt.Columns.Add("Appointment Type", typeof(string));
+                    dt.Columns.Add("AppointmentID", typeof(int));
 
                     var appointmentQuery = from a in appointments.AsEnumerable()
                                            join p in patients.AsEnumerable()
@@ -87,12 +87,11 @@ namespace Team29_Group_Project
                                            orderby a.appointmentStartTime
                                            select dt.LoadDataRow(new object[]
                                            {
-                                                a.appointmentID,
-                                                p.firstName,
-                                                p.lastName,
+                                                p.firstName + " " + p.lastName,
                                                 a.appointmentStartTime,
                                                 a.appointmentEndTime,
-                                                a.appointmentType
+                                                a.appointmentType,
+                                                a.appointmentID
 
                                            }, false);
 
@@ -107,16 +106,6 @@ namespace Team29_Group_Project
 
             return dt;
         }
-
-
-
-
-
-
-
-
-
-
         enum AppType
         {
             Checkup = 30,
@@ -133,6 +122,41 @@ namespace Team29_Group_Project
             TeethWhitening = 90,
             DentalVeneers = 120
 
+        }
+
+        public bool checkTime(DateTime date, TimeSpan startTime, TimeSpan endTime)
+        {
+            using (var context = new MyDBEntities())
+            {
+                var appointments = context.Appointments.ToList();
+                var patients = context.Patients.ToList();
+                var appQuery = from a in appointments.AsEnumerable()
+                               join p in patients.AsEnumerable()
+                               on a.patientID equals p.PatientID
+                               where a.appointmentDate == date && ((a.appointmentStartTime <= startTime && a.appointmentEndTime > startTime) || (a.appointmentStartTime > startTime && a.appointmentStartTime < endTime))
+
+
+                               select new
+                               {
+                                   a.appointmentDate,
+                                   a.appointmentStartTime,
+                                   a.appointmentEndTime
+                               };
+                var appointment = appQuery.ToList();
+                
+                if (appointment.Count > 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+
+            }
+
+         
         }
 
     }

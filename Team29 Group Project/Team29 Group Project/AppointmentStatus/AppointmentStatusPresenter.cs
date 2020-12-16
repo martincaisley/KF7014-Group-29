@@ -21,6 +21,7 @@ namespace Team29_Group_Project
         {
             statusScreen.setPatientName(statusModel.setName(appointmentID));
             statusScreen.setAppointmentTime(statusModel.setTime(appointmentID));
+            statusScreen.setAppointmentCost(statusModel.setCost(appointmentID));
         }
 
         public void updateTable(int appointmentID, string value)

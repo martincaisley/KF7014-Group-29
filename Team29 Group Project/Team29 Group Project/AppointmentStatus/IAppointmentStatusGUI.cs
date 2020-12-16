@@ -10,7 +10,9 @@ namespace Team29_Group_Project
     {
         void setPatientName(string name);
         void setAppointmentTime(TimeSpan appTime);
+        void setAppointmentCost(double cost);
         void Register(AppointmentStatusPresenter ASP);
+        
     }
 
 }

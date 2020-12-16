@@ -26,6 +26,14 @@ namespace Team29_Group_Project
 
             return time;
         }
+        public double setCost(int appointmentID)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var UOW = unitOfWork.appointment.GetByID(appointmentID);
+            double cost = UOW.appointmmentCost;
+
+            return cost;
+        }
         public void updateTable(int appointmentID, string value)
         {
             using (var context = new MyDBEntities())

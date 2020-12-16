@@ -37,6 +37,12 @@ namespace Team29_Group_Project
             txt_appointmentTime.ReadOnly = true;
         }
 
+        public void setAppointmentCost(double cost)
+        {
+            txt_cost.Text = "£" + cost.ToString() + "0";
+            txt_cost.ReadOnly = true;
+        }
+
         private void btn_arrived_Click(object sender, EventArgs e)
         {
             string value = "Yes";

@@ -27,5 +27,7 @@ namespace Team29_Group_Project
         public string arrivedToAppointment { get; set; }
         [Required]
         public string contacted { get; set; }
+        [Required]
+        public virtual double appointmmentCost { get; set; }
     }
 }

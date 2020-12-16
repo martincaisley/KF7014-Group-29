@@ -32,7 +32,31 @@ namespace Team29_Group_Project
             int appointmentLength = appLength;
             string appointmentType = NewAppointmentsScreen.getAppointmentType();
 
-            newAppointmentsModel.WriteToDatabase(patientID, appointmentDate, appointmentStartTime, appointmentEndTime, appointmentLength, appointmentType);
+            string appointmentBand = findAppBand(appointmentType);
+
+            newAppointmentsModel.WriteToDatabase(patientID, appointmentDate, appointmentStartTime, appointmentEndTime, appointmentLength, appointmentType, appointmentBand);
+        }
+
+        public string findAppBand(string appType)
+        {
+            string appBand = "";
+
+            if (appType == "Checkup" || appType == "ScaleAndPolish")
+            {
+                appBand = "Band1";
+            }
+            else if (appType == "BrokenTooth" || appType == "RootCanal" || appType == "Filings" 
+                || appType == "Crowns" || appType == "Bridges" || appType == "DentalImplants" || appType == "WisdowmTooth" || appType == "Braces")
+            {
+                appBand = "Band2";
+            }
+            else
+            {
+                appBand = "Band3";
+            }
+
+
+            return appBand;
         }
 
         public void getPatientName(int patientID)

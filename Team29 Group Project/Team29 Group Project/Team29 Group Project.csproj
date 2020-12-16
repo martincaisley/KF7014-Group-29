@@ -73,8 +73,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppointmentFactory.cs" />
     <Compile Include="AppointmentStatus\AppointmentStatusModel.cs" />
     <Compile Include="AppointmentStatus\AppointmentStatusPresenter.cs" />
+    <Compile Include="Band1Appointment.cs" />
+    <Compile Include="Band2Appointment.cs" />
+    <Compile Include="Band3Appointment.cs" />
     <Compile Include="ContactedByPhone\ContactedByPhoneModel.cs" />
     <Compile Include="ContactedByPhone\ContactedByPhonePresenter.cs" />
     <Compile Include="EntityFramework\Appointment.cs" />
@@ -125,6 +129,7 @@
     <Compile Include="PatientRegistration\IPatientRegistrationGUI.cs" />
     <Compile Include="PhoneReminders\PhoneRemindersModel.cs" />
     <Compile Include="PhoneReminders\PhoneRemindersPresenter.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="ViewAppointments\IViewAppointmentsGUI.cs" />
     <Compile Include="Medical Questionnaire\MedicalQuestionnaire.cs" />
     <Compile Include="Medical Questionnaire\MedicalQuestionnaireGUI.cs">

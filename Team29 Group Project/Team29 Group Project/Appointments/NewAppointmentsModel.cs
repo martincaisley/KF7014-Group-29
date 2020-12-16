@@ -9,45 +9,34 @@ namespace Team29_Group_Project
 {
     class NewAppointmentsModel
     {
-
         public string GetPatientName(int patientID)
         {
-            using (var context = new MyDBEntities())
-            {
-                var patients = context.Patients.ToList();
-                var nameQuery = from p in patients.AsEnumerable()
-                                where p.PatientID == patientID
-                                select new
-                                {
-                                    forename = p.firstName,
-                                    surname = p.lastName
-                                };
-                var name = nameQuery.ToList();
-                string patientName = name[0].forename + " " + name[0].surname;
+            var repo = new PatientRepository();
+            string patientName = repo.GetByID(patientID).firstName + " " + repo.GetByID(patientID).lastName;
 
-                return patientName;
-            }
+            return patientName;
         }
 
-        public void WriteToDatabase(int patientID, DateTime appointmentDate, TimeSpan appointmentStartTime, TimeSpan appointmentEndTime, int appointmentLength, string appointmentType)
+        public void WriteToDatabase(int patientID, DateTime appointmentDate, TimeSpan appointmentStartTime, TimeSpan appointmentEndTime, int appointmentLength, string appointmentType, string appointmentBand)
         {
             try
             {
-                using (var context = new MyDBEntities())
-                {
-                    Appointment a = new Appointment();
-                    a.patientID = patientID;
-                    a.appointmentDate = appointmentDate;
-                    a.appointmentStartTime = appointmentStartTime;
-                    a.appointmentEndTime = appointmentEndTime;
-                    a.appointmentLength = appointmentLength;
-                    a.appointmentType = appointmentType;
-                    a.arrivedToAppointment = "No";
-                    a.contacted = "No";
+                AppointmentFactory factory = new AppointmentFactory();
+                AppointmentCost appointmentCosts = (AppointmentCost)Enum.Parse(typeof(AppointmentCost), appointmentBand);
+                Appointment a = factory.GetAppointmentCost(appointmentCosts);
 
-                    context.Appointments.Add(a);
-                    context.SaveChanges();
-                }
+                a.patientID = patientID;
+                a.appointmentDate = appointmentDate;
+                a.appointmentStartTime = appointmentStartTime;
+                a.appointmentEndTime = appointmentEndTime;
+                a.appointmentLength = appointmentLength;
+                a.appointmentType = appointmentType;
+                a.arrivedToAppointment = "No";
+                a.contacted = "No";
+
+                var repo = new AppointmentRepository();
+                repo.Add(a);
+                repo.Save();
             }
             catch (Exception f)
             {
@@ -73,9 +62,9 @@ namespace Team29_Group_Project
                 {
                     var patients = context.Patients.ToList();
                     var appointments = context.Appointments.ToList();
-                    
+
                     dt.Columns.Add("Patient Name", typeof(string));
-                    dt.Columns.Add("Appointment Start Time", typeof(TimeSpan));         
+                    dt.Columns.Add("Appointment Start Time", typeof(TimeSpan));
                     dt.Columns.Add("Appointment End Time", typeof(TimeSpan));
                     dt.Columns.Add("Appointment Type", typeof(string));
                     dt.Columns.Add("AppointmentID", typeof(int));
@@ -143,7 +132,7 @@ namespace Team29_Group_Project
                                    a.appointmentEndTime
                                };
                 var appointment = appQuery.ToList();
-                
+
                 if (appointment.Count > 0)
                 {
                     return false;
@@ -156,7 +145,7 @@ namespace Team29_Group_Project
 
             }
 
-         
+
         }
     }
 }

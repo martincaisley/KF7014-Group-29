@@ -95,6 +95,9 @@
     </Compile>
     <Compile Include="ContactedByPhone\IContactedByPhoneGUI.cs" />
     <Compile Include="AppointmentStatus\IAppointmentStatusGUI.cs" />
+    <Compile Include="Medical Questionnaire\IMedicalQuestionnaireGUI.cs" />
+    <Compile Include="Medical Questionnaire\MedicalQuestionnaireModel.cs" />
+    <Compile Include="Medical Questionnaire\MedicalQuestionnairePresenter.cs" />
     <Compile Include="Messages\IMessagesGUI.cs" />
     <Compile Include="Messages\MessagesModel.cs" />
     <Compile Include="Messages\MessagesPresenter.cs" />
@@ -123,7 +126,7 @@
     <Compile Include="PhoneReminders\PhoneRemindersModel.cs" />
     <Compile Include="PhoneReminders\PhoneRemindersPresenter.cs" />
     <Compile Include="ViewAppointments\IViewAppointmentsGUI.cs" />
-    <Compile Include="MedicalQuestionnaire.cs" />
+    <Compile Include="Medical Questionnaire\MedicalQuestionnaire.cs" />
     <Compile Include="Medical Questionnaire\MedicalQuestionnaireGUI.cs">
       <SubType>Form</SubType>
     </Compile>

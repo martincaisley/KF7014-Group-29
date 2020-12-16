@@ -25,6 +25,7 @@ namespace Team29_Group_Project
             med.Show();
         }
 
+       
 
         public void ProcessNewPatient()
         {

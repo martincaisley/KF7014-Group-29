@@ -34,8 +34,8 @@ namespace Team29_Group_Project
                     patient.isFree = false;
                    
 
-                     context.Patients.Add(patient);
-                     context.SaveChanges();
+                    context.Patients.Add(patient);
+                    context.SaveChanges();
                    
                 }
             }
@@ -51,8 +51,6 @@ namespace Team29_Group_Project
             {
                 using (var context = new MyDBEntities())
                 {
-
-
 
                     Patient patient = patientFactory.GetPatientType(PatientTypes.Free);
                    

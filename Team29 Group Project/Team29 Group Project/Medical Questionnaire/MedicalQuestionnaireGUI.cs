@@ -10,11 +10,25 @@ using System.Windows.Forms;
 
 namespace Team29_Group_Project
 {
-    public partial class MedicalQuestionnaireGUI : Form
+    public partial class MedicalQuestionnaireGUI : Form, IMedicalQuestionnaireGUI
     {
+        private MedicalQuestionnairePresenter presenter;
+       
         public MedicalQuestionnaireGUI()
         {
             InitializeComponent();
         }
+
+        public void Register(MedicalQuestionnairePresenter MQP)
+        {
+            presenter = MQP;
+        }
+
+        public void SetDropBox()
+        {
+            CMB_patients.DataSource = presenter.getPatientList();
+        }
+
+
     }
 }

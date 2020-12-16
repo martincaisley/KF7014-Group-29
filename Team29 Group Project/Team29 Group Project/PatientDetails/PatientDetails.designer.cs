@@ -34,7 +34,7 @@ namespace Team29_Group_Project
             this.btn_newAppointment = new System.Windows.Forms.Button();
             this.btn_editDetails = new System.Windows.Forms.Button();
             this.btn_messages = new System.Windows.Forms.Button();
-            this.btn_refresh = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.lbl_noAppointments = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_patientAppointments)).BeginInit();
             this.SuspendLayout();
@@ -96,16 +96,16 @@ namespace Team29_Group_Project
             this.btn_messages.UseVisualStyleBackColor = false;
             this.btn_messages.Click += new System.EventHandler(this.btn_messages_Click_1);
             // 
-            // btn_refresh
+            // btn_delete
             // 
-            this.btn_refresh.Location = new System.Drawing.Point(289, 177);
-            this.btn_refresh.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(98, 50);
-            this.btn_refresh.TabIndex = 5;
-            this.btn_refresh.Text = "Refresh";
-            this.btn_refresh.UseVisualStyleBackColor = true;
-            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            this.btn_delete.Location = new System.Drawing.Point(289, 177);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(98, 50);
+            this.btn_delete.TabIndex = 5;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // lbl_noAppointments
             // 
@@ -123,7 +123,7 @@ namespace Team29_Group_Project
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(401, 366);
             this.Controls.Add(this.lbl_noAppointments);
-            this.Controls.Add(this.btn_refresh);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_messages);
             this.Controls.Add(this.btn_editDetails);
             this.Controls.Add(this.btn_newAppointment);
@@ -146,7 +146,7 @@ namespace Team29_Group_Project
         private System.Windows.Forms.Button btn_newAppointment;
         private System.Windows.Forms.Button btn_editDetails;
         private System.Windows.Forms.Button btn_messages;
-        private System.Windows.Forms.Button btn_refresh;
+        private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Label lbl_noAppointments;
     }
 }

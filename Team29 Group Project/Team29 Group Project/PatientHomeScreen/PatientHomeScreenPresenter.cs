@@ -31,6 +31,10 @@ namespace Team29_Group_Project
         {
             patientScreen.viewPatient(index);
         }
+        public void deleteRow(int appointmentID)
+        {
+            patientModel.deleteEntry(appointmentID);
+        }
 
     }
 }

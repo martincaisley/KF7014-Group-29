@@ -31,6 +31,10 @@ namespace Team29_Group_Project
             bool messages = detailsModel.messagesToView(patientID);
             return messages;
         }
+        public void deleteRow(int appointmentID)
+        {
+            detailsModel.deleteEntry(appointmentID);
+        }
 
 
 

@@ -26,13 +26,15 @@ namespace Team29_Group_Project
                 var appointments = unitOfWork.appointment.GetAll();
                 dt.Columns.Add("Appointment Date", typeof(DateTime));
                 dt.Columns.Add("Appointment Time", typeof(TimeSpan));
+                dt.Columns.Add("AppointmentID", typeof(int));
 
                 var appointmentQuery = from a in appointments.AsEnumerable()
                                        where a.patientID == patientID
                                        select dt.LoadDataRow(new object[]
                                        {
                                    a.appointmentDate,
-                                   a.appointmentStartTime
+                                   a.appointmentStartTime,
+                                   a.appointmentID
                                        }, false);
                 appointmentQuery.CopyToDataTable();
             }
@@ -42,6 +44,15 @@ namespace Team29_Group_Project
             }
             return dt;
         }
+
+        internal void deleteEntry(int appointmentID)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            Appointment appToDelete = unitOfWork.appointment.GetByID(appointmentID);
+            unitOfWork.appointment.Remove(appToDelete);
+            unitOfWork.Save();
+        }
+
         public bool messagesToView(int patientID)
         {
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());

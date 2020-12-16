@@ -39,5 +39,12 @@ namespace Team29_Group_Project
             }
             return dt;
         }
+        internal void deleteEntry(int patientID)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            Patient patientToDelete = unitOfWork.patient.GetByID(patientID);
+            unitOfWork.patient.Remove(patientToDelete);
+            unitOfWork.Save();
+        }
     }
 }

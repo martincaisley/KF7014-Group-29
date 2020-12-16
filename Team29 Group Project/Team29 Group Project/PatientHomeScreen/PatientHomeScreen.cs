@@ -22,10 +22,6 @@ namespace Team29_Group_Project
         {
             
         }
-        private void btn_refresh_Click(object sender, EventArgs e)
-        {
-            presenter.processPatients();
-        }
         private void btn_viewApps_Click(object sender, EventArgs e)
         {
             ViewAppointments viewAppointments = new ViewAppointments();
@@ -80,6 +76,16 @@ namespace Team29_Group_Project
         public void Register(PatientHomeScreenPresenter PHSP)
         {
             presenter = PHSP;
+        }
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            var selection = MessageBox.Show("Are you sure you want to delete this patient?", "Confirmation", MessageBoxButtons.YesNo);
+            if (selection == DialogResult.Yes)
+            {
+                presenter.deleteRow((int)dgv_patientList.SelectedRows[0].Cells[0].Value);
+                MessageBox.Show("Patient Deleted");
+                presenter.processPatients();
+            }
         }
     }
 }

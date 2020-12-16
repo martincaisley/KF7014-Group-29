@@ -38,10 +38,6 @@ namespace Team29_Group_Project
         {
             lbl_name.Text = patientName;
         }
-        private void btn_refresh_Click(object sender, EventArgs e)
-        {
-            presenter.showPatientDetails(patientID);
-        }
 
         public void setDGV(DataTable dt)
         {
@@ -97,6 +93,15 @@ namespace Team29_Group_Project
             presenter = PDP;
         }
 
-
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            var selection = MessageBox.Show("Are you sure you want to delete this patient?", "Confirmation", MessageBoxButtons.YesNo);
+            if (selection == DialogResult.Yes)
+            {
+                presenter.deleteRow((int)dgv_patientAppointments.SelectedRows[0].Cells[2].Value);
+                MessageBox.Show("Appointment Deleted");
+                presenter.showPatientDetails(patientID);
+            }
+        }
     }
 }

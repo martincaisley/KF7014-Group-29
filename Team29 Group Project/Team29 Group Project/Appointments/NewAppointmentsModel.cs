@@ -22,6 +22,10 @@ namespace Team29_Group_Project
         {
             try
             {
+                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+                bool patientType = unitOfWork.patient.GetByID(patientID).isFree;
+
+
                 AppointmentFactory factory = new AppointmentFactory();
                 AppointmentCost appointmentCosts = (AppointmentCost)Enum.Parse(typeof(AppointmentCost), appointmentBand);
                 Appointment a = factory.GetAppointmentCost(appointmentCosts);
@@ -35,7 +39,11 @@ namespace Team29_Group_Project
                 a.arrivedToAppointment = "No";
                 a.contacted = "No";
 
-                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+                if (patientType == true && appointmentBand == "Band1")
+                {
+                    a.appointmmentCost = 0;
+                }
+
                 unitOfWork.appointment.Add(a);
                 unitOfWork.Save();
             }

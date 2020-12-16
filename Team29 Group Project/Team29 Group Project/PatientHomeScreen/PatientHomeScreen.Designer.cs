@@ -33,27 +33,29 @@ namespace Team29_Group_Project
             this.btn_viewApps = new System.Windows.Forms.Button();
             this.btn_newPatient = new System.Windows.Forms.Button();
             this.lbl_patients = new System.Windows.Forms.Label();
-            this.btn_refresh = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_patientList)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_patientList
             // 
             this.dgv_patientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_patientList.Location = new System.Drawing.Point(14, 124);
+            this.dgv_patientList.Location = new System.Drawing.Point(10, 101);
+            this.dgv_patientList.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_patientList.Name = "dgv_patientList";
             this.dgv_patientList.RowHeadersWidth = 51;
             this.dgv_patientList.RowTemplate.Height = 24;
-            this.dgv_patientList.Size = new System.Drawing.Size(469, 366);
+            this.dgv_patientList.Size = new System.Drawing.Size(352, 297);
             this.dgv_patientList.TabIndex = 0;
             this.dgv_patientList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_patientList_CellContentClick);
             this.dgv_patientList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_patientList_CellContentDoubleClick);
             // 
             // btn_viewApps
             // 
-            this.btn_viewApps.Location = new System.Drawing.Point(15, 85);
+            this.btn_viewApps.Location = new System.Drawing.Point(11, 69);
+            this.btn_viewApps.Margin = new System.Windows.Forms.Padding(2);
             this.btn_viewApps.Name = "btn_viewApps";
-            this.btn_viewApps.Size = new System.Drawing.Size(145, 30);
+            this.btn_viewApps.Size = new System.Drawing.Size(109, 24);
             this.btn_viewApps.TabIndex = 1;
             this.btn_viewApps.Text = "View Appointments";
             this.btn_viewApps.UseVisualStyleBackColor = true;
@@ -61,9 +63,10 @@ namespace Team29_Group_Project
             // 
             // btn_newPatient
             // 
-            this.btn_newPatient.Location = new System.Drawing.Point(176, 85);
+            this.btn_newPatient.Location = new System.Drawing.Point(132, 69);
+            this.btn_newPatient.Margin = new System.Windows.Forms.Padding(2);
             this.btn_newPatient.Name = "btn_newPatient";
-            this.btn_newPatient.Size = new System.Drawing.Size(145, 30);
+            this.btn_newPatient.Size = new System.Drawing.Size(109, 24);
             this.btn_newPatient.TabIndex = 2;
             this.btn_newPatient.Text = "New Patient";
             this.btn_newPatient.UseVisualStyleBackColor = true;
@@ -73,32 +76,35 @@ namespace Team29_Group_Project
             // 
             this.lbl_patients.AutoSize = true;
             this.lbl_patients.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.lbl_patients.Location = new System.Drawing.Point(168, 9);
+            this.lbl_patients.Location = new System.Drawing.Point(126, 7);
+            this.lbl_patients.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_patients.Name = "lbl_patients";
-            this.lbl_patients.Size = new System.Drawing.Size(164, 46);
+            this.lbl_patients.Size = new System.Drawing.Size(132, 37);
             this.lbl_patients.TabIndex = 3;
             this.lbl_patients.Text = "Patients";
             // 
-            // btn_refresh
+            // btn_delete
             // 
-            this.btn_refresh.Location = new System.Drawing.Point(338, 85);
-            this.btn_refresh.Name = "btn_refresh";
-            this.btn_refresh.Size = new System.Drawing.Size(145, 30);
-            this.btn_refresh.TabIndex = 4;
-            this.btn_refresh.Text = "Refresh";
-            this.btn_refresh.UseVisualStyleBackColor = true;
-            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
+            this.btn_delete.Location = new System.Drawing.Point(254, 69);
+            this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(109, 24);
+            this.btn_delete.TabIndex = 4;
+            this.btn_delete.Text = "Delete";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
             // PatientHomeScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 504);
-            this.Controls.Add(this.btn_refresh);
+            this.ClientSize = new System.Drawing.Size(374, 410);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.lbl_patients);
             this.Controls.Add(this.btn_newPatient);
             this.Controls.Add(this.btn_viewApps);
             this.Controls.Add(this.dgv_patientList);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PatientHomeScreen";
             this.Text = "Quick Fix Dental Clinic";
             this.Load += new System.EventHandler(this.PatientHomeScreen_Load);
@@ -114,7 +120,7 @@ namespace Team29_Group_Project
         private System.Windows.Forms.Button btn_viewApps;
         private System.Windows.Forms.Button btn_newPatient;
         private System.Windows.Forms.Label lbl_patients;
-        private System.Windows.Forms.Button btn_refresh;
+        private System.Windows.Forms.Button btn_delete;
     }
 }
 

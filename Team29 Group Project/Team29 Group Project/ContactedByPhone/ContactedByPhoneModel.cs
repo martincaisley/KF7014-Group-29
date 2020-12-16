@@ -10,82 +10,30 @@ namespace Team29_Group_Project
     {
         public string setName(int appointmentID)
         {
-            using (var context = new MyDBEntities())
-            {
-                var appointments = context.Appointments.ToList();
-                var patients = context.Patients.ToList();
-                var appQuery = from a in appointments.AsEnumerable()
-                               join p in patients.AsEnumerable()
-                               on a.patientID equals p.PatientID
-                               where a.appointmentID == appointmentID
-                               select new
-                               {
-                                   forename = p.firstName,
-                                   surname = p.lastName
-                               };
-                var appointment = appQuery.ToList();
-                string name = appointment[0].forename + " " + appointment[0].surname;
-                return name;
-            }
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var app = unitOfWork.appointment.GetByID(appointmentID);
+            var pat = unitOfWork.patient.GetByID(app.patientID);
+
+            string patientName = pat.firstName + " " + pat.lastName;
+            return patientName;
         }
         public DateTime setDate(int appointmentID)
         {
-            using (var context = new MyDBEntities())
-            {
-                var appointments = context.Appointments.ToList();
-                var patients = context.Patients.ToList();
-                var appQuery = from a in appointments.AsEnumerable()
-                               join p in patients.AsEnumerable()
-                               on a.patientID equals p.PatientID
-                               where a.appointmentID == appointmentID
-                               select new
-                               {
-                                   appointmentDate = a.appointmentDate
-                               };
-                var appointment = appQuery.ToList();
-                return appointment[0].appointmentDate;
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var UOW = unitOfWork.appointment.GetByID(appointmentID);
+            DateTime date = UOW.appointmentDate;
 
-            }
+            return date;
         }
         public TimeSpan setTime(int appointmentID)
         {
-            using (var context = new MyDBEntities())
-            {
-                var appointments = context.Appointments.ToList();
-                var patients = context.Patients.ToList();
-                var appQuery = from a in appointments.AsEnumerable()
-                               join p in patients.AsEnumerable()
-                               on a.patientID equals p.PatientID
-                               where a.appointmentID == appointmentID
-                               select new
-                               {
-                                   appointmentStartTime = a.appointmentStartTime
-                               };
-                var appointment = appQuery.ToList();
-                return appointment[0].appointmentStartTime;
-            }
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var UOW = unitOfWork.appointment.GetByID(appointmentID);
+            TimeSpan time = UOW.appointmentStartTime;
+
+            return time;
         }
-        /*public void setDetails(int appointmentID)
-        {
-            using (var context = new MyDBEntities())
-            {
-                var appointments = context.Appointments.ToList();
-                var patients = context.Patients.ToList();
-                var appQuery = from a in appointments.AsEnumerable()
-                               join p in patients.AsEnumerable()
-                               on a.patientID equals p.PatientID
-                               where a.appointmentID == appointmentID
-                               select new
-                               {
-                                   appointmentDate = a.appointmentDate,
-                                   appointmentStartTime = a.appointmentStartTime,
-                                   forename = p.firstName,
-                                   surname = p.lastName
-                               };
-                var appointment = appQuery.ToList();
-            }
-        }
-        */
+        
         public void setToContacted(int appointmentID)
         {
             using (var context = new MyDBEntities())

@@ -6,38 +6,32 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    
-   
+
+
     public class PatientRegistrationModel
     {
         PatientFactory patientFactory = new PatientFactory();
-
 
         public void AddPayingPatient(String firstName, String lastName, DateTime DoB, String address, String email, String phoneNum, String occupation, String GPname, String GPaddress)
         {
             try
             {
-                using (var context = new MyDBEntities())
-                {
-                    
-                    Patient patient = patientFactory.GetPatientType(PatientTypes.Paying);
-                   
-                    patient.firstName = firstName;
-                    patient.lastName = lastName;
-                    patient.DoB = DoB;
-                    patient.Address = address;
-                    patient.Email = email;
-                    patient.Occupation = occupation;
-                    patient.PhoneNum = phoneNum;
-                    patient.GPname = GPname;
-                    patient.GPaddress = GPaddress;
-                    patient.isFree = false;
-                   
+                Patient patient = patientFactory.GetPatientType(PatientTypes.Paying);
 
-                    context.Patients.Add(patient);
-                    context.SaveChanges();
-                   
-                }
+                patient.firstName = firstName;
+                patient.lastName = lastName;
+                patient.DoB = DoB;
+                patient.Address = address;
+                patient.Email = email;
+                patient.Occupation = occupation;
+                patient.PhoneNum = phoneNum;
+                patient.GPname = GPname;
+                patient.GPaddress = GPaddress;
+                patient.isFree = false;
+
+                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+                unitOfWork.patient.Add(patient);
+                unitOfWork.Save();
             }
             catch (Exception e)
             {
@@ -49,34 +43,28 @@ namespace Team29_Group_Project
         {
             try
             {
-                using (var context = new MyDBEntities())
-                {
+                Patient patient = patientFactory.GetPatientType(PatientTypes.Free);
 
-                    Patient patient = patientFactory.GetPatientType(PatientTypes.Free);
-                   
-                    patient.firstName = firstName;
-                    patient.lastName = lastName;
-                    patient.DoB = DoB;
-                    patient.Address = address;
-                    patient.Email = email;
-                    patient.Occupation = occupation;
-                    patient.PhoneNum = phoneNum;
-                    patient.GPname = GPname;
-                    patient.GPaddress = GPaddress;
-                    patient.isFree = true;
+                patient.firstName = firstName;
+                patient.lastName = lastName;
+                patient.DoB = DoB;
+                patient.Address = address;
+                patient.Email = email;
+                patient.Occupation = occupation;
+                patient.PhoneNum = phoneNum;
+                patient.GPname = GPname;
+                patient.GPaddress = GPaddress;
+                patient.isFree = true;
 
-                    context.Patients.Add(patient);
-                    context.SaveChanges();
-                }
+                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+                unitOfWork.patient.Add(patient);
+                unitOfWork.Save();
             }
             catch (Exception e)
             {
                 Console.WriteLine("New Exception" + e.Message);
             }
-
-
-
         }
-    } 
+    }
 
 }

@@ -11,22 +11,54 @@ namespace Team29_Group_Project
     {
         void Add(T entity);
         T GetByID(int id);
+        IEnumerable<T> GetAll();
         void Remove(T entity);
-        IEnumerable<T> FindAll();
         void Save();
     }
+    public class Repository<T> : IRepository<T> where T : class
+    {
+        private MyDBEntities context;
 
-    public class AppointmentRepository : IRepository<Appointment>
+        public Repository(MyDBEntities context)
+        {
+            this.context = context;
+        }
+
+        public void Add(T entity)
+        {
+            context.Set<T>().Add(entity);
+        }
+
+        public IEnumerable<T> GetAll()
+        {
+            return context.Set<T>().ToList();
+        }
+
+        public T GetByID(int id)
+        {
+            return context.Set<T>().Find(id);
+        }
+
+        public void Remove(T entity)
+        {
+            context.Set<T>().Remove(entity);
+        }
+
+        public void Save()
+        {
+            context.SaveChanges();
+        }
+    }
+    /*public class AppointmentRepository : IRepository<Appointment>
     {
         private MyDBEntities context = new MyDBEntities();
         public void Add(Appointment entity)
         {
             context.Appointments.Add(entity);
         }
-
-        public IEnumerable<Appointment> FindAll()
+        public IEnumerable<Appointment> GetAll()
         {
-            return context.Appointments;
+            return context.Appointments.ToList();
         }
 
         public Appointment GetByID(int id)
@@ -38,10 +70,6 @@ namespace Team29_Group_Project
         {
             context.Appointments.Remove(entity);
         }
-        public void Save()
-        {
-            context.SaveChanges();
-        }
     }
 
     public class PatientRepository : IRepository<Patient>
@@ -51,10 +79,9 @@ namespace Team29_Group_Project
         {
             context.Patients.Add(entity);
         }
-
-        public IEnumerable<Patient> FindAll()
+        public IEnumerable<Patient> GetAll()
         {
-            return context.Patients;
+            return context.Patients.ToList();
         }
 
         public Patient GetByID(int patientID)
@@ -66,12 +93,6 @@ namespace Team29_Group_Project
         {
             context.Patients.Remove(entity);
         }
+    }*/
 
-
-
-        public void Save()
-        {
-            context.SaveChanges();
-        }
-    }
 }

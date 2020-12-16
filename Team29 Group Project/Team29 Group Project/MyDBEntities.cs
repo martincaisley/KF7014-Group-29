@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    class MyDBEntities : DbContext
+    public class MyDBEntities : DbContext
     {
         public MyDBEntities()
             : base("name=conString")

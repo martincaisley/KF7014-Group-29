@@ -99,6 +99,7 @@
     </Compile>
     <Compile Include="ContactedByPhone\IContactedByPhoneGUI.cs" />
     <Compile Include="AppointmentStatus\IAppointmentStatusGUI.cs" />
+    <Compile Include="UnitOfWork.cs" />
     <Compile Include="Medical Questionnaire\IMedicalQuestionnaireGUI.cs" />
     <Compile Include="Medical Questionnaire\MedicalQuestionnaireModel.cs" />
     <Compile Include="Medical Questionnaire\MedicalQuestionnairePresenter.cs" />

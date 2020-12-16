@@ -14,11 +14,11 @@ namespace Team29_Group_Project
             DataTable dt = new DataTable();
             try
             {
-                using (var context = new MyDBEntities())
-                {
-                    var patients = context.Patients.ToList();
-                    var appointments = context.Appointments.ToList();
-                    dt.Columns.Add("AppointmentID", typeof(int));
+                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+                var patients = unitOfWork.patient.GetAll();
+                var appointments = unitOfWork.appointment.GetAll();
+
+                dt.Columns.Add("AppointmentID", typeof(int));
                     dt.Columns.Add("Patient Forename", typeof(string));
                     dt.Columns.Add("Patient Surname", typeof(string));
                     dt.Columns.Add("Patient Phone Number", typeof(string));
@@ -45,11 +45,10 @@ namespace Team29_Group_Project
                                     a.appointmentType
                                      }, false);
                     phoneQuery.CopyToDataTable();
-                }
             }
-            catch
+            catch (Exception f)
             {
-
+                Console.WriteLine("Problem Viewing Reminders" + f.Message);
             }
             return dt;
         }

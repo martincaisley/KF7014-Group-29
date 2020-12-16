@@ -11,8 +11,9 @@ namespace Team29_Group_Project
     {
         public string GetPatientName(int patientID)
         {
-            var repo = new PatientRepository();
-            string patientName = repo.GetByID(patientID).firstName + " " + repo.GetByID(patientID).lastName;
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var UOW = unitOfWork.patient.GetByID(patientID);
+            string patientName = UOW.firstName + " " + UOW.lastName;
 
             return patientName;
         }
@@ -34,9 +35,9 @@ namespace Team29_Group_Project
                 a.arrivedToAppointment = "No";
                 a.contacted = "No";
 
-                var repo = new AppointmentRepository();
-                repo.Add(a);
-                repo.Save();
+                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+                unitOfWork.appointment.Add(a);
+                unitOfWork.Save();
             }
             catch (Exception f)
             {
@@ -58,39 +59,36 @@ namespace Team29_Group_Project
             DataTable dt = new DataTable();
             try
             {
-                using (var context = new MyDBEntities())
-                {
-                    var patients = context.Patients.ToList();
-                    var appointments = context.Appointments.ToList();
+                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+                var patient = unitOfWork.patient.GetAll();
+                var appointment = unitOfWork.appointment.GetAll();
 
-                    dt.Columns.Add("Patient Name", typeof(string));
-                    dt.Columns.Add("Appointment Start Time", typeof(TimeSpan));
-                    dt.Columns.Add("Appointment End Time", typeof(TimeSpan));
-                    dt.Columns.Add("Appointment Type", typeof(string));
-                    dt.Columns.Add("AppointmentID", typeof(int));
+                dt.Columns.Add("Patient Name", typeof(string));
+                dt.Columns.Add("Appointment Start Time", typeof(TimeSpan));
+                dt.Columns.Add("Appointment End Time", typeof(TimeSpan));
+                dt.Columns.Add("Appointment Type", typeof(string));
+                dt.Columns.Add("AppointmentID", typeof(int));
 
-                    var appointmentQuery = from a in appointments.AsEnumerable()
-                                           join p in patients.AsEnumerable()
-                                           on a.patientID equals p.PatientID
-                                           where a.appointmentDate == AppDate
-                                           orderby a.appointmentStartTime
-                                           select dt.LoadDataRow(new object[]
-                                           {
+                var appointmentQuery = from a in appointment.AsEnumerable()
+                                       join p in patient.AsEnumerable()
+                                       on a.patientID equals p.PatientID
+                                       where a.appointmentDate == AppDate
+                                       orderby a.appointmentStartTime
+                                       select dt.LoadDataRow(new object[]
+                                       {
                                                 p.firstName + " " + p.lastName,
                                                 a.appointmentStartTime,
                                                 a.appointmentEndTime,
                                                 a.appointmentType,
                                                 a.appointmentID
 
-                                           }, false);
+                                       }, false);
 
-                    appointmentQuery.CopyToDataTable();
-                }
+                appointmentQuery.CopyToDataTable();
             }
-            catch
+            catch (Exception f)
             {
-
-
+                Console.WriteLine("No Appointments to show " + f.Message);
             }
 
             return dt;
@@ -115,37 +113,32 @@ namespace Team29_Group_Project
 
         public bool checkTime(DateTime date, TimeSpan startTime, TimeSpan endTime)
         {
-            using (var context = new MyDBEntities())
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var patient = unitOfWork.patient.GetAll();
+            var appointment = unitOfWork.appointment.GetAll();
+
+            var appQuery = from a in appointment.AsEnumerable()
+                           join p in patient.AsEnumerable()
+                           on a.patientID equals p.PatientID
+                           where a.appointmentDate == date && ((a.appointmentStartTime <= startTime && a.appointmentEndTime > startTime) || (a.appointmentStartTime > startTime && a.appointmentStartTime < endTime))
+
+
+                           select new
+                           {
+                               a.appointmentDate,
+                               a.appointmentStartTime,
+                               a.appointmentEndTime
+                           };
+            var appointmentExist = appQuery.ToList();
+
+            if (appointmentExist.Count > 0)
             {
-                var appointments = context.Appointments.ToList();
-                var patients = context.Patients.ToList();
-                var appQuery = from a in appointments.AsEnumerable()
-                               join p in patients.AsEnumerable()
-                               on a.patientID equals p.PatientID
-                               where a.appointmentDate == date && ((a.appointmentStartTime <= startTime && a.appointmentEndTime > startTime) || (a.appointmentStartTime > startTime && a.appointmentStartTime < endTime))
-
-
-                               select new
-                               {
-                                   a.appointmentDate,
-                                   a.appointmentStartTime,
-                                   a.appointmentEndTime
-                               };
-                var appointment = appQuery.ToList();
-
-                if (appointment.Count > 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-
-
+                return false;
             }
-
-
+            else
+            {
+                return true;
+            }
         }
     }
 }

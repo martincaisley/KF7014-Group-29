@@ -139,7 +139,7 @@
     </Compile>
     <Compile Include="Patients\PayingPatient.cs" />
     <Compile Include="Patients\Patient.cs" />
-    <Compile Include="PatientFactory\PatientFactory.cs" />
+    <Compile Include="Patients\PatientFactory.cs" />
     <Compile Include="PatientHomeScreen\PatientHomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>

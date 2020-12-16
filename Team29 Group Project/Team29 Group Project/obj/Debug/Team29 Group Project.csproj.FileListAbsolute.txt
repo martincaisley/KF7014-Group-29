@@ -4,7 +4,6 @@ C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advance
 C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.exe.config
 C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.exe
 C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\Team29 Group Project.pdb
-C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.HomeGUI.resources
 C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.exe
 C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.pdb
 C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csprojAssemblyReference.cache
@@ -132,3 +131,18 @@ C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Pr
 C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.Messages.resources
 C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientDetails.resources
 C:\Users\Amras\source\repos\KF7014-Group-29\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PhoneReminders.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\DentalDatabase.mdf
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\DentalDatabase_log.ldf
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.dll
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.xml
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.AppointmentStatus.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.ContactedByPhone.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.NewAppointment.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientHomeScreen.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.Messages.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PatientDetails.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.PhoneReminders.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29_Group_Project.ViewAppointments.resources
+C:\Users\Amras\Documents\University\MSc Advanced Computer Science\KF7014 Advanced Programming\Assignment\Assignment Repository\Team29 Group Project\Team29 Group Project\obj\Debug\Team29 Group Project.csproj.CopyComplete

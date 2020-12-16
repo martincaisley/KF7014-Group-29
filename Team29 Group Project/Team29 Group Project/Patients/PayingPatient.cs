@@ -7,15 +7,9 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    class PayingPatient : Patient, IPatientType
+    class PayingPatient : Patient
     {
-        void IPatientType.GetDetails()
-        {
-            Console.WriteLine("PAYING PATIENT");
-        }
-        public IPatientType CreatePatient()
-        {
-            return new PayingPatient();
-        }
+        
+       
     }
 }

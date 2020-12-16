@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Team29_Group_Project
 {
-    abstract class Patient
+    public abstract class Patient
     {
         [Key]
         public int PatientID { get; set; }

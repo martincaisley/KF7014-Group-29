@@ -120,7 +120,6 @@
     <Compile Include="Patients\FreePatient.cs" />
     <Compile Include="PatientHomeScreen\IPatientHomeScreenGUI.cs" />
     <Compile Include="PatientRegistration\IPatientRegistrationGUI.cs" />
-    <Compile Include="Patients\IPatientType.cs" />
     <Compile Include="PhoneReminders\PhoneRemindersModel.cs" />
     <Compile Include="PhoneReminders\PhoneRemindersPresenter.cs" />
     <Compile Include="ViewAppointments\IViewAppointmentsGUI.cs" />
@@ -140,7 +139,7 @@
     </Compile>
     <Compile Include="Patients\PayingPatient.cs" />
     <Compile Include="Patients\Patient.cs" />
-    <Compile Include="Patients\PatientFactory.cs" />
+    <Compile Include="PatientFactory\PatientFactory.cs" />
     <Compile Include="PatientHomeScreen\PatientHomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>

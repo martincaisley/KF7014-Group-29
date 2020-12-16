@@ -10,13 +10,18 @@ namespace Team29_Group_Project
    
     public class PatientRegistrationModel
     {
+        PatientFactory patientFactory = new PatientFactory();
+
+
         public void AddPayingPatient(String firstName, String lastName, DateTime DoB, String address, String email, String phoneNum, String occupation, String GPname, String GPaddress)
         {
             try
             {
                 using (var context = new MyDBEntities())
                 {
-                    PayingPatient patient = new PayingPatient();
+                    
+                    Patient patient = patientFactory.GetPatientType(PatientTypes.Paying);
+                   
                     patient.firstName = firstName;
                     patient.lastName = lastName;
                     patient.DoB = DoB;
@@ -27,10 +32,11 @@ namespace Team29_Group_Project
                     patient.GPname = GPname;
                     patient.GPaddress = GPaddress;
                     patient.isFree = false;
-
+                   
 
                      context.Patients.Add(patient);
                      context.SaveChanges();
+                   
                 }
             }
             catch (Exception e)
@@ -45,11 +51,11 @@ namespace Team29_Group_Project
             {
                 using (var context = new MyDBEntities())
                 {
-                    IPatientType patientType = PatientFactory.Singleton.GetPatientType(PatientTypes.Free);
-                    patientType.GetDetails();
-                    
 
-                    FreePatient patient = new FreePatient();
+
+
+                    Patient patient = patientFactory.GetPatientType(PatientTypes.Free);
+                   
                     patient.firstName = firstName;
                     patient.lastName = lastName;
                     patient.DoB = DoB;

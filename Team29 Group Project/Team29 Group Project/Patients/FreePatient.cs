@@ -7,17 +7,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Team29_Group_Project
 {
-    class FreePatient : Patient, IPatientType
+    class FreePatient : Patient
     {
         public static double treatmentCost { get; set; } = 0;
-        void IPatientType.GetDetails()
-        {
-            Console.WriteLine("FREE PATIENT");
-        }
-        public IPatientType CreatePatient()
-        {
-            return new FreePatient();
-        }
+        
+      
 
     }
 }

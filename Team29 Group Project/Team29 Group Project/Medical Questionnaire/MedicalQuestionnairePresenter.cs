@@ -23,5 +23,21 @@ namespace Team29_Group_Project
         {
             view.setPatient(model.GetPatientName(patientID));
         }
+        public String GetMessage()
+        {
+            return model.Message();
+        }
+
+        public void ProcessNewAppointment()
+        {
+            String medicalConditions = view.GetMedicalConditions();
+            String medication = view.GetMedication();
+            String allergies = view.GetAllergies();
+            int patientID = Convert.ToInt32( view.GetPatientID());
+
+            model.AddQuestionnaire(patientID,medicalConditions, medication, allergies );
+            String result = model.Message();
+            
+        }
     }
 }

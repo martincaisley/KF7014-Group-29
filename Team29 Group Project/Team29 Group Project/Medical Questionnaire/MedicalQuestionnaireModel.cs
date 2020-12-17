@@ -8,6 +8,12 @@ namespace Team29_Group_Project
 {
     class MedicalQuestionnaireModel
     {
+        public string message;
+        public String Message()
+        {
+            
+            return message;
+        }
         public string GetPatientName(int patientID)
         {
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
@@ -31,8 +37,8 @@ namespace Team29_Group_Project
                                q.questionnaireID
                            };
             var questionnaires = appQuery.ToList();
-            var questionnaireID = questionnaires[0].questionnaireID;
-            int intQuestionnaireID = Int32.Parse(questionnaireID);
+            
+
 
             if (questionnaires.Count == 0)
             {
@@ -41,32 +47,26 @@ namespace Team29_Group_Project
                 questionnaire.medicalConditions = medicalConditions;
                 questionnaire.medication = medication;
                 questionnaire.allergies = allergies;
+                questionnaire.DateCompleted = DateTime.Today.Date;
 
                 unitOfWork.questionnaire.Add(questionnaire);
                 unitOfWork.Save();
+                message = "Medical record added successfully";
             }
             else
             {
-                MedicalQuestionnaire med = unitOfWork.questionnaire.GetByID(intQuestionnaireID);
+                var questionnaireID = questionnaires[0].questionnaireID;
+
+                MedicalQuestionnaire med = unitOfWork.questionnaire.GetByID(questionnaireID);
                 med.medicalConditions = medicalConditions;
                 med.medication = medication;
                 med.allergies = allergies;
+                med.DateCompleted = DateTime.Today.Date;
                 unitOfWork.Save();
+                message = "Medical record updated successfully";
             }
 
-            /*
-
-
-            MedicalQuestionnaire questionnaire = new MedicalQuestionnaire();
-            questionnaire.patientID = patientID;
-            questionnaire.medicalConditions = medicalConditions;
-            questionnaire.medication = medication;
-            questionnaire.allergies = allergies;
-
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
-            unitOfWork.questionnaire.Add(questionnaire);
-            unitOfWork.Save();
-            */
+         
         }
         
     }

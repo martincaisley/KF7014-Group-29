@@ -12,6 +12,7 @@ namespace Team29_Group_Project
 {
     public partial class MedicalQuestionnaireGUI : Form, IMedicalQuestionnaireGUI
     {
+        private string message;
         int patientID;
         private MedicalQuestionnairePresenter presenter;
        
@@ -32,7 +33,7 @@ namespace Team29_Group_Project
         public String GetAllergies()
         { return TXT_allergies.Text; }
         public String GetPatientID()
-        { return TXT_patient.Text; }
+        { return patientID.ToString(); }
         public void Register(MedicalQuestionnairePresenter MQP)
         {
             presenter = MQP;
@@ -43,8 +44,19 @@ namespace Team29_Group_Project
             TXT_patient.ReadOnly = true;
         }
 
-       
+        public String Message()
+        {
 
-       
+
+            return presenter.GetMessage();
+        }
+
+        private void BTN_submitQuestionnaire_Click(object sender, EventArgs e)
+        {
+            presenter.ProcessNewAppointment();
+            MessageBox.Show(Message());
+          
+            this.Close();
+        }
     }
 }

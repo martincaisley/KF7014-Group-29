@@ -100,12 +100,13 @@
             // 
             // BTN_submitQuestionnaire
             // 
-            this.BTN_submitQuestionnaire.Location = new System.Drawing.Point(279, 451);
+            this.BTN_submitQuestionnaire.Location = new System.Drawing.Point(167, 446);
             this.BTN_submitQuestionnaire.Name = "BTN_submitQuestionnaire";
             this.BTN_submitQuestionnaire.Size = new System.Drawing.Size(218, 65);
             this.BTN_submitQuestionnaire.TabIndex = 9;
             this.BTN_submitQuestionnaire.Text = "Submit";
             this.BTN_submitQuestionnaire.UseVisualStyleBackColor = true;
+            this.BTN_submitQuestionnaire.Click += new System.EventHandler(this.BTN_submitQuestionnaire_Click);
             // 
             // label1
             // 

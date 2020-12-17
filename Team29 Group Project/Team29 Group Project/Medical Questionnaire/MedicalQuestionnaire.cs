@@ -10,18 +10,16 @@ namespace Team29_Group_Project
    public class MedicalQuestionnaire
     {
         [Key]
-        public String questionnaireID { get; set; }
-        [Required]
+        public int questionnaireID { get; set; }
+       
         public String medicalConditions { get; set; }
-        [Required]
+       
         public String medication { get; set; }
-        [Required]
+       
         public String allergies { get; set; }
         [Required]
         public int patientID { get; set; }
         public DateTime DateCompleted { get; set; }
        
-        
-
     }
 }

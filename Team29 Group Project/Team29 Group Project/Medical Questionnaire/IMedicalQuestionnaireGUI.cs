@@ -13,7 +13,7 @@ namespace Team29_Group_Project
         String GetAllergies();
         String GetPatientID();
         void setPatient(string name);
-
+        String Message();
         void Register(MedicalQuestionnairePresenter MQP);
     }
 }

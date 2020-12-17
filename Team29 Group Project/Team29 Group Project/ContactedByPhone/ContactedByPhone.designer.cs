@@ -93,9 +93,9 @@ namespace Team29_Group_Project
             this.lbl_appStatus.Location = new System.Drawing.Point(9, 7);
             this.lbl_appStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_appStatus.Name = "lbl_appStatus";
-            this.lbl_appStatus.Size = new System.Drawing.Size(298, 37);
+            this.lbl_appStatus.Size = new System.Drawing.Size(254, 37);
             this.lbl_appStatus.TabIndex = 7;
-            this.lbl_appStatus.Text = "Appointment Status";
+            this.lbl_appStatus.Text = "Reminder Status";
             // 
             // lbl_appointmentDate
             // 

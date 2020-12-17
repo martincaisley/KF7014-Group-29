@@ -49,12 +49,13 @@ namespace Team29_Group_Project
             // 
             this.dgv_phoneReminders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_phoneReminders.Location = new System.Drawing.Point(15, 47);
-            this.dgv_phoneReminders.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_phoneReminders.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_phoneReminders.Name = "dgv_phoneReminders";
             this.dgv_phoneReminders.RowHeadersWidth = 51;
             this.dgv_phoneReminders.RowTemplate.Height = 24;
             this.dgv_phoneReminders.Size = new System.Drawing.Size(312, 299);
             this.dgv_phoneReminders.TabIndex = 1;
+            this.dgv_phoneReminders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phoneReminders_CellClick);
             this.dgv_phoneReminders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phoneReminders_CellContentClick);
             this.dgv_phoneReminders.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phoneReminders_CellContentDoubleClick);
             // 
@@ -65,7 +66,7 @@ namespace Team29_Group_Project
             this.ClientSize = new System.Drawing.Size(344, 366);
             this.Controls.Add(this.dgv_phoneReminders);
             this.Controls.Add(this.lbl_phoneReminders);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PhoneReminders";
             this.Text = "PhoneReminders";
             this.Load += new System.EventHandler(this.PhoneReminders_Load);

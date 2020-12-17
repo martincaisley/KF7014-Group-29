@@ -13,7 +13,7 @@ namespace Team29_Group_Project
         T GetByID(int id);
         IEnumerable<T> GetAll();
         void Remove(T entity);
-        void Save();
+        void Update(T entity);
     }
     public class Repository<T> : IRepository<T> where T : class
     {
@@ -44,9 +44,9 @@ namespace Team29_Group_Project
             context.Set<T>().Remove(entity);
         }
 
-        public void Save()
+        public void Update(T entity)
         {
-            context.SaveChanges();
+            context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
         }
     }
     /*public class AppointmentRepository : IRepository<Appointment>

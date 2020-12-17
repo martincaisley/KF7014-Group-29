@@ -43,6 +43,10 @@ namespace Team29_Group_Project
         {
             presenter.rowSelcted(Convert.ToInt32(dgv_phoneReminders.CurrentRow.Cells[0].Value.ToString()));
         }
+        private void dgv_phoneReminders_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            presenter.rowSelcted(Convert.ToInt32(dgv_phoneReminders.CurrentRow.Cells[0].Value.ToString()));
+        }
         public void viewChosenReminder(int appointmentID)
         {
             ContactedByPhone contactedByPhone = new ContactedByPhone(appointmentID);
@@ -57,5 +61,6 @@ namespace Team29_Group_Project
         {
             presenter = PRP;
         }
+
     }
 }

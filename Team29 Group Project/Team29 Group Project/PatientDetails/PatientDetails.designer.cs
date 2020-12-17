@@ -79,7 +79,7 @@ namespace Team29_Group_Project
             this.btn_editDetails.Name = "btn_editDetails";
             this.btn_editDetails.Size = new System.Drawing.Size(98, 50);
             this.btn_editDetails.TabIndex = 3;
-            this.btn_editDetails.Text = "Edit Details";
+            this.btn_editDetails.Text = "Edit Patient Details";
             this.btn_editDetails.UseVisualStyleBackColor = true;
             // 
             // btn_messages
@@ -92,7 +92,7 @@ namespace Team29_Group_Project
             this.btn_messages.Name = "btn_messages";
             this.btn_messages.Size = new System.Drawing.Size(98, 50);
             this.btn_messages.TabIndex = 4;
-            this.btn_messages.Text = "Messages";
+            this.btn_messages.Text = "Attention -  User missed previous appointment";
             this.btn_messages.UseVisualStyleBackColor = false;
             this.btn_messages.Click += new System.EventHandler(this.btn_messages_Click_1);
             // 
@@ -103,7 +103,7 @@ namespace Team29_Group_Project
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(98, 50);
             this.btn_delete.TabIndex = 5;
-            this.btn_delete.Text = "Delete";
+            this.btn_delete.Text = "Delete Appointment";
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 

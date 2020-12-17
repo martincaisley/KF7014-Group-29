@@ -36,14 +36,10 @@ namespace Team29_Group_Project
         
         public void setToContacted(int appointmentID)
         {
-            using (var context = new MyDBEntities())
-            {
-                //https://stackoverflow.com/questions/20832684/update-records-using-linq
-                (from a in context.Appointments
-                 where a.appointmentID == appointmentID
-                 select a).ToList().ForEach(x => x.contacted = "Yes");
-                context.SaveChanges();
-            }
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            Appointment a = unitOfWork.appointment.GetByID(appointmentID);
+            a.contacted = "Yes";
+            unitOfWork.Save();
         }
     }
 }

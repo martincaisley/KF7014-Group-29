@@ -93,10 +93,7 @@ namespace Team29_Group_Project
             presenter = PRP;
         }
 
-        private void BTN_medQuestionnaire_Click(object sender, EventArgs e)
-        {
-            presenter.BTN_medQuestionnaire_event();
-        }
+       
 
         private void BTN_addPatient_MouseClick(object sender, MouseEventArgs e)
         {

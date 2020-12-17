@@ -19,7 +19,9 @@ namespace Team29_Group_Project
         public String allergies { get; set; }
         [Required]
         public String patientID { get; set; }
+        public DateTime DateCompleted { get; set; }
        
-         
+        
+
     }
 }

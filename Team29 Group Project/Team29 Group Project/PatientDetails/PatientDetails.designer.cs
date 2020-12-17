@@ -32,7 +32,7 @@ namespace Team29_Group_Project
             this.lbl_name = new System.Windows.Forms.Label();
             this.dgv_patientAppointments = new System.Windows.Forms.DataGridView();
             this.btn_newAppointment = new System.Windows.Forms.Button();
-            this.btn_editDetails = new System.Windows.Forms.Button();
+            this.BTN_medicalQuestionnaire = new System.Windows.Forms.Button();
             this.btn_messages = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.lbl_noAppointments = new System.Windows.Forms.Label();
@@ -72,22 +72,23 @@ namespace Team29_Group_Project
             this.btn_newAppointment.UseVisualStyleBackColor = true;
             this.btn_newAppointment.Click += new System.EventHandler(this.btn_newAppointment_Click);
             // 
-            // btn_editDetails
+            // BTN_medicalQuestionnaire
             // 
-            this.btn_editDetails.Location = new System.Drawing.Point(289, 113);
-            this.btn_editDetails.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_editDetails.Name = "btn_editDetails";
-            this.btn_editDetails.Size = new System.Drawing.Size(98, 50);
-            this.btn_editDetails.TabIndex = 3;
-            this.btn_editDetails.Text = "Edit Patient Details";
-            this.btn_editDetails.UseVisualStyleBackColor = true;
+            this.BTN_medicalQuestionnaire.Location = new System.Drawing.Point(289, 121);
+            this.BTN_medicalQuestionnaire.Margin = new System.Windows.Forms.Padding(2);
+            this.BTN_medicalQuestionnaire.Name = "BTN_medicalQuestionnaire";
+            this.BTN_medicalQuestionnaire.Size = new System.Drawing.Size(98, 50);
+            this.BTN_medicalQuestionnaire.TabIndex = 3;
+            this.BTN_medicalQuestionnaire.Text = "Medical Record";
+            this.BTN_medicalQuestionnaire.UseVisualStyleBackColor = true;
+            this.BTN_medicalQuestionnaire.Click += new System.EventHandler(this.BTN_medicalQuestionnaire_Click);
             // 
             // btn_messages
             // 
             this.btn_messages.BackColor = System.Drawing.Color.Red;
             this.btn_messages.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_messages.ForeColor = System.Drawing.Color.White;
-            this.btn_messages.Location = new System.Drawing.Point(289, 296);
+            this.btn_messages.Location = new System.Drawing.Point(292, 296);
             this.btn_messages.Margin = new System.Windows.Forms.Padding(2);
             this.btn_messages.Name = "btn_messages";
             this.btn_messages.Size = new System.Drawing.Size(98, 50);
@@ -98,7 +99,7 @@ namespace Team29_Group_Project
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(289, 177);
+            this.btn_delete.Location = new System.Drawing.Point(289, 188);
             this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(98, 50);
@@ -121,11 +122,11 @@ namespace Team29_Group_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 366);
+            this.ClientSize = new System.Drawing.Size(401, 373);
             this.Controls.Add(this.lbl_noAppointments);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_messages);
-            this.Controls.Add(this.btn_editDetails);
+            this.Controls.Add(this.BTN_medicalQuestionnaire);
             this.Controls.Add(this.btn_newAppointment);
             this.Controls.Add(this.dgv_patientAppointments);
             this.Controls.Add(this.lbl_name);
@@ -144,7 +145,7 @@ namespace Team29_Group_Project
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.DataGridView dgv_patientAppointments;
         private System.Windows.Forms.Button btn_newAppointment;
-        private System.Windows.Forms.Button btn_editDetails;
+        private System.Windows.Forms.Button BTN_medicalQuestionnaire;
         private System.Windows.Forms.Button btn_messages;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Label lbl_noAppointments;

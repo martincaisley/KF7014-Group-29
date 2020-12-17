@@ -19,12 +19,7 @@ namespace Team29_Group_Project
             
         }
 
-        public void BTN_medQuestionnaire_event()
-        {
-            MedicalQuestionnaireGUI med = new MedicalQuestionnaireGUI();
-            med.Show();
-        }
-
+  
        
 
         public void ProcessNewPatient()

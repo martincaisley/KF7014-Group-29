@@ -142,6 +142,7 @@
             this.Controls.Add(this.LBL_medTitle);
             this.Name = "MedicalQuestionnaireGUI";
             this.Text = "MedicalQuestionnaireGUI";
+            this.Load += new System.EventHandler(this.MedicalQuestionnaireGUI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

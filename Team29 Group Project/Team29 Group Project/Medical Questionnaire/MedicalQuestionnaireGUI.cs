@@ -18,7 +18,19 @@ namespace Team29_Group_Project
         {
             InitializeComponent();
         }
+        private void MedicalQuestionnaireGUI_Load(object sender, EventArgs e)
+        {
+            SetDropBox();
+        }
 
+        public String GetMedicalConditions()
+        { return TXT_medicalConditions.Text; }
+        public String GetMedication()
+        { return TXT_medication.Text; }
+        public String GetAllergies()
+        { return TXT_allergies.Text; }
+        public String GetPatientID()
+        { return CMB_patients.SelectedItem.ToString(); }
         public void Register(MedicalQuestionnairePresenter MQP)
         {
             presenter = MQP;
@@ -29,6 +41,6 @@ namespace Team29_Group_Project
             CMB_patients.DataSource = presenter.getPatientList();
         }
 
-
+       
     }
 }

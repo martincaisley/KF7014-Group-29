@@ -48,7 +48,12 @@ namespace Team29_Group_Project
             detailsModel.deleteEntry(appointmentID);
         }
 
-
+        public void ShowMedicalQuestionnaire()
+        {
+            MedicalQuestionnaireGUI med = new MedicalQuestionnaireGUI();
+            MedicalQuestionnairePresenter MQP = new MedicalQuestionnairePresenter(med);
+            med.Show();
+        }
 
     }
 }

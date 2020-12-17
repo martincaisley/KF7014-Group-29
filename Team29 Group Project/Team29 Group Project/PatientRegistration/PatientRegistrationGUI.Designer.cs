@@ -47,7 +47,6 @@
             this.TXT_sname = new System.Windows.Forms.TextBox();
             this.TXT_address = new System.Windows.Forms.TextBox();
             this.TXT_email = new System.Windows.Forms.TextBox();
-            this.BTN_medQuestionnaire = new System.Windows.Forms.Button();
             this.LBL_GPname = new System.Windows.Forms.Label();
             this.LBL_GPaddress = new System.Windows.Forms.Label();
             this.TXT_GPname = new System.Windows.Forms.TextBox();
@@ -245,16 +244,6 @@
             this.TXT_email.Size = new System.Drawing.Size(149, 20);
             this.TXT_email.TabIndex = 12;
             // 
-            // BTN_medQuestionnaire
-            // 
-            this.BTN_medQuestionnaire.Location = new System.Drawing.Point(296, 638);
-            this.BTN_medQuestionnaire.Name = "BTN_medQuestionnaire";
-            this.BTN_medQuestionnaire.Size = new System.Drawing.Size(158, 54);
-            this.BTN_medQuestionnaire.TabIndex = 15;
-            this.BTN_medQuestionnaire.Text = "Medical Questionnaire";
-            this.BTN_medQuestionnaire.UseVisualStyleBackColor = true;
-            this.BTN_medQuestionnaire.Click += new System.EventHandler(this.BTN_medQuestionnaire_Click);
-            // 
             // LBL_GPname
             // 
             this.LBL_GPname.AutoSize = true;
@@ -291,7 +280,7 @@
             // 
             // BTN_addPatient
             // 
-            this.BTN_addPatient.Location = new System.Drawing.Point(296, 555);
+            this.BTN_addPatient.Location = new System.Drawing.Point(187, 683);
             this.BTN_addPatient.Name = "BTN_addPatient";
             this.BTN_addPatient.Size = new System.Drawing.Size(158, 54);
             this.BTN_addPatient.TabIndex = 20;
@@ -347,7 +336,6 @@
             this.Controls.Add(this.TXT_GPname);
             this.Controls.Add(this.LBL_GPaddress);
             this.Controls.Add(this.LBL_GPname);
-            this.Controls.Add(this.BTN_medQuestionnaire);
             this.Controls.Add(this.TXT_email);
             this.Controls.Add(this.TXT_address);
             this.Controls.Add(this.TXT_sname);
@@ -392,7 +380,6 @@
         private System.Windows.Forms.TextBox TXT_sname;
         private System.Windows.Forms.TextBox TXT_address;
         private System.Windows.Forms.TextBox TXT_email;
-        private System.Windows.Forms.Button BTN_medQuestionnaire;
         private System.Windows.Forms.Label LBL_GPname;
         private System.Windows.Forms.Label LBL_GPaddress;
         private System.Windows.Forms.TextBox TXT_GPname;

@@ -116,5 +116,10 @@ namespace Team29_Group_Project
             }
             presenter.showDetails(patientID);
         }
+
+        private void BTN_medicalQuestionnaire_Click(object sender, EventArgs e)
+        {
+            presenter.ShowMedicalQuestionnaire();
+        }
     }
 }

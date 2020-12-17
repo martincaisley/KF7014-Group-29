@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppointmentBandsTest.cs" />
+    <Compile Include="NewAppointmentModelTest.cs" />
+    <Compile Include="NewAppointmentMVPTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AppointmentFactoryTests.cs" />
   </ItemGroup>

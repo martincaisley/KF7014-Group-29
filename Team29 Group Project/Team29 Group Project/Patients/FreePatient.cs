@@ -18,7 +18,7 @@ namespace Team29_Group_Project
             }
             set
             {
-                isFree = value;
+                //isFree = value;
             }
         }
 

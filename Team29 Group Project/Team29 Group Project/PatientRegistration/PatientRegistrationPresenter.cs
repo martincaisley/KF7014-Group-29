@@ -33,7 +33,7 @@ namespace Team29_Group_Project
             String occupation = form.GetOccupation();
             String GPname = form.GetGPname();
             String GPaddress = form.GetGPaddress();
-            /*
+            
             string type;
             if (form.GetPaymentType())
             {
@@ -43,9 +43,9 @@ namespace Team29_Group_Project
             {
                 type = "Paying"; 
             }
-            //model.AddPatient(firstName, surname, DoB, address, email, phoneNum, occupation, GPname, GPaddress,type);
+            model.AddPatient(firstName, surname, DoB, address, email, phoneNum, occupation, GPname, GPaddress,type);
 
-            */
+            /*
             if (form.GetPaymentType())
             {
                 model.AddFreePatient(firstName, surname, DoB, address, email, phoneNum, occupation, GPname, GPaddress);
@@ -58,7 +58,7 @@ namespace Team29_Group_Project
             else
             {
                 Console.WriteLine("An error has occured, please try again");
-            }
+            }*/
 
 
         }

@@ -12,6 +12,7 @@ namespace Team29_Group_Project
     {
         PatientFactory patientFactory = new PatientFactory();
         
+        /*
         public void AddPayingPatient(String firstName, String lastName, DateTime DoB, String address, String email, String phoneNum, String occupation, String GPname, String GPaddress)
         {
             try
@@ -38,7 +39,7 @@ namespace Team29_Group_Project
             }
 
         }
-        /*
+        */
         public void AddPatient(String firstName, String lastName, DateTime DoB, String address, String email, String phoneNum, String occupation, String GPname, String GPaddress, string type)
         {
             PatientTypes patientTypes = (PatientTypes)Enum.Parse(typeof(PatientTypes), type);
@@ -57,7 +58,7 @@ namespace Team29_Group_Project
             unitOfWork.patient.Add(patient);
             unitOfWork.Save();
         }
-        */
+        /*
         public void AddFreePatient(String firstName, String lastName, DateTime DoB, String address, String email, String phoneNum, String occupation, String GPname, String GPaddress)
         {
             try
@@ -84,6 +85,7 @@ namespace Team29_Group_Project
                 Console.WriteLine("New Exception" + e.Message);
             }
         }
+        */
     }
 
 }

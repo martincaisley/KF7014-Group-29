@@ -89,7 +89,7 @@ namespace Team29_Group_Project
         {
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             Appointment a = unitOfWork.appointment.GetByID(appointmentID);
-            a.contacted = value;
+            a.arrivedToAppointment = value;
             unitOfWork.Save();
         }
 

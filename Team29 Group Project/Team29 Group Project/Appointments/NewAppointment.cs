@@ -124,8 +124,8 @@ namespace Team29_Group_Project
                 {
                     appType = RadioButton.Text;   
                 }
-                presenter.setAppType(appType);
             }
+            presenter.setAppType(appType);
         }
 
         private bool AppTypeValidation()

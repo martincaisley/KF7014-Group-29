@@ -86,7 +86,7 @@ namespace Team29_Group_Project
             TXT_phoneNum.Clear();
             TXT_GPname.Clear();
             TXT_GPaddress.Clear();
-            TXT_age.Clear();
+            TXT_age.Text = "0";
         }
         public void Register(PatientRegistrationPresenter PRP)
         {

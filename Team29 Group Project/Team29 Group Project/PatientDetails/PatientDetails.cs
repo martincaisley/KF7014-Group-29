@@ -107,7 +107,6 @@ namespace Team29_Group_Project
             try 
             {
                 presenter.deleteRow((int)dgv_patientAppointments.SelectedCells[0].OwningRow.Cells[2].Value);
-                MessageBox.Show("Appointment Deleted");
                 presenter.showPatientDetails(patientID);
             }
             catch (Exception f)

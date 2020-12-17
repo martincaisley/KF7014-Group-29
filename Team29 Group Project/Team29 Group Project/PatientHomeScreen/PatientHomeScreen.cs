@@ -83,7 +83,6 @@ namespace Team29_Group_Project
             if (selection == DialogResult.Yes)
             {
                 presenter.deleteRow((int)dgv_patientList.SelectedCells[0].OwningRow.Cells[0].Value);
-                MessageBox.Show("Patient Deleted");
                 presenter.processPatients();
             }
         }

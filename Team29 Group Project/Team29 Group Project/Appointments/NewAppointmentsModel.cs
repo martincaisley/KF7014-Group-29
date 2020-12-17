@@ -25,7 +25,6 @@ namespace Team29_Group_Project
                 UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
                 bool patientType = unitOfWork.patient.GetByID(patientID).isFree;
 
-
                 AppointmentFactory factory = new AppointmentFactory();
                 AppointmentCost appointmentCosts = (AppointmentCost)Enum.Parse(typeof(AppointmentCost), appointmentBand);
                 Appointment a = factory.GetAppointmentCost(appointmentCosts);
@@ -49,7 +48,7 @@ namespace Team29_Group_Project
             }
             catch (Exception f)
             {
-                Console.WriteLine("New aPp Exception" + f.Message);
+                Console.WriteLine("New app Exception" + f.Message);
             }
 
         }
@@ -129,8 +128,6 @@ namespace Team29_Group_Project
                            join p in patient.AsEnumerable()
                            on a.patientID equals p.PatientID
                            where a.appointmentDate == date && ((a.appointmentStartTime <= startTime && a.appointmentEndTime > startTime) || (a.appointmentStartTime > startTime && a.appointmentStartTime < endTime))
-
-
                            select new
                            {
                                a.appointmentDate,

@@ -19,6 +19,44 @@ namespace Team29_Group_Project
 
         public void AddQuestionnaire(int patientID, String medicalConditions, String medication, String allergies )
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            MedicalQuestionnaire mq = unitOfWork.questionnaire.GetByID(patientID);
+
+            var quetionnaire = unitOfWork.questionnaire.GetAll();
+
+            var appQuery = from q in quetionnaire.AsEnumerable()
+                           where q.patientID == patientID 
+                           select new
+                           {
+                               q.questionnaireID
+                           };
+            var questionnaires = appQuery.ToList();
+            var questionnaireID = questionnaires[0].questionnaireID;
+            int intQuestionnaireID = Int32.Parse(questionnaireID);
+
+            if (questionnaires.Count == 0)
+            {
+                MedicalQuestionnaire questionnaire = new MedicalQuestionnaire();
+                questionnaire.patientID = patientID;
+                questionnaire.medicalConditions = medicalConditions;
+                questionnaire.medication = medication;
+                questionnaire.allergies = allergies;
+
+                unitOfWork.questionnaire.Add(questionnaire);
+                unitOfWork.Save();
+            }
+            else
+            {
+                MedicalQuestionnaire med = unitOfWork.questionnaire.GetByID(intQuestionnaireID);
+                med.medicalConditions = medicalConditions;
+                med.medication = medication;
+                med.allergies = allergies;
+                unitOfWork.Save();
+            }
+
+            /*
+
+
             MedicalQuestionnaire questionnaire = new MedicalQuestionnaire();
             questionnaire.patientID = patientID;
             questionnaire.medicalConditions = medicalConditions;
@@ -28,6 +66,7 @@ namespace Team29_Group_Project
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             unitOfWork.questionnaire.Add(questionnaire);
             unitOfWork.Save();
+            */
         }
         
     }

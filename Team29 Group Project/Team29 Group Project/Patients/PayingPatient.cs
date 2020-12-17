@@ -9,7 +9,18 @@ namespace Team29_Group_Project
 {
     class PayingPatient : Patient
     {
-        
-       
+        private bool free = false;
+        public override bool isFree
+        {
+            get
+            {
+                return free;
+            }
+            set
+            {
+                //isFree = value;
+            }
+        }
+
     }
 }

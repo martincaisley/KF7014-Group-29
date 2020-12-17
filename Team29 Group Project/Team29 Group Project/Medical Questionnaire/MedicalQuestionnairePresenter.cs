@@ -19,8 +19,6 @@ namespace Team29_Group_Project
 
         }
 
-        
-
         public void GetPatientName(int patientID)
         {
             view.setPatient(model.GetPatientName(patientID));

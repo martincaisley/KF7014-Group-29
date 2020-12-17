@@ -9,9 +9,19 @@ namespace Team29_Group_Project
 {
     class FreePatient : Patient
     {
-        public static double treatmentCost { get; set; } = 0;
-        
-      
+        private bool free = true;
+        public override bool isFree 
+        {
+            get
+            {
+                return free;
+            }
+            set
+            {
+                isFree = value;
+            }
+        }
+
 
     }
 }

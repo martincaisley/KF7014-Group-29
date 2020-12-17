@@ -83,17 +83,33 @@ namespace Team29_Group_Project
 
         public bool checkRemoved(int patientID)
         {
-            MessagesModel messages = new MessagesModel();
-            bool remove = messages.checkForRepeatOffence(patientID);
-
-            if (remove == true)
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var appointments = unitOfWork.appointment.GetAll();
+            try
             {
-                return true;
+                var repeatAppQuery = from a in appointments.AsEnumerable()
+                                     where a.patientID == patientID && a.arrivedToAppointment == "Invalid" && a.appointmentDate >= DateTime.Today.AddYears(-3)
+                                     group a by a.patientID into grouped
+                                     select new
+                                     {
+                                         count = grouped.Count()
+                                     };
+                var offences = repeatAppQuery.ToList();
+                int numberOfOffences = offences[0].count;
+                if (numberOfOffences >= 3)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
+            catch (Exception e)
             {
-                return false;
+                Console.WriteLine("No offences to show " + e.Message);
             }
+            return false;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    class Band2Appointment: Appointment
+    public class Band2Appointment: Appointment
     {
         private double cost = 122.70;
         public override double appointmmentCost

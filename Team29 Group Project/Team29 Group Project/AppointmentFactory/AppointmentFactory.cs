@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    enum AppointmentCost
+    public enum AppointmentCost
     {
         Band1 = 1,
         Band2 = 2,
         Band3 = 3
     }
-    class AppointmentFactory
+    public class AppointmentFactory
     {
         public Appointment GetAppointmentCost(AppointmentCost appointmentCost)
         {

@@ -17,6 +17,11 @@ namespace Team29_Group_Project
             detailsScreen.Register(this);
             detailsModel = new PatientDetailsModel();
         }
+
+        public PatientDetailsPresenter()
+        {
+        }
+
         public void showDetails(int patientID)
         {
             bool toRemove = detailsModel.checkRemoved(patientID);

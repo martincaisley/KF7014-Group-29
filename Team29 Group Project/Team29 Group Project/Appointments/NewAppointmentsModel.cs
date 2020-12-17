@@ -7,7 +7,7 @@ using System.Data;
 
 namespace Team29_Group_Project
 {
-    class NewAppointmentsModel
+    public class NewAppointmentsModel
     {
         public string GetPatientName(int patientID)
         {

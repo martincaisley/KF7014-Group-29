@@ -21,7 +21,10 @@ namespace Team29_Group_Project
             showAppointmentList(Date);
             
         }
-               
+
+        public NewAppointmentsPresenter()
+        {
+        }
 
         public void processAppointment()
         {

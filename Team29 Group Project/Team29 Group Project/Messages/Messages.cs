@@ -58,10 +58,7 @@ namespace Team29_Group_Project
             {
                 MessageBox.Show("Patient needs to be removed");
             }
-            else
-            {
-                this.Close();
-            }
+            this.Close();
 
         }
 

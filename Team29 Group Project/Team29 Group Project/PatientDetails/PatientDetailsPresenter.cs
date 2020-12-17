@@ -19,8 +19,15 @@ namespace Team29_Group_Project
         }
         public void showDetails(int patientID)
         {
-            detailsScreen.setLabel(detailsModel.getName(patientID));
-            
+            bool toRemove = detailsModel.checkRemoved(patientID);
+            if (toRemove == true)
+            {
+                detailsScreen.setLabelToBeRemoved(detailsModel.getName(patientID));
+            }
+            else
+            {
+                detailsScreen.setLabel(detailsModel.getName(patientID));
+            }            
         }
         public void showPatientDetails(int patientID)
         {

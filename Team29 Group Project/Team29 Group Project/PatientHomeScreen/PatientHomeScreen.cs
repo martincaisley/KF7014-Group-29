@@ -82,7 +82,7 @@ namespace Team29_Group_Project
             var selection = MessageBox.Show("Are you sure you want to delete this patient?", "Confirmation", MessageBoxButtons.YesNo);
             if (selection == DialogResult.Yes)
             {
-                presenter.deleteRow((int)dgv_patientList.SelectedRows[0].Cells[0].Value);
+                presenter.deleteRow((int)dgv_patientList.SelectedCells[0].OwningRow.Cells[0].Value);
                 MessageBox.Show("Patient Deleted");
                 presenter.processPatients();
             }

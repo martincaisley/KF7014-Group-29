@@ -80,5 +80,20 @@ namespace Team29_Group_Project
                 return true;
             }
         }
+
+        public bool checkRemoved(int patientID)
+        {
+            MessagesModel messages = new MessagesModel();
+            bool remove = messages.checkForRepeatOffence(patientID);
+
+            if (remove == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

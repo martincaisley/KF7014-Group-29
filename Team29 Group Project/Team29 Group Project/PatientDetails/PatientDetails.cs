@@ -37,6 +37,13 @@ namespace Team29_Group_Project
         public void setLabel(string patientName)
         {
             lbl_name.Text = patientName;
+            lbl_name.ForeColor = System.Drawing.Color.Black;
+        }
+
+        public void setLabelToBeRemoved(string patientName)
+        {
+            lbl_name.Text = patientName + " - To be removed";
+            lbl_name.ForeColor = System.Drawing.Color.Red;
         }
 
         public void setDGV(DataTable dt)
@@ -85,6 +92,7 @@ namespace Team29_Group_Project
             {
                 btn_messages.Show();
             }
+            presenter.showDetails(patientID);
             this.Show();
         }
 
@@ -95,13 +103,18 @@ namespace Team29_Group_Project
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            var selection = MessageBox.Show("Are you sure you want to delete this patient?", "Confirmation", MessageBoxButtons.YesNo);
-            if (selection == DialogResult.Yes)
+            var selection = MessageBox.Show("Are you sure you want to delete this appointment?", "Confirmation", MessageBoxButtons.YesNo);
+            try 
             {
-                presenter.deleteRow((int)dgv_patientAppointments.SelectedRows[0].Cells[2].Value);
+                presenter.deleteRow((int)dgv_patientAppointments.SelectedCells[0].OwningRow.Cells[2].Value);
                 MessageBox.Show("Appointment Deleted");
                 presenter.showPatientDetails(patientID);
             }
+            catch (Exception f)
+            {
+                Console.WriteLine("No row selected " + f.Message);
+            }
+            presenter.showDetails(patientID);
         }
     }
 }

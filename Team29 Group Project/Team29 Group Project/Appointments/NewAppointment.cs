@@ -89,24 +89,27 @@ namespace Team29_Group_Project
         }
         private void btn_addAppointment_Click(object sender, EventArgs e)
         {
-            bool emergencyAppointment = presenter.checkEmergency(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
-            if (emergencyAppointment == true)
+            if (AppTypeValidation())
             {
-                bool canBook = presenter.checkTime(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
-                if (canBook == false)
+                bool emergencyAppointment = presenter.checkEmergency(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
+                if (emergencyAppointment == true)
                 {
-                    MessageBox.Show("Appointment already booked for this time");
+                    bool canBook = presenter.checkTime(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
+                    if (canBook == false)
+                    {
+                        MessageBox.Show("Appointment already booked for this time");
+                    }
+                    else
+                    {
+                        presenter.processAppointment();
+                        MessageBox.Show("Appointment Added");
+                        this.Close();
+                    }
                 }
                 else
                 {
-                    presenter.processAppointment();
-                    MessageBox.Show("Appointment Added");
-                    this.Close();
+                    MessageBox.Show("These times are reserved");
                 }
-            }
-            else
-            {
-                MessageBox.Show("These times are reserved");
             }
         }
 
@@ -119,11 +122,23 @@ namespace Team29_Group_Project
             {
                 if (RadioButton.Checked)
                 {
-                    appType = RadioButton.Text;
+                    appType = RadioButton.Text;   
+                }
+                presenter.setAppType(appType);
+            }
+        }
+
+        private bool AppTypeValidation()
+        {
+            foreach (var RadioButton in AppointmentBox.Controls.OfType<RadioButton>())
+            {
+                if (RadioButton.Checked)
+                {
+                    return true;
                 }
             }
-            presenter.setAppType(appType);
-
+            MessageBox.Show("An appointment type has not been chosen.");
+            return false;
         }
         #endregion
 

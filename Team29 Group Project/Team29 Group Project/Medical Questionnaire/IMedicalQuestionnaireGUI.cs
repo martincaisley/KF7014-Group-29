@@ -12,7 +12,8 @@ namespace Team29_Group_Project
         String GetMedication();
         String GetAllergies();
         String GetPatientID();
+        void setPatient(string name);
 
-       void Register(MedicalQuestionnairePresenter MQP);
+        void Register(MedicalQuestionnairePresenter MQP);
     }
 }

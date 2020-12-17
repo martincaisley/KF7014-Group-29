@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Team29_Group_Project
 {
-    class MedicalQuestionnaire
+   public class MedicalQuestionnaire
     {
         [Key]
         public String questionnaireID { get; set; }
@@ -18,7 +18,7 @@ namespace Team29_Group_Project
         [Required]
         public String allergies { get; set; }
         [Required]
-        public String patientID { get; set; }
+        public int patientID { get; set; }
         public DateTime DateCompleted { get; set; }
        
         

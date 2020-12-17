@@ -19,9 +19,11 @@ namespace Team29_Group_Project
 
         }
 
-        public String[] getPatientList()
+        
+
+        public void GetPatientName(int patientID)
         {
-            return model.getPatientNames();
+            view.setPatient(model.GetPatientName(patientID));
         }
     }
 }

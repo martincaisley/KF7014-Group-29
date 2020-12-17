@@ -10,12 +10,14 @@ namespace Team29_Group_Project
     {
         Repository<Appointment> appointment { get; }
         Repository<Patient> patient { get; }
+        Repository<MedicalQuestionnaire> questionnaire { get; }
         void Save();
     }
     class UnitOfWork : IUnitOfWork
     {
         private Repository<Appointment> _appointments;
         private Repository<Patient> _patients;
+        private Repository<MedicalQuestionnaire> _questionnaire;
         private MyDBEntities context;
 
         public UnitOfWork (MyDBEntities context)
@@ -32,6 +34,18 @@ namespace Team29_Group_Project
                     _appointments = new Repository<Appointment>(context);
                 }
                 return _appointments;
+            }
+        }
+
+        public Repository<MedicalQuestionnaire> questionnaire
+        {
+            get
+            {
+                if (_questionnaire == null)
+                {
+                    _questionnaire = new Repository<MedicalQuestionnaire>(context);
+                }
+                return _questionnaire;
             }
         }
         public Repository<Patient> patient 

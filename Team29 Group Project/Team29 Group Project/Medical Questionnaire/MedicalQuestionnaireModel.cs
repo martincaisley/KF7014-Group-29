@@ -8,17 +8,29 @@ namespace Team29_Group_Project
 {
     class MedicalQuestionnaireModel
     {
-        public String[] getPatientNames()
-        { 
-                using(var context = new MyDBEntities())
-                {
-                    var patientNames = context.Patients.Select(x => x.firstName).ToArray();
+        public string GetPatientName(int patientID)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var UOW = unitOfWork.patient.GetByID(patientID);
+            string patientName = UOW.firstName + " " + UOW.lastName;
 
-                    return patientNames;
-
-
-                }
-             
+            return patientName;
         }
+
+        public void AddQuestionnaire(int patientID, String medicalConditions, String medication, String allergies )
+        {
+            MedicalQuestionnaire questionnaire = new MedicalQuestionnaire();
+            questionnaire.patientID = patientID;
+            questionnaire.medicalConditions = medicalConditions;
+            questionnaire.medication = medication;
+            questionnaire.allergies = allergies;
+
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            unitOfWork.questionnaire.Add(questionnaire);
+            unitOfWork.Save();
+        }
+        
     }
+       
 }
+

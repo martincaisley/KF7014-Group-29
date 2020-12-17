@@ -37,7 +37,7 @@
             this.TXT_allergies = new System.Windows.Forms.TextBox();
             this.BTN_submitQuestionnaire = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.CMB_patients = new System.Windows.Forms.ComboBox();
+            this.TXT_patient = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // LBL_medTitle
@@ -117,20 +117,19 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Patient ";
             // 
-            // CMB_patients
+            // TXT_patient
             // 
-            this.CMB_patients.FormattingEnabled = true;
-            this.CMB_patients.Location = new System.Drawing.Point(391, 157);
-            this.CMB_patients.Name = "CMB_patients";
-            this.CMB_patients.Size = new System.Drawing.Size(119, 21);
-            this.CMB_patients.TabIndex = 11;
+            this.TXT_patient.Location = new System.Drawing.Point(388, 149);
+            this.TXT_patient.Name = "TXT_patient";
+            this.TXT_patient.Size = new System.Drawing.Size(120, 20);
+            this.TXT_patient.TabIndex = 11;
             // 
             // MedicalQuestionnaireGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(566, 541);
-            this.Controls.Add(this.CMB_patients);
+            this.Controls.Add(this.TXT_patient);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BTN_submitQuestionnaire);
             this.Controls.Add(this.TXT_allergies);
@@ -159,6 +158,6 @@
         private System.Windows.Forms.TextBox TXT_allergies;
         private System.Windows.Forms.Button BTN_submitQuestionnaire;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CMB_patients;
+        private System.Windows.Forms.TextBox TXT_patient;
     }
 }

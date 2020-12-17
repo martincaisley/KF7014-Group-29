@@ -12,15 +12,17 @@ namespace Team29_Group_Project
 {
     public partial class MedicalQuestionnaireGUI : Form, IMedicalQuestionnaireGUI
     {
+        int patientID;
         private MedicalQuestionnairePresenter presenter;
        
-        public MedicalQuestionnaireGUI()
+        public MedicalQuestionnaireGUI(int patientID)
         {
+            this.patientID = patientID;
             InitializeComponent();
         }
         private void MedicalQuestionnaireGUI_Load(object sender, EventArgs e)
         {
-            SetDropBox();
+            presenter.GetPatientName(patientID);
         }
 
         public String GetMedicalConditions()
@@ -30,16 +32,18 @@ namespace Team29_Group_Project
         public String GetAllergies()
         { return TXT_allergies.Text; }
         public String GetPatientID()
-        { return CMB_patients.SelectedItem.ToString(); }
+        { return TXT_patient.Text; }
         public void Register(MedicalQuestionnairePresenter MQP)
         {
             presenter = MQP;
         }
-
-        public void SetDropBox()
+        public void setPatient(string name)
         {
-            CMB_patients.DataSource = presenter.getPatientList();
+            TXT_patient.Text = name;
+            TXT_patient.ReadOnly = true;
         }
+
+       
 
        
     }

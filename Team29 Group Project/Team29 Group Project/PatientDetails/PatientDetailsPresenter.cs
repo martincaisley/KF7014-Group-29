@@ -48,9 +48,9 @@ namespace Team29_Group_Project
             detailsModel.deleteEntry(appointmentID);
         }
 
-        public void ShowMedicalQuestionnaire()
+        public void ShowMedicalQuestionnaire(int patientID)
         {
-            MedicalQuestionnaireGUI med = new MedicalQuestionnaireGUI();
+            MedicalQuestionnaireGUI med = new MedicalQuestionnaireGUI(patientID);
             MedicalQuestionnairePresenter MQP = new MedicalQuestionnairePresenter(med);
             med.Show();
         }

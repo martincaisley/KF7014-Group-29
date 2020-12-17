@@ -119,7 +119,8 @@ namespace Team29_Group_Project
 
         private void BTN_medicalQuestionnaire_Click(object sender, EventArgs e)
         {
-            presenter.ShowMedicalQuestionnaire();
+            presenter.ShowMedicalQuestionnaire(patientID);
+            this.Hide();
         }
     }
 }

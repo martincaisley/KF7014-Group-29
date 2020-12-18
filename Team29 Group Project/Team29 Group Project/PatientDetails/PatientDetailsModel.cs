@@ -92,9 +92,16 @@ namespace Team29_Group_Project
                                      {
                                          q.questionnaireID
                                      };
+                var questExists = from q in questionnaires.AsEnumerable()
+                                  where q.patientID == patientID
+                                  select new
+                                  {
+                                      q.questionnaireID
+                                  };
                 var questionnairePeriod = questQuery.ToList();
+                var questionnaireExists = questExists.ToList();
                 
-                if (questionnairePeriod.Count > 0)
+                if (questionnairePeriod.Count > 0 || questionnaireExists == null)
                 {
                     return true;
                 }

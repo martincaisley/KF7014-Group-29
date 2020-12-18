@@ -24,13 +24,14 @@ namespace Team29_Group_Project
             return model.getLastPatientID();
         }
        
+     
 
         public void ProcessNewPatient()
-        {
-            String firstName = form.GetFirstname();
-            String surname = form.GetSurname();
+        { 
+            String firstName = form.GetFirstname().Trim();
+            String surname = form.GetSurname().Trim();
             DateTime DoB = form.GetDoB();
-            String address = form.GetAddress();
+            String address = form.GetAddress().Trim();
             String email = form.GetEmail();
             String phoneNum = form.GetPhoneNumber();
             String occupation = form.GetOccupation();
@@ -48,20 +49,7 @@ namespace Team29_Group_Project
             }
             model.AddPatient(firstName, surname, DoB, address, email, phoneNum, occupation, GPname, GPaddress,type);
 
-            /*
-            if (form.GetPaymentType())
-            {
-                model.AddFreePatient(firstName, surname, DoB, address, email, phoneNum, occupation, GPname, GPaddress);
-        
-            }
-            else if(!form.GetPaymentType())
-            {
-                model.AddPayingPatient(firstName, surname, DoB, address, email, phoneNum, occupation, GPname, GPaddress);
-            }
-            else
-            {
-                Console.WriteLine("An error has occured, please try again");
-            }*/
+         
 
 
         }

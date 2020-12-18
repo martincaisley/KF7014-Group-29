@@ -34,18 +34,19 @@ namespace Team29_Group_Project
             this.btn_newPatient = new System.Windows.Forms.Button();
             this.lbl_patients = new System.Windows.Forms.Label();
             this.btn_delete = new System.Windows.Forms.Button();
+            this.lbl_active = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_patientList)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_patientList
             // 
             this.dgv_patientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_patientList.Location = new System.Drawing.Point(10, 101);
+            this.dgv_patientList.Location = new System.Drawing.Point(11, 157);
             this.dgv_patientList.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_patientList.Name = "dgv_patientList";
             this.dgv_patientList.RowHeadersWidth = 51;
             this.dgv_patientList.RowTemplate.Height = 24;
-            this.dgv_patientList.Size = new System.Drawing.Size(352, 297);
+            this.dgv_patientList.Size = new System.Drawing.Size(352, 245);
             this.dgv_patientList.TabIndex = 0;
             this.dgv_patientList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_patientList_CellContentClick);
             this.dgv_patientList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_patientList_CellContentDoubleClick);
@@ -94,11 +95,23 @@ namespace Team29_Group_Project
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
+            // lbl_active
+            // 
+            this.lbl_active.AutoSize = true;
+            this.lbl_active.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.lbl_active.Location = new System.Drawing.Point(11, 131);
+            this.lbl_active.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_active.Name = "lbl_active";
+            this.lbl_active.Size = new System.Drawing.Size(131, 24);
+            this.lbl_active.TabIndex = 7;
+            this.lbl_active.Text = "Active Patients";
+            // 
             // PatientHomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 410);
+            this.ClientSize = new System.Drawing.Size(374, 415);
+            this.Controls.Add(this.lbl_active);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.lbl_patients);
             this.Controls.Add(this.btn_newPatient);
@@ -121,6 +134,7 @@ namespace Team29_Group_Project
         private System.Windows.Forms.Button btn_newPatient;
         private System.Windows.Forms.Label lbl_patients;
         private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Label lbl_active;
     }
 }
 

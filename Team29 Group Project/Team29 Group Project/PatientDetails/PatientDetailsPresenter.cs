@@ -55,5 +55,13 @@ namespace Team29_Group_Project
             med.Show();
         }
 
+        public void longerThanAYear(int patientID)
+        {
+            if (detailsModel.checkQuestionnaireDate(patientID))
+            {
+                detailsScreen.setButtonRed();
+            }
+        }
+
     }
 }

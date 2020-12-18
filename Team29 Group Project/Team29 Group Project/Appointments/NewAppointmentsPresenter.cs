@@ -83,6 +83,20 @@ namespace Team29_Group_Project
         {
             return newAppointmentsModel.checkTime(date, startTime, endTime);
         }
+
+        public bool checkInWorkingHours(TimeSpan startTime, TimeSpan endTime)
+        {
+            TimeSpan workStartTime = TimeSpan.Parse("09:00:00");
+            TimeSpan workEndTime = TimeSpan.Parse("17:00:00");
+            if (startTime < workStartTime || startTime > workEndTime || endTime < workStartTime || endTime > workEndTime)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public bool checkEmergency(DateTime date, TimeSpan startTime, TimeSpan endTime)
         {
             if (date != DateTime.Today.Date)

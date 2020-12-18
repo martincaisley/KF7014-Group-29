@@ -13,5 +13,6 @@ namespace Team29_Group_Project
         void Register(PatientDetailsPresenter PDP);
         void setDGV(DataTable dt);
         void setLabelToBeRemoved(string patientName);
+        void setButtonRed();
     }
 }

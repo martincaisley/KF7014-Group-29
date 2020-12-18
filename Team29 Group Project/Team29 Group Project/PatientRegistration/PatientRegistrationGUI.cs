@@ -171,7 +171,12 @@ namespace Team29_Group_Project
             {
                 presenter.ProcessNewPatient();
                 MessageBox.Show("Patient has been added", "Success");
+                int patientID1 = presenter.getLastPatientID();
+                PatientDetails patientDetails = new PatientDetails(patientID1);
+                PatientDetailsPresenter PDP = new PatientDetailsPresenter(patientDetails);
                 this.Close();
+                patientDetails.ShowDialog();
+
             }
             else 
             {

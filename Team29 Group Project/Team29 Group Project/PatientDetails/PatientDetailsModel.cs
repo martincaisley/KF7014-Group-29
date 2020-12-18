@@ -80,6 +80,35 @@ namespace Team29_Group_Project
                 return true;
             }
         }
+        public bool checkQuestionnaireDate(int patientID)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var questionnaires = unitOfWork.questionnaire.GetAll();
+            try
+            {
+                var questQuery = from q in questionnaires.AsEnumerable()
+                                     where q.patientID == patientID && q.DateCompleted < DateTime.Today.AddYears(-1)
+                                     select new
+                                     {
+                                         q.questionnaireID
+                                     };
+                var questionnairePeriod = questQuery.ToList();
+                
+                if (questionnairePeriod.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("No questionnaire to show " + e.Message);
+            }
+            return false;
+        }
 
         public bool checkRemoved(int patientID)
         {

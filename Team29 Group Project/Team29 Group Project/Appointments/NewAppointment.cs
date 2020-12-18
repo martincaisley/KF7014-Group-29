@@ -89,26 +89,34 @@ namespace Team29_Group_Project
         }
         private void btn_addAppointment_Click(object sender, EventArgs e)
         {
-            if (AppTypeValidation())
+            if (AppTypeValidation() && dateValidation() && timeValidation())
             {
-                bool emergencyAppointment = presenter.checkEmergency(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
-                if (emergencyAppointment == true)
+                bool inWorkingHours = presenter.checkInWorkingHours(AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
+                if (inWorkingHours)
                 {
-                    bool canBook = presenter.checkTime(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
-                    if (canBook == false)
+                    bool emergencyAppointment = presenter.checkEmergency(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
+                    if (emergencyAppointment == true)
                     {
-                        MessageBox.Show("Appointment already booked for this time");
+                        bool canBook = presenter.checkTime(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
+                        if (canBook == false)
+                        {
+                            MessageBox.Show("Appointment already booked for this time");
+                        }
+                        else
+                        {
+                            presenter.processAppointment();
+                            MessageBox.Show("Appointment Added");
+                            this.Close();
+                        }
                     }
                     else
                     {
-                        presenter.processAppointment();
-                        MessageBox.Show("Appointment Added");
-                        this.Close();
+                        MessageBox.Show("These times are reserved");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("These times are reserved");
+                    MessageBox.Show("Choose an appointment in working hours 9-5");
                 }
             }
         }
@@ -139,6 +147,26 @@ namespace Team29_Group_Project
             }
             MessageBox.Show("An appointment type has not been chosen.");
             return false;
+        }
+
+        private bool dateValidation()
+        {
+            if (datePicker.Value < DateTime.Today.Date)
+            {
+                MessageBox.Show("Appointment date cannot be before today");
+                datePicker.Value = DateTime.Today.Date;
+                return false;
+            }
+            return true;
+        }
+        private bool timeValidation()
+        {
+            if (AppointmentTimePicker2.Value < AppointmentTimePicker.Value)
+            {
+                MessageBox.Show("Appointment end time cannot be before start time");
+                return false;
+            }
+            return true;
         }
         #endregion
 

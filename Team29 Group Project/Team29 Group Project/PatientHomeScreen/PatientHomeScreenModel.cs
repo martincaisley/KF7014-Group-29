@@ -16,7 +16,7 @@ namespace Team29_Group_Project
             {
                 UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
                 var patients = unitOfWork.patient.GetAll();
-                
+
                 dt.Columns.Add("PatientID", typeof(int));
                 dt.Columns.Add("Patient Name", typeof(string));
                 dt.Columns.Add("Patient Phone Number", typeof(string));
@@ -46,5 +46,51 @@ namespace Team29_Group_Project
             unitOfWork.patient.Remove(patientToDelete);
             unitOfWork.Save();
         }
+        /*
+        public bool checkForLastApp(patientID)
+        {
+            
+                UnitOfWork unitOfWork = new UnitOfWork(MyDBEntities());
+                
+                var patToRemove = unitOfWork.appointment.GetAll().Where(pats => pats.patientID == patientID);
+                if (!patToRemove.Any())
+                {
+                    var patientsToRemoveQuery = from p in patients.AsEnumerable()
+                                                where p.PatientID == patientIDs[i].PatientID
+                                                select dt.LoadDataRow(new object[]
+                                               {
+                                                   p.PatientID,
+                                                    p.firstName + " " + p.lastName,
+                                                     p.PhoneNum
+                                               }, false);
+
+
+                    patientsToRemoveQuery.CopyToDataTable();
+                }
+                else
+                {
+                    var pat = patToRemove.OrderBy(app => app.appointmentDate);
+                    var last = pat.Last().appointmentDate;
+                    Console.WriteLine(last.ToString());
+
+                    if (last < DateTime.Today.Date.AddYears(-1))
+                    {
+                        var patientsToRemoveQuery = from p in patients.AsEnumerable()
+                                                    where p.PatientID == patientIDs[i].PatientID
+                                                    select dt.LoadDataRow(new object[]
+                                                   {
+                                                   p.PatientID,
+                                                    p.firstName + " " + p.lastName,
+                                                     p.PhoneNum
+                                                   }, false);
+
+
+                        patientsToRemoveQuery.CopyToDataTable();
+                    }
+                }
+            return true;
+
+        }
+            */
     }
 }

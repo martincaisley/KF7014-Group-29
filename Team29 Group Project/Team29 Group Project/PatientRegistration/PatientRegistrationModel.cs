@@ -31,6 +31,33 @@ namespace Team29_Group_Project
             unitOfWork.patient.Add(patient);
             unitOfWork.Save();
         }
+
+        public int getLastPatientID()
+        {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var patients = unitOfWork.patient.GetAll();
+            var appointments = unitOfWork.appointment.GetAll();
+
+
+            var patientQuery = from p in patients.AsEnumerable()
+                               select new
+                               {
+                                   p.PatientID
+                               };
+
+            var patientIDs = patientQuery.ToList();
+            List<int> patids = new List<int> { };
+
+            for (int i = 0; i < patientIDs.Count; i++)
+            {
+                patids.Add(patientIDs[i].PatientID);
+            }
+
+
+            int patientID = patids.Max();
+
+            return patientID;
+        }
        
     }
 

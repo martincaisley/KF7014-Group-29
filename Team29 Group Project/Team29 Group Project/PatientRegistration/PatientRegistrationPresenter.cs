@@ -19,7 +19,10 @@ namespace Team29_Group_Project
             
         }
 
-  
+        public int getLastPatientID()
+        {
+            return model.getLastPatientID();
+        }
        
 
         public void ProcessNewPatient()

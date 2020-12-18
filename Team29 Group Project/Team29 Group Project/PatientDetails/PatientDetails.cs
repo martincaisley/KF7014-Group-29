@@ -21,6 +21,7 @@ namespace Team29_Group_Project
         }
         private void PatientDetails_Load(object sender, EventArgs e)
         {
+            presenter.longerThanAYear(patientID);
             presenter.showPatientDetails(patientID);
             presenter.showDetails(patientID);
             bool messages = presenter.getMessages(patientID);
@@ -32,6 +33,11 @@ namespace Team29_Group_Project
             {
                 btn_messages.Show();
             }
+        }
+
+        public void setButtonRed()
+        {
+            BTN_medicalQuestionnaire.BackColor = System.Drawing.Color.Red;
         }
 
         public void setLabel(string patientName)
@@ -104,16 +110,20 @@ namespace Team29_Group_Project
         private void btn_delete_Click(object sender, EventArgs e)
         {
             var selection = MessageBox.Show("Are you sure you want to delete this appointment?", "Confirmation", MessageBoxButtons.YesNo);
-            try 
+            if (selection == DialogResult.Yes)
             {
-                presenter.deleteRow((int)dgv_patientAppointments.SelectedCells[0].OwningRow.Cells[2].Value);
-                presenter.showPatientDetails(patientID);
+                try
+                {
+                    presenter.deleteRow((int)dgv_patientAppointments.SelectedCells[0].OwningRow.Cells[2].Value);
+                    presenter.showPatientDetails(patientID);
+                }
+                catch (Exception f)
+                {
+                    Console.WriteLine("No row selected " + f.Message);
+                }
+                presenter.showDetails(patientID);
             }
-            catch (Exception f)
-            {
-                Console.WriteLine("No row selected " + f.Message);
-            }
-            presenter.showDetails(patientID);
+            
         }
 
         private void BTN_medicalQuestionnaire_Click(object sender, EventArgs e)

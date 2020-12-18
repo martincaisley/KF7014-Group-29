@@ -101,7 +101,7 @@ namespace Team29_Group_Project
                 var questionnairePeriod = questQuery.ToList();
                 var questionnaireExists = questExists.ToList();
                 
-                if (questionnairePeriod.Count > 0 || questionnaireExists == null)
+                if (questionnairePeriod.Count > 0 || questionnaireExists.Count == 0)
                 {
                     return true;
                 }

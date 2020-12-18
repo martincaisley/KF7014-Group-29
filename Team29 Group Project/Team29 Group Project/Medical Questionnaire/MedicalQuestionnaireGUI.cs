@@ -25,7 +25,7 @@ namespace Team29_Group_Project
         {
             presenter.GetPatientName(patientID);
         }
-
+        #region interface methods
         public String GetMedicalConditions()
         { return TXT_medicalConditions.Text; }
         public String GetMedication()
@@ -38,18 +38,19 @@ namespace Team29_Group_Project
         {
             presenter = MQP;
         }
+       
         public void setPatient(string name)
         {
             TXT_patient.Text = name;
             TXT_patient.ReadOnly = true;
         }
-
         public String Message()
         {
 
 
             return presenter.GetMessage();
         }
+        #endregion
 
         private void BTN_submitQuestionnaire_Click(object sender, EventArgs e)
         {

@@ -32,11 +32,11 @@ namespace Team29_Group_Project
             String surname = form.GetSurname().Trim();
             DateTime DoB = form.GetDoB();
             String address = form.GetAddress().Trim();
-            String email = form.GetEmail();
-            String phoneNum = form.GetPhoneNumber();
-            String occupation = form.GetOccupation();
-            String GPname = form.GetGPname();
-            String GPaddress = form.GetGPaddress();
+            String email = form.GetEmail().Trim();
+            String phoneNum = form.GetPhoneNumber().Trim();
+            String occupation = form.GetOccupation().Trim();
+            String GPname = form.GetGPname().Trim();
+            String GPaddress = form.GetGPaddress().Trim();
             
             string type;
             if (form.GetPaymentType())

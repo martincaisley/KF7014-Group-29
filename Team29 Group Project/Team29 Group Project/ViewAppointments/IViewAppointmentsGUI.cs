@@ -11,6 +11,7 @@ namespace Team29_Group_Project
     {
         void setDGV(DataTable dt);
         void Register(ViewAppointmentsPresenter VAP);
-        void viewChosenAppointment(int appointmentID);   
+        void viewChosenAppointment(int appointmentID);
+        void noAppointmentsToShow();
     }
 }

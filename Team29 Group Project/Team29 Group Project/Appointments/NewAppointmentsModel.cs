@@ -19,7 +19,7 @@ namespace Team29_Group_Project
             return patientName;
         }
 
-        public void WriteToDatabase(int patientID, DateTime appointmentDate, TimeSpan appointmentStartTime, TimeSpan appointmentEndTime, int appointmentLength, string appointmentType, string appointmentBand)
+        public void AddAppointmentToDatabase(int patientID, DateTime appointmentDate, TimeSpan appointmentStartTime, TimeSpan appointmentEndTime, int appointmentLength, string appointmentType, string appointmentBand)
         {
             try
             {
@@ -27,8 +27,9 @@ namespace Team29_Group_Project
                 bool patientType = unitOfWork.patient.GetByID(patientID).isFree;
 
                 AppointmentFactory factory = new AppointmentFactory();
-                AppointmentCost appointmentCosts = (AppointmentCost)Enum.Parse(typeof(AppointmentCost), appointmentBand);
-                Appointment a = factory.GetAppointmentCost(appointmentCosts);
+                //insired by https://docs.microsoft.com/en-us/dotnet/api/system.enum.parse?view=net-5.0
+                AppointmentBand AppointmentBands = (AppointmentBand)Enum.Parse(typeof(AppointmentBand), appointmentBand);
+                Appointment a = factory.GetAppointmentBand(AppointmentBands);
 
                 a.patientID = patientID;
                 a.appointmentDate = appointmentDate;
@@ -49,7 +50,7 @@ namespace Team29_Group_Project
             }
             catch (Exception f)
             {
-                Console.WriteLine("New app Exception" + f.Message);
+                Console.WriteLine("Add appointment exception in NewAppointmentsModel: " + f.Message);
             }
 
         }
@@ -57,13 +58,14 @@ namespace Team29_Group_Project
 
         public int getAppointmentLength(string AppointmentT)
         {
+            //insired by https://docs.microsoft.com/en-us/dotnet/api/system.enum.parse?view=net-5.0
             AppType applength = (AppType)Enum.Parse(typeof(AppType), AppointmentT);
             int appointmentLength = Convert.ToInt32(applength);
 
             return appointmentLength;
         }
 
-        public DataTable getDT(DateTime AppDate)
+        public DataTable getAppointmentsDT(DateTime AppDate)
         {
             DataTable dt = new DataTable();
             try
@@ -104,28 +106,8 @@ namespace Team29_Group_Project
         }
         #endregion
 
-        #region Appointment Type and Time they take
-        enum AppType
-        {
-            Checkup = 30,
-            Bridges = 60,
-            Crowns = 30,
-            Fillings = 20,
-            RootCanal = 60,
-            ScaleAndPolish = 45,
-            Braces = 60,
-            WisdomTooth = 20,
-            DentalImplants = 60,
-            Dentures = 60,
-            BrokenTooth = 30,
-            TeethWhitening = 90,
-            DentalVeneers = 120
-
-        }
-        #endregion
-
         #region Check Appointment Time
-        public bool checkTime(DateTime date, TimeSpan startTime, TimeSpan endTime)
+        public bool checkIfCanBookAtThisTime(DateTime selectedDate, TimeSpan selectedStartTime, TimeSpan selectedEndTime)
         {
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patient = unitOfWork.patient.GetAll();
@@ -134,7 +116,8 @@ namespace Team29_Group_Project
             var appQuery = from a in appointment.AsEnumerable()
                            join p in patient.AsEnumerable()
                            on a.patientID equals p.PatientID
-                           where a.appointmentDate == date && ((a.appointmentStartTime <= startTime && a.appointmentEndTime > startTime) || (a.appointmentStartTime > startTime && a.appointmentStartTime < endTime))
+                           where a.appointmentDate == selectedDate && ((a.appointmentStartTime <= selectedStartTime && a.appointmentEndTime > selectedStartTime) 
+                           || (a.appointmentStartTime > selectedStartTime && a.appointmentStartTime < selectedEndTime))
                            select new
                            {
                                a.appointmentDate,

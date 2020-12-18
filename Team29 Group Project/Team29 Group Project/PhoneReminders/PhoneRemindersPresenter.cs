@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,11 +17,23 @@ namespace Team29_Group_Project
             this.remindersScreen = remindersScreen;
             remindersScreen.Register(this);
             remindersModel = new PhoneRemindersModel();
+            initialiseForm();
+        }
+        public void initialiseForm()
+        {
             getPhoneDetails();
         }
         public void getPhoneDetails()
         {
-            remindersScreen.setPhoneDetails(remindersModel.getPhoneDetails());
+            DataTable dt = remindersModel.getPhoneDetails();
+            if (dt.Rows.Count != 0)
+            {
+                remindersScreen.setPhoneDetails(dt);
+            }
+            else
+            {
+                remindersScreen.noPhoneReminders();
+            }
         }
 
         public void rowSelcted(int index)

@@ -12,7 +12,10 @@ namespace Team29_Group_Project
         void setAppointmentTime(TimeSpan appTime);
         void setAppointmentCost(double cost);
         void Register(AppointmentStatusPresenter ASP);
-        
+        int getAppointmentID();
+        string getAppointmentStatus();
+
+
     }
 
 }

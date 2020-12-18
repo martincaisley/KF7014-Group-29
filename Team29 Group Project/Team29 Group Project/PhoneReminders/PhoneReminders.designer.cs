@@ -31,6 +31,7 @@ namespace Team29_Group_Project
         {
             this.lbl_phoneReminders = new System.Windows.Forms.Label();
             this.dgv_phoneReminders = new System.Windows.Forms.DataGridView();
+            this.lbl_noReminders = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phoneReminders)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,7 +39,7 @@ namespace Team29_Group_Project
             // 
             this.lbl_phoneReminders.AutoSize = true;
             this.lbl_phoneReminders.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
-            this.lbl_phoneReminders.Location = new System.Drawing.Point(9, 7);
+            this.lbl_phoneReminders.Location = new System.Drawing.Point(41, 9);
             this.lbl_phoneReminders.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_phoneReminders.Name = "lbl_phoneReminders";
             this.lbl_phoneReminders.Size = new System.Drawing.Size(271, 37);
@@ -48,7 +49,7 @@ namespace Team29_Group_Project
             // dgv_phoneReminders
             // 
             this.dgv_phoneReminders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_phoneReminders.Location = new System.Drawing.Point(15, 47);
+            this.dgv_phoneReminders.Location = new System.Drawing.Point(21, 56);
             this.dgv_phoneReminders.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_phoneReminders.Name = "dgv_phoneReminders";
             this.dgv_phoneReminders.RowHeadersWidth = 51;
@@ -59,11 +60,21 @@ namespace Team29_Group_Project
             this.dgv_phoneReminders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phoneReminders_CellContentClick);
             this.dgv_phoneReminders.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phoneReminders_CellContentDoubleClick);
             // 
+            // lbl_noReminders
+            // 
+            this.lbl_noReminders.AutoSize = true;
+            this.lbl_noReminders.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.lbl_noReminders.Location = new System.Drawing.Point(99, 46);
+            this.lbl_noReminders.Name = "lbl_noReminders";
+            this.lbl_noReminders.Size = new System.Drawing.Size(0, 25);
+            this.lbl_noReminders.TabIndex = 2;
+            // 
             // PhoneReminders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(344, 366);
+            this.Controls.Add(this.lbl_noReminders);
             this.Controls.Add(this.dgv_phoneReminders);
             this.Controls.Add(this.lbl_phoneReminders);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -80,5 +91,6 @@ namespace Team29_Group_Project
 
         private System.Windows.Forms.Label lbl_phoneReminders;
         private System.Windows.Forms.DataGridView dgv_phoneReminders;
+        private System.Windows.Forms.Label lbl_noReminders;
     }
 }

@@ -37,7 +37,7 @@ namespace Team29_Group_Project
             PatientRegistrationPresenter PRP = new PatientRegistrationPresenter(addPatient);
             this.Hide();
             addPatient.ShowDialog();
-            presenter.processPatients();
+            presenter.processPatientsList();
             this.Show();
         }
 
@@ -56,13 +56,15 @@ namespace Team29_Group_Project
             PatientDetailsPresenter PDP = new PatientDetailsPresenter(patientDetails);
             this.Hide();
             patientDetails.ShowDialog();
-            presenter.processPatients();
+            presenter.processPatientsList();
             this.Show();
         }
         
 
         public void setDGV(DataTable dt)
         {
+            dgv_patientList.Show();
+            lbl_active.Text = "Active Patients";
             dgv_patientList.DataSource = dt;
             dgv_patientList.AllowUserToAddRows = false;
             dgv_patientList.AllowUserToDeleteRows = false;
@@ -72,6 +74,13 @@ namespace Team29_Group_Project
                 dgv_patientList.Columns[x].ReadOnly = true;
             }
         }
+
+        public void noPatientsToShow()
+        {
+            dgv_patientList.Hide();
+            lbl_active.Text = "No Patients Added";
+        }
+
         public void Register(PatientHomeScreenPresenter PHSP)
         {
             presenter = PHSP;
@@ -82,7 +91,6 @@ namespace Team29_Group_Project
             if (selection == DialogResult.Yes)
             {
                 presenter.deleteRow((int)dgv_patientList.SelectedCells[0].OwningRow.Cells[0].Value);                
-                presenter.processPatients();
             }
         }
     }

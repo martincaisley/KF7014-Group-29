@@ -22,7 +22,12 @@ namespace Team29_Group_Project
 
         private void ContactedByPhone_Load(object sender, EventArgs e)
         {
-            presenter.getDetails(appointmentID);
+
+        }
+
+        public int getAppointmentID()
+        {
+            return appointmentID;
         }
 
         public void setPatientName(string name)
@@ -42,7 +47,7 @@ namespace Team29_Group_Project
 
         private void btn_contacted_Click(object sender, EventArgs e)
         {
-            presenter.setContacted(appointmentID);
+            presenter.setContacted();
             this.Close();
         }
         public void Register(ContactedByPhonePresenter CBPP)

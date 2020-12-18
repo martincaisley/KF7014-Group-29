@@ -49,50 +49,6 @@ namespace Team29_Group_Project
             context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
         }
     }
-    /*public class AppointmentRepository : IRepository<Appointment>
-    {
-        private MyDBEntities context = new MyDBEntities();
-        public void Add(Appointment entity)
-        {
-            context.Appointments.Add(entity);
-        }
-        public IEnumerable<Appointment> GetAll()
-        {
-            return context.Appointments.ToList();
-        }
-
-        public Appointment GetByID(int id)
-        {
-            return context.Appointments.Find(id);
-        }
-
-        public void Remove(Appointment entity)
-        {
-            context.Appointments.Remove(entity);
-        }
-    }
-
-    public class PatientRepository : IRepository<Patient>
-    {
-        private MyDBEntities context = new MyDBEntities();
-        public void Add(Patient entity)
-        {
-            context.Patients.Add(entity);
-        }
-        public IEnumerable<Patient> GetAll()
-        {
-            return context.Patients.ToList();
-        }
-
-        public Patient GetByID(int patientID)
-        {
-            return context.Patients.Find(patientID);
-        }
-
-        public void Remove(Patient entity)
-        {
-            context.Patients.Remove(entity);
-        }
-    }*/
+   
 
 }

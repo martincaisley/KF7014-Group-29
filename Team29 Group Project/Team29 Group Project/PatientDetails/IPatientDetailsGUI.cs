@@ -14,5 +14,9 @@ namespace Team29_Group_Project
         void setDGV(DataTable dt);
         void setLabelToBeRemoved(string patientName);
         void setButtonRed();
+        int getPatientID();
+        void messagesButton_hide();
+        void messagesButton_show();
+        void noAppointmentsToShow();
     }
 }

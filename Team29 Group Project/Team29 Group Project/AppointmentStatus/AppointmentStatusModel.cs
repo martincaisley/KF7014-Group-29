@@ -34,11 +34,11 @@ namespace Team29_Group_Project
 
             return cost;
         }
-        public void updateTable(int appointmentID, string value)
+        public void updateTable(int appointmentID, string appointmentStatus)
         {
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             Appointment a = unitOfWork.appointment.GetByID(appointmentID);
-            a.arrivedToAppointment = value;
+            a.arrivedToAppointment = appointmentStatus;
             unitOfWork.Save();
         }
     }

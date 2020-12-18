@@ -14,6 +14,7 @@ namespace Team29_Group_Project
     {
         int patientID;
         int appointmentID;
+        string response;
 
         private MessagesPresenter presenter;
         public Messages(int patientID)
@@ -23,9 +24,18 @@ namespace Team29_Group_Project
         }
         private void Messages_Load(object sender, EventArgs e)
         {
-            presenter.getDetaisl(patientID);
         }
         
+        public int getPatientID()
+        {
+            return patientID;
+        }
+
+        public string getResponse()
+        {
+            return response;
+        }
+
         public void setAppID(int appID)
         {
             appointmentID = appID;
@@ -51,25 +61,23 @@ namespace Team29_Group_Project
 
         private void btn_invalid_Click(object sender, EventArgs e)
         {
-            string value = "Invalid";
-            presenter.updateTable(appointmentID, value);
-            bool repeatOffence = presenter.checkForRepeatOffence(patientID);
+            response = "Invalid";
+            presenter.updateTable();
+            bool repeatOffence = presenter.checkForRepeatOffence();
             if (repeatOffence == true)
             {
                 MessageBox.Show("Patient needs to be removed");
             }
             this.Close();
-
         }
 
         private void btn_valid_Click(object sender, EventArgs e)
         {
-            string value = "Valid";
-            presenter.updateTable(appointmentID, value);
+            response = "Valid";
+            presenter.updateTable();
             this.Close();
         }
-
-        
+              
 
         public void Register(MessagesPresenter MP)
         {

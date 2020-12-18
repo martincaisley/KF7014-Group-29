@@ -12,5 +12,6 @@ namespace Team29_Group_Project
         void setDGV(DataTable dt);
         void Register(PatientHomeScreenPresenter PHSP);
         void viewPatient(int patientID);
+        void noPatientsToShow();
     }
 }

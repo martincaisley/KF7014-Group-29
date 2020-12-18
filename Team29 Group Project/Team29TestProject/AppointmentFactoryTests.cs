@@ -8,14 +8,14 @@ namespace Team29TestProject
     public class AppointmentFactoryTests
     {
         [TestMethod]
-        public void TestAppointmentFactoryGetAppointmentCost()
+        public void TestAppointmentFactoryGetAppointmentBand()
         {
         }
         [TestMethod]
         public void TestFactoryCosts()
         {
             AppointmentFactory factory = new AppointmentFactory();
-            Appointment a = factory.GetAppointmentCost(AppointmentCost.Band1);
+            Appointment a = factory.GetAppointmentBand(AppointmentBand.Band1);
             Assert.AreEqual(22.70,a.appointmmentCost);
         }
         /*
@@ -23,7 +23,7 @@ namespace Team29TestProject
         public void TestFactoryCostsToFail()
         {
             AppointmentFactory factory = new AppointmentFactory();
-            Appointment a = factory.GetAppointmentCost(AppointmentCost.Band2);
+            Appointment a = factory.GetAppointmentBand(AppointmentBand.Band2);
             Assert.AreEqual(22.70, a.appointmmentCost);
         }
         */

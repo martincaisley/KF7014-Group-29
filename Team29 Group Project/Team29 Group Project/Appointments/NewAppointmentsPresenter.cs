@@ -23,10 +23,19 @@ namespace Team29_Group_Project
             this.NewAppointmentsScreen = NewAppointmentsScreen;
             NewAppointmentsScreen.Register(this);
             newAppointmentsModel = new NewAppointmentsModel();
-            showAppointmentList(Date);
-            
+            initialiseForm();
         }
 
+        #endregion
+
+        #region Form Initialiser
+
+        public void initialiseForm()
+        {
+            NewAppointmentsScreen.setTimePickers();
+            showAppointmentList(Date);
+            getPatientName();
+        }
         #endregion
 
         #region Process Appointment
@@ -38,10 +47,8 @@ namespace Team29_Group_Project
             TimeSpan appointmentEndTime = NewAppointmentsScreen.getAppointmentEndTime();
             int appointmentLength = appLength;
             string appointmentType = NewAppointmentsScreen.getAppointmentType();
-
             string appointmentBand = findAppBand(appointmentType);
-
-            newAppointmentsModel.WriteToDatabase(patientID, appointmentDate, appointmentStartTime, appointmentEndTime, appointmentLength, appointmentType, appointmentBand);
+            newAppointmentsModel.AddAppointmentToDatabase(patientID, appointmentDate, appointmentStartTime, appointmentEndTime, appointmentLength, appointmentType, appointmentBand);
         }
         #endregion
 
@@ -70,14 +77,14 @@ namespace Team29_Group_Project
         #endregion
 
         #region Get Patient Name
-        public void getPatientName(int patientID)
+        public void getPatientName()
         {
-            NewAppointmentsScreen.setName(newAppointmentsModel.GetPatientName(patientID));
+            NewAppointmentsScreen.setName(newAppointmentsModel.GetPatientName(NewAppointmentsScreen.getPatientID()));
         }
         #endregion
 
         #region Set Appointment Type
-        public void setAppType(string appType)
+        public void setAppLength(string appType)
         {
             string appointmentType = appType;
             appLength = newAppointmentsModel.getAppointmentLength(appointmentType);
@@ -88,17 +95,18 @@ namespace Team29_Group_Project
         #region Show Appointment List
         public void showAppointmentList(DateTime AppDate)
         {
-            NewAppointmentsScreen.setDGV(newAppointmentsModel.getDT(AppDate));
+            NewAppointmentsScreen.setDGV(newAppointmentsModel.getAppointmentsDT(AppDate));
         }
         #endregion
 
         #region Checking Restricted Appointment times
+        //ensures that there are no appointments alredy during these times
         public bool checkTime(DateTime date, TimeSpan startTime, TimeSpan endTime)
         {
-            return newAppointmentsModel.checkTime(date, startTime, endTime);
+            return newAppointmentsModel.checkIfCanBookAtThisTime(date, startTime, endTime);
         }
 
-        
+        //Ensures the appointment is between working hours of 9-5
         public bool checkInWorkingHours(TimeSpan startTime, TimeSpan endTime)
         {
             TimeSpan workStartTime = TimeSpan.Parse("09:00:00");
@@ -112,6 +120,7 @@ namespace Team29_Group_Project
                 return true;
             }
         }
+        //11-13 everyday reserved for emergencies, cannot book in advance for this time
         public bool checkEmergency(DateTime date, TimeSpan startTime, TimeSpan endTime)
         {
             if (date != DateTime.Today.Date)

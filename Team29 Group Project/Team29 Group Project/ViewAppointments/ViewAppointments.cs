@@ -24,6 +24,8 @@ namespace Team29_Group_Project
 
         public void setDGV(DataTable dt)
         {
+            dgv_appointmentList.Show();
+            lbl_today.Text = "Appointments For";
             dgv_appointmentList.DataSource = dt;
             dgv_appointmentList.AllowUserToAddRows = false;
             dgv_appointmentList.AllowUserToDeleteRows = false;
@@ -32,6 +34,11 @@ namespace Team29_Group_Project
             {
                 dgv_appointmentList.Columns[x].ReadOnly = true;
             }
+        }
+        public void noAppointmentsToShow()
+        {
+            dgv_appointmentList.Hide();
+            lbl_today.Text = "No appointments";
         }
         private void btn_phoneReminders_Click(object sender, EventArgs e)
         {

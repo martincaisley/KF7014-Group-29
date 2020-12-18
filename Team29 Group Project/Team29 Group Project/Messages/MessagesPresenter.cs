@@ -16,24 +16,24 @@ namespace Team29_Group_Project
             this.messagesScreen = messagesScreen;
             messagesScreen.Register(this);
             messagesModel = new MessagesModel();
+            initialiseForm();
         }
-        public void getDetaisl(int patientID)
+        public void initialiseForm()
         {
-            messagesScreen.setAppID(messagesModel.getID(patientID));
-            messagesScreen.setName(messagesModel.getName(patientID));
-            messagesScreen.setAppDate(messagesModel.getDate(patientID));
-            messagesScreen.setAppTime(messagesModel.getTime(patientID));
-
-        }
-
-        public void updateTable(int appointmentID, string value)
-        {
-            messagesModel.updateTables(appointmentID, value);
+            messagesScreen.setAppID(messagesModel.getAppointmentID(messagesScreen.getPatientID()));
+            messagesScreen.setName(messagesModel.getName(messagesScreen.getPatientID()));
+            messagesScreen.setAppDate(messagesModel.getDate(messagesScreen.getPatientID()));
+            messagesScreen.setAppTime(messagesModel.getTime(messagesScreen.getPatientID()));
         }
 
-        public bool checkForRepeatOffence(int patientID)
+        public void updateTable()
         {
-            return messagesModel.checkForRepeatOffence(patientID);
+            messagesModel.updateTables(messagesScreen.getPatientID(), messagesScreen.getResponse());
+        }
+
+        public bool checkForRepeatOffence()
+        {
+            return messagesModel.checkForRepeatOffence(messagesScreen.getPatientID());
         }
     }
 }

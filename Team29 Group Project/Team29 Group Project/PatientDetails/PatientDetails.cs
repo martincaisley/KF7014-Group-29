@@ -21,18 +21,11 @@ namespace Team29_Group_Project
         }
         private void PatientDetails_Load(object sender, EventArgs e)
         {
-            presenter.longerThanAYear(patientID);
-            presenter.showPatientDetails(patientID);
-            presenter.showDetails(patientID);
-            bool messages = presenter.getMessages(patientID);
-            if (messages == false)
-            {
-                btn_messages.Hide();
-            }
-            else
-            {
-                btn_messages.Show();
-            }
+        }
+
+        public int getPatientID()
+        {
+            return patientID;
         }
 
         public void setButtonRed()
@@ -54,23 +47,31 @@ namespace Team29_Group_Project
 
         public void setDGV(DataTable dt)
         {
-            try 
-            { 
-                dgv_patientAppointments.DataSource = dt;
-                dgv_patientAppointments.AllowUserToAddRows = false;
-                dgv_patientAppointments.AllowUserToDeleteRows = false;
-                int cols = dgv_patientAppointments.ColumnCount;
-                for (int x = 0; x < cols; x++)
-                {
-                    dgv_patientAppointments.Columns[x].ReadOnly = true;
-
-                }
-            }
-            catch
+            dgv_patientAppointments.Show();
+            lbl_noAppointments.Text = "";
+            dgv_patientAppointments.DataSource = dt;
+            dgv_patientAppointments.AllowUserToAddRows = false;
+            dgv_patientAppointments.AllowUserToDeleteRows = false;
+            int cols = dgv_patientAppointments.ColumnCount;
+            for (int x = 0; x < cols; x++)
             {
-                dgv_patientAppointments.Hide();
-                lbl_noAppointments.Text = "No Appointments";
+                dgv_patientAppointments.Columns[x].ReadOnly = true;
             }
+        }
+        public void noAppointmentsToShow()
+        {
+            dgv_patientAppointments.Hide();
+            lbl_noAppointments.Text = "No Appointments";
+        }
+
+        public void messagesButton_hide()
+        {
+            btn_messages.Hide();
+        }
+
+        public void messagesButton_show()
+        {
+            btn_messages.Show();
         }
 
         private void btn_newAppointment_Click(object sender, EventArgs e)
@@ -79,7 +80,7 @@ namespace Team29_Group_Project
             NewAppointmentsPresenter NAP = new NewAppointmentsPresenter(newAppointment);
             this.Hide();
             newAppointment.ShowDialog();
-            presenter.showPatientDetails(patientID);
+            presenter.showPatientAppointments();
             this.Show();
         }
 
@@ -89,16 +90,7 @@ namespace Team29_Group_Project
             MessagesPresenter MP = new MessagesPresenter(messages);
             this.Hide();
             messages.ShowDialog();
-            bool message = presenter.getMessages(patientID);
-            if (message == false)
-            {
-                btn_messages.Hide();
-            }
-            else
-            {
-                btn_messages.Show();
-            }
-            presenter.showDetails(patientID);
+            presenter.setMessagesToView();
             this.Show();
         }
 
@@ -115,20 +107,18 @@ namespace Team29_Group_Project
                 try
                 {
                     presenter.deleteRow((int)dgv_patientAppointments.SelectedCells[0].OwningRow.Cells[2].Value);
-                    presenter.showPatientDetails(patientID);
                 }
                 catch (Exception f)
                 {
                     Console.WriteLine("No row selected " + f.Message);
                 }
-                presenter.showDetails(patientID);
             }
-            
+
         }
 
         private void BTN_medicalQuestionnaire_Click(object sender, EventArgs e)
         {
-            presenter.ShowMedicalQuestionnaire(patientID);
+            presenter.ShowMedicalQuestionnaire();
             this.Hide();
         }
     }

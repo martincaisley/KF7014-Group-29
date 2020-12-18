@@ -9,7 +9,7 @@ namespace Team29_Group_Project
 {
     class ViewAppointmentsModel
     {
-        public DataTable getDT(DateTime date)
+        public DataTable getAppointmentsList(DateTime date)
         {
             DataTable dt = new DataTable();
             try
@@ -47,12 +47,12 @@ namespace Team29_Group_Project
             }
             catch (Exception e)
             {
-                Console.WriteLine("No Appointments to show" + e.Message);
+                Console.WriteLine("Exception in ViewAppointmentsModel: " + e.Message);
             }
 
             return dt;
         }
-        public void showAppointmentReminders()
+        public void generateCSVFile()
         {
             List<string> csv = new List<string>();
 

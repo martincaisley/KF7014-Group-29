@@ -48,7 +48,7 @@ namespace Team29_Group_Project
             }
             catch (Exception f)
             {
-                Console.WriteLine("Problem Viewing Reminders" + f.Message);
+                Console.WriteLine("Exception in Phone Reminders Model: " + f.Message);
             }
             return dt;
         }

@@ -19,5 +19,6 @@ namespace Team29_Group_Project
         void Register(NewAppointmentsPresenter NAP);
         void setAppointmentEndTime(int appointmentLength);
         void setDGV(DataTable DT);
+        void setTimePickers();
     }
 }

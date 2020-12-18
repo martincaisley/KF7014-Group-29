@@ -16,17 +16,18 @@ namespace Team29_Group_Project
             this.statusScreen = statusScreen;
             statusScreen.Register(this);
             statusModel = new AppointmentStatusModel();
+            initialiseForm();
         }
-        public void getDetails(int appointmentID)
+        public void initialiseForm()
         {
-            statusScreen.setPatientName(statusModel.setName(appointmentID));
-            statusScreen.setAppointmentTime(statusModel.setTime(appointmentID));
-            statusScreen.setAppointmentCost(statusModel.setCost(appointmentID));
+            statusScreen.setPatientName(statusModel.setName(statusScreen.getAppointmentID()));
+            statusScreen.setAppointmentTime(statusModel.setTime(statusScreen.getAppointmentID()));
+            statusScreen.setAppointmentCost(statusModel.setCost(statusScreen.getAppointmentID()));
         }
 
-        public void updateTable(int appointmentID, string value)
+        public void updateTable()
         {
-            statusModel.updateTable(appointmentID, value);
+            statusModel.updateTable(statusScreen.getAppointmentID(), statusScreen.getAppointmentStatus());
         }
     }
 }

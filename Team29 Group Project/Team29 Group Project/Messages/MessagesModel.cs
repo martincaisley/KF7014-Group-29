@@ -8,7 +8,7 @@ namespace Team29_Group_Project
 {
     class MessagesModel
     {
-        public int getID(int patientID)
+        public int getAppointmentID(int patientID)
         {
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();

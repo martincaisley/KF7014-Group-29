@@ -17,7 +17,7 @@ namespace Team29_Group_Project
 
             return patientName;
         }
-        public DataTable getDT(int patientID)
+        public DataTable getAppointmentList(int patientID)
         {
             DataTable dt = new DataTable();
             try
@@ -65,10 +65,7 @@ namespace Team29_Group_Project
                            where p.PatientID == patientID && a.arrivedToAppointment == "No" && a.appointmentDate < DateTime.Today
                            select new
                            {
-                               forename = p.firstName,
-                               surname = p.lastName,
-                               appointmentDate = a.appointmentDate,
-                               appointmentStartTime = a.appointmentStartTime
+                               forename = p.firstName
                            };
             var appointment = appQuery.ToList();
             if (appointment.Count() == 0)
@@ -86,22 +83,25 @@ namespace Team29_Group_Project
             var questionnaires = unitOfWork.questionnaire.GetAll();
             try
             {
-                var questQuery = from q in questionnaires.AsEnumerable()
-                                     where q.patientID == patientID && q.DateCompleted < DateTime.Today.AddYears(-1)
-                                     select new
-                                     {
-                                         q.questionnaireID
-                                     };
-                var questExists = from q in questionnaires.AsEnumerable()
+                //checks to see if questionnaire was modified over a year ago
+                var questionnaireDateQuery = from q in questionnaires.AsEnumerable()
+                                 where q.patientID == patientID && q.DateCompleted < DateTime.Today.AddYears(-1)
+                                 select new
+                                 {
+                                     q.questionnaireID
+                                 };
+                var dateQuestionnaireID = questionnaireDateQuery.ToList();
+
+                //checks to see if a questionnaire entry exists
+                var questionnaireExistsQuery = from q in questionnaires.AsEnumerable()
                                   where q.patientID == patientID
                                   select new
                                   {
                                       q.questionnaireID
                                   };
-                var questionnairePeriod = questQuery.ToList();
-                var questionnaireExists = questExists.ToList();
-                
-                if (questionnairePeriod.Count > 0 || questionnaireExists.Count == 0)
+                var existsQuestionnaireID = questionnaireExistsQuery.ToList();
+
+                if (dateQuestionnaireID.Count > 0 || existsQuestionnaireID.Count == 0)
                 {
                     return true;
                 }
@@ -117,20 +117,21 @@ namespace Team29_Group_Project
             return false;
         }
 
-        public bool checkRemoved(int patientID)
+        public bool checkRepeatOffences(int patientID)
         {
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var appointments = unitOfWork.appointment.GetAll();
             try
             {
-                var repeatAppQuery = from a in appointments.AsEnumerable()
+                //checks how many missed appointments exist for this patient
+                var repeatOffenceQuery = from a in appointments.AsEnumerable()
                                      where a.patientID == patientID && a.arrivedToAppointment == "Invalid" && a.appointmentDate >= DateTime.Today.AddYears(-3)
                                      group a by a.patientID into grouped
                                      select new
                                      {
                                          count = grouped.Count()
                                      };
-                var offences = repeatAppQuery.ToList();
+                var offences = repeatOffenceQuery.ToList();
                 int numberOfOffences = offences[0].count;
                 if (numberOfOffences >= 3)
                 {

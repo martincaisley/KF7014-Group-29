@@ -9,7 +9,7 @@ namespace Team29_Group_Project
 {
     class PatientHomeScreenModel
     {
-        public DataTable getDT()
+        public DataTable getPatientsDT()
         {
             DataTable dt = new DataTable();
             try
@@ -34,8 +34,7 @@ namespace Team29_Group_Project
             }
             catch (Exception e)
             {
-                Console.WriteLine("Home Screen Exception: " + e.Message);
-                //add in exception here
+                Console.WriteLine("Exception in PatientHomeScreenModel: " + e.Message);
             }
             return dt;
         }
@@ -46,51 +45,5 @@ namespace Team29_Group_Project
             unitOfWork.patient.Remove(patientToDelete);
             unitOfWork.Save();
         }
-        /*
-        public bool checkForLastApp(patientID)
-        {
-            
-                UnitOfWork unitOfWork = new UnitOfWork(MyDBEntities());
-                
-                var patToRemove = unitOfWork.appointment.GetAll().Where(pats => pats.patientID == patientID);
-                if (!patToRemove.Any())
-                {
-                    var patientsToRemoveQuery = from p in patients.AsEnumerable()
-                                                where p.PatientID == patientIDs[i].PatientID
-                                                select dt.LoadDataRow(new object[]
-                                               {
-                                                   p.PatientID,
-                                                    p.firstName + " " + p.lastName,
-                                                     p.PhoneNum
-                                               }, false);
-
-
-                    patientsToRemoveQuery.CopyToDataTable();
-                }
-                else
-                {
-                    var pat = patToRemove.OrderBy(app => app.appointmentDate);
-                    var last = pat.Last().appointmentDate;
-                    Console.WriteLine(last.ToString());
-
-                    if (last < DateTime.Today.Date.AddYears(-1))
-                    {
-                        var patientsToRemoveQuery = from p in patients.AsEnumerable()
-                                                    where p.PatientID == patientIDs[i].PatientID
-                                                    select dt.LoadDataRow(new object[]
-                                                   {
-                                                   p.PatientID,
-                                                    p.firstName + " " + p.lastName,
-                                                     p.PhoneNum
-                                                   }, false);
-
-
-                        patientsToRemoveQuery.CopyToDataTable();
-                    }
-                }
-            return true;
-
-        }
-            */
     }
 }

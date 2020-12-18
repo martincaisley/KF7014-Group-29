@@ -6,21 +6,15 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    public enum AppointmentCost
-    {
-        Band1 = 1,
-        Band2 = 2,
-        Band3 = 3
-    }
     public class AppointmentFactory
     {
-        public Appointment GetAppointmentCost(AppointmentCost appointmentCost)
+        public Appointment GetAppointmentBand(AppointmentBand AppointmentBand)
         {
-            if (appointmentCost == AppointmentCost.Band1)
+            if (AppointmentBand == AppointmentBand.Band1)
             {
                 return new Band1Appointment();
             }
-            else if (appointmentCost == AppointmentCost.Band2)
+            else if (AppointmentBand == AppointmentBand.Band2)
             {
                 return new Band2Appointment();
             }

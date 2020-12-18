@@ -16,18 +16,19 @@ namespace Team29_Group_Project
             this.contactedScreen = contactedScreen;
             contactedScreen.Register(this);
             contactedModel = new ContactedByPhoneModel();
+            initaliseForm();            
         }
 
-        public void getDetails(int appointmentID)
+        public void initaliseForm()
         {
-            contactedScreen.setPatientName(contactedModel.setName(appointmentID));
-            contactedScreen.setAppointmentDate(contactedModel.setDate(appointmentID));
-            contactedScreen.setAppointmentTime(contactedModel.setTime(appointmentID));
+            contactedScreen.setPatientName(contactedModel.setName(contactedScreen.getAppointmentID()));
+            contactedScreen.setAppointmentDate(contactedModel.setDate(contactedScreen.getAppointmentID()));
+            contactedScreen.setAppointmentTime(contactedModel.setTime(contactedScreen.getAppointmentID()));
         }
 
-        public void setContacted(int appointmentID)
+        public void setContacted()
         {
-            contactedModel.setToContacted(appointmentID);
+            contactedModel.setToContacted(contactedScreen.getAppointmentID());
         }
 
     }

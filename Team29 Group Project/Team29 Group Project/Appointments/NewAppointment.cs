@@ -28,16 +28,6 @@ namespace Team29_Group_Project
 
         private void NewAppointment_Load(object sender, EventArgs e)
         {
-            presenter.getPatientName(patientID);
-
-            AppointmentTimePicker.Format = DateTimePickerFormat.Custom;
-            AppointmentTimePicker.CustomFormat = "HH:mm";
-            AppointmentTimePicker.ShowUpDown = true;
-
-            AppointmentTimePicker2.Format = DateTimePickerFormat.Custom;
-            AppointmentTimePicker2.CustomFormat = "HH:mm";
-            AppointmentTimePicker2.ShowUpDown = true;
-            
         }
         #endregion
 
@@ -74,6 +64,7 @@ namespace Team29_Group_Project
 
         public void setAppointmentEndTime(int appointmentLength)
         {
+            //inspired by http://zetcode.com/csharp/datetime/
             AppointmentTimePicker2.Value = AppointmentTimePicker.Value.AddMinutes(appointmentLength);
         }
 
@@ -93,6 +84,23 @@ namespace Team29_Group_Project
                 DGV_AddApp.Columns[x].ReadOnly = true;
             }
         }
+        #endregion
+
+        #region TimePickerSet
+
+        public void setTimePickers()
+        {
+            AppointmentTimePicker.Format = DateTimePickerFormat.Custom;
+            AppointmentTimePicker.CustomFormat = "HH:mm";
+            AppointmentTimePicker.Value = DateTime.Parse("09:00:00");
+            AppointmentTimePicker.ShowUpDown = true;
+
+            AppointmentTimePicker2.Format = DateTimePickerFormat.Custom;
+            AppointmentTimePicker2.CustomFormat = "HH:mm";
+            AppointmentTimePicker2.Value = DateTime.Parse("09:00:00");
+            AppointmentTimePicker2.ShowUpDown = true;
+        }
+
         #endregion
 
         #region Add Appointment
@@ -136,7 +144,6 @@ namespace Team29_Group_Project
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-
             foreach (var RadioButton in AppointmentBox.Controls.OfType<RadioButton>())
             {
                 if (RadioButton.Checked)
@@ -144,7 +151,7 @@ namespace Team29_Group_Project
                     appType = RadioButton.Text;   
                 }
             }
-            presenter.setAppType(appType);
+            presenter.setAppLength(appType);
         }
 
         #endregion

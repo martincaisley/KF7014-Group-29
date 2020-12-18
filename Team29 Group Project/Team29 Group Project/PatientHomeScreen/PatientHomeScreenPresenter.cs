@@ -21,11 +21,19 @@ namespace Team29_Group_Project
         }
         private void initialiseForm()
         {
-            processPatients();
+            processPatientsList();
         }
-        public void processPatients()
+        public void processPatientsList()
         {
-            patientScreen.setDGV(patientModel.getDT());
+            DataTable dt = patientModel.getPatientsDT();
+            if (dt.Rows.Count != 0)
+            {
+                patientScreen.setDGV(dt);
+            }
+            else
+            {
+                patientScreen.noPatientsToShow();
+            }
         }
         public void rowSelcted(int index)
         {
@@ -34,6 +42,7 @@ namespace Team29_Group_Project
         public void deleteRow(int appointmentID)
         {
             patientModel.deleteEntry(appointmentID);
+            processPatientsList();
         }
 
     }

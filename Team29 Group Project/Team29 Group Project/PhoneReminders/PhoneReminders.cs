@@ -19,7 +19,6 @@ namespace Team29_Group_Project
         }
         private void PhoneReminders_Load(object sender, EventArgs e)
         {
-            //presenter.getPhoneDetails();
         }
         
         public void setPhoneDetails(DataTable dt)
@@ -32,6 +31,12 @@ namespace Team29_Group_Project
             {
                 dgv_phoneReminders.Columns[x].ReadOnly = true;
             }
+        }
+
+        public void noPhoneReminders()
+        {
+            dgv_phoneReminders.Hide();
+            lbl_noReminders.Text = "No Reminders";
         }
 
         private void dgv_phoneReminders_CellContentClick(object sender, DataGridViewCellEventArgs e)

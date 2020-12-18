@@ -12,5 +12,6 @@ namespace Team29_Group_Project
         void setPhoneDetails(DataTable dt);
         void Register(PhoneRemindersPresenter PRP);
         void viewChosenReminder(int appointmentID);
+        void noPhoneReminders();
     }
 }

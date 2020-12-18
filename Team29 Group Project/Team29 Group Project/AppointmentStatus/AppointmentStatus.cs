@@ -14,6 +14,7 @@ namespace Team29_Group_Project
     {
         private AppointmentStatusPresenter presenter;
         int appointmentID;
+        string appointmentStatus;
         public AppointmentStatus(int appointmentID)
         {
             InitializeComponent();
@@ -22,7 +23,11 @@ namespace Team29_Group_Project
 
         private void AppointmentStatus_Load(object sender, EventArgs e)
         {
-            presenter.getDetails(appointmentID);
+        }
+
+        public int getAppointmentID()
+        {
+            return appointmentID;
         }
 
         public void setPatientName(string name)
@@ -43,20 +48,25 @@ namespace Team29_Group_Project
             txt_cost.ReadOnly = true;
         }
 
+        public string getAppointmentStatus()
+        {
+            return appointmentStatus;
+        }
+
         private void btn_arrived_Click(object sender, EventArgs e)
         {
-            string value = "Yes";
-            presenter.updateTable(appointmentID, value);
+            appointmentStatus = "Yes";
+            presenter.updateTable();
             this.Close();
         }
 
         private void btn_cancelledWithValidExcuse_Click(object sender, EventArgs e)
         {
-            string value = "Valid";
-            presenter.updateTable(appointmentID, value);
+            appointmentStatus = "Valid";
+            presenter.updateTable();
             this.Close();
         }
-        
+
         public void Register(AppointmentStatusPresenter ASP)
         {
             presenter = ASP;

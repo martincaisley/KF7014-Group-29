@@ -19,10 +19,6 @@ namespace Team29_Group_Project
             PatientHomeScreen phs = new PatientHomeScreen();
             PatientHomeScreenPresenter phsp = new PatientHomeScreenPresenter(phs);
             Application.Run(phs);
-
-           
-
-
         }
     }
 }

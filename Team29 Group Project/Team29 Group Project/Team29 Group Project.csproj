@@ -115,7 +115,6 @@
     <Compile Include="Messages\Messages.designer.cs">
       <DependentUpon>Messages.cs</DependentUpon>
     </Compile>
-    <Compile Include="EntityFramework\MissedAppointments.cs" />
     <Compile Include="PatientDetails\PatientDetailsModel.cs" />
     <Compile Include="PatientDetails\PatientDetailsPresenter.cs" />
     <Compile Include="PatientDetails\PatientDetails.cs">

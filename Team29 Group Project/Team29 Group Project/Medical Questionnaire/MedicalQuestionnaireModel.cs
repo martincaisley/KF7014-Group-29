@@ -22,11 +22,86 @@ namespace Team29_Group_Project
 
             return patientName;
         }
+        public string GetMedicalConditions(int patientID)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var quetionnaire = unitOfWork.questionnaire.GetAll();
+
+            var appQuery = from q in quetionnaire.AsEnumerable()
+                           where q.patientID == patientID
+                           select new
+                           {
+                               q.questionnaireID
+                           };
+            var questionnaires = appQuery.ToList();
+            if (questionnaires.Count != 0)
+            {
+
+                var mq = unitOfWork.questionnaire.GetByID(questionnaires[0].questionnaireID);
+                string medicalConditions = mq.medicalConditions;
+
+                return medicalConditions;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public string GetMedication(int patientID)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var quetionnaire = unitOfWork.questionnaire.GetAll();
+
+            var appQuery = from q in quetionnaire.AsEnumerable()
+                           where q.patientID == patientID
+                           select new
+                           {
+                               q.questionnaireID
+                           };
+            var questionnaires = appQuery.ToList();
+
+            if (questionnaires.Count != 0)
+            {
+                var mq = unitOfWork.questionnaire.GetByID(questionnaires[0].questionnaireID);
+                string medication = mq.medication;
+
+                return medication;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public string GetAllergies(int patientID)
+        {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+            var quetionnaire = unitOfWork.questionnaire.GetAll();
+
+            var appQuery = from q in quetionnaire.AsEnumerable()
+                           where q.patientID == patientID
+                           select new
+                           {
+                               q.questionnaireID
+                           };
+            var questionnaires = appQuery.ToList();
+
+            if (questionnaires.Count != 0)
+            {
+
+                var mq = unitOfWork.questionnaire.GetByID(questionnaires[0].questionnaireID);
+                string allergies = mq.allergies;
+
+                return allergies;
+            }
+            else
+            {
+                return "";
+            }
+        }
 
         public void AddQuestionnaire(int patientID, String medicalConditions, String medication, String allergies )
         {
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
-            MedicalQuestionnaire mq = unitOfWork.questionnaire.GetByID(patientID);
 
             var quetionnaire = unitOfWork.questionnaire.GetAll();
 

@@ -24,6 +24,9 @@ namespace Team29_Group_Project
         private void MedicalQuestionnaireGUI_Load(object sender, EventArgs e)
         {
             presenter.GetPatientName(patientID);
+            presenter.GetMedicalConditions(patientID);
+            presenter.GetMedication(patientID);
+            presenter.GetAllergies(patientID);
         }
         #region interface methods
         public String GetMedicalConditions()
@@ -50,6 +53,21 @@ namespace Team29_Group_Project
 
             return presenter.GetMessage();
         }
+
+        public void setMedicalConditions(string medicalConditions)
+        {
+            TXT_medicalConditions.Text = medicalConditions;
+        }
+
+        public void setMedication(string medications)
+        {
+            TXT_medication.Text = medications;
+        }
+
+        public void setAllergies(string allergies)
+        {
+            TXT_allergies.Text = allergies;
+        }
         #endregion
 
         private void BTN_submitQuestionnaire_Click(object sender, EventArgs e)
@@ -59,5 +77,7 @@ namespace Team29_Group_Project
           
             this.Close();
         }
+
+        
     }
 }

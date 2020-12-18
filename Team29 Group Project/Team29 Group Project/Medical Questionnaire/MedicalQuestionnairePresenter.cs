@@ -23,6 +23,19 @@ namespace Team29_Group_Project
         {
             view.setPatient(model.GetPatientName(patientID));
         }
+
+        public void GetMedicalConditions(int patientID)
+        {
+            view.setMedicalConditions(model.GetMedicalConditions(patientID));
+        }
+        public void GetAllergies(int patientID)
+        {
+            view.setAllergies(model.GetAllergies(patientID));
+        }
+        public void GetMedication(int patientID)
+        {
+            view.setMedication(model.GetMedication(patientID));
+        }
         public String GetMessage()
         {
             return model.Message();

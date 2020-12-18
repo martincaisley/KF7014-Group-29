@@ -8,10 +8,15 @@ namespace Team29_Group_Project
 {
     public class NewAppointmentsPresenter
     {
+        #region Instance Variables
         private NewAppointmentsModel newAppointmentsModel;
         private INewAppointmentsGUI NewAppointmentsScreen;
         int appLength;
         DateTime Date = DateTime.Today;
+
+        #endregion
+
+        #region Constructor
 
         public NewAppointmentsPresenter(INewAppointmentsGUI NewAppointmentsScreen)
         {
@@ -22,10 +27,9 @@ namespace Team29_Group_Project
             
         }
 
-        public NewAppointmentsPresenter()
-        {
-        }
+        #endregion
 
+        #region Process Appointment
         public void processAppointment()
         {
             int patientID = NewAppointmentsScreen.getPatientID();
@@ -39,7 +43,9 @@ namespace Team29_Group_Project
 
             newAppointmentsModel.WriteToDatabase(patientID, appointmentDate, appointmentStartTime, appointmentEndTime, appointmentLength, appointmentType, appointmentBand);
         }
+        #endregion
 
+        #region Find Appointment Band for Cost
         public string findAppBand(string appType)
         {
             string appBand = "";
@@ -61,29 +67,38 @@ namespace Team29_Group_Project
 
             return appBand;
         }
+        #endregion
 
+        #region Get Patient Name
         public void getPatientName(int patientID)
         {
             NewAppointmentsScreen.setName(newAppointmentsModel.GetPatientName(patientID));
         }
+        #endregion
 
+        #region Set Appointment Type
         public void setAppType(string appType)
         {
             string appointmentType = appType;
             appLength = newAppointmentsModel.getAppointmentLength(appointmentType);
             NewAppointmentsScreen.setAppointmentEndTime(appLength);
         }
+        #endregion
 
+        #region Show Appointment List
         public void showAppointmentList(DateTime AppDate)
         {
             NewAppointmentsScreen.setDGV(newAppointmentsModel.getDT(AppDate));
         }
+        #endregion
 
+        #region Checking Restricted Appointment times
         public bool checkTime(DateTime date, TimeSpan startTime, TimeSpan endTime)
         {
             return newAppointmentsModel.checkTime(date, startTime, endTime);
         }
 
+        
         public bool checkInWorkingHours(TimeSpan startTime, TimeSpan endTime)
         {
             TimeSpan workStartTime = TimeSpan.Parse("09:00:00");
@@ -117,6 +132,7 @@ namespace Team29_Group_Project
                 return true;
             }
         }
+        #endregion
 
 
     }

@@ -9,6 +9,7 @@ namespace Team29_Group_Project
 {
     public class NewAppointmentsModel
     {
+        #region Get from Database / Write to Database
         public string GetPatientName(int patientID)
         {
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
@@ -52,6 +53,7 @@ namespace Team29_Group_Project
             }
 
         }
+        
 
         public int getAppointmentLength(string AppointmentT)
         {
@@ -100,6 +102,9 @@ namespace Team29_Group_Project
 
             return dt;
         }
+        #endregion
+
+        #region Appointment Type and Time they take
         enum AppType
         {
             Checkup = 30,
@@ -117,7 +122,9 @@ namespace Team29_Group_Project
             DentalVeneers = 120
 
         }
+        #endregion
 
+        #region Check Appointment Time
         public bool checkTime(DateTime date, TimeSpan startTime, TimeSpan endTime)
         {
             UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
@@ -145,5 +152,6 @@ namespace Team29_Group_Project
                 return true;
             }
         }
+        #endregion
     }
 }

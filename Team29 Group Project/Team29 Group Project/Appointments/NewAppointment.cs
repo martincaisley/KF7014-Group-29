@@ -13,9 +13,13 @@ namespace Team29_Group_Project
 {
     public partial class NewAppointment : Form, INewAppointmentsGUI
     {
+        #region Instance Variables
         private NewAppointmentsPresenter presenter;
         int patientID;
         string appType = "";
+        #endregion
+
+        #region Constructor and FormLoad
         public NewAppointment(int patientID)
         {
             this.patientID = patientID;
@@ -35,7 +39,9 @@ namespace Team29_Group_Project
             AppointmentTimePicker2.ShowUpDown = true;
             
         }
+        #endregion
 
+        #region Getters and Setters
         public void setName(string name)
         {
             txt_name.Text = name;
@@ -87,6 +93,9 @@ namespace Team29_Group_Project
                 DGV_AddApp.Columns[x].ReadOnly = true;
             }
         }
+        #endregion
+
+        #region Add Appointment
         private void btn_addAppointment_Click(object sender, EventArgs e)
         {
             if (AppTypeValidation() && dateValidation() && timeValidation())
@@ -111,7 +120,7 @@ namespace Team29_Group_Project
                     }
                     else
                     {
-                        MessageBox.Show("These times are reserved");
+                        MessageBox.Show("These time slots are reserved");
                     }
                 }
                 else
@@ -121,7 +130,9 @@ namespace Team29_Group_Project
             }
         }
 
-        #region Chk box changed
+        #endregion
+
+        #region Radio botton changed
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -136,6 +147,10 @@ namespace Team29_Group_Project
             presenter.setAppType(appType);
         }
 
+        #endregion
+
+
+        #region Validation
         private bool AppTypeValidation()
         {
             foreach (var RadioButton in AppointmentBox.Controls.OfType<RadioButton>())
@@ -145,7 +160,7 @@ namespace Team29_Group_Project
                     return true;
                 }
             }
-            MessageBox.Show("An appointment type has not been chosen.");
+            MessageBox.Show("An Appointment type has not been chosen.");
             return false;
         }
 
@@ -168,11 +183,14 @@ namespace Team29_Group_Project
             }
             return true;
         }
+
         #endregion
 
+        #region DatePicker Changed
         private void datePicker_ValueChanged(object sender, EventArgs e)
         {
             presenter.showAppointmentList(datePicker.Value.Date);
         }
+        #endregion
     }
 }

@@ -16,25 +16,15 @@ namespace Team29_Group_Project
             this.view = medicalScreen;
             model = new MedicalQuestionnaireModel();
             view.Register(this);
-
+            initialiseForm();
         }
 
-        public void GetPatientName(int patientID)
+        public void initialiseForm()
         {
-            view.setPatient(model.GetPatientName(patientID));
-        }
-
-        public void GetMedicalConditions(int patientID)
-        {
-            view.setMedicalConditions(model.GetMedicalConditions(patientID));
-        }
-        public void GetAllergies(int patientID)
-        {
-            view.setAllergies(model.GetAllergies(patientID));
-        }
-        public void GetMedication(int patientID)
-        {
-            view.setMedication(model.GetMedication(patientID));
+            view.setPatient(model.GetPatientName(view.GetPatientID()));
+            view.setMedicalConditions(model.GetMedicalConditions(view.GetPatientID()));
+            view.setAllergies(model.GetAllergies(view.GetPatientID()));
+            view.setMedication(model.GetMedication(view.GetPatientID()));
         }
         public String GetMessage()
         {

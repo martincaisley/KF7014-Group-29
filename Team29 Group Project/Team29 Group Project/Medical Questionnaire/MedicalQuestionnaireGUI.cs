@@ -23,10 +23,7 @@ namespace Team29_Group_Project
         }
         private void MedicalQuestionnaireGUI_Load(object sender, EventArgs e)
         {
-            presenter.GetPatientName(patientID);
-            presenter.GetMedicalConditions(patientID);
-            presenter.GetMedication(patientID);
-            presenter.GetAllergies(patientID);
+
         }
         #region interface methods
         public String GetMedicalConditions()
@@ -35,8 +32,8 @@ namespace Team29_Group_Project
         { return TXT_medication.Text; }
         public String GetAllergies()
         { return TXT_allergies.Text; }
-        public String GetPatientID()
-        { return patientID.ToString(); }
+        public int GetPatientID()
+        { return patientID; }
         public void Register(MedicalQuestionnairePresenter MQP)
         {
             presenter = MQP;

@@ -11,7 +11,7 @@ namespace Team29_Group_Project
         String GetMedicalConditions();
         String GetMedication();
         String GetAllergies();
-        String GetPatientID();
+        int GetPatientID();
         void setPatient(string name);
         void setMedicalConditions(string medicalConditions);
         void setMedication(string medications);

@@ -58,7 +58,7 @@ namespace Team29_Group_Project
             this.dgv_patientAppointments.Name = "dgv_patientAppointments";
             this.dgv_patientAppointments.RowHeadersWidth = 51;
             this.dgv_patientAppointments.RowTemplate.Height = 24;
-            this.dgv_patientAppointments.Size = new System.Drawing.Size(263, 296);
+            this.dgv_patientAppointments.Size = new System.Drawing.Size(249, 296);
             this.dgv_patientAppointments.TabIndex = 1;
             // 
             // btn_newAppointment

@@ -74,9 +74,9 @@ namespace Team29_Group_Project
                 var patient = unitOfWork.patient.GetAll();
                 var appointment = unitOfWork.appointment.GetAll();
 
-                dt.Columns.Add("Patient Name", typeof(string));
                 dt.Columns.Add("Appointment Start Time", typeof(TimeSpan));
                 dt.Columns.Add("Appointment End Time", typeof(TimeSpan));
+                dt.Columns.Add("Patient Name", typeof(string));
                 dt.Columns.Add("Appointment Type", typeof(string));
                 dt.Columns.Add("AppointmentID", typeof(int));
 
@@ -87,9 +87,9 @@ namespace Team29_Group_Project
                                        orderby a.appointmentStartTime
                                        select dt.LoadDataRow(new object[]
                                        {
-                                                p.firstName + " " + p.lastName,
                                                 a.appointmentStartTime,
                                                 a.appointmentEndTime,
+                                                p.firstName + " " + p.lastName,
                                                 a.appointmentType,
                                                 a.appointmentID
 

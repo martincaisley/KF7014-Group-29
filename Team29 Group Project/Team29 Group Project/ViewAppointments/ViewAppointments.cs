@@ -51,11 +51,11 @@ namespace Team29_Group_Project
 
         private void dgv_appointmentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            presenter.rowSelcted(Convert.ToInt32(dgv_appointmentList.CurrentRow.Cells[0].Value.ToString()));
+            presenter.rowSelcted(Convert.ToInt32(dgv_appointmentList.CurrentRow.Cells[6].Value.ToString()));
         }
         private void dgv_appointmentList_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            presenter.rowSelcted(Convert.ToInt32(dgv_appointmentList.CurrentRow.Cells[0].Value.ToString()));
+            presenter.rowSelcted(Convert.ToInt32(dgv_appointmentList.CurrentRow.Cells[6].Value.ToString()));
         }
 
         public void viewChosenAppointment(int appointmentID)

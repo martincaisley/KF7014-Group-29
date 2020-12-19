@@ -24,17 +24,18 @@ namespace Team29_Group_Project
             {
                 UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
                 var appointments = unitOfWork.appointment.GetAll();
+                dt.Columns.Add("Appointment Type", typeof(string));
                 dt.Columns.Add("Appointment Date", typeof(DateTime));
                 dt.Columns.Add("Appointment Time", typeof(TimeSpan));
-                dt.Columns.Add("AppointmentID", typeof(int));
 
                 var appointmentQuery = from a in appointments.AsEnumerable()
                                        where a.patientID == patientID
+                                       orderby a.appointmentDate
                                        select dt.LoadDataRow(new object[]
                                        {
+                                           a.appointmentType,
                                    a.appointmentDate,
-                                   a.appointmentStartTime,
-                                   a.appointmentID
+                                   a.appointmentStartTime
                                        }, false);
                 appointmentQuery.CopyToDataTable();
             }

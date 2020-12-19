@@ -41,12 +41,12 @@ namespace Team29_Group_Project
             // dgv_patientList
             // 
             this.dgv_patientList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_patientList.Location = new System.Drawing.Point(11, 157);
+            this.dgv_patientList.Location = new System.Drawing.Point(11, 139);
             this.dgv_patientList.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_patientList.Name = "dgv_patientList";
             this.dgv_patientList.RowHeadersWidth = 51;
             this.dgv_patientList.RowTemplate.Height = 24;
-            this.dgv_patientList.Size = new System.Drawing.Size(352, 245);
+            this.dgv_patientList.Size = new System.Drawing.Size(353, 263);
             this.dgv_patientList.TabIndex = 0;
             this.dgv_patientList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_patientList_CellContentClick);
             this.dgv_patientList.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_patientList_CellContentDoubleClick);
@@ -64,7 +64,7 @@ namespace Team29_Group_Project
             // 
             // btn_newPatient
             // 
-            this.btn_newPatient.Location = new System.Drawing.Point(132, 69);
+            this.btn_newPatient.Location = new System.Drawing.Point(133, 69);
             this.btn_newPatient.Margin = new System.Windows.Forms.Padding(2);
             this.btn_newPatient.Name = "btn_newPatient";
             this.btn_newPatient.Size = new System.Drawing.Size(109, 24);
@@ -86,7 +86,7 @@ namespace Team29_Group_Project
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(254, 69);
+            this.btn_delete.Location = new System.Drawing.Point(255, 69);
             this.btn_delete.Margin = new System.Windows.Forms.Padding(2);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(109, 24);
@@ -99,7 +99,7 @@ namespace Team29_Group_Project
             // 
             this.lbl_active.AutoSize = true;
             this.lbl_active.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.lbl_active.Location = new System.Drawing.Point(11, 131);
+            this.lbl_active.Location = new System.Drawing.Point(11, 113);
             this.lbl_active.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_active.Name = "lbl_active";
             this.lbl_active.Size = new System.Drawing.Size(131, 24);
@@ -110,7 +110,7 @@ namespace Team29_Group_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 415);
+            this.ClientSize = new System.Drawing.Size(373, 415);
             this.Controls.Add(this.lbl_active);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.lbl_patients);

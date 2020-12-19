@@ -48,7 +48,12 @@ namespace Team29_Group_Project
             int appointmentLength = appLength;
             string appointmentType = NewAppointmentsScreen.getAppointmentType();
             string appointmentBand = findAppBand(appointmentType);
-            newAppointmentsModel.AddAppointmentToDatabase(patientID, appointmentDate, appointmentStartTime, appointmentEndTime, appointmentLength, appointmentType, appointmentBand);
+
+            if (appointmentRadioChecked() && appDateBeforeToday() && endTimeBeforeStartTime() && checkEmergency() && checkInWorkingHours() && checkTime())
+            {
+                newAppointmentsModel.AddAppointmentToDatabase(patientID, appointmentDate, appointmentStartTime, appointmentEndTime, appointmentLength, appointmentType, appointmentBand);
+                NewAppointmentsScreen.appointmentConfirmation();
+            }
         }
         #endregion
 
@@ -99,20 +104,81 @@ namespace Team29_Group_Project
         }
         #endregion
 
+        #region validation for view
+        public bool appointmentRadioChecked()
+        {
+            string appType = NewAppointmentsScreen.getAppointmentType();
+            if (appType == "")
+            {
+                NewAppointmentsScreen.noAppointmentTypeChecked();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool appDateBeforeToday()
+        {
+            DateTime date = NewAppointmentsScreen.getAppointmentDate();
+            if (date < DateTime.Today.Date)
+            {
+                NewAppointmentsScreen.appDateBeforeToday();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool endTimeBeforeStartTime()
+        {
+            TimeSpan startTime = NewAppointmentsScreen.getAppointmentStartTime();
+            TimeSpan endTime = NewAppointmentsScreen.getAppointmentEndTime();
+            if (endTime <= startTime)
+            {
+                NewAppointmentsScreen.startTimeAfterEndTime();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        #endregion
+
         #region Checking Restricted Appointment times
         //ensures that there are no appointments alredy during these times
-        public bool checkTime(DateTime date, TimeSpan startTime, TimeSpan endTime)
+        public bool checkTime()
         {
-            return newAppointmentsModel.checkIfCanBookAtThisTime(date, startTime, endTime);
+            DateTime date = NewAppointmentsScreen.getAppointmentDate();
+            TimeSpan startTime = NewAppointmentsScreen.getAppointmentStartTime();
+            TimeSpan endTime = NewAppointmentsScreen.getAppointmentEndTime();
+            bool noAppointmentAtThisTime = newAppointmentsModel.checkIfCanBookAtThisTime(date, startTime, endTime);
+            
+            if(noAppointmentAtThisTime == true)
+            {
+                return true;
+            }
+            else
+            {
+                NewAppointmentsScreen.appAlreadyAtTime();
+                return false;
+            }
         }
 
         //Ensures the appointment is between working hours of 9-5
-        public bool checkInWorkingHours(TimeSpan startTime, TimeSpan endTime)
+        public bool checkInWorkingHours()
         {
+            TimeSpan startTime = NewAppointmentsScreen.getAppointmentStartTime();
+            TimeSpan endTime = NewAppointmentsScreen.getAppointmentEndTime();
             TimeSpan workStartTime = TimeSpan.Parse("09:00:00");
             TimeSpan workEndTime = TimeSpan.Parse("17:00:00");
             if (startTime < workStartTime || startTime > workEndTime || endTime < workStartTime || endTime > workEndTime)
             {
+                NewAppointmentsScreen.outsideOfWorkingHours();
                 return false;
             }
             else
@@ -121,14 +187,18 @@ namespace Team29_Group_Project
             }
         }
         //11-13 everyday reserved for emergencies, cannot book in advance for this time
-        public bool checkEmergency(DateTime date, TimeSpan startTime, TimeSpan endTime)
+        public bool checkEmergency()
         {
-            if (date != DateTime.Today.Date)
+            DateTime dateInputted = NewAppointmentsScreen.getAppointmentDate();
+            TimeSpan startTime = NewAppointmentsScreen.getAppointmentStartTime();
+            TimeSpan endTime = NewAppointmentsScreen.getAppointmentEndTime();
+            TimeSpan startingHour = TimeSpan.Parse("11:00:00");
+            TimeSpan endingHour = TimeSpan.Parse("13:00:00");
+            if (dateInputted != DateTime.Today.Date)
             {
-                TimeSpan startingHour = TimeSpan.Parse("11:00:00");
-                TimeSpan endingHour = TimeSpan.Parse("13:00:00");
                 if ((startTime < startingHour && endTime > startingHour) || (startTime > startingHour && endTime < endingHour) || (startTime < endingHour && endTime > endingHour))
                 {
+                    NewAppointmentsScreen.notAnEmergency();
                     return false;
                 }
                 else

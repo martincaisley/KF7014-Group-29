@@ -52,6 +52,11 @@ namespace Team29_Group_Project
             return AppointmentTimePicker2.Value.TimeOfDay;
         }
 
+        public string getAppointmentTypeCheckBoxValue()
+        {
+            return AppointmentBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked).ToString();
+        }
+
         public int getPatientID()
         {
             return patientID;
@@ -106,38 +111,14 @@ namespace Team29_Group_Project
         #region Add Appointment
         private void btn_addAppointment_Click(object sender, EventArgs e)
         {
-            if (AppTypeValidation() && dateValidation() && timeValidation())
-            {
-                bool inWorkingHours = presenter.checkInWorkingHours(AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
-                if (inWorkingHours)
-                {
-                    bool emergencyAppointment = presenter.checkEmergency(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
-                    if (emergencyAppointment == true)
-                    {
-                        bool canBook = presenter.checkTime(datePicker.Value.Date, AppointmentTimePicker.Value.TimeOfDay, AppointmentTimePicker2.Value.TimeOfDay);
-                        if (canBook == false)
-                        {
-                            MessageBox.Show("Appointment already booked for this time");
-                        }
-                        else
-                        {
-                            presenter.processAppointment();
-                            MessageBox.Show("Appointment Added");
-                            this.Close();
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("These time slots are reserved");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Choose an appointment in working hours 9-5");
-                }
-            }
+            presenter.processAppointment();
         }
 
+        public void appointmentConfirmation()
+        {
+            MessageBox.Show("Appointment Added");
+            this.Close();
+        }
         #endregion
 
         #region Radio botton changed
@@ -148,47 +129,42 @@ namespace Team29_Group_Project
             {
                 if (RadioButton.Checked)
                 {
-                    appType = RadioButton.Text;   
+                    appType = RadioButton.Text;
                 }
             }
             presenter.setAppLength(appType);
         }
 
         #endregion
+        #region validaiton text boxes
 
-
-        #region Validation
-        private bool AppTypeValidation()
+        public void noAppointmentTypeChecked()
         {
-            foreach (var RadioButton in AppointmentBox.Controls.OfType<RadioButton>())
-            {
-                if (RadioButton.Checked)
-                {
-                    return true;
-                }
-            }
-            MessageBox.Show("An Appointment type has not been chosen.");
-            return false;
+            MessageBox.Show("No appointment type checked");
         }
 
-        private bool dateValidation()
+        public void startTimeAfterEndTime()
         {
-            if (datePicker.Value < DateTime.Today.Date)
-            {
-                MessageBox.Show("Appointment date cannot be before today");
-                datePicker.Value = DateTime.Today.Date;
-                return false;
-            }
-            return true;
+            MessageBox.Show("Appointment end time cannot be before start time");
+            AppointmentTimePicker2.Value = AppointmentTimePicker.Value;
         }
-        private bool timeValidation()
+
+        public void appDateBeforeToday()
         {
-            if (AppointmentTimePicker2.Value < AppointmentTimePicker.Value)
-            {
-                MessageBox.Show("Appointment end time cannot be before start time");
-                return false;
-            }
-            return true;
+            MessageBox.Show("Appointment date cannot be before today");
+            datePicker.Value = DateTime.Today.Date;
+        }
+        public void appAlreadyAtTime()
+        {
+            MessageBox.Show("Appointment already book at this time");
+        }
+        public void notAnEmergency()
+        {
+            MessageBox.Show("Appointments between 11-13 are reserved for on the day emergency appointments");
+        }
+        public void outsideOfWorkingHours()
+        {
+            MessageBox.Show("Appointment must be booked between 9-5");
         }
 
         #endregion

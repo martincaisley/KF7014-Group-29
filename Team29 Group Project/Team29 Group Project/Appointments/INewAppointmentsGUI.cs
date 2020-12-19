@@ -20,5 +20,13 @@ namespace Team29_Group_Project
         void setAppointmentEndTime(int appointmentLength);
         void setDGV(DataTable DT);
         void setTimePickers();
+        string getAppointmentTypeCheckBoxValue();
+        void noAppointmentTypeChecked();
+        void startTimeAfterEndTime();
+        void appDateBeforeToday();
+        void appointmentConfirmation();
+        void outsideOfWorkingHours();
+        void notAnEmergency();
+        void appAlreadyAtTime();
     }
 }

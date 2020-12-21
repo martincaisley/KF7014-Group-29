@@ -8,16 +8,16 @@ namespace Team29_Group_Project
 {
     public interface IUnitOfWork
     {
-        Repository<Appointment> appointment { get; }
-        Repository<Patient> patient { get; }
-        Repository<MedicalQuestionnaire> questionnaire { get; }
+        IRepository<Appointment> appointment { get; }
+        IRepository<Patient> patient { get; }
+        IRepository<MedicalQuestionnaire> questionnaire { get; }
         void Save();
     }
     class UnitOfWork : IUnitOfWork
     {
-        private Repository<Appointment> _appointments;
-        private Repository<Patient> _patients;
-        private Repository<MedicalQuestionnaire> _questionnaire;
+        private IRepository<Appointment> _appointments;
+        private IRepository<Patient> _patients;
+        private IRepository<MedicalQuestionnaire> _questionnaire;
         private MyDBEntities context;
 
         public UnitOfWork (MyDBEntities context)
@@ -25,7 +25,7 @@ namespace Team29_Group_Project
             this.context = context;
         }
 
-        public Repository<Appointment> appointment
+        public IRepository<Appointment> appointment
         {
             get
             {
@@ -37,7 +37,7 @@ namespace Team29_Group_Project
             }
         }
 
-        public Repository<MedicalQuestionnaire> questionnaire
+        public IRepository<MedicalQuestionnaire> questionnaire
         {
             get
             {
@@ -48,7 +48,7 @@ namespace Team29_Group_Project
                 return _questionnaire;
             }
         }
-        public Repository<Patient> patient 
+        public IRepository<Patient> patient 
         {
             get
             {

@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using Team29_Group_Project;
 
 namespace Team29TestProject
@@ -9,20 +10,21 @@ namespace Team29TestProject
     {
         NewAppointment form;
         NewAppointmentsModel model;
-        NewAppointmentsPresenter presenter;
+        NewAppointmentsPresenter presenter = null;
+
         [TestInitialize]
         public void NewAppointmentMVPTestInitialize()
         {
             form = new NewAppointment(1);
             model = new NewAppointmentsModel();
-            presenter = new NewAppointmentsPresenter();
+            presenter = new NewAppointmentsPresenter(form);
         }
         [TestMethod]
-        public void NewAppMVPTest()
+        public void TestPresenterFindAppBand1()
         {
-            Assert.IsNotNull(form, "Form is null");
-            Assert.IsNotNull(model, "model is null");
-            Assert.IsNotNull(presenter, "presenter is null");
+            string appType = "Checkup";
+            string result = presenter.findAppBand(appType);
+            Assert.AreEqual("Band1", result);
         }
     }
 }

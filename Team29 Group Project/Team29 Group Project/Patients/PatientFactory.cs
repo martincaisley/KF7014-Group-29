@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Team29_Group_Project
 {
   
-    class PatientFactory 
+    public class PatientFactory 
     {
         
         public Patient GetPatientType(PatientTypes patientType)

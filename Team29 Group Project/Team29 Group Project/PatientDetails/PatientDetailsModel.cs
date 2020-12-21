@@ -7,11 +7,11 @@ using System.Data;
 
 namespace Team29_Group_Project
 {
-    class PatientDetailsModel
+    public class PatientDetailsModel
     {
+        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         public String getName(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var UOW = unitOfWork.patient.GetByID(patientID);
             string patientName = UOW.firstName + " " + UOW.lastName;
 
@@ -22,7 +22,6 @@ namespace Team29_Group_Project
             DataTable dt = new DataTable();
             try
             {
-                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
                 var appointments = unitOfWork.appointment.GetAll();
                 dt.Columns.Add("Appointment Type", typeof(string));
                 dt.Columns.Add("Appointment Date", typeof(DateTime));
@@ -48,7 +47,6 @@ namespace Team29_Group_Project
 
         internal void deleteEntry(int appointmentID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             Appointment appToDelete = unitOfWork.appointment.GetByID(appointmentID);
             unitOfWork.appointment.Remove(appToDelete);
             unitOfWork.Save();
@@ -56,7 +54,6 @@ namespace Team29_Group_Project
 
         public bool messagesToView(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -80,7 +77,6 @@ namespace Team29_Group_Project
         }
         public bool checkQuestionnaireDate(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var questionnaires = unitOfWork.questionnaire.GetAll();
             try
             {
@@ -120,7 +116,6 @@ namespace Team29_Group_Project
 
         public bool checkRepeatOffences(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var appointments = unitOfWork.appointment.GetAll();
             try
             {

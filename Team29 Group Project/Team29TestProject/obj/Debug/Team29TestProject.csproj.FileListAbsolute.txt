@@ -19,3 +19,11 @@ C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 G
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\obj\Debug\Team29TestProject.csproj.CopyComplete
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\obj\Debug\Team29TestProject.dll
 C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\obj\Debug\Team29TestProject.pdb
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\bin\Debug\Castle.Core.dll
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\bin\Debug\Moq.dll
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\bin\Debug\Castle.Core.xml
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\bin\Debug\Moq.xml
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\Team29TestProject\bin\Debug\System.Threading.Tasks.Extensions.xml

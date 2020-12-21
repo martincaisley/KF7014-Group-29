@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    enum PatientTypes
+    public enum PatientTypes
     {
         Paying = 1,
         Free = 2

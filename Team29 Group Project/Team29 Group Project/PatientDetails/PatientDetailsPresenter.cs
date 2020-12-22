@@ -68,15 +68,6 @@ namespace Team29_Group_Project
             detailsModel.deleteEntry(appToDelete);
             showPatientAppointments();
         }
-        /*
-        public void ShowMedicalQuestionnaire()
-        {
-            MedicalQuestionnaireGUI med = new MedicalQuestionnaireGUI(detailsScreen.getPatientID());
-            MedicalQuestionnairePresenter MQP = new MedicalQuestionnairePresenter(med);
-            med.Show();
-        }
-        */
-
         public void longerThanAYear()
         {
             if (detailsModel.checkQuestionnaireDate(detailsScreen.getPatientID()))

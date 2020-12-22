@@ -120,13 +120,13 @@ namespace Team29_Group_Project
 
         private void BTN_medicalQuestionnaire_Click(object sender, EventArgs e)
         {
-            //presenter.ShowMedicalQuestionnaire();
-            //this.Hide();
-
             MedicalQuestionnaireGUI med = new MedicalQuestionnaireGUI(patientID);
             MedicalQuestionnaireModel medmod = new MedicalQuestionnaireModel();
             MedicalQuestionnairePresenter MQP = new MedicalQuestionnairePresenter(med,medmod);
-            med.Show();
+            this.Hide();
+            med.ShowDialog();
+            this.Show();
+
         }
     }
 }

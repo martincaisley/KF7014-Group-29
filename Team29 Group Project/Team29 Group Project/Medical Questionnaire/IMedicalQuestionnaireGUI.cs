@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Team29_Group_Project
 {
     public  interface IMedicalQuestionnaireGUI
-    {   //add code in program.cs later
+    {   
         String GetMedicalConditions();
         String GetMedication();
         String GetAllergies();

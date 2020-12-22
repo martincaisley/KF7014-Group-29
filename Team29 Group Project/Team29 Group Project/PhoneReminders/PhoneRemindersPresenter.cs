@@ -9,14 +9,14 @@ namespace Team29_Group_Project
 {
     public class PhoneRemindersPresenter
     {
-        private PhoneRemindersModel remindersModel;
+        private IPhoneRemindersModel remindersModel;
         private IPhoneRemindersGUI remindersScreen;
 
-        public PhoneRemindersPresenter(IPhoneRemindersGUI remindersScreen)
+        public PhoneRemindersPresenter(IPhoneRemindersGUI remindersScreen, IPhoneRemindersModel remindersModel)
         {
             this.remindersScreen = remindersScreen;
             remindersScreen.Register(this);
-            remindersModel = new PhoneRemindersModel();
+            this.remindersModel = remindersModel;
             initialiseForm();
         }
         public void initialiseForm()

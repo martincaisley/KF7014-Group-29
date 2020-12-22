@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    class ViewAppointmentsModel
+    class ViewAppointmentsModel : IViewAppointmentsModel
     {
+        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         public DataTable getAppointmentsList(DateTime date)
         {
             DataTable dt = new DataTable();
             try
             {
-                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
                 var patients = unitOfWork.patient.GetAll();
                 var appointments = unitOfWork.appointment.GetAll();
 
@@ -54,8 +54,6 @@ namespace Team29_Group_Project
         public void generateCSVFile()
         {
             List<string> csv = new List<string>();
-
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 

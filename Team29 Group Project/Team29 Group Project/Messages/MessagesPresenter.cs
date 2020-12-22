@@ -8,14 +8,14 @@ namespace Team29_Group_Project
 {
     public class MessagesPresenter
     {
-        private MessagesModel messagesModel;
+        private IMessagesModel messagesModel;
         private IMessagesGUI messagesScreen;
 
-        public MessagesPresenter(IMessagesGUI messagesScreen)
+        public MessagesPresenter(IMessagesGUI messagesScreen, IMessagesModel messagesModel)
         {
             this.messagesScreen = messagesScreen;
             messagesScreen.Register(this);
-            messagesModel = new MessagesModel();
+            this.messagesModel = messagesModel;
             initialiseForm();
         }
         public void initialiseForm()

@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    class MedicalQuestionnaireModel
+    class MedicalQuestionnaireModel : IMedicalQuestionnaireModel
     {
+        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         public string message;
-        public String Message()
+        public string Message()
         {
-            
             return message;
+        }
+
+        public void setMessage(string messageToSet)
+        {
+            message = messageToSet;
         }
         public string GetPatientName(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var UOW = unitOfWork.patient.GetByID(patientID);
             string patientName = UOW.firstName + " " + UOW.lastName;
 
@@ -24,7 +28,6 @@ namespace Team29_Group_Project
         }
         public string GetMedicalConditions(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var quetionnaire = unitOfWork.questionnaire.GetAll();
 
             var appQuery = from q in quetionnaire.AsEnumerable()
@@ -49,7 +52,6 @@ namespace Team29_Group_Project
         }
         public string GetMedication(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var quetionnaire = unitOfWork.questionnaire.GetAll();
 
             var appQuery = from q in quetionnaire.AsEnumerable()
@@ -74,7 +76,6 @@ namespace Team29_Group_Project
         }
         public string GetAllergies(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var quetionnaire = unitOfWork.questionnaire.GetAll();
 
             var appQuery = from q in quetionnaire.AsEnumerable()
@@ -101,8 +102,6 @@ namespace Team29_Group_Project
 
         public void AddQuestionnaire(int patientID, String medicalConditions, String medication, String allergies )
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
-
             var quetionnaire = unitOfWork.questionnaire.GetAll();
 
             var appQuery = from q in quetionnaire.AsEnumerable()
@@ -126,7 +125,7 @@ namespace Team29_Group_Project
 
                 unitOfWork.questionnaire.Add(questionnaire);
                 unitOfWork.Save();
-                message = "Medical record added successfully";
+                setMessage("Medical record added successfully");
             }
             else
             {
@@ -138,7 +137,7 @@ namespace Team29_Group_Project
                 med.allergies = allergies;
                 med.DateCompleted = DateTime.Today.Date;
                 unitOfWork.Save();
-                message = "Medical record updated successfully";
+                setMessage("Medical record updated successfully");
             }
 
          

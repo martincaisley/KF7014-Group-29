@@ -8,11 +8,11 @@ namespace Team29_Group_Project
 {
 
 
-    public class PatientRegistrationModel
+    public class PatientRegistrationModel : IPatientRegistrationModel
     {
         PatientFactory patientFactory = new PatientFactory();
-        
-      
+        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+
         public void AddPatient(String firstName, String lastName, DateTime DoB, String address, String email, String phoneNum, String occupation, String GPname, String GPaddress, string type)
         {
             PatientTypes patientTypes = (PatientTypes)Enum.Parse(typeof(PatientTypes), type);
@@ -27,14 +27,12 @@ namespace Team29_Group_Project
             patient.GPname = GPname;
             patient.GPaddress = GPaddress;
 
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             unitOfWork.patient.Add(patient);
             unitOfWork.Save();
         }
 
         public int getLastPatientID()
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 

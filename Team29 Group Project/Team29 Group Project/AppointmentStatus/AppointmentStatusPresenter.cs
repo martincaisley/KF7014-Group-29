@@ -8,14 +8,14 @@ namespace Team29_Group_Project
 {
     public class AppointmentStatusPresenter
     {
-        private AppointmentStatusModel statusModel;
+        private IAppointmentStatusModel statusModel;
         private IAppointmentStatusGUI statusScreen;
 
-        public AppointmentStatusPresenter(IAppointmentStatusGUI statusScreen)
+        public AppointmentStatusPresenter(IAppointmentStatusGUI statusScreen, IAppointmentStatusModel model)
         {
             this.statusScreen = statusScreen;
             statusScreen.Register(this);
-            statusModel = new AppointmentStatusModel();
+            statusModel = model;
             initialiseForm();
         }
         public void initialiseForm()

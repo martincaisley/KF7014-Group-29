@@ -7,14 +7,14 @@ using System.Data;
 
 namespace Team29_Group_Project
 {
-    class PhoneRemindersModel
+    class PhoneRemindersModel : IPhoneRemindersModel
     {
+        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         public DataTable getPhoneDetails()
         {
             DataTable dt = new DataTable();
             try
             {
-                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
                 var patients = unitOfWork.patient.GetAll();
                 var appointments = unitOfWork.appointment.GetAll();
 

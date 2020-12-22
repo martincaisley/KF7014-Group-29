@@ -9,12 +9,12 @@ namespace Team29_Group_Project
     public class MedicalQuestionnairePresenter
     {
         private IMedicalQuestionnaireGUI view;
-        private MedicalQuestionnaireModel model;
+        private IMedicalQuestionnaireModel model;
 
-        public MedicalQuestionnairePresenter(IMedicalQuestionnaireGUI medicalScreen)
+        public MedicalQuestionnairePresenter(IMedicalQuestionnaireGUI medicalScreen, IMedicalQuestionnaireModel medModel)
         {
             this.view = medicalScreen;
-            model = new MedicalQuestionnaireModel();
+            model = medModel;
             view.Register(this);
             initialiseForm();
         }

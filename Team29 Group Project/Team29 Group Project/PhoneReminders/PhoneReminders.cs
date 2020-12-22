@@ -55,7 +55,8 @@ namespace Team29_Group_Project
         public void viewChosenReminder(int appointmentID)
         {
             ContactedByPhone contactedByPhone = new ContactedByPhone(appointmentID);
-            ContactedByPhonePresenter CBPP = new ContactedByPhonePresenter(contactedByPhone);
+            ContactedByPhoneModel contactedModel = new ContactedByPhoneModel();
+            ContactedByPhonePresenter CBPP = new ContactedByPhonePresenter(contactedByPhone, contactedModel);
             this.Hide();
             contactedByPhone.ShowDialog();
             presenter.getPhoneDetails();

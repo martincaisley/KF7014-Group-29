@@ -173,7 +173,8 @@ namespace Team29_Group_Project
                 MessageBox.Show("Patient has been added", "Success");
                 int patientID1 = presenter.getLastPatientID();
                 PatientDetails patientDetails = new PatientDetails(patientID1);
-                PatientDetailsPresenter PDP = new PatientDetailsPresenter(patientDetails);
+                PatientDetailsModel patientDetailsModel = new PatientDetailsModel();
+                PatientDetailsPresenter PDP = new PatientDetailsPresenter(patientDetails, patientDetailsModel);
                 this.Close();
                 patientDetails.ShowDialog();
 

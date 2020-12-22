@@ -7,12 +7,12 @@ using System.Data;
 
 namespace Team29_Group_Project
 {
-    public class NewAppointmentsModel
+    public class NewAppointmentsModel : INewAppointmentsModel
     {
+        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         #region Get from Database / Write to Database
         public string GetPatientName(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var UOW = unitOfWork.patient.GetByID(patientID);
             string patientName = UOW.firstName + " " + UOW.lastName;
 
@@ -23,7 +23,6 @@ namespace Team29_Group_Project
         {
             try
             {
-                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
                 bool patientType = unitOfWork.patient.GetByID(patientID).isFree;
 
                 AppointmentFactory factory = new AppointmentFactory();
@@ -70,7 +69,6 @@ namespace Team29_Group_Project
             DataTable dt = new DataTable();
             try
             {
-                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
                 var patient = unitOfWork.patient.GetAll();
                 var appointment = unitOfWork.appointment.GetAll();
 
@@ -109,7 +107,6 @@ namespace Team29_Group_Project
         #region Check Appointment Time
         public bool checkIfCanBookAtThisTime(DateTime selectedDate, TimeSpan selectedStartTime, TimeSpan selectedEndTime)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patient = unitOfWork.patient.GetAll();
             var appointment = unitOfWork.appointment.GetAll();
 

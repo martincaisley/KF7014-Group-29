@@ -8,14 +8,14 @@ namespace Team29_Group_Project
 {
     public class PatientRegistrationPresenter
     {
-        private PatientRegistrationModel model;
+        private IPatientRegistrationModel model;
         private IPatientRegistrationGUI form;
 
-        public PatientRegistrationPresenter(IPatientRegistrationGUI form)
+        public PatientRegistrationPresenter(IPatientRegistrationGUI form, IPatientRegistrationModel model)
         {
             this.form = form;
             form.Register(this);
-            model = new PatientRegistrationModel();
+            this.model = model;
             
         }
 
@@ -23,9 +23,6 @@ namespace Team29_Group_Project
         {
             return model.getLastPatientID();
         }
-       
-     
-
         public void ProcessNewPatient()
         { 
             String firstName = form.GetFirstname().Trim();

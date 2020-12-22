@@ -9,14 +9,14 @@ namespace Team29_Group_Project
 {
     public class PatientHomeScreenPresenter
     {
-        private PatientHomeScreenModel patientModel;
+        private IPatientHomeScreenModel patientModel;
         private IPatientHomeScreenGUI patientScreen;
 
-        public PatientHomeScreenPresenter(IPatientHomeScreenGUI patientScreen)
+        public PatientHomeScreenPresenter(IPatientHomeScreenGUI patientScreen, IPatientHomeScreenModel patientModel)
         {
             this.patientScreen = patientScreen;
             patientScreen.Register(this);
-            patientModel = new PatientHomeScreenModel();
+            this.patientModel = patientModel;
             initialiseForm();
         }
         private void initialiseForm()

@@ -9,14 +9,14 @@ namespace Team29_Group_Project
 {
     public class PatientDetailsPresenter
     {
-        private PatientDetailsModel detailsModel;
+        private IPatientDetailsModel detailsModel;
         private IPatientDetailsGUI detailsScreen;
 
-        public PatientDetailsPresenter(IPatientDetailsGUI detailsScreen)
+        public PatientDetailsPresenter(IPatientDetailsGUI detailsScreen, IPatientDetailsModel detailsModel)
         {
             this.detailsScreen = detailsScreen;
             detailsScreen.Register(this);
-            detailsModel = new PatientDetailsModel();
+            this.detailsModel = detailsModel;
             initaliseForm();
         }
 
@@ -68,13 +68,14 @@ namespace Team29_Group_Project
             detailsModel.deleteEntry(appToDelete);
             showPatientAppointments();
         }
-
+        /*
         public void ShowMedicalQuestionnaire()
         {
             MedicalQuestionnaireGUI med = new MedicalQuestionnaireGUI(detailsScreen.getPatientID());
             MedicalQuestionnairePresenter MQP = new MedicalQuestionnairePresenter(med);
             med.Show();
         }
+        */
 
         public void longerThanAYear()
         {

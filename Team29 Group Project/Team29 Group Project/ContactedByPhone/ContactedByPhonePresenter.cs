@@ -8,14 +8,14 @@ namespace Team29_Group_Project
 {
     public class ContactedByPhonePresenter
     {
-        private ContactedByPhoneModel contactedModel;
+        private IContactedByPhoneModel contactedModel;
         private IContactedByPhoneGUI contactedScreen;
 
-        public ContactedByPhonePresenter(IContactedByPhoneGUI contactedScreen)
+        public ContactedByPhonePresenter(IContactedByPhoneGUI contactedScreen, IContactedByPhoneModel contactedModel)
         {
             this.contactedScreen = contactedScreen;
             contactedScreen.Register(this);
-            contactedModel = new ContactedByPhoneModel();
+            this.contactedModel = contactedModel;
             initaliseForm();            
         }
 

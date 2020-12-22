@@ -8,10 +8,6 @@ namespace Team29TestProject
     public class AppointmentFactoryTests
     {
         [TestMethod]
-        public void TestAppointmentFactoryGetAppointmentBand()
-        {
-        }
-        [TestMethod]
         public void TestFactoryBand1Costs()
         {
             AppointmentFactory factory = new AppointmentFactory();

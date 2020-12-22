@@ -1,0 +1,73 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\NUnit\\NUnit.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\NUnit\\NUnit.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\NUnit\\NUnit.csproj",
+        "projectName": "NUnit",
+        "projectPath": "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\NUnit\\NUnit.csproj",
+        "packagesPath": "C:\\Users\\markb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\NUnit\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\markb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net50": {
+            "projectReferences": {
+              "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\Team29 Group Project\\Team29 Group Project.csproj": {
+                "projectPath": "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\Team29 Group Project\\Team29 Group Project.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net50": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.16.1, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\Team29 Group Project\\Team29 Group Project.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\Team29 Group Project\\Team29 Group Project.csproj",
+        "projectName": "Team29 Group Project",
+        "projectPath": "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\Team29 Group Project\\Team29 Group Project.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}

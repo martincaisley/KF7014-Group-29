@@ -13,7 +13,7 @@ namespace Team29_Group_Project
         IRepository<MedicalQuestionnaire> questionnaire { get; }
         void Save();
     }
-    class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private IRepository<Appointment> _appointments;
         private IRepository<Patient> _patients;

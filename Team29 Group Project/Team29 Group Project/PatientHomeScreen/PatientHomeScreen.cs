@@ -25,7 +25,8 @@ namespace Team29_Group_Project
         private void btn_viewApps_Click(object sender, EventArgs e)
         {
             ViewAppointments viewAppointments = new ViewAppointments();
-            ViewAppointmentsPresenter VAP = new ViewAppointmentsPresenter(viewAppointments);
+            ViewAppointmentsModel viewAppointmentsModel = new ViewAppointmentsModel();
+            ViewAppointmentsPresenter VAP = new ViewAppointmentsPresenter(viewAppointments, viewAppointmentsModel);
             this.Hide();
             viewAppointments.ShowDialog();
             this.Show();
@@ -34,7 +35,8 @@ namespace Team29_Group_Project
         private void btn_newPatient_Click(object sender, EventArgs e)
         {
             PatientRegistrationGUI addPatient = new PatientRegistrationGUI();
-            PatientRegistrationPresenter PRP = new PatientRegistrationPresenter(addPatient);
+            PatientRegistrationModel registrationModel = new PatientRegistrationModel();
+            PatientRegistrationPresenter PRP = new PatientRegistrationPresenter(addPatient, registrationModel);
             this.Hide();
             addPatient.ShowDialog();
             presenter.processPatientsList();
@@ -53,7 +55,8 @@ namespace Team29_Group_Project
         public void viewPatient(int patientID)
         {
             PatientDetails patientDetails = new PatientDetails(patientID);
-            PatientDetailsPresenter PDP = new PatientDetailsPresenter(patientDetails);
+            PatientDetailsModel patientDetailsModel = new PatientDetailsModel();
+            PatientDetailsPresenter PDP = new PatientDetailsPresenter(patientDetails,patientDetailsModel);
             this.Hide();
             patientDetails.ShowDialog();
             presenter.processPatientsList();

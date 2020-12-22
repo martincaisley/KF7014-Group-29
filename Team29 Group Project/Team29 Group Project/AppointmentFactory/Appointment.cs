@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    public class Appointment
+    public class Appointment : IAppointment
     {
         [Key]
         public int appointmentID { get; set; }

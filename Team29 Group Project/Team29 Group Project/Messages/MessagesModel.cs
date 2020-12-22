@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    class MessagesModel
+    class MessagesModel : IMessagesModel
     {
+        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         public int getAppointmentID(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -28,7 +28,6 @@ namespace Team29_Group_Project
         }
         public string getName(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -49,7 +48,6 @@ namespace Team29_Group_Project
 
         public DateTime getDate(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -68,7 +66,6 @@ namespace Team29_Group_Project
 
         public TimeSpan getTime(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -87,7 +84,6 @@ namespace Team29_Group_Project
 
         public void updateTables(int appointmentID, string value)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             Appointment a = unitOfWork.appointment.GetByID(appointmentID);
             a.arrivedToAppointment = value;
             unitOfWork.Save();
@@ -95,7 +91,6 @@ namespace Team29_Group_Project
 
         public bool checkForRepeatOffence(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var appointments = unitOfWork.appointment.GetAll();
             try
             {

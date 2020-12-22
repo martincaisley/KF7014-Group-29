@@ -17,7 +17,8 @@ namespace Team29_Group_Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             PatientHomeScreen phs = new PatientHomeScreen();
-            PatientHomeScreenPresenter phsp = new PatientHomeScreenPresenter(phs);
+            PatientHomeScreenModel phsm = new PatientHomeScreenModel();
+            PatientHomeScreenPresenter phsp = new PatientHomeScreenPresenter(phs, phsm);
             Application.Run(phs);
         }
     }

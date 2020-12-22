@@ -43,7 +43,8 @@ namespace Team29_Group_Project
         private void btn_phoneReminders_Click(object sender, EventArgs e)
         {
             PhoneReminders phoneReminders = new PhoneReminders();
-            PhoneRemindersPresenter PRP = new PhoneRemindersPresenter(phoneReminders);
+            PhoneRemindersModel remindersModel = new PhoneRemindersModel();  
+            PhoneRemindersPresenter PRP = new PhoneRemindersPresenter(phoneReminders, remindersModel);
             this.Hide();
             phoneReminders.ShowDialog();
             this.Show();
@@ -61,7 +62,8 @@ namespace Team29_Group_Project
         public void viewChosenAppointment(int appointmentID)
         {
             AppointmentStatus appointmentStatus = new AppointmentStatus(appointmentID);
-            AppointmentStatusPresenter ASP = new AppointmentStatusPresenter(appointmentStatus);
+            AppointmentStatusModel appointmentStatusModel = new AppointmentStatusModel();
+            AppointmentStatusPresenter ASP = new AppointmentStatusPresenter(appointmentStatus, appointmentStatusModel);
             this.Hide();
             appointmentStatus.ShowDialog();
             presenter.showAppointments(dtp_appointmentDate.Value.Date);

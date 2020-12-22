@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "dgSpecHash": "fmJ1kxdwZxo3yE1dT0Q3se0BST1izQz9A4lBB5uVzom4013tnGXikMGHItbLciQy+h0WW28Z43ZRyOpuVT63JQ==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\markb\\Documents\\Masters\\Advanced Programming\\Assessment\\Github\\Team29 Group Project\\NUnit\\NUnit.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\markb\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
+    "C:\\Users\\markb\\.nuget\\packages\\microsoft.net.test.sdk\\16.5.0\\microsoft.net.test.sdk.16.5.0.nupkg.sha512",
+    "C:\\Users\\markb\\.nuget\\packages\\nunit3testadapter\\3.16.1\\nunit3testadapter.3.16.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1108",
+      "level": "Error",
+      "message": "Cycle detected. \r\n  NUnit -> NUnit (>= 3.12.0).",
+      "libraryId": "NUnit",
+      "targetGraphs": [
+        ".NETFramework,Version=v5.0"
+      ]
+    }
+  ]
+}

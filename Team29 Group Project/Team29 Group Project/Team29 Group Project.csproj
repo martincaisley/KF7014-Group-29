@@ -75,12 +75,15 @@
   <ItemGroup>
     <Compile Include="AppointmentFactory\AppointmentBand.cs" />
     <Compile Include="AppointmentFactory\AppointmentFactory.cs" />
+    <Compile Include="AppointmentFactory\IAppointment.cs" />
     <Compile Include="AppointmentStatus\AppointmentStatusModel.cs" />
     <Compile Include="AppointmentStatus\AppointmentStatusPresenter.cs" />
     <Compile Include="AppointmentFactory\Band1Appointment.cs" />
     <Compile Include="AppointmentFactory\Band2Appointment.cs" />
     <Compile Include="AppointmentFactory\Band3Appointment.cs" />
+    <Compile Include="AppointmentStatus\IAppointmentStatusModel.cs" />
     <Compile Include="Appointments\AppointmentTypes.cs" />
+    <Compile Include="Appointments\INewAppointmentsModel.cs" />
     <Compile Include="ContactedByPhone\ContactedByPhoneModel.cs" />
     <Compile Include="ContactedByPhone\ContactedByPhonePresenter.cs" />
     <Compile Include="AppointmentFactory\Appointment.cs" />
@@ -101,7 +104,14 @@
     </Compile>
     <Compile Include="ContactedByPhone\IContactedByPhoneGUI.cs" />
     <Compile Include="AppointmentStatus\IAppointmentStatusGUI.cs" />
+    <Compile Include="ContactedByPhone\IContactedByPhoneModel.cs" />
+    <Compile Include="Medical Questionnaire\IMedicalQuestionnaireModel.cs" />
+    <Compile Include="Messages\IMessagesModel.cs" />
+    <Compile Include="PatientDetails\IPatientDetailsModel.cs" />
+    <Compile Include="PatientHomeScreen\IPatientHomeScreenModel.cs" />
+    <Compile Include="PatientRegistration\IPatientRegistrationModel.cs" />
     <Compile Include="Patients\PatientTypes.cs" />
+    <Compile Include="PhoneReminders\IPhoneRemindersModel.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="Medical Questionnaire\IMedicalQuestionnaireGUI.cs" />
     <Compile Include="Medical Questionnaire\MedicalQuestionnaireModel.cs" />
@@ -173,6 +183,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewAppointments\IViewAppointmentsModel.cs" />
     <Compile Include="ViewAppointments\ViewAppointments.cs">
       <SubType>Form</SubType>
     </Compile>

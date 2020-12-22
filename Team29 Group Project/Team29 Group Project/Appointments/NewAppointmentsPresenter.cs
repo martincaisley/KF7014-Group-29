@@ -9,7 +9,7 @@ namespace Team29_Group_Project
     public class NewAppointmentsPresenter
     {
         #region Instance Variables
-        private NewAppointmentsModel newAppointmentsModel;
+        private INewAppointmentsModel newAppointmentsModel;
         private INewAppointmentsGUI NewAppointmentsScreen;
         int appLength;
         DateTime Date = DateTime.Today;
@@ -18,11 +18,11 @@ namespace Team29_Group_Project
 
         #region Constructor
 
-        public NewAppointmentsPresenter(INewAppointmentsGUI NewAppointmentsScreen)
+        public NewAppointmentsPresenter(INewAppointmentsGUI NewAppointmentsScreen, INewAppointmentsModel model)
         {
             this.NewAppointmentsScreen = NewAppointmentsScreen;
             NewAppointmentsScreen.Register(this);
-            newAppointmentsModel = new NewAppointmentsModel();
+            newAppointmentsModel = model;
             initialiseForm();
         }
 
@@ -49,7 +49,9 @@ namespace Team29_Group_Project
             string appointmentType = NewAppointmentsScreen.getAppointmentType();
             string appointmentBand = findAppBand(appointmentType);
 
-            if (appointmentRadioChecked() && appDateBeforeToday() && endTimeBeforeStartTime() && checkEmergency() && checkInWorkingHours() && checkTime())
+            if (appointmentRadioChecked(appointmentType) && appDateBeforeToday(appointmentDate) && endTimeBeforeStartTime(appointmentStartTime,appointmentEndTime) 
+                && checkEmergency(appointmentDate,appointmentStartTime,appointmentEndTime) 
+                && checkInWorkingHours(appointmentStartTime, appointmentEndTime) && checkTime(appointmentDate, appointmentStartTime, appointmentEndTime))
             {
                 newAppointmentsModel.AddAppointmentToDatabase(patientID, appointmentDate, appointmentStartTime, appointmentEndTime, appointmentLength, appointmentType, appointmentBand);
                 NewAppointmentsScreen.appointmentConfirmation();
@@ -105,9 +107,8 @@ namespace Team29_Group_Project
         #endregion
 
         #region validation for view
-        public bool appointmentRadioChecked()
+        public bool appointmentRadioChecked(string appType)
         {
-            string appType = NewAppointmentsScreen.getAppointmentType();
             if (appType == "")
             {
                 NewAppointmentsScreen.noAppointmentTypeChecked();
@@ -119,9 +120,8 @@ namespace Team29_Group_Project
             }
         }
 
-        public bool appDateBeforeToday()
+        public bool appDateBeforeToday(DateTime date)
         {
-            DateTime date = NewAppointmentsScreen.getAppointmentDate();
             if (date < DateTime.Today.Date)
             {
                 NewAppointmentsScreen.appDateBeforeToday();
@@ -133,10 +133,8 @@ namespace Team29_Group_Project
             }
         }
 
-        public bool endTimeBeforeStartTime()
+        public bool endTimeBeforeStartTime(TimeSpan startTime, TimeSpan endTime)
         {
-            TimeSpan startTime = NewAppointmentsScreen.getAppointmentStartTime();
-            TimeSpan endTime = NewAppointmentsScreen.getAppointmentEndTime();
             if (endTime <= startTime)
             {
                 NewAppointmentsScreen.startTimeAfterEndTime();
@@ -151,11 +149,8 @@ namespace Team29_Group_Project
 
         #region Checking Restricted Appointment times
         //ensures that there are no appointments alredy during these times
-        public bool checkTime()
+        public bool checkTime(DateTime date, TimeSpan startTime, TimeSpan endTime)
         {
-            DateTime date = NewAppointmentsScreen.getAppointmentDate();
-            TimeSpan startTime = NewAppointmentsScreen.getAppointmentStartTime();
-            TimeSpan endTime = NewAppointmentsScreen.getAppointmentEndTime();
             bool noAppointmentAtThisTime = newAppointmentsModel.checkIfCanBookAtThisTime(date, startTime, endTime);
             
             if(noAppointmentAtThisTime == true)
@@ -170,10 +165,8 @@ namespace Team29_Group_Project
         }
 
         //Ensures the appointment is between working hours of 9-5
-        public bool checkInWorkingHours()
+        public bool checkInWorkingHours(TimeSpan startTime, TimeSpan endTime)
         {
-            TimeSpan startTime = NewAppointmentsScreen.getAppointmentStartTime();
-            TimeSpan endTime = NewAppointmentsScreen.getAppointmentEndTime();
             TimeSpan workStartTime = TimeSpan.Parse("09:00:00");
             TimeSpan workEndTime = TimeSpan.Parse("17:00:00");
             if (startTime < workStartTime || startTime > workEndTime || endTime < workStartTime || endTime > workEndTime)
@@ -187,11 +180,8 @@ namespace Team29_Group_Project
             }
         }
         //11-13 everyday reserved for emergencies, cannot book in advance for this time
-        public bool checkEmergency()
+        public bool checkEmergency(DateTime dateInputted, TimeSpan startTime, TimeSpan endTime)
         {
-            DateTime dateInputted = NewAppointmentsScreen.getAppointmentDate();
-            TimeSpan startTime = NewAppointmentsScreen.getAppointmentStartTime();
-            TimeSpan endTime = NewAppointmentsScreen.getAppointmentEndTime();
             TimeSpan startingHour = TimeSpan.Parse("11:00:00");
             TimeSpan endingHour = TimeSpan.Parse("13:00:00");
             if (dateInputted != DateTime.Today.Date)

@@ -7,7 +7,7 @@ using System.Data;
 
 namespace Team29_Group_Project
 {
-    public class PatientDetailsModel
+    public class PatientDetailsModel: IPatientDetailsModel
     {
         UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         public String getName(int patientID)
@@ -26,6 +26,7 @@ namespace Team29_Group_Project
                 dt.Columns.Add("Appointment Type", typeof(string));
                 dt.Columns.Add("Appointment Date", typeof(DateTime));
                 dt.Columns.Add("Appointment Time", typeof(TimeSpan));
+                dt.Columns.Add("AppointmentID", typeof(int));
 
                 var appointmentQuery = from a in appointments.AsEnumerable()
                                        where a.patientID == patientID
@@ -34,7 +35,8 @@ namespace Team29_Group_Project
                                        {
                                            a.appointmentType,
                                    a.appointmentDate,
-                                   a.appointmentStartTime
+                                   a.appointmentStartTime,
+                                   a.appointmentID
                                        }, false);
                 appointmentQuery.CopyToDataTable();
             }
@@ -45,7 +47,7 @@ namespace Team29_Group_Project
             return dt;
         }
 
-        internal void deleteEntry(int appointmentID)
+        public void deleteEntry(int appointmentID)
         {
             Appointment appToDelete = unitOfWork.appointment.GetByID(appointmentID);
             unitOfWork.appointment.Remove(appToDelete);

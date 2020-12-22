@@ -9,15 +9,15 @@ namespace Team29_Group_Project
 {
     public class ViewAppointmentsPresenter
     {
-        private ViewAppointmentsModel appointmentsModel;
+        private IViewAppointmentsModel appointmentsModel;
         private IViewAppointmentsGUI appointmentsScreen;
         DateTime date = DateTime.Today;
 
-        public ViewAppointmentsPresenter(IViewAppointmentsGUI appointmentsScreen)
+        public ViewAppointmentsPresenter(IViewAppointmentsGUI appointmentsScreen, IViewAppointmentsModel appointmentsModel)
         {
             this.appointmentsScreen = appointmentsScreen;
             appointmentsScreen.Register(this);
-            appointmentsModel = new ViewAppointmentsModel();
+            this.appointmentsModel = appointmentsModel;
             showAppointments(date);
         }
         public void showAppointments(DateTime date)

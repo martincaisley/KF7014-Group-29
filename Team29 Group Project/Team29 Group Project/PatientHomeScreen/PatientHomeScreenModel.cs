@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
-    class PatientHomeScreenModel
+    public class PatientHomeScreenModel : IPatientHomeScreenModel
     {
+        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         public DataTable getPatientsDT()
         {
             DataTable dt = new DataTable();
             try
             {
-                UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
                 var patients = unitOfWork.patient.GetAll();
 
                 dt.Columns.Add("PatientID", typeof(int));
@@ -38,9 +38,8 @@ namespace Team29_Group_Project
             }
             return dt;
         }
-        internal void deleteEntry(int patientID)
+        public void deleteEntry(int patientID)
         {
-            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             Patient patientToDelete = unitOfWork.patient.GetByID(patientID);
             unitOfWork.patient.Remove(patientToDelete);
             unitOfWork.Save();

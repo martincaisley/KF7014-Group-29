@@ -77,7 +77,8 @@ namespace Team29_Group_Project
         private void btn_newAppointment_Click(object sender, EventArgs e)
         {
             NewAppointment newAppointment = new NewAppointment(patientID);
-            NewAppointmentsPresenter NAP = new NewAppointmentsPresenter(newAppointment);
+            NewAppointmentsModel model = new NewAppointmentsModel();
+            NewAppointmentsPresenter NAP = new NewAppointmentsPresenter(newAppointment, model);
             this.Hide();
             newAppointment.ShowDialog();
             presenter.showPatientAppointments();
@@ -87,7 +88,8 @@ namespace Team29_Group_Project
         private void btn_messages_Click_1(object sender, EventArgs e)
         {
             Messages messages = new Messages(patientID);
-            MessagesPresenter MP = new MessagesPresenter(messages);
+            MessagesModel messagesModel = new MessagesModel();
+            MessagesPresenter MP = new MessagesPresenter(messages, messagesModel);
             this.Hide();
             messages.ShowDialog();
             presenter.setMessagesToView();
@@ -106,7 +108,7 @@ namespace Team29_Group_Project
             {
                 try
                 {
-                    presenter.deleteRow((int)dgv_patientAppointments.SelectedCells[0].OwningRow.Cells[2].Value);
+                    presenter.deleteRow((int)dgv_patientAppointments.SelectedCells[0].OwningRow.Cells[3].Value);
                 }
                 catch (Exception f)
                 {
@@ -118,8 +120,13 @@ namespace Team29_Group_Project
 
         private void BTN_medicalQuestionnaire_Click(object sender, EventArgs e)
         {
-            presenter.ShowMedicalQuestionnaire();
-            this.Hide();
+            //presenter.ShowMedicalQuestionnaire();
+            //this.Hide();
+
+            MedicalQuestionnaireGUI med = new MedicalQuestionnaireGUI(patientID);
+            MedicalQuestionnaireModel medmod = new MedicalQuestionnaireModel();
+            MedicalQuestionnairePresenter MQP = new MedicalQuestionnairePresenter(med,medmod);
+            med.Show();
         }
     }
 }

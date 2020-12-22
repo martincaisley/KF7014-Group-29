@@ -119,6 +119,7 @@
     <Compile Include="MessagesViewTest.cs" />
     <Compile Include="PatientDetailsViewTest.cs" />
     <Compile Include="RepositoryTest.cs" />
+    <Compile Include="PatientRegistrationPresenterTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

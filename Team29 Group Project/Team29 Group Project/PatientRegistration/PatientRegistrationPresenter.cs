@@ -92,7 +92,8 @@ namespace Team29_Group_Project
         }
         public bool IsGPNameText(string input)
         {
-            if (input.All(Char.IsLetter))
+            string inputTrimmed = input.Replace(" ", string.Empty);
+            if (inputTrimmed.All(Char.IsLetter))
             {
 
                 return true;

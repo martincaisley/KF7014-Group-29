@@ -13,6 +13,7 @@ namespace Team29_Group_Project
     public partial class PatientRegistrationGUI : Form, IPatientRegistrationGUI
     {
         private PatientRegistrationPresenter presenter;
+        public String message;
 
         #region Getters for presenter
         public String GetFirstname()
@@ -65,9 +66,13 @@ namespace Team29_Group_Project
 
         #endregion
 
-        public void Message(String message)
+        public void Message()
         {
             MessageBox.Show(message);
+        }
+        public void SetMessage(String message)
+        {
+            this.message = message;
         }
        
         public PatientRegistrationGUI()
@@ -87,6 +92,7 @@ namespace Team29_Group_Project
             TXT_GPname.Clear();
             TXT_GPaddress.Clear();
             TXT_age.Text = "0";
+            DTB_DoB.MaxDate = DateTime.Today;
         }
         public void Register(PatientRegistrationPresenter PRP)
         {
@@ -165,26 +171,34 @@ namespace Team29_Group_Project
             return false;
         }
         
+    
         private void PatientSubmit()
         {
             if (TextValidation() && OccupationValidation())
             {
                 presenter.ProcessNewPatient();
-                MessageBox.Show("Patient has been added", "Success");
-                int patientID1 = presenter.getLastPatientID();
-                PatientDetails patientDetails = new PatientDetails(patientID1);
-                PatientDetailsModel patientDetailsModel = new PatientDetailsModel();
-                PatientDetailsPresenter PDP = new PatientDetailsPresenter(patientDetails, patientDetailsModel);
-                this.Close();
-                patientDetails.ShowDialog();
+               
+                
+                
 
             }
             else 
             {
-                MessageBox.Show("There has been an error please try again", "Error");
+                
             }
+
+
+        }
+        public void OpenDetails()
+        {
+            int patientID1 = presenter.getLastPatientID();
+            PatientDetails patientDetails = new PatientDetails(patientID1);
+            PatientDetailsModel patientDetailsModel = new PatientDetailsModel();
+            PatientDetailsPresenter PDP = new PatientDetailsPresenter(patientDetails, patientDetailsModel);
+            this.Close();
+            patientDetails.ShowDialog();
         }
 
-      
+
     }
 }

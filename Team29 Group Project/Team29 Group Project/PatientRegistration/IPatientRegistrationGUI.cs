@@ -18,7 +18,9 @@ namespace Team29_Group_Project
         String GetGPname();
         String GetGPaddress();
         bool GetPaymentType();
-        void Message(String message);
+        void Message();
+        void SetMessage(String message);
         void Register(PatientRegistrationPresenter PRP);
+        void OpenDetails();
     }
 }

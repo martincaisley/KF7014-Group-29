@@ -23,6 +23,7 @@ namespace Team29_Group_Project
 
         private void AppointmentStatus_Load(object sender, EventArgs e)
         {
+
         }
 
         public int getAppointmentID()

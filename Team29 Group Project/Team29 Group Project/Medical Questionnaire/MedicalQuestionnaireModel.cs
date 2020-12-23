@@ -8,7 +8,6 @@ namespace Team29_Group_Project
 {
     class MedicalQuestionnaireModel : IMedicalQuestionnaireModel
     {
-        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         public string message;
         public string Message()
         {
@@ -21,13 +20,15 @@ namespace Team29_Group_Project
         }
         public string GetPatientName(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var UOW = unitOfWork.patient.GetByID(patientID);
             string patientName = UOW.firstName + " " + UOW.lastName;
-
+            unitOfWork.Dispose();
             return patientName;
         }
         public string GetMedicalConditions(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var quetionnaire = unitOfWork.questionnaire.GetAll();
 
             var appQuery = from q in quetionnaire.AsEnumerable()
@@ -42,16 +43,18 @@ namespace Team29_Group_Project
 
                 var mq = unitOfWork.questionnaire.GetByID(questionnaires[0].questionnaireID);
                 string medicalConditions = mq.medicalConditions;
-
+                unitOfWork.Dispose();
                 return medicalConditions;
             }
             else
             {
+                unitOfWork.Dispose();
                 return "";
             }
         }
         public string GetMedication(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var quetionnaire = unitOfWork.questionnaire.GetAll();
 
             var appQuery = from q in quetionnaire.AsEnumerable()
@@ -67,15 +70,18 @@ namespace Team29_Group_Project
                 var mq = unitOfWork.questionnaire.GetByID(questionnaires[0].questionnaireID);
                 string medication = mq.medication;
 
+                unitOfWork.Dispose();
                 return medication;
             }
             else
             {
+                unitOfWork.Dispose();
                 return "";
             }
         }
         public string GetAllergies(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var quetionnaire = unitOfWork.questionnaire.GetAll();
 
             var appQuery = from q in quetionnaire.AsEnumerable()
@@ -91,17 +97,19 @@ namespace Team29_Group_Project
 
                 var mq = unitOfWork.questionnaire.GetByID(questionnaires[0].questionnaireID);
                 string allergies = mq.allergies;
-
+                unitOfWork.Dispose();
                 return allergies;
             }
             else
             {
+                unitOfWork.Dispose();
                 return "";
             }
         }
 
         public void AddQuestionnaire(int patientID, String medicalConditions, String medication, String allergies )
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var quetionnaire = unitOfWork.questionnaire.GetAll();
 
             var appQuery = from q in quetionnaire.AsEnumerable()
@@ -125,6 +133,7 @@ namespace Team29_Group_Project
 
                 unitOfWork.questionnaire.Add(questionnaire);
                 unitOfWork.Save();
+                unitOfWork.Dispose();
                 setMessage("Medical record added successfully");
             }
             else
@@ -137,6 +146,7 @@ namespace Team29_Group_Project
                 med.allergies = allergies;
                 med.DateCompleted = DateTime.Today.Date;
                 unitOfWork.Save();
+                unitOfWork.Dispose();
                 setMessage("Medical record updated successfully");
             }
 

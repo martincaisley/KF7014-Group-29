@@ -9,12 +9,14 @@ namespace Team29_Group_Project
 {
     class ViewAppointmentsModel : IViewAppointmentsModel
     {
-        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+        
         public DataTable getAppointmentsList(DateTime date)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             DataTable dt = new DataTable();
             try
             {
+                
                 var patients = unitOfWork.patient.GetAll();
                 var appointments = unitOfWork.appointment.GetAll();
 
@@ -43,17 +45,21 @@ namespace Team29_Group_Project
                                        }, false);
 
                 appointmentQuery.CopyToDataTable();
+                Console.WriteLine("HERE1");
             }
             catch (Exception e)
             {
                 Console.WriteLine("Exception in ViewAppointmentsModel: " + e.Message);
             }
-
+            Console.WriteLine("HERE2");
+            unitOfWork.Dispose();
             return dt;
+            
         }
         public void generateCSVFile()
         {
             List<string> csv = new List<string>();
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -80,6 +86,7 @@ namespace Team29_Group_Project
             }
             string filePath = @"C:\Users\markb\Documents\Masters\Advanced Programming\Assessment\Github\Team29 Group Project\AppointmentTextReminders\" + fileName + ".txt";
             System.IO.File.WriteAllLines(filePath, csv);
+            unitOfWork.Dispose();
         }
     }
 }

@@ -74,6 +74,10 @@ namespace Team29_Group_Project
             {
                 detailsScreen.setButtonRed();
             }
+            else
+            {
+                detailsScreen.setButtonNormal();
+            }
         }
 
     }

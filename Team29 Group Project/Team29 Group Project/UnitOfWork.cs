@@ -12,6 +12,7 @@ namespace Team29_Group_Project
         IRepository<Patient> patient { get; }
         IRepository<MedicalQuestionnaire> questionnaire { get; }
         void Save();
+        void Dispose();
     }
     public class UnitOfWork : IUnitOfWork
     {
@@ -63,6 +64,11 @@ namespace Team29_Group_Project
         public void Save()
         {
             context.SaveChanges();   
+        }
+
+        public void Dispose()
+        {
+            context.Dispose();
         }
     }
     

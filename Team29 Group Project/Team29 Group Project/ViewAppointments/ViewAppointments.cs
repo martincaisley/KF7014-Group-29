@@ -70,6 +70,11 @@ namespace Team29_Group_Project
             this.Show();
         }
 
+        public void refreshPage()
+        {
+            presenter.showAppointments(dtp_appointmentDate.Value.Date);
+        }
+
         private void btn_textReminders_Click(object sender, EventArgs e)
         {
             presenter.createAppointmentRemindersCSV();

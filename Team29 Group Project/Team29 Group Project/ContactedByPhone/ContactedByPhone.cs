@@ -48,11 +48,16 @@ namespace Team29_Group_Project
         private void btn_contacted_Click(object sender, EventArgs e)
         {
             presenter.setContacted();
-            this.Close();
+            
         }
         public void Register(ContactedByPhonePresenter CBPP)
         {
             presenter = CBPP;
+        }
+        public void confirmationMessage()
+        {
+            MessageBox.Show("Patient Contacted");
+            this.Close();
         }
     }
 }

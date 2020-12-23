@@ -9,9 +9,9 @@ namespace Team29_Group_Project
 {
     public class PatientHomeScreenModel : IPatientHomeScreenModel
     {
-        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         public DataTable getPatientsDT()
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             DataTable dt = new DataTable();
             try
             {
@@ -36,13 +36,16 @@ namespace Team29_Group_Project
             {
                 Console.WriteLine("Exception in PatientHomeScreenModel: " + e.Message);
             }
+            unitOfWork.Dispose();
             return dt;
         }
         public void deleteEntry(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             Patient patientToDelete = unitOfWork.patient.GetByID(patientID);
             unitOfWork.patient.Remove(patientToDelete);
             unitOfWork.Save();
+            unitOfWork.Dispose();
         }
     }
 }

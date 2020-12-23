@@ -33,6 +33,11 @@ namespace Team29_Group_Project
             BTN_medicalQuestionnaire.BackColor = System.Drawing.Color.Red;
         }
 
+        public void setButtonNormal() 
+        {
+            BTN_medicalQuestionnaire.BackColor = default;
+        }
+
         public void setLabel(string patientName)
         {
             lbl_name.Text = patientName;
@@ -92,7 +97,7 @@ namespace Team29_Group_Project
             MessagesPresenter MP = new MessagesPresenter(messages, messagesModel);
             this.Hide();
             messages.ShowDialog();
-            presenter.setMessagesToView();
+            presenter.initaliseForm();
             this.Show();
         }
 
@@ -125,6 +130,7 @@ namespace Team29_Group_Project
             MedicalQuestionnairePresenter MQP = new MedicalQuestionnairePresenter(med,medmod);
             this.Hide();
             med.ShowDialog();
+            presenter.initaliseForm();
             this.Show();
 
         }

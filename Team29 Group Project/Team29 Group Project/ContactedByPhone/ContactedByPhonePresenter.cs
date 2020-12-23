@@ -29,6 +29,7 @@ namespace Team29_Group_Project
         public void setContacted()
         {
             contactedModel.setToContacted(contactedScreen.getAppointmentID());
+            contactedScreen.confirmationMessage();
         }
 
     }

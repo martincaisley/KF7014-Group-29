@@ -11,10 +11,11 @@ namespace Team29_Group_Project
     public class PatientRegistrationModel : IPatientRegistrationModel
     {
         PatientFactory patientFactory = new PatientFactory();
-        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+        
 
         public void AddPatient(String firstName, String lastName, DateTime DoB, String address, String email, String phoneNum, String occupation, String GPname, String GPaddress, string type)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             PatientTypes patientTypes = (PatientTypes)Enum.Parse(typeof(PatientTypes), type);
             Patient patient = patientFactory.GetPatientType(patientTypes);
             patient.firstName = firstName;
@@ -29,10 +30,12 @@ namespace Team29_Group_Project
 
             unitOfWork.patient.Add(patient);
             unitOfWork.Save();
+            unitOfWork.Dispose();
         }
 
         public int getLastPatientID()
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -53,7 +56,7 @@ namespace Team29_Group_Project
 
 
             int patientID = patids.Max();
-
+            unitOfWork.Dispose();
             return patientID;
         }
        

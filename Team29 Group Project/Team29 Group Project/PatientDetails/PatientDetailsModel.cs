@@ -9,17 +9,19 @@ namespace Team29_Group_Project
 {
     public class PatientDetailsModel: IPatientDetailsModel
     {
-        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
-        public String getName(int patientID)
+        public string getName(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var UOW = unitOfWork.patient.GetByID(patientID);
             string patientName = UOW.firstName + " " + UOW.lastName;
 
+            unitOfWork.Dispose();
             return patientName;
         }
         public DataTable getAppointmentList(int patientID)
         {
             DataTable dt = new DataTable();
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             try
             {
                 var appointments = unitOfWork.appointment.GetAll();
@@ -44,18 +46,22 @@ namespace Team29_Group_Project
             {
                 Console.WriteLine("No Appointments to show" + e.Message);
             }
+            unitOfWork.Dispose();
             return dt;
         }
 
         public void deleteEntry(int appointmentID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             Appointment appToDelete = unitOfWork.appointment.GetByID(appointmentID);
             unitOfWork.appointment.Remove(appToDelete);
             unitOfWork.Save();
+            unitOfWork.Dispose();
         }
 
         public bool messagesToView(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -70,15 +76,18 @@ namespace Team29_Group_Project
             var appointment = appQuery.ToList();
             if (appointment.Count() == 0)
             {
+                unitOfWork.Dispose();
                 return false;
             }
             else
             {
+                unitOfWork.Dispose();
                 return true;
             }
         }
         public bool checkQuestionnaireDate(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var questionnaires = unitOfWork.questionnaire.GetAll();
             try
             {
@@ -102,10 +111,12 @@ namespace Team29_Group_Project
 
                 if (dateQuestionnaireID.Count > 0 || existsQuestionnaireID.Count == 0)
                 {
+                    unitOfWork.Dispose();
                     return true;
                 }
                 else
                 {
+                    unitOfWork.Dispose();
                     return false;
                 }
             }
@@ -113,11 +124,13 @@ namespace Team29_Group_Project
             {
                 Console.WriteLine("No questionnaire to show " + e.Message);
             }
+            unitOfWork.Dispose();
             return false;
         }
 
         public bool checkRepeatOffences(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var appointments = unitOfWork.appointment.GetAll();
             try
             {
@@ -133,10 +146,12 @@ namespace Team29_Group_Project
                 int numberOfOffences = offences[0].count;
                 if (numberOfOffences >= 3)
                 {
+                    unitOfWork.Dispose();
                     return true;
                 }
                 else
                 {
+                    unitOfWork.Dispose();
                     return false;
                 }
             }
@@ -144,6 +159,7 @@ namespace Team29_Group_Project
             {
                 Console.WriteLine("No offences to show " + e.Message);
             }
+            unitOfWork.Dispose();
             return false;
         }
     }

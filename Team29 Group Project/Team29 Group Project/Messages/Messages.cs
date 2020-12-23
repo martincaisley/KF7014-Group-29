@@ -41,6 +41,11 @@ namespace Team29_Group_Project
             appointmentID = appID;
         }
 
+        public int getAppointmentID()
+        {
+            return appointmentID;
+        }
+
         public void setName(string name)
         {
             txt_patientName.Text = name;

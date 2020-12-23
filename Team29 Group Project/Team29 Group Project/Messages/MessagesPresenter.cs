@@ -28,7 +28,7 @@ namespace Team29_Group_Project
 
         public void updateTable()
         {
-            messagesModel.updateTables(messagesScreen.getPatientID(), messagesScreen.getResponse());
+            messagesModel.updateTables(messagesScreen.getAppointmentID(), messagesScreen.getResponse());
         }
 
         public bool checkForRepeatOffence()

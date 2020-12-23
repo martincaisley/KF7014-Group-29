@@ -15,5 +15,6 @@ namespace Team29_Group_Project
         void Register(MessagesPresenter MP);
         int getPatientID();
         string getResponse();
+        int getAppointmentID();
     }
 }

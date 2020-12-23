@@ -9,9 +9,10 @@ namespace Team29_Group_Project
 {
     class PhoneRemindersModel : IPhoneRemindersModel
     {
-        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
+        
         public DataTable getPhoneDetails()
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             DataTable dt = new DataTable();
             try
             {
@@ -50,7 +51,9 @@ namespace Team29_Group_Project
             {
                 Console.WriteLine("Exception in Phone Reminders Model: " + f.Message);
             }
+            unitOfWork.Dispose();
             return dt;
+            
         }
     }
 }

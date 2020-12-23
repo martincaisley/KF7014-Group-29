@@ -56,7 +56,6 @@ namespace Team29_Group_Project
             this.dgv_phoneReminders.RowTemplate.Height = 24;
             this.dgv_phoneReminders.Size = new System.Drawing.Size(312, 299);
             this.dgv_phoneReminders.TabIndex = 1;
-            this.dgv_phoneReminders.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phoneReminders_CellClick);
             this.dgv_phoneReminders.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phoneReminders_CellContentClick);
             this.dgv_phoneReminders.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phoneReminders_CellContentDoubleClick);
             // 

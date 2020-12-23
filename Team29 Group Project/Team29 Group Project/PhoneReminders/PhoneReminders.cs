@@ -42,15 +42,13 @@ namespace Team29_Group_Project
         private void dgv_phoneReminders_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             presenter.rowSelcted(Convert.ToInt32(dgv_phoneReminders.CurrentRow.Cells[0].Value.ToString()));
+            presenter.getPhoneDetails();
         }
 
         private void dgv_phoneReminders_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             presenter.rowSelcted(Convert.ToInt32(dgv_phoneReminders.CurrentRow.Cells[0].Value.ToString()));
-        }
-        private void dgv_phoneReminders_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            presenter.rowSelcted(Convert.ToInt32(dgv_phoneReminders.CurrentRow.Cells[0].Value.ToString()));
+            presenter.getPhoneDetails();
         }
         public void viewChosenReminder(int appointmentID)
         {
@@ -61,7 +59,7 @@ namespace Team29_Group_Project
             contactedByPhone.ShowDialog();
             presenter.getPhoneDetails();
             this.Show();
-        }
+        } 
 
         public void Register(PhoneRemindersPresenter PRP)
         {

@@ -13,5 +13,6 @@ namespace Team29_Group_Project
         void setAppointmentTime(TimeSpan time);
         void Register(ContactedByPhonePresenter CBPP);
         int getAppointmentID();
+        void confirmationMessage();
     }
 }

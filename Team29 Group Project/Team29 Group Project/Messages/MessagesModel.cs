@@ -8,9 +8,9 @@ namespace Team29_Group_Project
 {
     class MessagesModel : IMessagesModel
     {
-        UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
         public int getAppointmentID(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -24,10 +24,13 @@ namespace Team29_Group_Project
                            };
             var appointment = appQuery.ToList();
             int appointmentID = appointment[0].appointmentID;
+            unitOfWork.Dispose();
             return appointmentID;
+            
         }
         public string getName(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -42,12 +45,14 @@ namespace Team29_Group_Project
                            };
             var appointment = appQuery.ToList();
             string name = appointment[0].forename + " " + appointment[0].surname;
+            unitOfWork.Dispose();
             return name;
 
         }
 
         public DateTime getDate(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -61,11 +66,13 @@ namespace Team29_Group_Project
                            };
             var appointment = appQuery.ToList();
             DateTime date = appointment[0].appointmentDate;
+            unitOfWork.Dispose();
             return date;
         }
 
         public TimeSpan getTime(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var patients = unitOfWork.patient.GetAll();
             var appointments = unitOfWork.appointment.GetAll();
 
@@ -79,18 +86,22 @@ namespace Team29_Group_Project
                            };
             var appointment = appQuery.ToList();
             TimeSpan time = appointment[0].appointmentStartTime;
+            unitOfWork.Dispose();
             return time;
         }
 
         public void updateTables(int appointmentID, string value)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             Appointment a = unitOfWork.appointment.GetByID(appointmentID);
             a.arrivedToAppointment = value;
             unitOfWork.Save();
+            unitOfWork.Dispose();
         }
 
         public bool checkForRepeatOffence(int patientID)
         {
+            UnitOfWork unitOfWork = new UnitOfWork(new MyDBEntities());
             var appointments = unitOfWork.appointment.GetAll();
             try
             {
@@ -105,10 +116,12 @@ namespace Team29_Group_Project
                 int numberOfOffences = offences[0].count;
                 if (numberOfOffences >= 3)
                 {
+                    unitOfWork.Dispose();
                     return true;
                 }
                 else
                 {
+                    unitOfWork.Dispose();
                     return false;
                 }
             }
@@ -116,6 +129,7 @@ namespace Team29_Group_Project
             {
                 Console.WriteLine("No offences to show " + e.Message);
             }
+            unitOfWork.Dispose();
             return false;
         }
 

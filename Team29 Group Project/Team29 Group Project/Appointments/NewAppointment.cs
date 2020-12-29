@@ -122,7 +122,10 @@ namespace Team29_Group_Project
         #endregion
 
         #region Radio botton changed
-
+        /*
+        * Code for checking every radio button in a panel inspired by:
+        * https://stackoverflow.com/questions/8750290/how-can-i-check-multiple-textboxes-if-null-or-empty-without-a-unique-test-for-ea
+        */
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
             foreach (var RadioButton in AppointmentBox.Controls.OfType<RadioButton>())

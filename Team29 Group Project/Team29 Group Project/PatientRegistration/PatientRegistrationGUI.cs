@@ -105,7 +105,10 @@ namespace Team29_Group_Project
         {
             PatientSubmit();
         }
-
+        /*
+         * finding age based on date of birth while taking into account leap years taken from
+         * https://stackoverflow.com/questions/9/in-c-how-do-i-calculate-someones-age-based-on-a-datetime-type-birthday
+         */
         private void DTB_DoB_ValueChanged(object sender, EventArgs e)
         {
             var today = DateTime.Today;
@@ -113,6 +116,11 @@ namespace Team29_Group_Project
             if (DTB_DoB.Value.Date > today.AddYears(-age)) age--;
             TXT_age.Text = age.ToString();
         }
+
+        /*
+         * code to check all text boxes to see if theuy're null inspired from.
+         *https://stackoverflow.com/questions/8750290/how-can-i-check-multiple-textboxes-if-null-or-empty-without-a-unique-test-for-ea
+         */
 
         private bool TextValidation()
         {
@@ -135,7 +143,10 @@ namespace Team29_Group_Project
             DTB_DoB.CustomFormat = "dd MMMM, yyyy";
             DTB_DoB.Format = DateTimePickerFormat.Custom;
         }
-
+        /*
+         * Code for checking every radio button in a panel inspired by:
+         * https://stackoverflow.com/questions/8750290/how-can-i-check-multiple-textboxes-if-null-or-empty-without-a-unique-test-for-ea
+         */
         private bool OccupationValidation()
         {
             foreach (var RadioButton in PNL_occupations.Controls.OfType<RadioButton>())

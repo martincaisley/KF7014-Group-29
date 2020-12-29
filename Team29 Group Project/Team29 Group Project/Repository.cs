@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace Team29_Group_Project
 {
+    /*
+     * Method of implementing repository design pattern learned from:
+     * https://codewithshadman.com/repository-pattern-csharp/
+     * https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
+     */
     public interface IRepository<T>
     {
         void Add(T entity);

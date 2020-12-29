@@ -56,6 +56,11 @@ namespace Team29_Group_Project
             return dt;
             
         }
+
+        /*
+         * code for generating a CSV file taken from
+         * https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file
+         */
         public void generateCSVFile()
         {
             List<string> csv = new List<string>();

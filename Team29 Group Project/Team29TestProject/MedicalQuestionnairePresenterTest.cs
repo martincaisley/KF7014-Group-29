@@ -19,14 +19,6 @@ namespace Team29TestProject
             model = new Mock<IMedicalQuestionnaireModel>();
             presenter = new MedicalQuestionnairePresenter(view.Object, model.Object);
         }
-        /*[TestMethod]
-         Does not work
-        public void TestGetMessageResponse()
-        {
-            string messageToSend = "Hello";
-            model.Object.setMessage(messageToSend);
-            string response  = presenter.GetMessage();
-            Assert.AreEqual("Hello", response);
-        }*/
+      
     }
 }

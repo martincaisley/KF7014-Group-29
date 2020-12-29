@@ -83,17 +83,7 @@ namespace Team29TestProject
             bool result = presenter.endTimeBeforeStartTime(startTime, endTime);
             Assert.AreEqual(false, result);
         }
-        /*This test won't work as connection to database required
-        [TestMethod]
-        public void TestCheckDuplicateTime()
-        {
-            DateTime date = DateTime.Today.Date;
-            TimeSpan startTime = TimeSpan.Parse("19:00");
-            TimeSpan endTime = TimeSpan.Parse("19:30");
-            bool result = presenter.checkTime(date, startTime, endTime);
-            Assert.AreEqual(true, result);
-        }
-        */
+       
 
         [TestMethod]
         public void TestAppIsInWorkingHoursValidation()

@@ -14,23 +14,7 @@ namespace Team29TestProject
         [TestMethod]
         public void TestMethod1()
         {
-            /*var context = new Mock<MyDBEntities>();
-
-            UnitOfWork uow = new UnitOfWork(context.Object);
-
-            Mock<Appointment> app = new Mock<Appointment>();
-
-            app.Object.appointmentID = 1;
-            app.Object.appointmentDate = DateTime.Today.Date;
-
-            uow.appointment.Add(app.Object);
-
-
-            IAppointment appointment = uow.appointment.GetByID(1);
-
-            Assert.AreEqual(DateTime.Today.Date, appointment.appointmentDate);
-
-            */ 
+           
 
             var testObject = new Appointment();
 

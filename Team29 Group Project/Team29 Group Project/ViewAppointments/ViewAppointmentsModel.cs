@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Martin Caisley:17015608
+ * Drummond Heckles:17005997
+ * Mark Burns:16016013
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,13 +50,11 @@ namespace Team29_Group_Project
                                        }, false);
 
                 appointmentQuery.CopyToDataTable();
-                Console.WriteLine("HERE1");
             }
             catch (Exception e)
             {
                 Console.WriteLine("Exception in ViewAppointmentsModel: " + e.Message);
             }
-            Console.WriteLine("HERE2");
             unitOfWork.Dispose();
             return dt;
             

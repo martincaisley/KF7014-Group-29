@@ -269,14 +269,14 @@
             this.TXT_GPname.Location = new System.Drawing.Point(117, 573);
             this.TXT_GPname.Name = "TXT_GPname";
             this.TXT_GPname.Size = new System.Drawing.Size(149, 20);
-            this.TXT_GPname.TabIndex = 18;
+            this.TXT_GPname.TabIndex = 14;
             // 
             // TXT_GPaddress
             // 
             this.TXT_GPaddress.Location = new System.Drawing.Point(116, 607);
             this.TXT_GPaddress.Name = "TXT_GPaddress";
             this.TXT_GPaddress.Size = new System.Drawing.Size(149, 20);
-            this.TXT_GPaddress.TabIndex = 19;
+            this.TXT_GPaddress.TabIndex = 15;
             // 
             // BTN_addPatient
             // 
@@ -303,7 +303,7 @@
             this.TXT_phoneNum.Location = new System.Drawing.Point(132, 285);
             this.TXT_phoneNum.Name = "TXT_phoneNum";
             this.TXT_phoneNum.Size = new System.Drawing.Size(149, 20);
-            this.TXT_phoneNum.TabIndex = 22;
+            this.TXT_phoneNum.TabIndex = 13;
             // 
             // LBL_age
             // 
